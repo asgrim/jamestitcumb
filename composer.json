@@ -1,0 +1,16 @@
+{
+	"name": "asgrim/jamestitcumb",
+	"description": "My personal website at www.jamestitcumb.com",
+	"require": {
+		"php": ">= 5.4",
+		"michelf/php-markdown": "1.3",
+		"symfony/yaml": "2.3.0"
+	},
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "James Titcumb",
+			"email": "james@asgrim.com"
+		}
+	]
+}

@@ -1,0 +1,74 @@
+
+body {
+	background-color: #61bf6a;
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+div#header, div#content, div#footer {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.clear {
+	clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Droid Sans', sans-serif;
+}
+
+header {
+	padding: 20px 0 0 0;
+	background-color: #ddf6df;
+}
+header h1 {
+	margin: 0;
+	color: black;
+	font-size: 50px;
+	padding-left: 70px;
+	background-image: url('/avatar.png');
+	background-repeat: no-repeat;
+	line-height: 50px;
+}
+header ul {
+	list-style-type: none;
+	margin: 10px 0 0 0;
+	padding: 0;
+	display: block;
+	height: 30px;
+	background-color: #61bf6a;
+}
+header ul li {
+	float: left;
+}
+header ul li a {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 20px;
+	text-decoration: none;
+	color: white;
+}
+header ul li a:hover {
+	background-color: #90da98;
+}
+
+div#contentContainer {
+	background-color: #ddf6df;
+	padding: 20px 0 40px 0;
+}
+
+div#content h1 a {
+	text-decoration: none;
+	color: black;
+}
+
+footer {
+	text-align: center;
+	color: white;
+	background-image: url('saw.png');
+	background-repeat: repeat-x;
+	padding-top: 20px;
+}
