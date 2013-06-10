@@ -32,18 +32,22 @@ header h1 {
 	background-repeat: no-repeat;
 	line-height: 50px;
 }
-header ul {
-	list-style-type: none;
+header nav {
 	margin: 10px 0 0 0;
 	padding: 0;
 	display: block;
-	height: 30px;
 	background-color: #61bf6a;
+	padding-left: 10%;
 }
-header ul li {
+header nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+header nav ul li {
 	float: left;
 }
-header ul li a {
+header nav ul li a {
 	display: block;
 	height: 30px;
 	line-height: 30px;
@@ -51,7 +55,7 @@ header ul li a {
 	text-decoration: none;
 	color: white;
 }
-header ul li a:hover {
+header nav ul li a:hover {
 	background-color: #90da98;
 }
 
