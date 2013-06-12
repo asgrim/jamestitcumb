@@ -16,7 +16,7 @@ namespace {
 
 namespace Asgrim\Service
 {
-	require 'vendor/wp_formatting.php';
+	require 'app/wp_formatting.php';
 
 	class WordpressBlogRepository implements BlogRepositoryInterface
 	{
