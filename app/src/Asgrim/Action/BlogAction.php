@@ -3,6 +3,7 @@
 namespace Asgrim\Action;
 
 use Asgrim\Service\BlogService;
+use Asgrim\Service\WordpressBlogRepository;
 
 class BlogAction extends AbstractAction
 {
@@ -12,7 +13,10 @@ class BlogAction extends AbstractAction
 	{
 		if (!$this->blogService)
 		{
-			$this->blogService = new BlogService($this->getApplication()->getConfig('directories')['post-index']);
+			$db = $this->getApplication()->getConfig('database');
+			$pdoConnection = new \PDO($db['dsn'], $db['username'], $db['password']);
+			$blogRepository = new WordpressBlogRepository($pdoConnection);
+			$this->blogService = new BlogService($blogRepository);
 		}
 
 		return $this->blogService;

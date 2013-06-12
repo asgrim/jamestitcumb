@@ -13,3 +13,8 @@ routes:
     action: Blog
   contact:
     url: 
+
+database:
+  dsn: mysql:host=localhost;dbname=REPLACEME
+  username: REPLACEME
+  password: REPLACEME

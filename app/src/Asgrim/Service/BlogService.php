@@ -2,32 +2,21 @@
 
 namespace Asgrim\Service;
 
-use Michelf\Markdown;
-use Symfony\Component\Yaml\Yaml;
-
 class BlogService
 {
-	protected $slugIndex;
-	protected $markdownParser;
+	protected $blogRepository;
 
-	public function __construct($postIndexFilename)
+	public function __construct(BlogRepositoryInterface $blogRepository)
 	{
-		$fileContents = file_get_contents($postIndexFilename);
-		$this->slugIndex = Yaml::parse($fileContents);
-		$this->markdownParser = new Markdown();
+		$this->blogRepository = $blogRepository;
 	}
 
 	public function fetchBySlug($slug)
 	{
-		$text = file_get_contents('app/posts/' . $this->slugIndex[$slug]);
-
-		$text = str_replace('@[', '<a href="/blog/' . $slug . '">', $text);
-		$text = str_replace(']@', '</a>', $text);
-
-		return $this->markdownParser->defaultTransform($text);
+		return $this->blogRepository->fetchBySlug($slug);
 	}
 
-	public function fetchLast($howeverMany)
+	public function fetchLast($howeverMany = 5)
 	{
 		$howeverMany = (int)$howeverMany;
 
@@ -36,15 +25,6 @@ class BlogService
 			$howeverMany = 5;
 		}
 
-		$items = array_slice($this->slugIndex, -$howeverMany);
-
-		$text = '';
-
-		foreach ($items as $slug => $file)
-		{
-			$text .= $this->fetchBySlug($slug);
-		}
-
-		return $text;
+		return $this->blogRepository->fetchLast($howeverMany);
 	}
 }
