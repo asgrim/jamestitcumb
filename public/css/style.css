@@ -83,5 +83,12 @@ footer {
 }
 #openSource .card .inner {
 	padding: 20px;
+	text-align: center;
+}
+#openSource .card img {
+	max-width: 260px;
+}
+#openSource .card p {
+	text-align: justify;
 }
 
