@@ -91,4 +91,7 @@ footer {
 #openSource .card p {
 	text-align: justify;
 }
+#openSource .card ul {
+	text-align: left;
+}
 
