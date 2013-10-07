@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<title>James Titcumb</title>
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
 

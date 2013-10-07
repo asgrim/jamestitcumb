@@ -5,6 +5,7 @@ namespace Asgrim;
 use Silex\Application as SilexApplication;
 use Herrera\Template\TemplateServiceProvider;
 use Michelf\MarkdownExtra as Markdown;
+use Symfony\Component\HttpFoundation\Request;
 
 class Application extends SilexApplication
 {
@@ -22,6 +23,7 @@ class Application extends SilexApplication
 
 		$this->get('/', array($this, 'aboutAction'));
 		$this->get('/posts', array($this, 'postsAction'));
+		$this->get('/posts/{slug}', array($this, 'postsAction'));
 		$this->get('/talks', array($this, 'talksAction'));
 		$this->get('/books', array($this, 'booksAction'));
 	}
@@ -31,9 +33,18 @@ class Application extends SilexApplication
 		return $this['template.engine']->render('about.php', array(), true);
 	}
 
-	public function postsAction()
+	public function postsAction(Request $request)
 	{
-		$posts = $this->fetchRecentPosts();
+		$slug = $request->get('slug');
+
+		if (!is_null($slug))
+		{
+			$posts = array($slug => $this->fetchPostBySlug($slug));
+		}
+		else
+		{
+			$posts = $this->fetchRecentPosts();
+		}
 
 		return $this['template.engine']->render('posts.php', array('posts' => $posts), true);
 	}
@@ -83,7 +94,7 @@ class Application extends SilexApplication
 			$post['content'] = $this->renderPost($post['file']);
 		}
 
-		return $recentPosts;
+		return array_reverse($recentPosts);
 	}
 
 	public function fetchPostBySlug($slug)
