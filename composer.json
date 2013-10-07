@@ -3,10 +3,12 @@
 	"description": "My personal website at www.jamestitcumb.com",
 	"require": {
 		"php": ">= 5.4",
-		"ext-pdo": "*",
-		"michelf/php-markdown": "1.3",
-		"symfony/yaml": "2.3.0"
+		"silex/silex": "1.*",
+		"herrera-io/silex-template": "1.*"
 	},
+	"autoload": {
+		"psr-0": { "": "src/" }
+    },
 	"license": "MIT",
 	"authors": [
 		{
