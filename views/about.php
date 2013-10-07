@@ -12,6 +12,7 @@
 	<li>I am a <a href="http://www.zend.com/en/store/education/certification/yellow-pages.php#show-ClientCandidateID=ZEND010150">Zend Certified Engineer PHP 5.3</a>.</li>
 	<li>I contribute back to open source software when I can.</li>
 	<li>I run the <a href="http://www.phphants.co.uk/">PHP Hampshire</a> PHP user group.</li>
+	<li>I am an active contributor to the <a href="https://github.com/browscap/browscap">Browser Capabilities Project</a></li>
 	<li>I wrote a deployment tool called <a href="http://www.godeploy.com/">GoDeploy</a>.</li>
 	<li>I live in Portsmouth, UK and I'm married, with 2 children.</li>
 	<li>I like <a href="/talks">speaking</a> sometimes.</li>

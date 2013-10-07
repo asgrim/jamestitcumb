@@ -1,6 +1,6 @@
 <?php require_once('header.php'); ?>
 
-<p>This is a list of books I'm working on:</p>
+<p>I'm currently writing a book!</p>
 
 <ul>
 	<li>
