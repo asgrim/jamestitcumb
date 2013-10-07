@@ -9,9 +9,11 @@
 
 <ul>
 	<li>I am the Development Manager at <a href="http://www.protected.co.uk">Protected.co.uk</a> where I work on Zend Framework 2 stuff with an <em>amazing</em> team of developers.</li>
-	<li>I run the <a href="http://www.phphants.co.uk/">PHP Hampshire</a> user group.</li>
+	<li>I am a <a href="http://www.zend.com/en/store/education/certification/yellow-pages.php#show-ClientCandidateID=ZEND010150">Zend Certified Engineer PHP 5.3</a>.</li>
+	<li>I contribute back to open source software when I can.</li>
+	<li>I run the <a href="http://www.phphants.co.uk/">PHP Hampshire</a> PHP user group.</li>
 	<li>I wrote a deployment tool called <a href="http://www.godeploy.com/">GoDeploy</a>.</li>
-	<li>I'm married, with 2 children.</li>
+	<li>I live in Portsmouth, UK and I'm married, with 2 children.</li>
 	<li>I like <a href="/talks">speaking</a> sometimes.</li>
 	<li>I'm writing <a href="/books">a book</a>.</li>
 </ul>
@@ -22,6 +24,7 @@
 
 <ul>
 	<li>Twitter: <a href="https://twitter.com/asgrim">@asgrim</a></li>
+	<li>GitHub: <a href="https://github.com/asgrim">https://github.com/asgrim</a></li>
 	<li>Google+: <a href="https://plus.google.com/115315299682874378471">James Titcumb</a></li>
 	<li>IRC (freenode): asgrim</li>
 </ul>
