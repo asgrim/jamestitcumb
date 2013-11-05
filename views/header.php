@@ -16,7 +16,6 @@
 				<li><a href="/">About Me</a></li>
 				<li><a href="/posts">Posts</a></li>
 				<li><a href="/talks">Talks</a></li>
-				<li><a href="/books">Books</a></li>
 			</ul>
 		</div>
 	</div>

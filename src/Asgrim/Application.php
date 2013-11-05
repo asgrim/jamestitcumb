@@ -21,11 +21,30 @@ class Application extends SilexApplication
 			'template.dir' => __DIR__ . '/../../views',
 		));
 
+		$this->error(function (\Exception $e, $code) {
+			if ($code == 404)
+			{
+				return $this['template.engine']->render('404.php', array(), true);
+			}
+			else
+			{
+				if ($this['debug'])
+				{
+					$vars = array('exception' => $e);
+				}
+				else
+				{
+					$vars = array();
+				}
+				return $this['template.engine']->render('error.php', $vars, true);
+			}
+		});
+
 		$this->get('/', array($this, 'aboutAction'));
 		$this->get('/posts', array($this, 'postsAction'));
 		$this->get('/posts/{slug}', array($this, 'postsAction'));
 		$this->get('/talks', array($this, 'talksAction'));
-		$this->get('/books', array($this, 'booksAction'));
+		//$this->get('/books', array($this, 'booksAction'));
 	}
 
 	public function aboutAction()
@@ -75,7 +94,7 @@ class Application extends SilexApplication
 
 		if (!file_exists($fullPath))
 		{
-			throw new \Exception("Markdown file called {$file} was missing");
+			throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException("Markdown file called {$file} was missing");
 		}
 
 		$text = file_get_contents($fullPath);
@@ -108,7 +127,7 @@ class Application extends SilexApplication
 		}
 		else
 		{
-			throw new \Exception("Post with slug {$slug} not found.");
+			throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException("Post with slug {$slug} not found.");
 		}
 	}
 }

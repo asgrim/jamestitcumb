@@ -8,13 +8,13 @@
 <p>Hi there! I'm James Titcumb. I've been a PHP developer since 2002. Here's some facts about me:</p>
 
 <ul>
-	<li>I am the Development Manager at <a href="http://www.protected.co.uk">Protected.co.uk</a> where I work on Zend Framework 2 stuff with an <em>amazing</em> team of developers.</li>
+	<li>I am the Development Manager at <a href="http://www.protected.co.uk">Protected.co.uk</a> where I write stuff using <a href="http://framework.zend.com/">Zend Framework 2</a> with an <em>amazing</em> team of developers.</li>
 	<li>I am a <a href="http://www.zend.com/en/store/education/certification/yellow-pages.php#show-ClientCandidateID=ZEND010150">Zend Certified Engineer PHP 5.3</a>.</li>
 	<li>I contribute back to open source software when I can.</li>
 	<li>I run the <a href="http://www.phphants.co.uk/">PHP Hampshire</a> PHP user group.</li>
 	<li>I am an active contributor to the <a href="https://github.com/browscap/browscap">Browser Capabilities Project</a></li>
 	<li>I wrote a deployment tool called <a href="http://www.godeploy.com/">GoDeploy</a>.</li>
-	<li>I live in Portsmouth, UK and I'm married, with 2 children.</li>
+	<li>I live in <a href="http://en.wikipedia.org/wiki/Portsmouth">Portsmouth, UK</a> and I'm married, with 2 children.</li>
 	<li>I like <a href="/talks">speaking</a> sometimes.</li>
 	<li>I'm writing <a href="/books">a book</a>.</li>
 </ul>
