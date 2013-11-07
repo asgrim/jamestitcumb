@@ -20,4 +20,9 @@ return array(
 		'file' => '2013/2013-09-27-zf2-doctrine-objectselect-form-binding-custom-select-options.md',
 		'title' => 'ZF2 + Doctrine ObjectSelect + Form binding + Custom Select Options',
 	),
+	'errors-exceptions-logging-talk-php-hants-oct-13' => array(
+		'date' => '2013-11-07',
+		'file' => '2013/2013-11-07-errors-exceptions-logging-talk-php-hants-oct-13.md',
+		'title' => 'Errors, Exceptions and Logging talk @ PHP Hants Oct 13',
+	),
 );
