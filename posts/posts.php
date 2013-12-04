@@ -25,4 +25,9 @@ return array(
 		'file' => '2013/2013-11-07-errors-exceptions-logging-talk-php-hants-oct-13.md',
 		'title' => 'Errors, Exceptions and Logging talk @ PHP Hants Oct 13',
 	),
+	'local-packagist-setup' => array(
+		'date' => '2013-12-04',
+		'file' => '2013/2013-12-04-local-packagist-setup.md',
+		'title' => 'Local Packagist Setup',
+	),
 );
