@@ -6,7 +6,7 @@
 		<h1><a href="/posts/<?php echo $slug; ?>"><?php echo $post['title']; ?></a></h1>
 		<p style="font-weight: bold; font-style: italic;">
 			Posted on <?php echo date('jS F Y', strtotime($post['date'])); ?>
-			| <a href="/posts/<?php echo $slug; ?>#disqus_thread">View comments</a>
+			| <a href="/posts/<?php echo $slug; ?>#disqus_thread" data-disqus-identifier="<?php echo $slug; ?>">View comments</a>
 		</p>
 	</div>
 	<hr />
@@ -21,6 +21,9 @@
 		<script type="text/javascript">
 			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 			var disqus_shortname = 'asgrim'; // required: replace example with your forum shortname
+			var disqus_identifier = '<?php echo $slug; ?>';
+			var disqus_title = '<?php echo $post['title']; ?>';
+			var disqus_title = '/posts/<?php echo $slug; ?>';
 
 			/* * * DON'T EDIT BELOW THIS LINE * * */
 			(function() {
