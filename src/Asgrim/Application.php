@@ -59,6 +59,7 @@ class Application extends SilexApplication
 		if (!is_null($slug))
 		{
 			$posts = array($slug => $this->fetchPostBySlug($slug));
+			$posts[$slug]['active'] = true;
 		}
 		else
 		{
@@ -111,6 +112,7 @@ class Application extends SilexApplication
 		foreach ($recentPosts as &$post)
 		{
 			$post['content'] = $this->renderPost($post['file']);
+			$post['active'] = false;
 		}
 
 		return array_reverse($recentPosts);
@@ -123,6 +125,7 @@ class Application extends SilexApplication
 		if (isset($posts[$slug]))
 		{
 			$posts[$slug]['content'] = $this->renderPost($posts[$slug]['file']);
+			$posts[$slug]['active'] = false;
 			return $posts[$slug];
 		}
 		else
