@@ -30,4 +30,9 @@ return array(
 		'file' => '2013/2013-12-04-local-packagist-setup.md',
 		'title' => 'Local Packagist Setup',
 	),
+	'a-little-bit-about-this-site' => array(
+		'date' => '2013-12-16',
+		'file' => '2013/2013-12-16-a-little-bit-about-this-site.md',
+		'title' => 'A Little Bit About This Site',
+	),
 );
