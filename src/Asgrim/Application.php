@@ -44,7 +44,56 @@ class Application extends SilexApplication
 		$this->get('/posts', array($this, 'postsAction'));
 		$this->get('/posts/{slug}', array($this, 'postsAction'));
 		$this->get('/talks', array($this, 'talksAction'));
+		$this->get('/feed', array($this, 'feedAction'));
+		$this->get('/feed/{format}', array($this, 'feedAction'));
 		//$this->get('/books', array($this, 'booksAction'));
+	}
+
+	public function feedAction(Request $request)
+	{
+		$baseUrl = 'http://www.jamestitcumb.com/';
+
+		$outputFormat = $request->get('format', 'rss');
+
+		if (!in_array($outputFormat, ['rss', 'rdf', 'atom']))
+		{
+			throw new \Exception('Invalid output format.');
+		}
+
+		$feed = new \Zend\Feed\Writer\Feed();
+		$feed->setTitle('James Titcumb\'s blog');
+		$feed->setLink($baseUrl);
+		$feed->setDescription('This is James Titcumb\'s personal PHP-related blog posts.');
+		$feed->setFeedLink($baseUrl . 'feed/atom', 'atom');
+		$feed->addAuthor([
+			'name' => 'James Titcumb',
+			'uri' => $baseUrl,
+		]);
+		$feed->setDateModified(time());
+
+		$posts = $this->fetchRecentPosts(10);
+
+		foreach ($posts as $slug => $post)
+		{
+			$entry = $feed->createEntry();
+			$entry->setTitle($post['title']);
+			$entry->setLink($baseUrl . 'posts/' . $slug);
+			$entry->addAuthor(array(
+				'name'  => 'James Titcumb',
+				'uri'   => $baseUrl,
+			));
+			$entry->setDateModified(time());
+			$entry->setDateCreated(new \DateTime($post['date']));
+			$entry->setDescription($post['title']);
+
+			$content = str_replace(' allowfullscreen>', ' allowfullscreen="allowfullscreen">', $post['content']);
+
+			$entry->setContent($content);
+
+			$feed->addEntry($entry);
+		}
+
+		return $feed->export($outputFormat);
 	}
 
 	public function aboutAction()
