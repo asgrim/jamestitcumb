@@ -122,7 +122,7 @@ This uses the repository's `findBy()` method to find all Ad Groups with a status
 
 **Step 4 - Custom options**
 
-After examining the `ObjectSelect` class, it seems we can provide our own options (for example, we wanted to have <optgroup> groups on one of our dropdowns):
+After examining the `ObjectSelect` class, it seems we can provide our own options (for example, we wanted to have `<optgroup>` groups on one of our dropdowns):
 
 ~~~ .php
 // .. build $optionValues, e.g.:
