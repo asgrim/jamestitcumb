@@ -103,11 +103,11 @@ class Application extends SilexApplication
 		return Markdown::defaultTransform($text);
 	}
 
-	public function fetchRecentPosts()
+	public function fetchRecentPosts($howMany = 5)
 	{
 		$posts = $this->getPosts();
 
-		$recentPosts = array_slice($posts, -5);
+		$recentPosts = array_slice($posts, -$howMany);
 
 		foreach ($recentPosts as &$post)
 		{
