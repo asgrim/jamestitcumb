@@ -5,7 +5,9 @@
 		"php": ">= 5.3",
 		"silex/silex": "1.*",
 		"herrera-io/silex-template": "1.*",
-		"michelf/php-markdown": "1.3"
+		"michelf/php-markdown": "1.3",
+		"zendframework/zend-feed": "2.*",
+		"zendframework/zend-servicemanager": "2.*"
 	},
 	"autoload": {
 		"psr-0": { "": "src/" }
