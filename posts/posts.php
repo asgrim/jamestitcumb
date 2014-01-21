@@ -35,4 +35,9 @@ return array(
 		'file' => '2013/2013-12-16-a-little-bit-about-this-site.md',
 		'title' => 'A Little Bit About This Site',
 	),
+	'hhvm-hack' => array(
+		'date' => '2014-01-21',
+		'file' => '2014/2014-01-21-hhvm-hack.md',
+		'title' => 'HHVM and Hack',
+	),
 );
