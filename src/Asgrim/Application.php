@@ -55,7 +55,7 @@ class Application extends SilexApplication
 
 		$outputFormat = $request->get('format', 'rss');
 
-		if (!in_array($outputFormat, ['rss', 'rdf', 'atom']))
+		if (!in_array($outputFormat, array('rss', 'rdf', 'atom')))
 		{
 			throw new \Exception('Invalid output format.');
 		}
@@ -65,10 +65,10 @@ class Application extends SilexApplication
 		$feed->setLink($baseUrl);
 		$feed->setDescription('This is James Titcumb\'s personal PHP-related blog posts.');
 		$feed->setFeedLink($baseUrl . 'feed/atom', 'atom');
-		$feed->addAuthor([
+		$feed->addAuthor(array(
 			'name' => 'James Titcumb',
 			'uri' => $baseUrl,
-		]);
+		));
 		$feed->setDateModified(time());
 
 		$posts = $this->fetchRecentPosts(10);
