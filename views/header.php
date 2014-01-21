@@ -3,6 +3,7 @@
 <head>
 	<title>James Titcumb</title>
 	<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link rel="alternate" type="application/rss+xml" title="James Titcumb's blog feed" href="http://www.jamestitcumb.com/feed" />
 </head>
 <body>
 
