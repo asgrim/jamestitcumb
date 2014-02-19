@@ -40,4 +40,9 @@ return array(
 		'file' => '2014/2014-01-21-hhvm-hack.md',
 		'title' => 'HHVM and Hack',
 	),
+	'speaking-resources' => array(
+		'date' => '2014-02-19',
+		'file' => '2014/2014-02-19-speaking-resources.md',
+		'title' => 'Resources for Public Speaking',
+	),
 );
