@@ -5,7 +5,7 @@ Some of you who know me know that I'm trying to get more involved in speaking at
 * Cal Evans - [http://blog.calevans.com/2011/06/02/crafting-conference-proposal/](http://blog.calevans.com/2011/06/02/crafting-conference-proposal/)
 * Beth Tucker Long - [http://www.alittleofboth.com/2014/01/how-to-submit-a-talk-to-a-conference/](http://www.alittleofboth.com/2014/01/how-to-submit-a-talk-to-a-conference/)
 * Davey Shafik - [https://blog.engineyard.com/2013/speaking-at-conferences](https://blog.engineyard.com/2013/speaking-at-conferences)
-* Matt Frost - http://shortwhitebaldguy.com/blog/2014/01/getting-talks-selected
+* Matt Frost - [http://shortwhitebaldguy.com/blog/2014/01/getting-talks-selected](http://shortwhitebaldguy.com/blog/2014/01/getting-talks-selected)
 
 I'm sincerely grateful to everyone who has given me advice, feedback and compliments in my journey so far, and it's this positive encouragement that is helping me want to keep improving myself. This is a bit of a new adventure for me, and I'm fascinated with where it might take me.
 
