@@ -1,3 +1,6 @@
+---
+title: Local Packagist Setup
+---
 At [Protected.co.uk](http://www.protected.co.uk/) we are developing some new back end systems, which are broken down "[the right way](http://www.phptherightway.com/)" into lots of little components, all installable via [Composer](http://getcomposer.org/). Because all of our code is closed source, we couldn't use the awesome [Packagist.org](https://packagist.org/). After reading up a little on it, we found a tool called [Satis](https://github.com/composer/satis), which is a static Composer repository generator.
 
 After a little while, we discovered a problem with this - after reaching 15-20 or so components (all hosted remotely on GitHub), the `php bin/satis build` command started taking some time (and sometimes overrunning the cron job we had every minute - which we subsequently lowered to 5 minutes). Ideally what we wanted to do is only update packages that we know are updated (by way of using GitHub push hooks) - but Satis does not yet support this (see [composer/satis#40](https://github.com/composer/satis/issues/40)). So our next logical step was to host our own local Packagist.

@@ -132,7 +132,7 @@ class Application extends SilexApplication
 	{
 		if(!isset($this->posts))
 		{
-			$posts = require_once(__DIR__ . '/../../posts/posts.php');
+			$posts = require_once(__DIR__ . '/../../posts/postsCache.php');
 		}
 
 		return $posts;
@@ -149,7 +149,11 @@ class Application extends SilexApplication
 
 		$text = file_get_contents($fullPath);
 
-		return Markdown::defaultTransform($text);
+		// Get rid of the metadata
+		$text = substr($text, strpos($text, '---')+3);
+		$text = substr($text, strpos($text, '---')+3);
+
+		return Markdown::defaultTransform(trim($text));
 	}
 
 	public function fetchRecentPosts($howMany = 5)

@@ -1,3 +1,6 @@
+---
+title: Resources for Public Speaking
+---
 Some of you who know me know that I'm trying to get more involved in speaking at conferences and user groups. Unfortunately it's a bit slow at the moment on account of our baby being due any day now (due date is in fact *tomorrow* - exciting!). However, I've put together a list of various resources to help me become a better speaker, and I thought I'd share it with the world.
 
 * speaking.io - [http://speaking.io/](http://speaking.io/)

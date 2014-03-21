@@ -1,4 +1,6 @@
-
+---
+draft: true
+---
 ~~~
 <asgrim> richsage: surely pentests would ignore such trivally workaroundable "features" like autocomplete="off"? A hacker certinaly isn't going to obey autocomplete="off", so why should any pentest?
 <richsage> asgrim: it's less about hacking and more about general data security in points

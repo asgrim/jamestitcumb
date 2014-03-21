@@ -1,3 +1,6 @@
+---
+title: PHPUnit Coverage...
+---
 In our new projects at Netbasic / Ed, I am adamant that we will have 100% unit test coverage.
 
 There's a distinction however that I've come to understand between having a fully comprehensive test suite, and _code coverage_. It's the _code coverage_ that I'm trying to reach 100%, not necessarily the test suite itself.
