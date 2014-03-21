@@ -20,5 +20,13 @@
 			"name": "James Titcumb",
 			"email": "james@asgrim.com"
 		}
-	]
+	],
+	"scripts": {
+		"post-update-cmd": [
+			"./app.php index-posts"
+		],
+		"post-install-cmd": [
+			"./app.php index-posts"
+		]
+	}
 }
