@@ -4,6 +4,11 @@
 
 <ul>
 	<li>
+		<h3>What RabbitMQ Can Do For You (PHP Hampshire, 9th Apr '14)</h3>
+		<p>A lightning talk that gives a quick introduction as to what RabbitMQ is for and what it can do for your applications.</p>
+		<p><strong>Links:</strong> <a href="https://joind.in/11174">Joind.in</a> | <a href="http://www.slideshare.net/asgrim1/rabbit-mq-32447680">Slides</a></p>
+	</li>
+	<li>
 		<h3>What RabbitMQ Can Do For You (PHPNE14 Uncon)</h3>
 		<p>An introduction to what RabbitMQ is and what it can do for your applications.</p>
 		<p><strong>Links:</strong> <a href="https://joind.in/10937">Joind.in</a> | <a href="http://www.slideshare.net/asgrim1/rabbit-mq-32447680">Slides</a></p>
