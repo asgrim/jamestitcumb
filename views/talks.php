@@ -14,7 +14,7 @@
 		<p><strong>Links:</strong> <a href="http://www.phpdorset.co.uk/">PHP Dorset</a></p>
 	</li>
 	<li>
-		<h3>Introduction to RabbitMQ (PHPem, 3rd Jul '14)</h3>
+		<h3>Practical Message Queueing Using RabbitMQ (PHPem, 3rd Jul '14)</h3>
 		<p>RabbitMQ is a message broker - an application that allows communication between applications by way of a message queuing system. In this talk, we’ll set up an RabbitMQ instance, take an intermediate-level look into the technical features it provides and also how you can apply RabbitMQ in your in applications to scale them efficiently.</p>
 		<p><strong>Links:</strong> <a href="http://phpem.info/">PHPem</a></p>
 	</li>
