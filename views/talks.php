@@ -9,9 +9,9 @@
 		<p><strong>Links:</strong> <a href="http://nomadphp.com/lightning-talks/">Nomad PHP</a></p>
 	</li>
 	<li>
-		<h3>tbc (Dorset PHP, 2nd Jun '14)</h3>
-		<p>tbc</p>
-		<p><strong>Links:</strong> <a href="http://www.phpdorset.co.uk/">Dorset PHP</a></p>
+		<h3>Dip Your Toes in the Sea of Security (PHP Dorset, 2nd Jun '14)</h3>
+		<p>Security is an enormous topic, and it’s really, really complicated. If you’re not careful, you’ll find yourself vulnerable to any number of attacks which you definitely don’t want to be on the receiving end of. This talk will give you just a taster of the vast array of things there is to know about security in modern web applications, such as writing secure PHP web applications and securing a Linux server. Whether you are writing anything beyond a basic brochure website, or even developing a complicated business web application, this talk will give you insights to some of the things you need to be aware of.</p>
+		<p><strong>Links:</strong> <a href="http://www.phpdorset.co.uk/">PHP Dorset</a></p>
 	</li>
 	<li>
 		<h3>Introduction to RabbitMQ (PHPem, 3rd Jul '14)</h3>
