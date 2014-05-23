@@ -9,8 +9,8 @@
 		<p><strong>Links:</strong> <a href="http://www.phpdorset.co.uk/">PHP Dorset</a></p>
 	</li>
 	<li>
-		<h3>tbc (Portsmouth Linux User Group, 21st Jun '14)</h3>
-		<p>tbc</p>
+		<h3>The State of PHP in 2014 (Portsmouth Linux User Group, 21st Jun '14)</h3>
+		<p>PHP has been around since 1995, which means it has been powering the web for nearly two decades. It is one of the top web scripting languages, and is used on countless websites. What is new in the world of PHP and why is this language, that many seem quick to dismiss, so popular? In this talk, we’ll look at some of the landmark achievements of PHP, why it’s still gaining popularity, and also a glimpse into what the future might hold for the world of PHP.</p>
 		<p><strong>Links:</strong> <a href="http://www.portsmouth.lug.org.uk/">Portsmouth LUG</a></p>
 	</li>
 	<li>
@@ -26,12 +26,12 @@
 	<li>
 		<h3>What RabbitMQ Can Do For You (Nomad PHP, 22nd May '14)</h3>
 		<p>RabbitMQ is a message broker – an application that allows communication between applications by way of a message queuing system. In this talk, we look at some of the basic concepts of RabbitMQ and how it can help effectively scale your applications.</p>
-		<p><strong>Links:</strong> <a href="https://joind.in/11350">Joind.in</a> | <a href="https://www.slideshare.net/asgrim1/rabbit-mq-nomad-php-may-2014">Slides</a> | <a href="http://nomadphp.com/lightning-talks/">Nomad PHP</a></p>
+		<p><strong>Links:</strong> <a href="https://joind.in/11350">Joind.in</a> | YouTube (coming soon) | <a href="https://www.slideshare.net/asgrim1/rabbit-mq-nomad-php-may-2014">Slides</a> | <a href="http://nomadphp.com/lightning-talks/">Nomad PHP</a></p>
 	</li>
 	<li>
 		<h3>What RabbitMQ Can Do For You (PHP Hampshire, 9th Apr '14)</h3>
 		<p>A lightning talk that gives a quick introduction as to what RabbitMQ is for and what it can do for your applications.</p>
-		<p><strong>Links:</strong> <a href="https://joind.in/11174">Joind.in</a> | <a href="http://www.slideshare.net/asgrim1/rabbit-mq-32447680">Slides</a></p>
+		<p><strong>Links:</strong> <a href="https://joind.in/11174">Joind.in</a> | <a href="http://www.youtube.com/watch?v=sY_cKzwyC5k">YouTube</a> | <a href="http://www.slideshare.net/asgrim1/rabbit-mq-32447680">Slides</a></p>
 	</li>
 	<li>
 		<h3>What RabbitMQ Can Do For You (PHPNE14 Uncon)</h3>
