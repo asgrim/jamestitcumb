@@ -26,7 +26,7 @@
 	<li>
 		<h3>What RabbitMQ Can Do For You (Nomad PHP, 22nd May '14)</h3>
 		<p>RabbitMQ is a message broker – an application that allows communication between applications by way of a message queuing system. In this talk, we look at some of the basic concepts of RabbitMQ and how it can help effectively scale your applications.</p>
-		<p><strong>Links:</strong> <a href="https://joind.in/11350">Joind.in</a> | YouTube (coming soon) | <a href="https://www.slideshare.net/asgrim1/rabbit-mq-nomad-php-may-2014">Slides</a> | <a href="http://nomadphp.com/lightning-talks/">Nomad PHP</a></p>
+		<p><strong>Links:</strong> <a href="https://joind.in/11350">Joind.in</a> | <a href="https://www.youtube.com/watch?v=4lDSwfrfM-I">YouTube</a> | <a href="https://www.slideshare.net/asgrim1/rabbit-mq-nomad-php-may-2014">Slides</a> | <a href="http://nomadphp.com/lightning-talks/">Nomad PHP</a></p>
 	</li>
 	<li>
 		<h3>What RabbitMQ Can Do For You (PHP Hampshire, 9th Apr '14)</h3>
