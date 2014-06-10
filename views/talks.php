@@ -11,7 +11,7 @@
 	<li>
 		<h3>Practical Message Queueing Using RabbitMQ (PHPem, 3rd Jul '14)</h3>
 		<p>RabbitMQ is a message broker - an application that allows communication between applications by way of a message queuing system. In this talk, we’ll set up an RabbitMQ instance, take an intermediate-level look into the technical features it provides and also how you can apply RabbitMQ in your in applications to scale them efficiently.</p>
-		<p><strong>Links:</strong> <a href="http://phpem.info/">PHPem</a></p>
+		<p><strong>Links:</strong> <a href="http://www.meetup.com/ugPHPem/events/188218922/">Meetup</a> | <a href="http://phpem.info/13-july-3rd-2014">PHPem</a></p>
 	</li>
 </ul>
 
