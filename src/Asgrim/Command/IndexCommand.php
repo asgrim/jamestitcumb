@@ -56,6 +56,14 @@ class IndexCommand extends Command
 			}
 		}
 
+		usort($postIndex, function ($a, $b) {
+			$aa = (int)str_replace('-', '', $a['date']);
+			$bb = (int)str_replace('-', '', $b['date']);
+			if ($aa > $bb) return 1;
+			else if ($bb > $aa) return -1;
+			else return 0;
+		});
+
 		$cacheContent = var_export($postIndex, true);
 
 		file_put_contents($this->postFolder . '/postsCache.php', "<?php\nreturn " . $cacheContent . ";\n");
