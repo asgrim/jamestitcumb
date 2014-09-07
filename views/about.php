@@ -1,7 +1,15 @@
 <?php require_once('header.php'); ?>
 
-
-<img src="/images/avatar.png" alt="Foo" class="pull-right img-thumbnail" />
+<div class="pull-right">
+	<p>
+		<img src="/images/photo.png" alt="Photo of James Titcumb" class="pull-right" style="margin-bottom: 5px;" />
+	</p>
+	<p>
+		<a href="https://twitter.com/asgrim"><img src="/images/avatar.png" alt="Avatar of James Titcumb" /></a>
+		<a href="http://www.zend.com/en/yellow-pages/ZEND010150"><img src="/images/zce.png" alt="Avatar of James Titcumb" /></a>
+		<a href="http://www.zend.com/en/yellow-pages/ZEND010150"><img src="/images/zcpe.png" alt="Avatar of James Titcumb" /></a>
+	</p>
+</div>
 
 <h2>Who am I?</h2>
 
