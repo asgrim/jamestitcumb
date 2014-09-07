@@ -4,11 +4,6 @@
 
 <ul>
 	<li>
-		<h3>Low Latency Logging with RabbitMQ (PHP London, 4th Sep '14)</h3>
-		<p>Logging is an absolute must for any API or web application, but when starting out, questions such as "how can we do it without disrupting everything else" and "what is the easiest way to log" often come up. We’re going to examine a tried and tested method to carry out high-performance, low-latency logging using the power of RabbitMQ to ensure minimal impact to the performance of your runtime application. The talk will show you that a really great logging architecture is a low-cost investment in your application that will definitely pay off in the long run.</p>
-		<p><strong>Links:</strong> <a href="http://www.meetup.com/phplondon/events/204629732/">Meetup</a></p>
-	</li>
-	<li>
 		<h3>Dip Your Toes in the Sea of Security (PHP Cambridge, 27th Jan '15)</h3>
 		<p>Security is an enormous topic, and it’s really, really complicated. If you’re not careful, you’ll find yourself vulnerable to any number of attacks which you definitely don’t want to be on the receiving end of. This talk will give you just a taster of the vast array of things there is to know about security in modern web applications, such as writing secure PHP web applications and securing a Linux server. Whether you are writing anything beyond a basic brochure website, or even developing a complicated business web application, this talk will give you insights to some of the things you need to be aware of.</p>
 		<p><strong>Links:</strong> <a href="http://www.meetup.com/phpcambridge/">PHP Cambridge</a></p>
@@ -18,6 +13,11 @@
 <p>This is a list of talks I've given:</p>
 
 <ul>
+	<li>
+		<h3>Low Latency Logging with RabbitMQ (PHP London, 4th Sep '14)</h3>
+		<p>Logging is an absolute must for any API or web application, but when starting out, questions such as "how can we do it without disrupting everything else" and "what is the easiest way to log" often come up. We’re going to examine a tried and tested method to carry out high-performance, low-latency logging using the power of RabbitMQ to ensure minimal impact to the performance of your runtime application. The talk will show you that a really great logging architecture is a low-cost investment in your application that will definitely pay off in the long run.</p>
+		<p><strong>Links:</strong> <a href="http://www.meetup.com/phplondon/events/204629732/">Meetup</a> | <a href="http://www.slideshare.net/asgrim1/low-latency-logging-with-rabbitmq-php-london-4th-sep-2014">Slides</a></p>
+	</li>
 	<li>
 		<h3>The State of PHP in 2014 (Portsmouth Linux User Group, 21st Jun '14)</h3>
 		<p>PHP has been around since 1995, which means it has been powering the web for nearly two decades. It is one of the top web scripting languages, and is used on countless websites. What is new in the world of PHP and why is this language, that many seem quick to dismiss, so popular? In this talk, we’ll look at some of the landmark achievements of PHP, why it’s still gaining popularity, and also a glimpse into what the future might hold for the world of PHP.</p>
