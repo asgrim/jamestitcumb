@@ -9,7 +9,7 @@
 
 <ul>
 	<li>I am the Development Manager at <a href="http://www.protected.co.uk">Protected.co.uk</a> where I write stuff using <a href="http://framework.zend.com/">Zend Framework 2</a> with an <em>amazing</em> team of developers.</li>
-	<li>I am a <a href="http://www.zend.com/en/yellow-pages/ZEND010150">Zend Certified Engineer PHP 5.3</a>.</li>
+	<li>I am a <a href="http://www.zend.com/en/yellow-pages/ZEND010150">Zend Certified PHP Engineer</a>.</li>
 	<li>I contribute back to open source software when I can.</li>
 	<li>I run the <a href="http://www.phphants.co.uk/">PHP Hampshire</a> PHP user group.</li>
 	<li>I am an active contributor to the <a href="https://github.com/browscap/browscap">Browser Capabilities Project</a>.</li>
