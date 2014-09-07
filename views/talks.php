@@ -19,14 +19,14 @@
 		<p><strong>Links:</strong> <a href="http://www.meetup.com/phplondon/events/204629732/">Meetup</a> | <a href="http://www.slideshare.net/asgrim1/low-latency-logging-with-rabbitmq-php-london-4th-sep-2014">Slides</a></p>
 	</li>
 	<li>
-		<h3>The State of PHP in 2014 (Portsmouth Linux User Group, 21st Jun '14)</h3>
-		<p>PHP has been around since 1995, which means it has been powering the web for nearly two decades. It is one of the top web scripting languages, and is used on countless websites. What is new in the world of PHP and why is this language, that many seem quick to dismiss, so popular? In this talk, we’ll look at some of the landmark achievements of PHP, why it’s still gaining popularity, and also a glimpse into what the future might hold for the world of PHP.</p>
-		<p><strong>Links:</strong> <a href="http://www.portsmouth.lug.org.uk/">Portsmouth LUG</a> | <a href="http://www.slideshare.net/asgrim1/the-state-of-php-2014-portsmouth-linux-user-group-6th-june-2014">Slides</a></p>
-	</li>
-	<li>
 		<h3>Practical Message Queueing Using RabbitMQ (PHPem, 3rd Jul '14)</h3>
 		<p>RabbitMQ is a message broker - an application that allows communication between applications by way of a message queuing system. In this talk, we’ll set up an RabbitMQ instance, take an intermediate-level look into the technical features it provides and also how you can apply RabbitMQ in your in applications to scale them efficiently.</p>
 		<p><strong>Links:</strong> <a href="http://www.meetup.com/ugPHPem/events/188218922/">Meetup</a> | <a href="http://phpem.info/13-july-3rd-2014">PHPem</a> | <a href="www.slideshare.net/asgrim1/practical-message-queuing-using-rabbitmq-phpem-3rd-july-2014">Slides</a></p>
+	</li>
+	<li>
+		<h3>The State of PHP in 2014 (Portsmouth Linux User Group, 21st Jun '14)</h3>
+		<p>PHP has been around since 1995, which means it has been powering the web for nearly two decades. It is one of the top web scripting languages, and is used on countless websites. What is new in the world of PHP and why is this language, that many seem quick to dismiss, so popular? In this talk, we’ll look at some of the landmark achievements of PHP, why it’s still gaining popularity, and also a glimpse into what the future might hold for the world of PHP.</p>
+		<p><strong>Links:</strong> <a href="http://www.portsmouth.lug.org.uk/">Portsmouth LUG</a> | <a href="http://www.slideshare.net/asgrim1/the-state-of-php-2014-portsmouth-linux-user-group-6th-june-2014">Slides</a></p>
 	</li>
 	<li>
 		<h3>Dip Your Toes in the Sea of Security (PHP Dorset, 2nd Jun '14)</h3>
