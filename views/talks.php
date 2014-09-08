@@ -4,6 +4,11 @@
 
 <ul>
 	<li>
+		<h3>Low Latency Logging with RabbitMQ (Brno PHP Conference 2014, 4th Sep '14)</h3>
+		<p>Logging is an absolute must for any API or web application, but when starting out, questions such as "how can we do it without disrupting everything else" and "what is the easiest way to log" often come up. We’re going to examine a tried and tested method to carry out high-performance, low-latency logging using the power of RabbitMQ to ensure minimal impact to the performance of your runtime application. The talk will show you that a really great logging architecture is a low-cost investment in your application that will definitely pay off in the long run.</p>
+		<p><strong>Links:</strong> <a href="https://www.brnophp.cz/conference-2014">Brno PHP Conference</a></p>
+	</li>
+	<li>
 		<h3>Dip Your Toes in the Sea of Security (PHP Cambridge, 27th Jan '15)</h3>
 		<p>Security is an enormous topic, and it’s really, really complicated. If you’re not careful, you’ll find yourself vulnerable to any number of attacks which you definitely don’t want to be on the receiving end of. This talk will give you just a taster of the vast array of things there is to know about security in modern web applications, such as writing secure PHP web applications and securing a Linux server. Whether you are writing anything beyond a basic brochure website, or even developing a complicated business web application, this talk will give you insights to some of the things you need to be aware of.</p>
 		<p><strong>Links:</strong> <a href="http://www.meetup.com/phpcambridge/">PHP Cambridge</a></p>
