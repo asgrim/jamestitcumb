@@ -9,6 +9,11 @@
 		<p><strong>Links:</strong> <a href="https://www.brnophp.cz/conference-2014">Brno PHP Conference</a></p>
 	</li>
 	<li>
+		<h3>Practical Message Queueing Using RabbitMQ (Nomad PHP December 2014, 18th Dec '14)</h3>
+		<p>RabbitMQ is a message broker – an application that allows communication between applications by way of a message queuing system. In this talk, we’ll set up a RabbitMQ instance, take an intermediate-level look into the technical features it provides and also how you can apply RabbitMQ in your applications to scale them efficiently.</p>
+		<p><strong>Links:</strong> <a href="https://nomadphp.com/2014/09/19/nomadphp-2014-12-eu/">Nomad PHP</a></p>
+	</li>
+	<li>
 		<h3>Dip Your Toes in the Sea of Security (PHP Cambridge, 27th Jan '15)</h3>
 		<p>Security is an enormous topic, and it’s really, really complicated. If you’re not careful, you’ll find yourself vulnerable to any number of attacks which you definitely don’t want to be on the receiving end of. This talk will give you just a taster of the vast array of things there is to know about security in modern web applications, such as writing secure PHP web applications and securing a Linux server. Whether you are writing anything beyond a basic brochure website, or even developing a complicated business web application, this talk will give you insights to some of the things you need to be aware of.</p>
 		<p><strong>Links:</strong> <a href="http://www.meetup.com/phpcambridge/">PHP Cambridge</a></p>
