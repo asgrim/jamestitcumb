@@ -4,9 +4,9 @@
 
 <ul>
 	<li>
-		<h3>Low Latency Logging with RabbitMQ (Brno PHP Conference 2014, 4th Sep '14)</h3>
-		<p>Logging is an absolute must for any API or web application, but when starting out, questions such as "how can we do it without disrupting everything else" and "what is the easiest way to log" often come up. We’re going to examine a tried and tested method to carry out high-performance, low-latency logging using the power of RabbitMQ to ensure minimal impact to the performance of your runtime application. The talk will show you that a really great logging architecture is a low-cost investment in your application that will definitely pay off in the long run.</p>
-		<p><strong>Links:</strong> <a href="https://www.brnophp.cz/conference-2014">Brno PHP Conference</a></p>
+		<h3>tbc (PHPSW November 2014, 12th Nov '14)</h3>
+		<p>tbc</p>
+		<p><strong>Links:</strong> <a href="http://www.meetup.com/php-sw/">PHPSW</a></p>
 	</li>
 	<li>
 		<h3>Practical Message Queueing Using RabbitMQ (Nomad PHP December 2014, 18th Dec '14)</h3>
@@ -23,6 +23,11 @@
 <p>This is a list of talks I've given:</p>
 
 <ul>
+	<li>
+		<h3>Low Latency Logging with RabbitMQ (Brno PHP Conference 2014, 4th Sep '14)</h3>
+		<p>Logging is an absolute must for any API or web application, but when starting out, questions such as "how can we do it without disrupting everything else" and "what is the easiest way to log" often come up. We’re going to examine a tried and tested method to carry out high-performance, low-latency logging using the power of RabbitMQ to ensure minimal impact to the performance of your runtime application. The talk will show you that a really great logging architecture is a low-cost investment in your application that will definitely pay off in the long run.</p>
+		<p><strong>Links:</strong> <a href="https://www.brnophp.cz/conference-2014">Brno PHP Conference</a> | <a href="https://joind.in/11825">Joind.in</a> | <a href="http://www.slideshare.net/asgrim1/low-latency-logging-with-rabbitmq-brno-php-cz-20th-sep-2014">Slides</a></p>
+	</li>
 	<li>
 		<h3>Low Latency Logging with RabbitMQ (PHP London, 4th Sep '14)</h3>
 		<p>Logging is an absolute must for any API or web application, but when starting out, questions such as "how can we do it without disrupting everything else" and "what is the easiest way to log" often come up. We’re going to examine a tried and tested method to carry out high-performance, low-latency logging using the power of RabbitMQ to ensure minimal impact to the performance of your runtime application. The talk will show you that a really great logging architecture is a low-cost investment in your application that will definitely pay off in the long run.</p>
