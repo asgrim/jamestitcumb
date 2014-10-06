@@ -56,7 +56,7 @@ class IndexCommand extends Command
 			}
 		}
 
-		usort($postIndex, function ($a, $b) {
+		uasort($postIndex, function ($a, $b) {
 			$aa = (int)str_replace('-', '', $a['date']);
 			$bb = (int)str_replace('-', '', $b['date']);
 			if ($aa > $bb) return 1;
