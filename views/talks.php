@@ -4,8 +4,8 @@
 
 <ul>
 	<li>
-		<h3>tbc (PHPSW November 2014, 12th Nov '14)</h3>
-		<p>tbc</p>
+		<h3>You’ll Never Believe How Easy Deployments Can Really Be... (PHPSW November 2014, 12th Nov '14)</h3>
+		<p>The deadline is looming: one week until we release the new version. Some features aren't going to make the cut, but the boss really wants to make sure these critical bugs are fixed. You can't wait for the release cycle to be over so you can relax. But what if I told you it didn't have to be that way? What if I could show you how to create a world where there is no release cycle? A world where weekend deployments are a rarity, not the norm?! In this talk we will cover the steps we took to achieve the coding utopia of releasing a feature as soon as it's ready - many times per day. You'll find out that by implementing a continuous deployment flow, you can empower your developers to take ownership and become more productive.</p>
 		<p><strong>Links:</strong> <a href="http://www.meetup.com/php-sw/">PHPSW</a></p>
 	</li>
 	<li>
@@ -23,6 +23,11 @@
 <p>This is a list of talks I've given:</p>
 
 <ul>
+	<li>
+		<h3>Practical Message Queueing Using RabbitMQ (PHPNW14 Uncon, 4th Oct '14)</h3>
+		<p>RabbitMQ is a message broker – an application that allows communication between applications by way of a message queuing system. In this talk, we look at some of the basic concepts of RabbitMQ and how it can help effectively scale your applications.</p>
+		<p><strong>Links:</strong> <a href="https://joind.in/talk/view/12144">Joind.in</a> | <a href="http://www.slideshare.net/asgrim1/141004-what-rabbit-mq-can-do-for-you-phpnw14-uncon">Slides</a></p>
+	</li>
 	<li>
 		<h3>Low Latency Logging with RabbitMQ (Brno PHP Conference 2014, 4th Sep '14)</h3>
 		<p>Logging is an absolute must for any API or web application, but when starting out, questions such as "how can we do it without disrupting everything else" and "what is the easiest way to log" often come up. We’re going to examine a tried and tested method to carry out high-performance, low-latency logging using the power of RabbitMQ to ensure minimal impact to the performance of your runtime application. The talk will show you that a really great logging architecture is a low-cost investment in your application that will definitely pay off in the long run.</p>
@@ -59,7 +64,7 @@
 		<p><strong>Links:</strong> <a href="https://joind.in/11174">Joind.in</a> | <a href="http://www.youtube.com/watch?v=sY_cKzwyC5k">YouTube</a> | <a href="http://www.slideshare.net/asgrim1/rabbit-mq-32447680">Slides</a></p>
 	</li>
 	<li>
-		<h3>What RabbitMQ Can Do For You (PHPNE14 Uncon)</h3>
+		<h3>What RabbitMQ Can Do For You (PHPNE14 Uncon, 18th Mar '14)</h3>
 		<p>An introduction to what RabbitMQ is and what it can do for your applications.</p>
 		<p><strong>Links:</strong> <a href="https://joind.in/10937">Joind.in</a> | <a href="http://www.slideshare.net/asgrim1/rabbit-mq-32447680">Slides</a></p>
 	</li>
@@ -74,7 +79,7 @@
 		<p><strong>Links:</strong> <a href="https://joind.in/9452">Joind.in</a> | <a href="http://www.youtube.com/watch?v=NnhkNhM3aDQ">YouTube</a> | <a href="http://www.slideshare.net/asgrim1/errors-exceptions-logging-php-hants-oct-13">Slides</a></p>
 	</li>
 	<li>
-		<h3>Errors, Exceptions &amp; Logging (PHPNW13 Uncon)</h3>
+		<h3>Errors, Exceptions &amp; Logging (PHPNW13 Uncon, 5th Oct '13)</h3>
 		<p>A brief introduction to how to handle errors, exceptions and some effective ways to log them.</p>
 		<p><strong>Links:</strong> <a href="https://joind.in/9470">Joind.in</a> | <a href="http://www.slideshare.net/asgrim1/errors-exceptions-logging-phpnw13-uncon">Slides</a></p>
 	</li>
