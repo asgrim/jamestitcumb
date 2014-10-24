@@ -12,7 +12,7 @@ require_once('header.php');
 	<li>
 		<h3>You’ll Never Believe How Easy Deployments Can Really Be... (PHPSW November 2014, 12th Nov '14)</h3>
 		<p>The deadline is looming: one week until we release the new version. Some features aren't going to make the cut, but the boss really wants to make sure these critical bugs are fixed. You can't wait for the release cycle to be over so you can relax. But what if I told you it didn't have to be that way? What if I could show you how to create a world where there is no release cycle? A world where weekend deployments are a rarity, not the norm?! In this talk we will cover the steps we took to achieve the coding utopia of releasing a feature as soon as it's ready - many times per day. You'll find out that by implementing a continuous deployment flow, you can empower your developers to take ownership and become more productive.</p>
-		<p><strong>Links:</strong> <a href="http://www.meetup.com/php-sw/">PHPSW</a></p>
+		<p><strong>Links:</strong> <a href="http://phpsw.org.uk/events/215366502-security-and-deployment">PHPSW</a> | <a href="http://www.meetup.com/php-sw/events/215366502/">Meetup.com</a></p>
 	</li>
 	<li>
 		<h3>Practical Message Queueing Using RabbitMQ (Nomad PHP December 2014, 18th Dec '14)</h3>
