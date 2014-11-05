@@ -15,6 +15,11 @@ require_once('header.php');
 		<p><strong>Links:</strong> <a href="http://phpsw.org.uk/events/215366502-security-and-deployment">PHPSW</a> | <a href="http://www.meetup.com/php-sw/events/215366502/">Meetup.com</a></p>
 	</li>
 	<li>
+		<h3>tbc (PHPNW December 2014, 2nd Dec '14)</h3>
+		<p>tbc</p>
+		<p><strong>Links:</strong> <a href="http://www.phpnw.org.uk/">PHPNW</a></p>
+	</li>
+	<li>
 		<h3>Practical Message Queueing Using RabbitMQ (Nomad PHP December 2014, 18th Dec '14)</h3>
 		<p>RabbitMQ is a message broker – an application that allows communication between applications by way of a message queuing system. In this talk, we’ll set up a RabbitMQ instance, take an intermediate-level look into the technical features it provides and also how you can apply RabbitMQ in your applications to scale them efficiently.</p>
 		<p><strong>Links:</strong> <a href="https://nomadphp.com/2014/09/19/nomadphp-2014-12-eu/">Nomad PHP</a></p>
