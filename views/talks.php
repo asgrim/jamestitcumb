@@ -10,11 +10,6 @@ require_once('header.php');
 
 <ul>
 	<li>
-		<h3>You’ll Never Believe How Easy Deployments Can Really Be... (PHPSW November 2014, 12th Nov '14)</h3>
-		<p>The deadline is looming: one week until we release the new version. Some features aren't going to make the cut, but the boss really wants to make sure these critical bugs are fixed. You can't wait for the release cycle to be over so you can relax. But what if I told you it didn't have to be that way? What if I could show you how to create a world where there is no release cycle? A world where weekend deployments are a rarity, not the norm?! In this talk we will cover the steps we took to achieve the coding utopia of releasing a feature as soon as it's ready - many times per day. You'll find out that by implementing a continuous deployment flow, you can empower your developers to take ownership and become more productive.</p>
-		<p><strong>Links:</strong> <a href="http://phpsw.org.uk/events/215366502-security-and-deployment">PHPSW</a> | <a href="http://www.meetup.com/php-sw/events/215366502/">Meetup.com</a></p>
-	</li>
-	<li>
 		<h3>Adding 1.21 Gigawatts to Applications with RabbitMQ (PHPNW December 2014, 2nd Dec '14)</h3>
 		<p>As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this talk, we will take a look at the techniques you can use to vastly enhance inter-application communication, learn about the core concepts of RabbitMQ, cover how you can scale different parts of your application separately, and modernise your development using a message-oriented architecture.</p>
 		<p><strong>Links:</strong> <a href="http://www.phpnw.org.uk/">PHPNW</a></p>
@@ -29,11 +24,21 @@ require_once('header.php');
 		<p>Security is an enormous topic, and it’s really, really complicated. If you’re not careful, you’ll find yourself vulnerable to any number of attacks which you definitely don’t want to be on the receiving end of. This talk will give you just a taster of the vast array of things there is to know about security in modern web applications, such as writing secure PHP web applications and securing a Linux server. Whether you are writing anything beyond a basic brochure website, or even developing a complicated business web application, this talk will give you insights to some of the things you need to be aware of.</p>
 		<p><strong>Links:</strong> <a href="http://www.meetup.com/phpcambridge/">PHP Cambridge</a></p>
 	</li>
+	<li>
+		<h3>tbc (tbc, 19th-20th Feb '15)</h3>
+		<p>tbc</p>
+		<p><strong>Links:</strong></p>
+	</li>
 </ul>
 
 <p>This is a list of talks I've given:</p>
 
 <ul>
+	<li>
+		<h3>You’ll Never Believe How Easy Deployments Can Really Be... (PHPSW November 2014, 12th Nov '14)</h3>
+		<p>The deadline is looming: one week until we release the new version. Some features aren't going to make the cut, but the boss really wants to make sure these critical bugs are fixed. You can't wait for the release cycle to be over so you can relax. But what if I told you it didn't have to be that way? What if I could show you how to create a world where there is no release cycle? A world where weekend deployments are a rarity, not the norm?! In this talk we will cover the steps we took to achieve the coding utopia of releasing a feature as soon as it's ready - many times per day. You'll find out that by implementing a continuous deployment flow, you can empower your developers to take ownership and become more productive.</p>
+		<p><strong>Links:</strong> <a href="http://phpsw.org.uk/events/215366502-security-and-deployment">PHPSW</a> | <a href="http://www.meetup.com/php-sw/events/215366502/">Meetup.com</a> | <a href="http://www.slideshare.net/asgrim1/youll-never-believe-how-easy-deployments-can-really-be">Slides</a></p>
+	</li>
 	<li>
 		<h3>Practical Message Queueing Using RabbitMQ (PHPNW14 Uncon, 4th Oct '14)</h3>
 		<p>RabbitMQ is a message broker – an application that allows communication between applications by way of a message queuing system. In this talk, we look at some of the basic concepts of RabbitMQ and how it can help effectively scale your applications.</p>
