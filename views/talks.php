@@ -10,11 +10,6 @@ require_once('header.php');
 
 <ul>
 	<li>
-		<h3>Adding 1.21 Gigawatts to Applications with RabbitMQ (PHPNW December 2014, 2nd Dec '14)</h3>
-		<p>As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this talk, we will take a look at the techniques you can use to vastly enhance inter-application communication, learn about the core concepts of RabbitMQ, cover how you can scale different parts of your application separately, and modernise your development using a message-oriented architecture.</p>
-		<p><strong>Links:</strong> <a href="http://www.phpnw.org.uk/">PHPNW</a></p>
-	</li>
-	<li>
 		<h3>Practical Message Queueing Using RabbitMQ (Nomad PHP December 2014, 18th Dec '14)</h3>
 		<p>RabbitMQ is a message broker – an application that allows communication between applications by way of a message queuing system. In this talk, we’ll set up a RabbitMQ instance, take an intermediate-level look into the technical features it provides and also how you can apply RabbitMQ in your applications to scale them efficiently.</p>
 		<p><strong>Links:</strong> <a href="https://nomadphp.com/2014/09/19/nomadphp-2014-12-eu/">Nomad PHP</a></p>
@@ -34,6 +29,11 @@ require_once('header.php');
 <p>This is a list of talks I've given:</p>
 
 <ul>
+	<li>
+		<h3>Adding 1.21 Gigawatts to Applications with RabbitMQ (PHPNW December 2014, 2nd Dec '14)</h3>
+		<p>As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this talk, we will take a look at the techniques you can use to vastly enhance inter-application communication, learn about the core concepts of RabbitMQ, cover how you can scale different parts of your application separately, and modernise your development using a message-oriented architecture.</p>
+		<p><strong>Links:</strong> <a href="http://www.phpnw.org.uk/">PHPNW</a> | <a href="http://www.slideshare.net/asgrim1/adding-121-gigawatts-to-applications-with-rabbit-mq-phpnw-dec-2014-meetup">Slides</a></p>
+	</li>
 	<li>
 		<h3>You’ll Never Believe How Easy Deployments Can Really Be... (PHPSW November 2014, 12th Nov '14)</h3>
 		<p>The deadline is looming: one week until we release the new version. Some features aren't going to make the cut, but the boss really wants to make sure these critical bugs are fixed. You can't wait for the release cycle to be over so you can relax. But what if I told you it didn't have to be that way? What if I could show you how to create a world where there is no release cycle? A world where weekend deployments are a rarity, not the norm?! In this talk we will cover the steps we took to achieve the coding utopia of releasing a feature as soon as it's ready - many times per day. You'll find out that by implementing a continuous deployment flow, you can empower your developers to take ownership and become more productive.</p>
