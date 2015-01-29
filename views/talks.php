@@ -22,7 +22,7 @@ require_once('header.php');
 	<li>
 		<h3>Dip Your Toes in the Sea of Security (PHP Cambridge, 27th Jan '15)</h3>
 		<p>Security is an enormous topic, and it’s really, really complicated. If you’re not careful, you’ll find yourself vulnerable to any number of attacks which you definitely don’t want to be on the receiving end of. This talk will give you just a taster of the vast array of things there is to know about security in modern web applications, such as writing secure PHP web applications and securing a Linux server. Whether you are writing anything beyond a basic brochure website, or even developing a complicated business web application, this talk will give you insights to some of the things you need to be aware of.</p>
-		<p><strong>Links:</strong> <a href="http://www.meetup.com/phpcambridge/">PHP Cambridge</a></p>
+		<p><strong>Links:</strong> <a href="http://www.meetup.com/phpcambridge/">PHP Cambridge</a> | <a href="http://www.slideshare.net/asgrim1/dip-your-toes-in-the-sea-of-security-php-cambridge">Slides</a></p>
 	</li>
 	<li>
 		<h3>Practical Message Queueing Using RabbitMQ (Nomad PHP December 2014, 18th Dec '14)</h3>
