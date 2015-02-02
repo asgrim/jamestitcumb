@@ -71,7 +71,7 @@ __libc_start_main (main=0x40077d <main()>, argc=1, argv=0x7fffffffde28, init=<op
 (gdb) 
 ~~~
 
-When we run `gdb test` note that the program does not actually get executed. You have full control of when execution starts, pauses and stops with `gdb`, so the assumption is that you have to explicitly run the program. Before we run though, the `break 1` command sets a breakpoint at line 1. So far I am not sure how to set breakpoints in different files, so that is a todo for me.
+When we run `gdb test` note that the program does not actually get executed. You have full control of when execution starts, pauses and stops with `gdb`, so the assumption is that you have to explicitly run the program. Before we run though, the `break 1` command sets a breakpoint at line 1. -So far I am not sure how to set breakpoints in different files, so that is a todo for me.- Davey Shafik helpfully informed me that you can use `gdb file.cpp:123` to set a breakpoint in `file.cpp` on line `123`.
 
 After we've set a breakpoint, we can use the `run` command which starts executing the program. The `n` (short for `next`) allows stepping down the function (also known as "Step Over"). If we use the `s` (short for `step`) command, then we will be doing a "Step Into" - we descend into each function call point. To "Step Out" you need to use `c` or `continue`.
 
