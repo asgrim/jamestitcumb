@@ -5,7 +5,7 @@ The last time I did any C++ was back in the late 90's/early 00's, and Microsoft 
 
 Lets start by making a hello world program in `test.cpp`:
 
-```cpp
+~~~ .cpp
 #include <iostream>
 
 int main()
@@ -14,24 +14,24 @@ int main()
   std::cout << "Hello world\n";
   return i_retVal;
 }
-```
+~~~
 
 We can then compile this (with the `-ggdb3` option, which produces debug information - or "symbols" - for gdb):
 
-```bash
+~~~ .bash
 $ g++ -ggdb3 test.cpp -o test
-```
+~~~
 
 We can run our hello world program now, and it works just like you'd expect:
 
-```bash
+~~~ .bash
 $ ./test 
 Hello world
-```
+~~~
 
 Let's use the `gdb` tool to step debug through our program, line-by-line:
 
-```gdb
+~~~ .gdb
 $ gdb test
 GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
 Copyright (C) 2014 Free Software Foundation, Inc.
@@ -69,7 +69,7 @@ __libc_start_main (main=0x40077d <main()>, argc=1, argv=0x7fffffffde28, init=<op
 (gdb) n
 [Inferior 1 (process 17788) exited normally]
 (gdb) 
-```
+~~~
 
 When we run `gdb test` note that the program does not actually get executed. You have full control of when execution starts, pauses and stops with `gdb`, so the assumption is that you have to explicitly run the program. Before we run though, the `break 1` command sets a breakpoint at line 1. So far I am not sure how to set breakpoints in different files, so that is a todo for me.
 
@@ -77,7 +77,7 @@ After we've set a breakpoint, we can use the `run` command which starts executin
 
 You can also view the stack, modify variables and view variables whilst execution is paused:
 
-```gdb
+~~~ .gdb
 (gdb) run
 Starting program: /home/james/workspace/cpptest/test 
 
@@ -104,6 +104,6 @@ __libc_start_main (main=0x40077d <main()>, argc=1, argv=0x7fffffffde28, init=<op
 (gdb) n
 [Inferior 1 (process 17997) exited with code 05]
 (gdb) 
-```
+~~~
 
 Note that we modified the "return value" to be 5, so we saw `[Inferior 1 (process 17997) exited with code 05]` at the end instead of `exited normally` - we had full contorl over everything. Also note that we ran `bt` which shows the current stack trace. In our simple, there is only one function here so not very interesting for now.
