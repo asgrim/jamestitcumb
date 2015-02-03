@@ -82,7 +82,7 @@ class Application extends SilexApplication
 				'name'  => 'James Titcumb',
 				'uri'   => $baseUrl,
 			));
-			$entry->setDateModified(time());
+			$entry->setDateModified(new \DateTime($post['date']));
 			$entry->setDateCreated(new \DateTime($post['date']));
 			$entry->setDescription($post['title']);
 
