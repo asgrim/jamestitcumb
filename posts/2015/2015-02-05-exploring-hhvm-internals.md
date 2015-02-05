@@ -19,10 +19,10 @@ Starting work on an existing open source project can be pretty overwhelming, esp
 
 Resources:
 
-* [http://blog.golemon.com/2015/01/hhvm-extension-writing-part-i.html]()
-* [http://hhvm.com/blog/6323/the-journey-of-a-thousand-bytecodes]()
-* [https://github.com/facebook/hhvm/blob/master/hphp/hhbbc/README]()
-* [https://github.com/facebook/hhvm/tree/master/hphp]()
-* [https://github.com/facebook/hhvm/wiki/Extension-API]()
-* [http://www.slideshare.net/auroraeosrose/hacking-with-hhvm/13]()
-* [https://github.com/derickr/hhvm-hni-cookbook]()
+* [http://blog.golemon.com/2015/01/hhvm-extension-writing-part-i.html](http://blog.golemon.com/2015/01/hhvm-extension-writing-part-i.html)
+* [http://hhvm.com/blog/6323/the-journey-of-a-thousand-bytecodes](http://hhvm.com/blog/6323/the-journey-of-a-thousand-bytecodes)
+* [https://github.com/facebook/hhvm/blob/master/hphp/hhbbc/README](https://github.com/facebook/hhvm/blob/master/hphp/hhbbc/README)
+* [https://github.com/facebook/hhvm/tree/master/hphp](https://github.com/facebook/hhvm/tree/master/hphp)
+* [https://github.com/facebook/hhvm/wiki/Extension-API](https://github.com/facebook/hhvm/wiki/Extension-API)
+* [http://www.slideshare.net/auroraeosrose/hacking-with-hhvm/13](http://www.slideshare.net/auroraeosrose/hacking-with-hhvm/13)
+* [https://github.com/derickr/hhvm-hni-cookbook](https://github.com/derickr/hhvm-hni-cookbook)
