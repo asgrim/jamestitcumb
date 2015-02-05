@@ -18,6 +18,7 @@ Starting work on an existing open source project can be pretty overwhelming, esp
 * `hphp/runtime/ext` PHP and C++ Extensions. You can find out how to write these sort of extensions from Sara Golemon's series on [HHVM extensions](http://blog.golemon.com/2015/01/hhvm-extension-writing-part-i.html). This (and `hphp/system/php`) is actually where most of the implementation of stuff happens. Everything else is pretty much just the "language" implementation (i.e. lexing, parsing, bytecode compilation, interpreting, JIT compilation). You can write extensions primarily using PHP here, but dip into native C++ using HHVM-Native Interface (HNI). More docs in the [Extension-API](https://github.com/facebook/hhvm/wiki/Extension-API), and check out Derick Rethans' cookbook on [writing extensions](https://github.com/derickr/hhvm-hni-cookbook).
 
 Resources:
+
 * http://blog.golemon.com/2015/01/hhvm-extension-writing-part-i.html
 * http://hhvm.com/blog/6323/the-journey-of-a-thousand-bytecodes
 * https://github.com/facebook/hhvm/blob/master/hphp/hhbbc/README
