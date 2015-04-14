@@ -24,6 +24,7 @@
 	<li>I wrote a deployment tool called <a href="http://www.godeploy.com/">GoDeploy</a>.</li>
 	<li>I live in <a href="http://en.wikipedia.org/wiki/Portsmouth">Portsmouth, UK</a> and I'm married, with 2 children.</li>
 	<li>I like <a href="/talks">speaking</a> sometimes.</li>
+	<li>I wrote an article for php[architect] magazine (<a href="http://www.phparch.com/magazine/2015-2/april/">April 2015</a>)</li>
 	<!-- <li>I'm writing <a href="/books">a book</a>.</li> -->
 </ul>
 
