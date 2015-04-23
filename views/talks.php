@@ -10,11 +10,6 @@ require_once('header.php');
 
 <ul>
 	<li>
-		<h3>Adding 1.21 Gigawatts to Applications with RabbitMQ (PHP Tour Luxembourg, 12th-13th May '15)</h3>
-		<p>As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this talk, we will take a look at the techniques you can use to vastly enhance inter-application communication, learn about the core concepts of RabbitMQ, cover how you can scale different parts of your application separately, and modernise your development using a message-oriented architecture.</p>
-		<p><strong>Links:</strong> <a href="https://joind.in/talk/view/14282" class="joindin">Joind.in</a> | <a href="http://www.afup.org/pages/phptourluxembourg2015/sessions.php#1351">PHP Tour Luxembourg</a></p>
-	</li>
-	<li>
 		<h3>Adding 1.21 Gigawatts to Applications with RabbitMQ (Dutch PHP Conference, 25th-27th Jun '15)</h3>
 		<p>As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this talk, we will take a look at the techniques you can use to vastly enhance inter-application communication, learn about the core concepts of RabbitMQ, cover how you can scale different parts of your application separately, and modernise your development using a message-oriented architecture.</p>
 		<p><strong>Links:</strong> <a href="https://joind.in/talk/view/14253" class="joindin">Joind.in</a> | <a href="http://www.phpconference.nl/schedule#conference-day-2/adding-121-gigawatts-applications-rabbitmq">Dutch PHP Conference</a></p>
