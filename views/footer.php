@@ -1,5 +1,10 @@
 </div>
 
+<hr />
+<footer class="text-center" style="font-size: 80%;">
+    <p>&copy; Copyright <?php echo date('Y'); ?>, JT Web Development Ltd, registered in England &amp; Wales, company number 09588091</p>
+</footer>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
