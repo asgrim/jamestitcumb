@@ -19,6 +19,11 @@ require_once('header.php');
 		<p>Security is an enormous topic, and it’s really, really complicated. If you’re not careful, you’ll find yourself vulnerable to any number of attacks which you definitely don’t want to be on the receiving end of. This talk will give you just a taster of the vast array of things there is to know about security in modern web applications, such as writing secure PHP web applications and securing a Linux server. Whether you are writing anything beyond a basic brochure website, or even developing a complicated business web application, this talk will give you insights to some of the things you need to be aware of.</p>
 		<p><strong>Links:</strong> <a href="https://joind.in/talk/view/14227" class="joindin">Joind.in</a> | <a href="http://www.phpconference.nl/schedule#conference-day-1/dip-your-toes-sea-security">Dutch PHP Conference</a></p>
 	</li>
+	<li>
+		<h3>Adding 1.21 Gigawatts to Applications with RabbitMQ (PHP Warwickshire, 30th Jul '15)</h3>
+		<p>As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this talk, we will take a look at the techniques you can use to vastly enhance inter-application communication, learn about the core concepts of RabbitMQ, cover how you can scale different parts of your application separately, and modernise your development using a message-oriented architecture.</p>
+		<p><strong>Links:</strong> <a href="http://phpwarks.co.uk/">PHP Warwickshire</a></p>
+	</li>
 </ul>
 
 <p>This is a list of talks I've given:</p>
