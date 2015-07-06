@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/asgrim
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://www.jamestitcumb.com
+  * I am asgrim (https://keybase.io/asgrim) on keybase.
+  * I have a public key with fingerprint 0CA7 4C69 68D5 5872 4C63  BC89 11EA 1C58 CEF3 7C1C
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.8.8"
+        },
+        "key": {
+            "fingerprint": "0ca74c6968d558724c63bc8911ea1c58cef37c1c",
+            "host": "keybase.io",
+            "key_id": "11ea1c58cef37c1c",
+            "uid": "511722ccce062a8fc1b07abab0abbd00",
+            "username": "asgrim"
+        },
+        "service": {
+            "hostname": "www.jamestitcumb.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1436175448,
+    "expire_in": 157680000,
+    "prev": "08adcda5381a8a568869243aaa5e6c684756bd3bf23672e33daa6b0636590e41",
+    "seqno": 47,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owGbwMvMwMQo+Eom4tznGhnG0wctkhhCZ/lEVCsl5adUKllVKyXnZKbmlYBYeYm5
+qUpWStmplUmJxal6mfkKefkpqXpZxQpQNTpKZalFxZn5eUBVBnoWehZKtTog5SDN
+aZl56alFBUWZILOUDJITzU2SzSzNLFJMTS3MjYBs46RkC0tDw9REw2RTi+TUNGPz
+ZMNkoJEZ+cUlKLYqgc2Mz0wBimJRXwqWMDU0NDcySk5OTjUwM0q0SEs2TDIwT0xK
+TDJITEpKMTAAKSxOLYJ6KbE4vSgzF+RaoFhZZnIqyMUgi6Hy5eXlellAZnFJZkly
+aW6SXnJ+LtCEgqL8kvzk/BygioySkgIrkAEllQVgHalJ8VCz4pMy81KAvkcOHkOg
+yuSSTJDhhibGZobmpiYmFjpKqRUFmUWp8ZkgFabmZhYGQACyJrUMFGYWiSnJKYmm
+xhaGiRaJpmYWFmaWRibGiYmJpqlmyWYWJuamZkkpxklpRsZm5kapxsYpiYlmSQZm
+xmamlgapJoZKIN8V5uUrWZmYA92ZmA40szgzPS+xpLQoVam2k0mGhYGRiYGNlQmU
+ABi4OAVgyeIHlwDDiwtqjrFX9xrezV7nJvQ07NDBLZfMjH8v+hLoHKd2/U1u2vlA
+1V9Vb/nmLDPbqHnr+U3hovSol1zXYytOLHjaN6e+db6cJL8n/yTtVVsbpHq3fGPr
+dDp/cp7F7mNdVsYODSfNp+7WvXErUpX9DHNneoxLxv35utce/L/M8E1V6Z+XxqW7
+Cs84FL+WqF9rVryf1dy9Xav6Yn83/63va+omWp+fxjLdKiwy4/naDVVnixK/7Ngl
+IGBSPG2zXGqbruuuA62Pj/5RfLEo5kxiEFulUPbxiGL9wt/1Aj+FP1uV391z5Uuh
+y4bPgYbW0pbeN5iDp5ToMD2xymOL/r1wFmPa3+gvO/MsPm4X4Odtnxe49JcvV2H6
+ia0Fi6Na+q5El309ljh7+d4/U6wrs/ymah/nm7pC5qJjUsfZyVNmchxh0jlUtH1v
+/tOiJeFLtn0qLPN/XpdcZXRxa0zP4bu96cVqbCpndhwPCS47YTtTU9Vs05GZqpO2
+up/bGXOpSb3s1sQzuSWTGfOToybsTeWwOXJm6e94W5Wbj64w+j7gq3fYsVnFb8NT
+bbs1LMf9DvyX9ip5KdayJqMkJ3z+4tpHl/VPqP+3OxyeMTlKXuT4IQ2b26rcwVy/
+5SfqesaGaKxqcPqz5FjI5lSZM2m9t7aevClyOX22jv7itSy/EmZLzSoRqXy//aCQ
+ceGXyn1fl31ivVqdERTtLW24rPFeQKcuAA==
+=7jkF
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/asgrim
+
+==================================================================
