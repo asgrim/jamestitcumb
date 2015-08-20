@@ -9,16 +9,17 @@ require_once('header.php');
 <p>Upcoming talks:</p>
 
 <ul>
-	<li>
-		<h3>Adding 1.21 Gigawatts to Applications with RabbitMQ (PHP Warwickshire, 30th Jul '15)</h3>
-		<p>As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this talk, we will take a look at the techniques you can use to vastly enhance inter-application communication, learn about the core concepts of RabbitMQ, cover how you can scale different parts of your application separately, and modernise your development using a message-oriented architecture.</p>
-		<p><strong>Links:</strong> <a href="http://phpwarks.co.uk/">PHP Warwickshire</a></p>
-	</li>
+	<li>No upcoming talks...</li>
 </ul>
 
 <p>This is a list of talks I've given:</p>
 
 <ul>
+	<li>
+		<h3>Adding 1.21 Gigawatts to Applications with RabbitMQ (PHP Warwickshire, 30th Jul '15)</h3>
+		<p>As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this talk, we will take a look at the techniques you can use to vastly enhance inter-application communication, learn about the core concepts of RabbitMQ, cover how you can scale different parts of your application separately, and modernise your development using a message-oriented architecture.</p>
+		<p><strong>Links:</strong> <a href="http://phpwarks.co.uk/">PHP Warwickshire</a></p>
+	</li>
 	<li>
 		<h3>Adding 1.21 Gigawatts to Applications with RabbitMQ (Dutch PHP Conference, 25th-27th Jun '15)</h3>
 		<p>As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this talk, we will take a look at the techniques you can use to vastly enhance inter-application communication, learn about the core concepts of RabbitMQ, cover how you can scale different parts of your application separately, and modernise your development using a message-oriented architecture.</p>
