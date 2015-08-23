@@ -18,14 +18,13 @@
 <ul>
 	<li>I am a consultant developer for Roave where I work with an <em>amazing</em> team of developers.</li>
 	<li>I am a <a href="http://www.zend.com/en/yellow-pages/ZEND010150">Zend Certified PHP Engineer</a>.</li>
-	<li>I contribute back to open source software when I can.</li>
+	<li>I love contributing to <a href="https://github.com/asgrim">open source software</a>.</li>
+	<li>I run the <a href="http://www.phpsouthcoast.co.uk/">PHP South Coast</a> conference.</li>
 	<li>I run the <a href="http://www.phphants.co.uk/">PHP Hampshire</a> PHP user group.</li>
-	<li>I am an active contributor to the <a href="https://github.com/browscap/browscap">Browser Capabilities Project</a>.</li>
-	<li>I wrote a deployment tool called <a href="http://www.godeploy.com/">GoDeploy</a>.</li>
+	<li>I speak as much as I can at user groups and conferences; <a href="/talks">see all the talks I'm doing and have done</a>.</li>
+	<li>I am the project lead for the <a href="https://github.com/browscap/browscap">Browser Capabilities Project</a>.</li>
 	<li>I live in <a href="http://en.wikipedia.org/wiki/Portsmouth">Portsmouth, UK</a> and I'm married, with 2 children.</li>
-	<li>I like <a href="/talks">speaking</a> sometimes.</li>
 	<li>I wrote an article for php[architect] magazine (<a href="http://www.phparch.com/magazine/2015-2/april/">April 2015</a>)</li>
-	<!-- <li>I'm writing <a href="/books">a book</a>.</li> -->
 </ul>
 
 <h2>Get in touch...</h2>
