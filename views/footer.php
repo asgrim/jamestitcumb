@@ -2,7 +2,7 @@
 
 <hr />
 <footer class="text-center" style="font-size: 80%;">
-    <p>&copy; Copyright <?php echo date('Y'); ?>, JT Web Development Ltd, registered in England &amp; Wales, company number 09588091</p>
+    <p>&copy; Copyright <?php echo date('Y'); ?>, JT Web Development Ltd, registered in England &amp; Wales, company number 09588091, VAT number 215 351 636</p>
 </footer>
 
 <script type="text/javascript">
