@@ -10,6 +10,11 @@ require_once('header.php');
 
 <ul>
 	<li>
+		<h3>Diving into HHVM Extensions (PHP Dorset, 7th Sep '15)</h3>
+		<p>HHVM is currently gaining popularity at quite a pace, and it's a pretty exciting time for PHP runtimes. Have you ever wondered what is going on beneath this slick and super-speedy engine? I wondered that myself, so I dived into the internals of HHVM, discovering a treasure trove of awesome stuff. In this talk, I'll show you how HHVM itself works with a guided tour of the codebase, demonstrating how it all pieces together. I'll also show you a couple of ways to write your own incredible HHVM extension. You don't need to know C++ to understand this talk - just PHP language knowledge is enough.</p>
+		<p><strong>Links:</strong> <a href="https://www.eventbrite.co.uk/e/phpdorset-september-james-titcumb-marco-pivetta-tickets-18010155861">PHP Dorset September 2015</a></p>
+	</li>
+	<li>
 		<h3>Diving into HHVM Extensions (PHPNW15, 3rd Oct '15)</h3>
 		<p>HHVM is currently gaining popularity at quite a pace, and it's a pretty exciting time for PHP runtimes. Have you ever wondered what is going on beneath this slick and super-speedy engine? I wondered that myself, so I dived into the internals of HHVM, discovering a treasure trove of awesome stuff. In this talk, I'll show you how HHVM itself works with a guided tour of the codebase, demonstrating how it all pieces together. I'll also show you a couple of ways to write your own incredible HHVM extension. You don't need to know C++ to understand this talk - just PHP language knowledge is enough.</p>
 		<p><strong>Links:</strong> <a href="http://conference.phpnw.org.uk/phpnw15/speakers/james-titcumb/">PHP North West Conference 2015</a></p>
@@ -18,6 +23,11 @@ require_once('header.php');
 		<h3><strong>Tutorial:</strong> Adding 1.21 Gigawatts to Applications with RabbitMQ (PHPNW15, 2nd Oct '15)</h3>
 		<p>As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this tutorial, I will introduce RabbitMQ as a solution to scalable, interoperable and flexible applications.<br /><br />We will first set up a hypothetical domain, around which we will structure practical coding exercises to learn the features of RabbitMQ from the ground up. This tutorial is perfect for those who would like a deep dive into RabbitMQ with little or no pre-existing knowledge about message queuing systems. Once you've finished the tutorial, you will have learnt how to set up basic publish/subscribe message queues, control the flow of messages using various exchanges, and understand various features of RabbitMQ such as RPC, TTL, and DLX.</p>
 		<p><strong>Links:</strong> <a href="http://conference.phpnw.org.uk/phpnw15/speakers/james-titcumb/">PHP North West Conference 2015</a></p>
+	</li>
+	<li>
+		<h3>Mirror, mirror on the wall (Lightning talk, PHPSW, 14th Oct '15)</h3>
+		<p>Better Reflection is an awesome new library that uses magical time-warp techniques* to improve on PHP's built-in reflection, in this talk we'll briefly explore how you can use it to maximise your reflection-fu.<br /><br />* actual magic or time-warp not guaranteed</p>
+		<p><strong>Links:</strong> <a href="http://www.meetup.com/php-sw/events/225148132/">PHPSW October 2015</a></p>
 	</li>
 </ul>
 
