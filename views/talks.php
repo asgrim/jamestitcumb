@@ -10,11 +10,6 @@ require_once('header.php');
 
 <ul>
 	<li>
-		<h3>Diving into HHVM Extensions (PHP Dorset, 7th Sep '15)</h3>
-		<p>HHVM is currently gaining popularity at quite a pace, and it's a pretty exciting time for PHP runtimes. Have you ever wondered what is going on beneath this slick and super-speedy engine? I wondered that myself, so I dived into the internals of HHVM, discovering a treasure trove of awesome stuff. In this talk, I'll show you how HHVM itself works with a guided tour of the codebase, demonstrating how it all pieces together. I'll also show you a couple of ways to write your own incredible HHVM extension. You don't need to know C++ to understand this talk - just PHP language knowledge is enough.</p>
-		<p><strong>Links:</strong> <a href="https://www.eventbrite.co.uk/e/phpdorset-september-james-titcumb-marco-pivetta-tickets-18010155861">PHP Dorset September 2015</a></p>
-	</li>
-	<li>
 		<h3>Diving into HHVM Extensions (PHPNW15, 3rd Oct '15)</h3>
 		<p>HHVM is currently gaining popularity at quite a pace, and it's a pretty exciting time for PHP runtimes. Have you ever wondered what is going on beneath this slick and super-speedy engine? I wondered that myself, so I dived into the internals of HHVM, discovering a treasure trove of awesome stuff. In this talk, I'll show you how HHVM itself works with a guided tour of the codebase, demonstrating how it all pieces together. I'll also show you a couple of ways to write your own incredible HHVM extension. You don't need to know C++ to understand this talk - just PHP language knowledge is enough.</p>
 		<p><strong>Links:</strong> <a href="http://conference.phpnw.org.uk/phpnw15/speakers/james-titcumb/">PHP North West Conference 2015</a></p>
@@ -34,6 +29,11 @@ require_once('header.php');
 <p>This is a list of talks I've given:</p>
 
 <ul>
+	<li>
+		<h3>Diving into HHVM Extensions (PHP Dorset, 7th Sep '15)</h3>
+		<p>HHVM is currently gaining popularity at quite a pace, and it's a pretty exciting time for PHP runtimes. Have you ever wondered what is going on beneath this slick and super-speedy engine? I wondered that myself, so I dived into the internals of HHVM, discovering a treasure trove of awesome stuff. In this talk, I'll show you how HHVM itself works with a guided tour of the codebase, demonstrating how it all pieces together. I'll also show you a couple of ways to write your own incredible HHVM extension. You don't need to know C++ to understand this talk - just PHP language knowledge is enough.</p>
+		<p><strong>Links:</strong> <a href="https://joind.in/talk/view/15163" class="joindin">Joind.in</a> | <a href="https://www.eventbrite.co.uk/e/phpdorset-september-james-titcumb-marco-pivetta-tickets-18010155861">PHP Dorset September 2015</a></p>
+	</li>
 	<li>
 		<h3>Adding 1.21 Gigawatts to Applications with RabbitMQ (PHP Warwickshire, 30th Jul '15)</h3>
 		<p>As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this talk, we will take a look at the techniques you can use to vastly enhance inter-application communication, learn about the core concepts of RabbitMQ, cover how you can scale different parts of your application separately, and modernise your development using a message-oriented architecture.</p>
