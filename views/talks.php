@@ -12,7 +12,7 @@ require_once('header.php');
 	<li>
 		<h3>Mirror, mirror on the wall (Lightning talk, PHPSW, 14th Oct '15)</h3>
 		<p>Better Reflection is an awesome new library that uses magical time-warp techniques* to improve on PHP's built-in reflection, in this talk we'll briefly explore how you can use it to maximise your reflection-fu.<br /><br />* actual magic or time-warp not guaranteed</p>
-		<p><strong>Links:</strong> <a href="http://www.meetup.com/php-sw/events/225148132/">PHPSW October 2015</a></p>
+		<p><strong>Links:</strong> <a href="https://joind.in/talk/view/15485" class="joindin">Joind.in</a> | <a href="http://www.meetup.com/php-sw/events/225148132/">PHPSW October 2015</a></p>
 	</li>
 </ul>
 
