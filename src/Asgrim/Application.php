@@ -3,6 +3,7 @@
 namespace Asgrim;
 
 use Asgrim\Service\PostService;
+use Asgrim\Service\TalkService;
 use Silex\Application as SilexApplication;
 use Herrera\Template\TemplateServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,6 +22,10 @@ class Application extends SilexApplication
 
         $this['post_service'] = $this->share(function () {
             return new PostService(__DIR__ . '/../../data/posts/');
+        });
+
+        $this['talk_service'] = $this->share(function () {
+            return new TalkService(__DIR__ . '/../../data/talks.php');
         });
 
         $this->error(function (\Exception $e, $code) {
@@ -121,6 +126,9 @@ class Application extends SilexApplication
 
     public function talksAction()
     {
-        return $this['template.engine']->render('talks.php', array(), true);
+        return $this['template.engine']->render('talks.php', [
+            'upcoming' => $this['talk_service']->getUpcomingTalks(),
+            'past' => $this['talk_service']->getPastTalks(),
+        ], true);
     }
 }
