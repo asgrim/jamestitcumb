@@ -15,7 +15,7 @@ class IndexCommand extends Command
 
 	public function __construct()
 	{
-		$this->postFolder = realpath(__DIR__ . '/../../../posts/');
+		$this->postFolder = realpath(__DIR__ . '/../../../data/posts/');
 
 		parent::__construct();
 	}
