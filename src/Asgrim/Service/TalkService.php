@@ -21,6 +21,9 @@ class TalkService
         $this->talkDataFile = $talkDataFile;
     }
 
+    /**
+     * @return array
+     */
     private function getTalks()
     {
         if (!isset($this->talks)) {
@@ -29,17 +32,27 @@ class TalkService
         return $this->talks;
     }
 
+    /**
+     * Get the upcoming talks
+     *
+     * @return array
+     */
     public function getUpcomingTalks()
     {
-        $now = new DateTime('23:59:59');
+        $now = new DateTime('00:00:00');
         return array_filter($this->getTalks(), function ($talk) use ($now) {
             return $talk['date'] >= $now;
         });
     }
 
+    /**
+     * Get talks in the past
+     *
+     * @return array
+     */
     public function getPastTalks()
     {
-        $now = new DateTime('23:59:59');
+        $now = new DateTime('00:00:00');
         return array_filter($this->getTalks(), function ($talk) use ($now) {
             return $talk['date'] < $now;
         });

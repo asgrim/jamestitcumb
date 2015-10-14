@@ -25,7 +25,12 @@ class PostService
         $this->postDirectory = $postDirectory;
     }
 
-    public function getPosts()
+    /**
+     * Fetch the posts from the cache
+     *
+     * @return array
+     */
+    private function getPosts()
     {
         if(!isset($this->posts))
         {
@@ -35,7 +40,13 @@ class PostService
         return $this->posts;
     }
 
-    public function renderPost($file)
+    /**
+     * Render the markdown (stripping metadata) of a post
+     *
+     * @param string $file Name of the file to render
+     * @return string
+     */
+    private function renderPost($file)
     {
         $fullPath = $this->postDirectory . $file;
 
@@ -53,6 +64,12 @@ class PostService
         return Markdown::defaultTransform(trim($text));
     }
 
+    /**
+     * Fetch a number of recent posts (rendered)
+     *
+     * @param int $howMany
+     * @return array
+     */
     public function fetchRecentPosts($howMany = 5)
     {
         $posts = $this->getPosts();
@@ -68,6 +85,12 @@ class PostService
         return array_reverse($recentPosts);
     }
 
+    /**
+     * Fetch a specific post by the slug (rendered)
+     *
+     * @param string $slug
+     * @return mixed
+     */
     public function fetchPostBySlug($slug)
     {
         $posts = $this->getPosts();
