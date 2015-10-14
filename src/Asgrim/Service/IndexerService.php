@@ -2,6 +2,7 @@
 
 namespace Asgrim\Service;
 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Yaml\Parser as YamlParser;
 
 class IndexerService
@@ -22,14 +23,18 @@ class IndexerService
     private $yamlParser;
 
     /**
-     * @param string $postFolder
-     * @param YamlParser $yamlParser
+     * @var array
      */
-    public function __construct($postFolder, YamlParser $yamlParser)
+    private $posts;
+
+    /**
+     * @param string $postFolder
+     */
+    public function __construct($postFolder)
     {
         $this->postFolder = $postFolder;
         $this->cacheFileName = $postFolder . '/postsCache.php';
-        $this->yamlParser = $yamlParser;
+        $this->yamlParser = new YamlParser();
     }
 
     /**
@@ -61,6 +66,40 @@ class IndexerService
         file_put_contents($this->cacheFileName, "<?php\nreturn " . $cacheContent . ";\n");
 
         return count($postIndex);
+    }
+
+    /**
+     * Fetch the posts from the cache
+     *
+     * @return array
+     */
+    public function getAllPostsFromCache()
+    {
+        if(!isset($this->posts))
+        {
+            $this->posts = require_once($this->cacheFileName);
+        }
+
+        return $this->posts;
+    }
+
+    /**
+     * Get the raw content of a post (including metadata) by the slug
+     *
+     * @param string $slug
+     * @return string
+     */
+    public function getPostContentBySlug($slug)
+    {
+        $posts = $this->getAllPostsFromCache();
+        $fullPath = $this->postFolder . $posts[$slug]['file'];
+
+        if (!file_exists($fullPath))
+        {
+            throw new NotFoundHttpException("Markdown file called {$slug} was missing");
+        }
+
+        return file_get_contents($fullPath);
     }
 
     /**

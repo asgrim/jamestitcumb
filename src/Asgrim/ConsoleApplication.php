@@ -4,7 +4,6 @@ namespace Asgrim;
 
 use Asgrim\Service\IndexerService;
 use Symfony\Component\Console\Application;
-use Symfony\Component\Yaml\Parser as YamlParser;
 
 class ConsoleApplication extends Application
 {
@@ -14,7 +13,7 @@ class ConsoleApplication extends Application
 
         $commands = array(
             new Command\IndexCommand(
-                new IndexerService(__DIR__ . '/../../data/posts/', new YamlParser())
+                new IndexerService(__DIR__ . '/../../data/posts/')
             ),
         );
 

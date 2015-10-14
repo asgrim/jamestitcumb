@@ -4,6 +4,7 @@ namespace Asgrim;
 
 use Asgrim\Service\PostService;
 use Asgrim\Service\TalkService;
+use Asgrim\Service\IndexerService;
 use Silex\Application as SilexApplication;
 use Herrera\Template\TemplateServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,7 +22,7 @@ class Application extends SilexApplication
         ));
 
         $this['post_service'] = $this->share(function () {
-            return new PostService(__DIR__ . '/../../data/posts/');
+            return new PostService(new IndexerService(__DIR__ . '/../../data/posts/'));
         });
 
         $this['talk_service'] = $this->share(function () {

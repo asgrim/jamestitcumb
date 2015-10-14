@@ -8,54 +8,27 @@ use Michelf\MarkdownExtra as Markdown;
 class PostService
 {
     /**
-     * @var string
+     * @var IndexerService
      */
-    private $postDirectory;
+    private $indexerService;
 
     /**
-     * @var array
+     * @param IndexerService $indexerService
      */
-    private $posts;
-
-    /**
-     * @param string $postDirectory
-     */
-    public function __construct($postDirectory)
+    public function __construct(IndexerService $indexerService)
     {
-        $this->postDirectory = $postDirectory;
-    }
-
-    /**
-     * Fetch the posts from the cache
-     *
-     * @return array
-     */
-    private function getPosts()
-    {
-        if(!isset($this->posts))
-        {
-            $this->posts = require_once($this->postDirectory . '/postsCache.php');
-        }
-
-        return $this->posts;
+        $this->indexerService = $indexerService;
     }
 
     /**
      * Render the markdown (stripping metadata) of a post
      *
-     * @param string $file Name of the file to render
+     * @param string $slug
      * @return string
      */
-    private function renderPost($file)
+    private function renderPost($slug)
     {
-        $fullPath = $this->postDirectory . $file;
-
-        if (!file_exists($fullPath))
-        {
-            throw new NotFoundHttpException("Markdown file called {$file} was missing");
-        }
-
-        $text = file_get_contents($fullPath);
+        $text = $this->indexerService->getPostContentBySlug($slug);
 
         // Get rid of the metadata
         $text = substr($text, strpos($text, '---')+3);
@@ -72,13 +45,13 @@ class PostService
      */
     public function fetchRecentPosts($howMany = 5)
     {
-        $posts = $this->getPosts();
+        $posts = $this->indexerService->getAllPostsFromCache();
 
         $recentPosts = array_slice($posts, -$howMany);
 
         foreach ($recentPosts as &$post)
         {
-            $post['content'] = $this->renderPost($post['file']);
+            $post['content'] = $this->renderPost($post['slug']);
             $post['active'] = false;
         }
 
@@ -93,11 +66,11 @@ class PostService
      */
     public function fetchPostBySlug($slug)
     {
-        $posts = $this->getPosts();
+        $posts = $this->indexerService->getAllPostsFromCache();
 
         if (isset($posts[$slug]))
         {
-            $posts[$slug]['content'] = $this->renderPost($posts[$slug]['file']);
+            $posts[$slug]['content'] = $this->renderPost($slug);
             $posts[$slug]['active'] = false;
             return $posts[$slug];
         }
