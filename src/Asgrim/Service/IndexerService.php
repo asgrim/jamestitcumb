@@ -77,7 +77,7 @@ class IndexerService
     {
         if(!isset($this->posts))
         {
-            $this->posts = require_once($this->cacheFileName);
+            $this->posts = require $this->cacheFileName;
         }
 
         return $this->posts;
@@ -92,11 +92,15 @@ class IndexerService
     public function getPostContentBySlug($slug)
     {
         $posts = $this->getAllPostsFromCache();
+
+        if (!isset($posts[$slug])) {
+            throw new NotFoundHttpException("No post was indexed with the slug: {$slug}");
+        }
+
         $fullPath = $this->postFolder . $posts[$slug]['file'];
 
-        if (!file_exists($fullPath))
-        {
-            throw new NotFoundHttpException("Markdown file called {$slug} was missing");
+        if (!file_exists($fullPath)) {
+            throw new NotFoundHttpException("Markdown file missing for slug: {$slug}");
         }
 
         return file_get_contents($fullPath);
