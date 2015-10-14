@@ -142,7 +142,7 @@ class IndexerService
 
         $parsed['date'] = sprintf('%04d-%02d-%02d', $fileparts[0], $fileparts[1], $fileparts[2]);
         $parsed['slug'] = str_replace('.md', '', $fileparts[3]);
-        $parsed['file'] = substr($filename, 1);
+        $parsed['file'] = $filename;
 
         return $parsed;
     }
