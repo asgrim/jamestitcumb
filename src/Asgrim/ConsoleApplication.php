@@ -3,9 +3,9 @@
 namespace Asgrim;
 
 use Asgrim\Service\IndexerService;
-use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Application as BaseApplication;
 
-class ConsoleApplication extends Application
+class ConsoleApplication extends BaseApplication
 {
     public function __construct()
     {
