@@ -27,7 +27,7 @@ class TalkService
     private function getTalks()
     {
         if (!isset($this->talks)) {
-            $this->talks = require_once($this->talkDataFile);
+            $this->talks = require $this->talkDataFile;
         }
         return $this->talks;
     }
