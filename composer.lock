@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "335b855715d809b9ec4a8d4d9b9ee343",
-    "content-hash": "5018242a2a8159675f9526522e1b6d0a",
+    "hash": "1f3a06ff81b6c8139e9ddb1fa49cf179",
+    "content-hash": "2242eaf04d52aba2376412bf5d7daa15",
     "packages": [
         {
             "name": "herrera-io/file-locator",
@@ -1997,7 +1997,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">= 5.5"
+        "php": ">= 5.6"
     },
     "platform-dev": []
 }
