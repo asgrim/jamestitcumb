@@ -64,4 +64,12 @@ class IndexerServiceTest extends \PHPUnit_Framework_TestCase
         $this->setExpectedException(NotFoundHttpException::class, 'Markdown file missing for slug');
         $indexer->getPostContentBySlug('test-post-slug');
     }
+
+    public function tearDown()
+    {
+        $cache = self::$postsFolder . '/postsCache.php';
+        if (file_exists($cache)) {
+            unlink($cache);
+        }
+    }
 }
