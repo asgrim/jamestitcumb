@@ -2,20 +2,23 @@
 
 namespace Asgrim;
 
-use Symfony\Component\Console\Application;
+use Asgrim\Service\IndexerService;
+use Symfony\Component\Console\Application as BaseApplication;
 
-class ConsoleApplication extends Application
+class ConsoleApplication extends BaseApplication
 {
-	public function __construct()
-	{
-		parent::__construct('James Titcumb', 'dev-master');
+    public function __construct()
+    {
+        parent::__construct('James Titcumb', 'dev-master');
 
-		$commands = array(
-			new Command\IndexCommand(),
-		);
+        $commands = array(
+            new Command\IndexCommand(
+                new IndexerService(__DIR__ . '/../../data/posts/')
+            ),
+        );
 
-		foreach ($commands as $command) {
-			$this->add($command);
-		}
-	}
+        foreach ($commands as $command) {
+            $this->add($command);
+        }
+    }
 }
