@@ -26,7 +26,7 @@ class IndexCommand extends Command
             ->setDescription('Indexes the blog posts to create a cached list of them');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $postsIndexed = $this->indexerService->createIndex();
 
