@@ -58,8 +58,6 @@ class Application extends SilexApplication
 
     public function feedAction(Request $request)
     {
-        $baseUrl = 'http://www.jamestitcumb.com/';
-
         $outputFormat = $request->get('format', 'rss');
 
         if (!in_array($outputFormat, array('rss', 'rdf', 'atom')))
@@ -67,38 +65,10 @@ class Application extends SilexApplication
             throw new \Exception('Invalid output format.');
         }
 
-        $feed = new \Zend\Feed\Writer\Feed();
-        $feed->setTitle('James Titcumb\'s blog');
-        $feed->setLink($baseUrl);
-        $feed->setDescription('This is James Titcumb\'s personal PHP-related blog posts.');
-        $feed->setFeedLink($baseUrl . 'feed/atom', 'atom');
-        $feed->addAuthor(array(
-            'name' => 'James Titcumb',
-            'uri' => $baseUrl,
-        ));
-        $feed->setDateModified(time());
-
-        $posts = $this['post_service']->fetchRecentPosts(10);
-
-        foreach ($posts as $slug => $post)
-        {
-            $entry = $feed->createEntry();
-            $entry->setTitle($post['title']);
-            $entry->setLink($baseUrl . 'posts/' . $slug);
-            $entry->addAuthor(array(
-                'name'  => 'James Titcumb',
-                'uri'   => $baseUrl,
-            ));
-            $entry->setDateModified(new \DateTime($post['date']));
-            $entry->setDateCreated(new \DateTime($post['date']));
-            $entry->setDescription($post['title']);
-
-            $content = str_replace(' allowfullscreen>', ' allowfullscreen="allowfullscreen">', $post['content']);
-
-            $entry->setContent($content);
-
-            $feed->addEntry($entry);
-        }
+        /** @var \Zend\Feed\Writer\Feed $feed */
+        $feed = $this['feed_service']->createFeed(
+            $this['post_service']->fetchRecentPosts(10)
+        );
 
         return $feed->export($outputFormat);
     }
