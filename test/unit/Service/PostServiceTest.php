@@ -33,7 +33,7 @@ class PostServiceTest extends \PHPUnit_Framework_TestCase
         $indexer->createIndex();
 
         $postService = new PostService($indexer);
-        
+
         $this->setExpectedException(NotFoundHttpException::class, 'Post with slug this-slug-should-not-exist not found');
         $postService->fetchPostBySlug('this-slug-should-not-exist');
     }

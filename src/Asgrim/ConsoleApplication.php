@@ -11,11 +11,11 @@ class ConsoleApplication extends BaseApplication
     {
         parent::__construct('James Titcumb', 'dev-master');
 
-        $commands = array(
+        $commands = [
             new Command\IndexCommand(
                 new IndexerService(__DIR__ . '/../../data/posts/')
             ),
-        );
+        ];
 
         foreach ($commands as $command) {
             $this->add($command);

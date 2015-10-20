@@ -50,10 +50,8 @@ class IndexerService
 
         // Build cache in array
         $postIndex = [];
-        foreach ($files as $file)
-        {
-            if($metadata = $this->getPostMetadata($file))
-            {
+        foreach ($files as $file) {
+            if ($metadata = $this->getPostMetadata($file)) {
                 $postIndex[$metadata['slug']] = $metadata;
             }
         }
@@ -69,14 +67,13 @@ class IndexerService
     }
 
     /**
-     * Fetch the posts from the cache
+     * Fetch the posts from the cache.
      *
      * @return array
      */
     public function getAllPostsFromCache()
     {
-        if(!isset($this->posts))
-        {
+        if (!isset($this->posts)) {
             $this->posts = require $this->cacheFileName;
         }
 
@@ -84,7 +81,7 @@ class IndexerService
     }
 
     /**
-     * Get the raw content of a post (including metadata) by the slug
+     * Get the raw content of a post (including metadata) by the slug.
      *
      * @param string $slug
      * @return string
@@ -107,7 +104,7 @@ class IndexerService
     }
 
     /**
-     * Sort a list of posts by date
+     * Sort a list of posts by date.
      *
      * @param mixed[] $postIndex
      * @return mixed[]
@@ -117,31 +114,33 @@ class IndexerService
         uasort($postIndex, function ($a, $b) {
             $aa = (int)str_replace('-', '', $a['date']);
             $bb = (int)str_replace('-', '', $b['date']);
-            if ($aa > $bb) return 1;
-            else if ($bb > $aa) return -1;
-            else return 0;
+            if ($aa > $bb) {
+                return 1;
+            } elseif ($bb > $aa) {
+                return -1;
+            } else {
+                return 0;
+            }
         });
 
         return $postIndex;
     }
 
     /**
-     * Build a flat file list of .md files from a directory
+     * Build a flat file list of .md files from a directory.
      *
      * @param string $directory
      * @return string[]
      */
     private function buildFileListFromDirectory($directory)
     {
-        $files = array();
+        $files = [];
 
         $iterator = new \RecursiveDirectoryIterator($directory);
 
-        foreach (new \RecursiveIteratorIterator($iterator) as $file)
-        {
+        foreach (new \RecursiveIteratorIterator($iterator) as $file) {
             /** @var $file \SplFileInfo */
-            if (!$file->isFile() || $file->getExtension() != 'md')
-            {
+            if (!$file->isFile() || $file->getExtension() != 'md') {
                 continue;
             }
 
@@ -166,8 +165,7 @@ class IndexerService
         $parts = explode('---', $contents);
 
         // No metadata
-        if (count($parts) < 3)
-        {
+        if (count($parts) < 3) {
             return null;
         }
 
@@ -176,8 +174,7 @@ class IndexerService
         $parsed = $this->yamlParser->parse($metadata);
 
         // Don't index drafts
-        if (isset($parsed['draft']) && $parsed['draft'])
-        {
+        if (isset($parsed['draft']) && $parsed['draft']) {
             return null;
         }
 

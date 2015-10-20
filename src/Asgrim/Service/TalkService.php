@@ -33,7 +33,7 @@ class TalkService
     }
 
     /**
-     * Get the upcoming talks
+     * Get the upcoming talks.
      *
      * @return array
      */
@@ -46,7 +46,7 @@ class TalkService
     }
 
     /**
-     * Get talks in the past
+     * Get talks in the past.
      *
      * @return array
      */

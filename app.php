@@ -1,9 +1,9 @@
 #!/usr/bin/env php
 <?php
 
-$autoloadPaths = array(
+$autoloadPaths = [
     'vendor/autoload.php',
-);
+];
 
 foreach ($autoloadPaths as $path) {
     if (file_exists($path)) {
