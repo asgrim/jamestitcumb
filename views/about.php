@@ -33,7 +33,8 @@
 
 <ul>
 	<li>Twitter: <a href="https://twitter.com/asgrim">@asgrim</a></li>
-	<li>GitHub: <a href="https://github.com/asgrim">https://github.com/asgrim</a></li>
+	<li>GitHub: <a href="https://github.com/asgrim">github.com/asgrim</a></li>
+	<li>LinkedIn: <a href="https://uk.linkedin.com/in/jamestitcumb">uk.linkedin.com/in/jamestitcumb</a></li>
 	<li>Google+: <a href="https://plus.google.com/115315299682874378471">James Titcumb</a></li>
 	<li>IRC (freenode): asgrim</li>
 </ul>
