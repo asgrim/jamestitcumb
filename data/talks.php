@@ -261,7 +261,7 @@ return [
         ],
     ],
     [
-        'name' => 'Errors, Exceptionsn &amp; Logging',
+        'name' => 'Errors, Exceptions &amp; Logging',
         'type' => 'talk',
         'date' => new DateTime('2013-10-09'),
         'event' => 'PHP Hampshire',
@@ -273,7 +273,7 @@ return [
         ],
     ],
     [
-        'name' => 'Errors, Exceptionsn &amp; Logging',
+        'name' => 'Errors, Exceptions &amp; Logging',
         'type' => 'lightning',
         'date' => new DateTime('2013-10-05'),
         'event' => 'PHPNW13 Uncon',
