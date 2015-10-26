@@ -26,7 +26,7 @@ function renderTalk(array $talk) {
             $l = '<a href="';
             $l .= $linkData['url'];
             if (isset($linkData['class'])) {
-                $l .= ' class="' . $linkData['class'] . '"';
+                $l .= '" class="' . $linkData['class'] . '"';
             }
             $l .= '">' . $text . '</a>';
             $links[] = $l;
