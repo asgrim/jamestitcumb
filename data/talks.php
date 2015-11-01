@@ -11,6 +11,16 @@ $loggingAbstract = 'Logging is an absolute must for any API or web application, 
 
 return [
     [
+        'name' => 'Diving into HHVM Extensions',
+        'type' => 'talk',
+        'date' => new DateTime('2015-11-14'),
+        'event' => 'BrnoPHP Conference 2015',
+        'abstract' => $hhvmAbstract,
+        'links' => [
+            'BrnoPHP Conference 2015' => ['url' => 'https://www.brnophp.cz/conference-2015'],
+        ],
+    ],
+    [
         'name' => 'Mirror, Mirror on the Wall',
         'type' => 'lightning',
         'date' => new DateTime('2015-10-14'),
