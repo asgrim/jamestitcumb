@@ -24,7 +24,7 @@
 	<li>I speak as much as I can at user groups and conferences; <a href="/talks">see all the talks I'm doing and have done</a>.</li>
 	<li>I am the project lead for the <a href="https://github.com/browscap/browscap">Browser Capabilities Project</a>.</li>
 	<li>I live in <a href="http://en.wikipedia.org/wiki/Portsmouth">Portsmouth, UK</a> and I'm married, with 2 children.</li>
-	<li>I wrote an article for php[architect] magazine (<a href="http://www.phparch.com/magazine/2015-2/april/">April 2015</a>)</li>
+	<li>I have written two articles for php[architect] magazine (<a href="http://www.phparch.com/magazine/2015-2/april/">April 2015</a>, <a href="https://www.phparch.com/magazine/2015-2/november/">November 2015</a>)</li>
 </ul>
 
 <h2>Get in touch...</h2>
