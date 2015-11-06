@@ -21,7 +21,7 @@ class PostService
     }
 
     /**
-     * Render the markdown (stripping metadata) of a post
+     * Render the markdown (stripping metadata) of a post.
      *
      * @param string $slug
      * @return string
@@ -38,7 +38,7 @@ class PostService
     }
 
     /**
-     * Fetch a number of recent posts (rendered)
+     * Fetch a number of recent posts (rendered).
      *
      * @param int $howMany
      * @return array
@@ -49,8 +49,7 @@ class PostService
 
         $recentPosts = array_slice($posts, -$howMany);
 
-        foreach ($recentPosts as &$post)
-        {
+        foreach ($recentPosts as &$post) {
             $post['content'] = $this->renderPost($post['slug']);
             $post['active'] = false;
         }
@@ -59,7 +58,7 @@ class PostService
     }
 
     /**
-     * Fetch a specific post by the slug (rendered)
+     * Fetch a specific post by the slug (rendered).
      *
      * @param string $slug
      * @return mixed
@@ -68,16 +67,12 @@ class PostService
     {
         $posts = $this->indexerService->getAllPostsFromCache();
 
-        if (isset($posts[$slug]))
-        {
+        if (isset($posts[$slug])) {
             $posts[$slug]['content'] = $this->renderPost($slug);
             $posts[$slug]['active'] = false;
             return $posts[$slug];
-        }
-        else
-        {
+        } else {
             throw new NotFoundHttpException("Post with slug {$slug} not found.");
         }
     }
 }
-
