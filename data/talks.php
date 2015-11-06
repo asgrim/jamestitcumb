@@ -11,6 +11,16 @@ $loggingAbstract = 'Logging is an absolute must for any API or web application, 
 
 return [
     [
+        'name' => 'Dip Your Toes in the Sea of Security',
+        'type' => 'talk',
+        'date' => new DateTime('2015-11-18'),
+        'event' => 'PHP Berkshire November 2015 meetup',
+        'abstract' => $securityAbstract,
+        'links' => [
+            'PHP Berkshire' => ['url' => 'http://www.meetup.com/PHP-Berkshire/'],
+        ],
+    ],
+    [
         'name' => 'Diving into HHVM Extensions',
         'type' => 'talk',
         'date' => new DateTime('2015-11-14'),
