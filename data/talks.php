@@ -13,6 +13,16 @@ return [
     [
         'name' => 'Dip Your Toes in the Sea of Security',
         'type' => 'talk',
+        'date' => new DateTime('2016-02-19'),
+        'event' => 'PHP UK Conference 2016',
+        'abstract' => $securityAbstract,
+        'links' => [
+            'PHP Berkshire' => ['url' => 'http://www.phpconference.co.uk/'],
+        ],
+    ],
+    [
+        'name' => 'Dip Your Toes in the Sea of Security',
+        'type' => 'talk',
         'date' => new DateTime('2016-01-21'),
         'event' => 'PHPMiNDS January 2015 meetup',
         'abstract' => $securityAbstract,
@@ -37,6 +47,7 @@ return [
         'event' => 'BrnoPHP Conference 2015',
         'abstract' => $hhvmAbstract,
         'links' => [
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/16263', 'class' => 'joindin'],
             'BrnoPHP Conference 2015' => ['url' => 'https://www.brnophp.cz/conference-2015'],
         ],
     ],

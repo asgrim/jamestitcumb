@@ -24,11 +24,21 @@ class TalkService
     /**
      * @return array
      */
-    private function getTalks()
+    private function getTalks($inverseOrder = false)
     {
         if (!isset($this->talks)) {
             $this->talks = require $this->talkDataFile;
         }
+
+        usort($this->talks, function($a, $b) use ($inverseOrder) {
+            if ($a['date'] > $b['date']) {
+                return $inverseOrder ? 1 : -1;
+            }
+            if ($a['date'] < $b['date']) {
+                return $inverseOrder ? -1 : 1;
+            }
+            return 0;
+        });
         return $this->talks;
     }
 
@@ -40,7 +50,7 @@ class TalkService
     public function getUpcomingTalks()
     {
         $now = new DateTime('00:00:00');
-        return array_filter($this->getTalks(), function ($talk) use ($now) {
+        return array_filter($this->getTalks(true), function ($talk) use ($now) {
             return $talk['date'] >= $now;
         });
     }
