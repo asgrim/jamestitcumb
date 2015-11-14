@@ -13,6 +13,16 @@ return [
     [
         'name' => 'Dip Your Toes in the Sea of Security',
         'type' => 'talk',
+        'date' => new DateTime('2016-02-19'),
+        'event' => 'PHP UK Conference 2016',
+        'abstract' => $securityAbstract,
+        'links' => [
+            'PHP Berkshire' => ['url' => 'http://www.phpconference.co.uk/'],
+        ],
+    ],
+    [
+        'name' => 'Dip Your Toes in the Sea of Security',
+        'type' => 'talk',
         'date' => new DateTime('2016-01-21'),
         'event' => 'PHPMiNDS January 2015 meetup',
         'abstract' => $securityAbstract,
