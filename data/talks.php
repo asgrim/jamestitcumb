@@ -47,6 +47,7 @@ return [
         'event' => 'BrnoPHP Conference 2015',
         'abstract' => $hhvmAbstract,
         'links' => [
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/16263', 'class' => 'joindin'],
             'BrnoPHP Conference 2015' => ['url' => 'https://www.brnophp.cz/conference-2015'],
         ],
     ],
