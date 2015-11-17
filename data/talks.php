@@ -31,13 +31,33 @@ return [
         ],
     ],
     [
+        'name' => 'tbc',
+        'type' => 'lightning',
+        'date' => new DateTime('2015-11-21'),
+        'event' => 'PHPem Unconference 2015',
+        'abstract' => 'tbc',
+        'links' => [
+            'PHPem' => ['url' => 'http://phpem.uk/event/unconference-2015'],
+        ],
+    ],
+    [
+        'name' => 'Dip Your Toes in the Sea of Security',
+        'type' => 'talk',
+        'date' => new DateTime('2015-11-19'),
+        'event' => 'OWASP Bristol November 2015 meetup',
+        'abstract' => $securityAbstract,
+        'links' => [
+            'OWASP Bristol' => ['url' => 'http://www.meetup.com/OWASP-Bristol/events/226348152/'],
+        ],
+    ],
+    [
         'name' => 'Dip Your Toes in the Sea of Security',
         'type' => 'talk',
         'date' => new DateTime('2015-11-18'),
         'event' => 'PHP Berkshire November 2015 meetup',
         'abstract' => $securityAbstract,
         'links' => [
-            'PHP Berkshire' => ['url' => 'http://www.meetup.com/PHP-Berkshire/'],
+            'PHP Berkshire' => ['url' => 'http://www.meetup.com/PHP-Berkshire/events/226673368/'],
         ],
     ],
     [
