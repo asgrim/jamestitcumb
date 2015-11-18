@@ -17,7 +17,8 @@ return [
         'event' => 'PHP UK Conference 2016',
         'abstract' => $securityAbstract,
         'links' => [
-            'PHP Berkshire' => ['url' => 'http://www.phpconference.co.uk/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/16400', 'class' => 'joindin'],
+            'PHP UK Conference' => ['url' => 'http://www.phpconference.co.uk/'],
         ],
     ],
     [
