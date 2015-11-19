@@ -58,6 +58,7 @@ return [
         'event' => 'PHP Berkshire November 2015 meetup',
         'abstract' => $securityAbstract,
         'links' => [
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/16416', 'class' => 'joindin'],
             'PHP Berkshire' => ['url' => 'http://www.meetup.com/PHP-Berkshire/events/226673368/'],
         ],
     ],
