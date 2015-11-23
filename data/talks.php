@@ -32,12 +32,13 @@ return [
         ],
     ],
     [
-        'name' => 'tbc',
+        'name' => 'Mirror, mirror on the wall',
         'type' => 'lightning',
         'date' => new DateTime('2015-11-21'),
         'event' => 'PHPem Unconference 2015',
-        'abstract' => 'tbc',
+        'abstract' => $reflectionLightningAbstract,
         'links' => [
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/16429', 'class' => 'joindin'],
             'PHPem' => ['url' => 'http://phpem.uk/event/unconference-2015'],
         ],
     ],
