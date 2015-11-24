@@ -3,7 +3,6 @@ $additionalHeader = <<<EOF
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="/js/joindin-ratings.min.js"></script>
 EOF;
-require_once('header.php');
 
 function renderTalk(array $talk)
 {
@@ -68,5 +67,3 @@ foreach ($past as $t) {
 }
 echo '</ul>';
 ?>
-
-<?php require_once('footer.php'); ?>
