@@ -34,6 +34,17 @@ return [
     [
         'name' => 'Mirror, mirror on the wall',
         'type' => 'lightning',
+        'date' => new DateTime('2015-12-17'),
+        'event' => 'Nomad PHP December 2015',
+        'abstract' => $reflectionLightningAbstract,
+        'links' => [
+            'Nomad PHP Lightning Talks' => ['url' => 'https://nomadphp.com/category/lightning-talks/'],
+            'Nomad PHP December 2015' => ['url' => 'https://nomadphp.com/2015/09/18/using-apigility-to-build-apis-everyone-can-enjoy/'],
+        ],
+    ],
+    [
+        'name' => 'Mirror, mirror on the wall',
+        'type' => 'lightning',
         'date' => new DateTime('2015-11-21'),
         'event' => 'PHPem Unconference 2015',
         'abstract' => $reflectionLightningAbstract,
