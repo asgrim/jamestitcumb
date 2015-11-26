@@ -1,2 +1,2 @@
-<h2>Something went wrong...</h2>
+<h2>Error: <?= $this->escapeHtml($error instanceof \Exception ? $error->getMessage() : $error); ?></h2>
 <p>Sorry, but something appears to have gone wrong.</p>
