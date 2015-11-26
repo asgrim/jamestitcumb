@@ -34,7 +34,7 @@ class PostServiceTest extends \PHPUnit_Framework_TestCase
 
         $postService = new PostService($indexer);
 
-        $this->setExpectedException(OutOfBoundsException::class, 'Post with slug this-slug-should-not-exist not found');
+        $this->setExpectedException(OutOfBoundsException::class, 'Post \'this-slug-should-not-exist\' not found');
         $postService->fetchPostBySlug('this-slug-should-not-exist');
     }
 
