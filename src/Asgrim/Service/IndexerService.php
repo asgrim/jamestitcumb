@@ -90,13 +90,13 @@ class IndexerService
         $posts = $this->getAllPostsFromCache();
 
         if (!isset($posts[$slug])) {
-            throw new \OutOfBoundsException("No post was indexed with the slug: {$slug}");
+            throw new Exception\PostNotFound("No post was indexed with the slug: {$slug}");
         }
 
         $fullPath = $this->postFolder . $posts[$slug]['file'];
 
         if (!file_exists($fullPath)) {
-            throw new \OutOfBoundsException("Markdown file missing for slug: {$slug}");
+            throw new Exception\PostNotFound("Markdown file missing for slug: {$slug}");
         }
 
         return file_get_contents($fullPath);

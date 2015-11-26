@@ -71,7 +71,7 @@ class PostService
             $posts[$slug]['active'] = false;
             return $posts[$slug];
         } else {
-            throw new \OutOfBoundsException("Post with slug {$slug} not found.");
+            throw new Exception\PostNotFound("Post '{$slug}' not found.");
         }
     }
 }

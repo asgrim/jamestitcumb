@@ -2,6 +2,7 @@
 
 namespace Asgrim\Action;
 
+use Asgrim\Service\Exception\PostNotFound;
 use Asgrim\Service\PostService;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -39,13 +40,17 @@ class PostsAction
     {
         $slug = $request->getAttribute('slug', null);
 
-        if (null !== $slug) {
-            $posts = [$slug => $this->postService->fetchPostBySlug($slug)];
-            $posts[$slug]['active'] = true;
-        } else {
-            $posts = $this->postService->fetchRecentPosts();
-        }
+        try {
+            if (null !== $slug) {
+                $posts = [$slug => $this->postService->fetchPostBySlug($slug)];
+                $posts[$slug]['active'] = true;
+            } else {
+                $posts = $this->postService->fetchRecentPosts();
+            }
 
-        return new HtmlResponse($this->template->render('app::posts', ['posts' => $posts]));
+            return new HtmlResponse($this->template->render('app::posts', ['posts' => $posts]));
+        } catch (PostNotFound $postNotFound) {
+            return new HtmlResponse($this->template->render('app::post-not-found', ['message' => $postNotFound->getMessage()]));
+        }
     }
 }

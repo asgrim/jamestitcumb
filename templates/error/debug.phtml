@@ -1,0 +1,8 @@
+<h2>Something went wrong...</h2>
+<p>Sorry, but something appears to have gone wrong.</p>
+
+<?php if (isset($this->error) && $this->error instanceof \Exception): ?>
+    <h3><?= get_class($this->error); ?>:</h3>
+    <h4><?= $this->escapeHtml($this->error->getMessage()); ?></h4>
+    <pre style="overflow-x: scroll; word-wrap: initial; white-space: pre"><?= $this->escapeHtml($this->error); ?></pre>
+<?php endif; ?>
