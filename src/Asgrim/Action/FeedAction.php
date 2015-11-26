@@ -54,7 +54,7 @@ class FeedAction
     {
         $outputFormat = $request->getAttribute('format', 'rss');
 
-        if (!in_array($outputFormat, ['rss', 'atom'])) {
+        if (!in_array($outputFormat, ['rss'/*, 'atom'*/])) {
             throw new \InvalidArgumentException('Invalid output format.');
         }
 
