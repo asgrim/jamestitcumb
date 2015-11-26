@@ -3,7 +3,7 @@
 namespace AsgrimTest\Service;
 
 use Asgrim\Service\IndexerService;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use \OutOfBoundsException;
 
 /**
  * @covers \Asgrim\Service\IndexerService
@@ -42,7 +42,7 @@ class IndexerServiceTest extends \PHPUnit_Framework_TestCase
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
 
-        $this->setExpectedException(NotFoundHttpException::class, 'No post was indexed with the slug');
+        $this->setExpectedException(OutOfBoundsException::class, 'No post was indexed with the slug');
         $indexer->getPostContentBySlug('this-slug-should-not-exist');
     }
 
@@ -61,7 +61,7 @@ class IndexerServiceTest extends \PHPUnit_Framework_TestCase
             ],
         ]);
 
-        $this->setExpectedException(NotFoundHttpException::class, 'Markdown file missing for slug');
+        $this->setExpectedException(OutOfBoundsException::class, 'Markdown file missing for slug');
         $indexer->getPostContentBySlug('test-post-slug');
     }
 

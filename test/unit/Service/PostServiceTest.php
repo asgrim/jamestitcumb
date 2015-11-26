@@ -4,7 +4,7 @@ namespace AsgrimTest\Service;
 
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\PostService;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use \OutOfBoundsException;
 
 /**
  * @covers \Asgrim\Service\PostService
@@ -34,7 +34,7 @@ class PostServiceTest extends \PHPUnit_Framework_TestCase
 
         $postService = new PostService($indexer);
 
-        $this->setExpectedException(NotFoundHttpException::class, 'Post with slug this-slug-should-not-exist not found');
+        $this->setExpectedException(OutOfBoundsException::class, 'Post with slug this-slug-should-not-exist not found');
         $postService->fetchPostBySlug('this-slug-should-not-exist');
     }
 

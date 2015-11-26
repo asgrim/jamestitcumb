@@ -2,7 +2,6 @@
 
 namespace Asgrim\Service;
 
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Michelf\MarkdownExtra as Markdown;
 
 class PostService
@@ -72,7 +71,7 @@ class PostService
             $posts[$slug]['active'] = false;
             return $posts[$slug];
         } else {
-            throw new NotFoundHttpException("Post with slug {$slug} not found.");
+            throw new \OutOfBoundsException("Post with slug {$slug} not found.");
         }
     }
 }
