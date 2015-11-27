@@ -2,7 +2,7 @@
 
 namespace Asgrim\Service;
 
-use Elasticsearch\Client as ElasticsearchClient;
+use Elasticsearch\Client as EsClient;
 
 class SearchWrapper
 {
@@ -12,14 +12,14 @@ class SearchWrapper
     private $indexerService;
 
     /**
-     * @var ElasticsearchClient
+     * @var EsClient
      */
-    private $client;
+    private $esClient;
 
-    public function __construct(ElasticsearchClient $client, IndexerService $indexerService)
+    public function __construct(EsClient $esClient, IndexerService $indexerService)
     {
         $this->indexerService = $indexerService;
-        $this->client = $client;
+        $this->esClient = $esClient;
     }
 
     /**
@@ -53,7 +53,7 @@ class SearchWrapper
             ],
         ];
 
-        $results = $this->client->search($params);
+        $results = $this->esClient->search($params);
 
         if (!$results['hits']['total']) {
             return [];
@@ -78,20 +78,21 @@ class SearchWrapper
         $posts = $this->indexerService->getAllPostsFromCache();
 
         // Clear index first
-        $this->client->indices()->delete(['index' => 'posts']);
+        $this->esClient->indices()->delete(['index' => 'posts']);
 
-        // Repopulate
+        // Repopulate the index
         foreach ($posts as $post) {
             $params = [
                 'body' => [
-                    'content' => $this->indexerService->getPostContentWithoutMetadata($post['slug'])
+                    'title' => $post['title'],
+                    'content' => $this->indexerService->getPostContentWithoutMetadata($post['slug']),
                 ],
                 'index' => 'posts',
                 'type' => 'post',
                 'id' => $post['slug'],
             ];
 
-            $this->client->index($params);
+            $this->esClient->index($params);
         }
     }
 }
