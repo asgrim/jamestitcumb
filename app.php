@@ -12,5 +12,8 @@ foreach ($autoloadPaths as $path) {
     }
 }
 
-$app = new \Asgrim\ConsoleApplication();
+/** @var \Interop\Container\ContainerInterface $container */
+$container = require 'config/container.php';
+
+$app = new \Asgrim\ConsoleApplication($container);
 $app->run();

@@ -2,18 +2,19 @@
 
 namespace Asgrim;
 
-use Asgrim\Service\IndexerService;
 use Symfony\Component\Console\Application as BaseApplication;
+use Interop\Container\ContainerInterface;
+use Asgrim\Service\IndexerService;
 
 class ConsoleApplication extends BaseApplication
 {
-    public function __construct()
+    public function __construct(ContainerInterface $container)
     {
         parent::__construct('James Titcumb', 'dev-master');
 
         $commands = [
             new Command\IndexCommand(
-                new IndexerService(__DIR__ . '/../../data/posts/')
+                $container->get(IndexerService::class)
             ),
         ];
 
