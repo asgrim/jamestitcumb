@@ -61,9 +61,13 @@ class IndexCommandTest extends \PHPUnit_Framework_TestCase
             ->setMethods(['writeln'])
             ->getMockForAbstractClass();
 
-        $mockOutput->expects($this->once())
+        $mockOutput->expects($this->at(0))
             ->method('writeln')
             ->with('<info>Indexed 3 posts in the cache</info>');
+
+        $mockOutput->expects($this->at(1))
+            ->method('writeln')
+            ->with('<info>Updated search index.</info>');
 
         $command = new IndexCommand($mockIndexer, $mockSearch);
 
