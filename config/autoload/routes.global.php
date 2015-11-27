@@ -32,5 +32,11 @@ return [
             'middleware' => Asgrim\Action\TalksAction::class,
             'allowed_methods' => ['GET'],
         ],
+        [
+            'name' => 'search',
+            'path' => '/search',
+            'middleware' => Asgrim\Action\SearchAction::class,
+            'allowed_methods' => ['GET'],
+        ],
     ],
 ];
