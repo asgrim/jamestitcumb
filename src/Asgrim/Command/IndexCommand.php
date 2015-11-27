@@ -4,6 +4,7 @@ namespace Asgrim\Command;
 
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
+use Elasticsearch\Common\Exceptions\TransportException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -48,6 +49,11 @@ class IndexCommand extends Command
             $postsIndexed == 1 ? '' : 's'
         ));
 
-        $this->searchWrapper->indexAllPosts();
+        try {
+            $this->searchWrapper->indexAllPosts();
+            $output->writeln('<info>Updated search index.</info>');
+        } catch (TransportException $transportException) {
+            $output->writeln('<error>Failed to connect to transport: ' . $transportException->getMessage() . '</error>');
+        }
     }
 }
