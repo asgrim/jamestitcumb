@@ -38,6 +38,7 @@ return [
         'event' => 'Nomad PHP December 2015',
         'abstract' => $reflectionLightningAbstract,
         'links' => [
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/16523', 'class' => 'joindin'],
             'Nomad PHP Lightning Talks' => ['url' => 'https://nomadphp.com/category/lightning-talks/'],
             'Nomad PHP December 2015' => ['url' => 'https://nomadphp.com/2015/09/18/using-apigility-to-build-apis-everyone-can-enjoy/'],
         ],
