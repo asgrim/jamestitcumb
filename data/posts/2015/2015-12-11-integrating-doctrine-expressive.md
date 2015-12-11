@@ -65,3 +65,18 @@ which has a function that calls this. This could be seen as synonymous with a
 `Module.php` in ZF2's bootstrap sequence.
 
 If anyone has any feedback, or simpler ways of doing this, I'd love to hear :)
+
+**EDIT** There was one more thing, in your `dependencies.global.php` you need
+to alias `configuration` to `config`, because it looks for `configuration`:
+
+~~~ .php
+<?php
+
+return [
+    'dependencies' => [
+        'aliases' => [
+            'configuration' => 'config',
+        ],
+    ],
+];
+~~~
