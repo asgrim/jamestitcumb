@@ -1,9 +1,6 @@
 <?php
-$additionalHeader = <<<EOF
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="/js/joindin-ratings.min.js"></script>
-EOF;
-
+$this->headScript()->appendFile('//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js');
+$this->headScript()->appendFile('/js/joindin-ratings.min.js');
 ?>
 
 <p>Upcoming talks:</p>
