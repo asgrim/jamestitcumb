@@ -27,11 +27,15 @@ return [
     ],
 
     'view_helpers' => [
+        'factories' => [
+            Asgrim\View\Helper\RenderPostContent::class => Asgrim\View\Helper\RenderPostContentFactory::class,
+        ],
         'invokables' => [
             Asgrim\View\Helper\RenderTalk::class => Asgrim\View\Helper\RenderTalk::class,
         ],
         'aliases' => [
             'renderTalk' => Asgrim\View\Helper\RenderTalk::class,
+            'renderPostContent' => Asgrim\View\Helper\RenderPostContent::class,
         ],
     ],
 ];

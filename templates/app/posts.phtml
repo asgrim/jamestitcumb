@@ -9,7 +9,7 @@
 	</div>
 	<hr />
 	<div class="article-body">
-		<?php echo $post['content']; ?>
+		<?php echo $this->renderPostContent($post['slug']); ?>
 	</div>
 
 	<?php if ($post['active']): ?>

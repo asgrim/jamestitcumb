@@ -3,7 +3,6 @@
 return [
     'dependencies' => [
         'invokables' => [
-            Asgrim\Service\FeedService::class => Asgrim\Service\FeedService::class,
         ],
         'factories' => [
             Asgrim\Action\AboutAction::class => Asgrim\Action\AboutActionFactory::class,
@@ -14,6 +13,7 @@ return [
             Asgrim\Service\PostService::class => Asgrim\Service\PostServiceFactory::class,
             Asgrim\Service\IndexerService::class => Asgrim\Service\IndexerServiceFactory::class,
             Asgrim\Service\TalkService::class => Asgrim\Service\TalkServiceFactory::class,
+            Asgrim\Service\FeedService::class => Asgrim\Service\FeedServiceFactory::class,
 
             Zend\Expressive\Application::class => Zend\Expressive\Container\ApplicationFactory::class,
         ],

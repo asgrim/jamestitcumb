@@ -4,6 +4,7 @@ namespace Asgrim\Service;
 
 use DateTime;
 use Zend\Feed\Writer\Feed;
+use Asgrim\View\Helper\RenderPostContent;
 
 class FeedService
 {
@@ -27,7 +28,12 @@ class FeedService
      */
     private $author;
 
-    public function __construct()
+    /**
+     * @var RenderPostContent
+     */
+    private $renderPostContent;
+
+    public function __construct(RenderPostContent $renderPostContent)
     {
         $this->baseUrl = 'http://www.jamestitcumb.com/';
         $this->title = 'James Titcumb\'s blog';
@@ -36,6 +42,7 @@ class FeedService
             'name' => 'James Titcumb',
             'url' => $this->baseUrl,
         ];
+        $this->renderPostContent = $renderPostContent;
     }
 
     /**
@@ -64,7 +71,11 @@ class FeedService
             $entry->setDateCreated(new DateTime($post['date']));
             $entry->setDescription($post['title']);
 
-            $content = str_replace(' allowfullscreen>', ' allowfullscreen="allowfullscreen">', $post['content']);
+            $content = str_replace(
+                ' allowfullscreen>',
+                ' allowfullscreen="allowfullscreen">',
+                $this->renderPostContent->__invoke($post['slug'])
+            );
 
             $entry->setContent($content);
 

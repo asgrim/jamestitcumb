@@ -2,7 +2,6 @@
 
 namespace Asgrim\Service;
 
-use Michelf\MarkdownExtra as Markdown;
 
 class PostService
 {
@@ -20,23 +19,6 @@ class PostService
     }
 
     /**
-     * Render the markdown (stripping metadata) of a post.
-     *
-     * @param string $slug
-     * @return string
-     */
-    private function renderPost($slug)
-    {
-        $text = $this->indexerService->getPostContentBySlug($slug);
-
-        // Get rid of the metadata
-        $text = substr($text, strpos($text, '---')+3);
-        $text = substr($text, strpos($text, '---')+3);
-
-        return Markdown::defaultTransform(trim($text));
-    }
-
-    /**
      * Fetch a number of recent posts (rendered).
      *
      * @param int $howMany
@@ -49,7 +31,6 @@ class PostService
         $recentPosts = array_slice($posts, -$howMany);
 
         foreach ($recentPosts as &$post) {
-            $post['content'] = $this->renderPost($post['slug']);
             $post['active'] = false;
         }
 
@@ -67,7 +48,6 @@ class PostService
         $posts = $this->indexerService->getAllPostsFromCache();
 
         if (isset($posts[$slug])) {
-            $posts[$slug]['content'] = $this->renderPost($slug);
             $posts[$slug]['active'] = false;
             return $posts[$slug];
         } else {
