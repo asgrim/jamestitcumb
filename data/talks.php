@@ -28,6 +28,7 @@ return [
         'event' => 'PHPMiNDS January 2015 meetup',
         'abstract' => $securityAbstract,
         'links' => [
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/16715', 'class' => 'joindin'],
             'PHPMiNDS (Nottingham)' => ['url' => 'http://www.meetup.com/PHPMiNDS-in-Nottingham/'],
         ],
     ],
