@@ -11,6 +11,26 @@ $loggingAbstract = 'Logging is an absolute must for any API or web application, 
 
 return [
     [
+        'name' => 'Diving into HHVM Extensions',
+        'type' => 'talk',
+        'date' => new DateTime('2016-05-25'),
+        'event' => 'php[tek] 2016',
+        'abstract' => $hhvmAbstract,
+        'links' => [
+            'php[tek] 2016' => ['url' => 'https://tek.phparch.com/speakers/#65598'],
+        ],
+    ],
+    [
+        'name' => 'Introducing Practical RabbitMQ',
+        'type' => 'tutorial',
+        'date' => new DateTime('2016-05-24'),
+        'event' => 'php[tek] 2016',
+        'abstract' => $rabbitTutorial,
+        'links' => [
+            'php[tek] 2016' => ['url' => 'https://tek.phparch.com/speakers/#65598'],
+        ],
+    ],
+    [
         'name' => 'Dip Your Toes in the Sea of Security',
         'type' => 'talk',
         'date' => new DateTime('2016-02-19'),
