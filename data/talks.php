@@ -42,6 +42,16 @@ return [
         ],
     ],
     [
+        'name' => 'AST + Better Reflection',
+        'type' => 'lightning',
+        'date' => new DateTime('2016-01-29'),
+        'event' => 'PHP Benelux 2016 Unconference',
+        'abstract' => $reflectionLightningAbstract,
+        'links' => [
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/16941', 'class' => 'joindin'],
+        ],
+    ],
+    [
         'name' => 'Dip Your Toes in the Sea of Security',
         'type' => 'talk',
         'date' => new DateTime('2016-01-21'),
