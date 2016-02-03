@@ -42,7 +42,7 @@ return [
         ],
     ],
     [
-        'name' => 'AST + Better Reflection',
+        'name' => 'Mirror, mirror on the wall',
         'type' => 'lightning',
         'date' => new DateTime('2016-01-29'),
         'event' => 'PHP Benelux 2016 Unconference',
