@@ -44,11 +44,16 @@ class PostsAction
             if (null !== $slug) {
                 $posts = [$slug => $this->postService->fetchPostBySlug($slug)];
                 $posts[$slug]['active'] = true;
+                $title = $posts[$slug]['title'];
             } else {
                 $posts = $this->postService->fetchRecentPosts();
+                $title = 'Recent posts';
             }
 
-            return new HtmlResponse($this->template->render('app::posts', ['posts' => $posts]));
+            return new HtmlResponse($this->template->render('app::posts', [
+                'posts' => $posts,
+                'title' => $title,
+            ]));
         } catch (PostNotFound $postNotFound) {
             return new HtmlResponse($this->template->render('app::post-not-found', ['message' => $postNotFound->getMessage()]));
         }
