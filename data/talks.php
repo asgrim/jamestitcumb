@@ -11,6 +11,16 @@ $loggingAbstract = 'Logging is an absolute must for any API or web application, 
 
 return [
     [
+        'name' => 'Adding 1.21 Gigawatts to Applications with RabbitMQ',
+        'type' => 'talk',
+        'date' => new DateTime('2016-06-29'),
+        'event' => 'PHP Oxford',
+        'abstract' => $rabbitAbstract,
+        'links' => [
+            'PHP Oxford' => ['url' => 'http://www.phpoxford.uk/'],
+        ],
+    ],
+    [
         'name' => 'Diving into HHVM Extensions',
         'type' => 'talk',
         'date' => new DateTime('2016-05-25'),
