@@ -103,6 +103,23 @@ class IndexerService
     }
 
     /**
+     * Get the post content with the metadata stripped out
+     *
+     * @param string $slug
+     * @return string
+     */
+    public function getPostContentWithoutMetadata($slug)
+    {
+        $text = $this->getPostContentBySlug($slug);
+
+        // Get rid of the metadata
+        $text = substr($text, strpos($text, '---')+3);
+        $text = substr($text, strpos($text, '---')+3);
+
+        return trim($text);
+    }
+
+    /**
      * Sort a list of posts by date.
      *
      * @param mixed[] $postIndex

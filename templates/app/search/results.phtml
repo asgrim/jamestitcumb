@@ -1,0 +1,21 @@
+<h1>Search results for '<?= $this->escapeHtml($query); ?>'</h1>
+
+<?php if (count($results)): ?>
+
+    <p>Displaying <?= count($results); ?> result<?= count($results) === 1 ? '' : 's'; ?>.</p>
+    <ul>
+        <?php foreach ($results as $post): ?>
+            <li>
+                <div class="article-header">
+                    <h3><a href="/posts/<?= $this->escapeHtmlAttr($post['slug']); ?>"><?= $this->escapeHtml($post['title']); ?></a></h3>
+                    <p style="font-weight: bold; font-style: italic;">
+                        Posted on <?php echo date('jS F Y', strtotime($post['date'])); ?>
+                    </p>
+                </div>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
+<?php else: ?>
+    <p>There are no results found.</p>
+<?php endif; ?>
