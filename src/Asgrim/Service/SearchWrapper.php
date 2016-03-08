@@ -77,8 +77,10 @@ class SearchWrapper
     {
         $posts = $this->indexerService->getAllPostsFromCache();
 
-        // Clear index first
-        $this->esClient->indices()->delete(['index' => 'posts']);
+        // Clear index first, if it exists
+        if ($this->esClient->indices()->exists(['index' => 'posts'])) {
+            $this->esClient->indices()->delete(['index' => 'posts']);
+        }
 
         // Repopulate the index
         foreach ($posts as $post) {
