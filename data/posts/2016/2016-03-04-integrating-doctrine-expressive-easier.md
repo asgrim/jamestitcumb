@@ -24,7 +24,7 @@ When I set up, I accepted all the default options, except I did not opt to insta
  * No template engine
  * No error handler
 
-No we're set up, don't forget to descend into your new project directory for the rest of the commands.
+Now we're set up, don't forget to descend into your new project directory for the rest of the commands.
 
 ~~~ .bash
 $ cd doctrine-test
