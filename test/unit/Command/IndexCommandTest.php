@@ -7,6 +7,9 @@ use Asgrim\Service\IndexerService;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * @covers Asgrim\Command\IndexCommand
+ */
 class IndexCommandTest extends \PHPUnit_Framework_TestCase
 {
     public function testConfiguration()

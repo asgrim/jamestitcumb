@@ -24,7 +24,6 @@ class PostServiceTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('Test post from 2014', $post['title']);
         $this->assertSame('2014-01-01', $post['date']);
         $this->assertSame('test-post', $post['slug']);
-        $this->assertContains('<p>This is the content in <em>Markdown</em>.</p>', $post['content']);
     }
 
     public function testExceptionThrownWhenSlugNotFound()

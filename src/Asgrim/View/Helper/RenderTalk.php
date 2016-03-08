@@ -29,11 +29,11 @@ class RenderTalk extends AbstractHelper
         $links = [];
         foreach ($talk['links'] as $text => $linkData) {
             $l = '<a href="';
-            $l .= $linkData['url'];
+            $l .= $linkData['url'] . '"';
             if (isset($linkData['class'])) {
-                $l .= '" class="' . $linkData['class'] . '"';
+                $l .= ' class="' . $linkData['class'] . '"';
             }
-            $l .= '">' . $text . '</a>';
+            $l .= '>' . $text . '</a>';
             $links[] = $l;
         }
 
