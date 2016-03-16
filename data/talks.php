@@ -1,5 +1,6 @@
 <?php
 
+$reflectionAbstract = 'Have you ever used PHP\'s built in reflection, only to find you can\'t do quite what you wanted? What about finding types for parameters or properties? What about reflecting on classes that aren\'t loaded, so that you can modify them directly?<br /><br />Better Reflection is an awesome new library that uses magical time-warp techniques* (*actual magic or time-warp not guaranteed) to improve on PHP\'s built-in reflection by providing additional functionality. In this talk we\'ll cover what reflection is all about, explore the cool features of Better Reflection already implemented, the difficulties we faced actually writing the thing, and how you can use Better Reflection in your projects to maximise your reflection-fu.';
 $hhvmAbstract = 'HHVM is currently gaining popularity at quite a pace, and it\'s a pretty exciting time for PHP runtimes. Have you ever wondered what is going on beneath this slick and super-speedy engine? I wondered that myself, so I dived into the internals of HHVM, discovering a treasure trove of awesome stuff. In this talk, I\'ll show you how HHVM itself works with a guided tour of the codebase, demonstrating how it all pieces together. I\'ll also show you a couple of ways to write your own incredible HHVM extension. You don\'t need to know C++ to understand this talk - just PHP language knowledge is enough.';
 $reflectionLightningAbstract = 'Better Reflection is an awesome new library that uses magical time-warp techniques* to improve on PHP\'s built-in reflection, in this talk we\'ll briefly explore how you can use it to maximise your reflection-fu.<br /><br />* actual magic or time-warp not guaranteed';
 $rabbitTutorial = 'As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this tutorial, I will introduce RabbitMQ as a solution to scalable, interoperable and flexible applications.<br /><br />We will first set up a hypothetical domain, around which we will structure practical coding exercises to learn the features of RabbitMQ from the ground up. This tutorial is perfect for those who would like a deep dive into RabbitMQ with little or no pre-existing knowledge about message queuing systems. Once you\'ve finished the tutorial, you will have learnt how to set up basic publish/subscribe message queues, control the flow of messages using various exchanges, and understand various features of RabbitMQ such as RPC, TTL, and DLX.';
@@ -23,6 +24,26 @@ return [
     [
         'name' => 'Diving into HHVM Extensions',
         'type' => 'talk',
+        'date' => new DateTime('2016-06-25'),
+        'event' => 'Dutch PHP Conference 2016',
+        'abstract' => $hhvmAbstract,
+        'links' => [
+            'Dutch PHP Conference' => ['url' => 'http://www.phpconference.nl/schedule#conference-day-2/diving-hhvm-extensions'],
+        ],
+    ],
+    [
+        'name' => 'Mirror, mirror on the wall: Building a new PHP reflection library',
+        'type' => 'talk',
+        'date' => new DateTime('2016-06-24'),
+        'event' => 'Dutch PHP Conference 2016',
+        'abstract' => $reflectionAbstract,
+        'links' => [
+            'Dutch PHP Conference' => ['url' => 'http://www.phpconference.nl/schedule#conference-day-1/mirror-mirror-wall-building-new-php-reflection-library'],
+        ],
+    ],
+    [
+        'name' => 'Diving into HHVM Extensions',
+        'type' => 'talk',
         'date' => new DateTime('2016-05-25'),
         'event' => 'php[tek] 2016',
         'abstract' => $hhvmAbstract,
@@ -38,6 +59,26 @@ return [
         'abstract' => $rabbitTutorial,
         'links' => [
             'php[tek] 2016' => ['url' => 'https://tek.phparch.com/speakers/#65598'],
+        ],
+    ],
+    [
+        'name' => 'Dip Your Toes in the Sea of Security',
+        'type' => 'talk',
+        'date' => new DateTime('2016-05-13'),
+        'event' => 'phpDay 2016',
+        'abstract' => $securityAbstract,
+        'links' => [
+            'phpDay' => ['url' => 'http://2016.phpday.it/talk/dip-your-toes-in-the-sea-of-security/'],
+        ],
+    ],
+    [
+        'name' => 'Mirror, mirror on the wall: Building a new PHP reflection library',
+        'type' => 'talk',
+        'date' => new DateTime('2016-05-04'),
+        'event' => 'PHP Surrey',
+        'abstract' => $reflectionAbstract,
+        'links' => [
+            'PHP Surrey' => ['url' => 'http://phpsurrey.uk/'],
         ],
     ],
     [
