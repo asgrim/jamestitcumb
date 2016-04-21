@@ -29,6 +29,7 @@ return [
         'abstract' => $hhvmAbstract,
         'links' => [
             'Dutch PHP Conference' => ['url' => 'http://www.phpconference.nl/schedule#conference-day-2/diving-hhvm-extensions'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/17566', 'class' => 'joindin'],
         ],
     ],
     [
@@ -39,6 +40,7 @@ return [
         'abstract' => $reflectionAbstract,
         'links' => [
             'Dutch PHP Conference' => ['url' => 'http://www.phpconference.nl/schedule#conference-day-1/mirror-mirror-wall-building-new-php-reflection-library'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/17534', 'class' => 'joindin'],
         ],
     ],
     [
@@ -49,6 +51,7 @@ return [
         'abstract' => $hhvmAbstract,
         'links' => [
             'php[tek] 2016' => ['url' => 'https://tek.phparch.com/speakers/#65598'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/17057', 'class' => 'joindin'],
         ],
     ],
     [
@@ -59,6 +62,7 @@ return [
         'abstract' => $rabbitTutorial,
         'links' => [
             'php[tek] 2016' => ['url' => 'https://tek.phparch.com/speakers/#65598'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/17077', 'class' => 'joindin'],
         ],
     ],
     [
@@ -69,6 +73,7 @@ return [
         'abstract' => $securityAbstract,
         'links' => [
             'phpDay' => ['url' => 'http://2016.phpday.it/talk/dip-your-toes-in-the-sea-of-security/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/17767', 'class' => 'joindin'],
         ],
     ],
     [
