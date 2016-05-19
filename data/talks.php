@@ -22,17 +22,6 @@ return [
         ],
     ],
     [
-        'name' => 'Diving into HHVM Extensions',
-        'type' => 'talk',
-        'date' => new DateTime('2016-06-25'),
-        'event' => 'Dutch PHP Conference 2016',
-        'abstract' => $hhvmAbstract,
-        'links' => [
-            'Dutch PHP Conference' => ['url' => 'http://www.phpconference.nl/schedule#conference-day-2/diving-hhvm-extensions'],
-            'Joind.in' => ['url' => 'https://joind.in/talk/view/17566', 'class' => 'joindin'],
-        ],
-    ],
-    [
         'name' => 'Mirror, mirror on the wall: Building a new PHP reflection library',
         'type' => 'talk',
         'date' => new DateTime('2016-06-24'),
