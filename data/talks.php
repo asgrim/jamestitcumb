@@ -10,8 +10,29 @@ $practicalAbstract = 'RabbitMQ is a message broker – an application that allow
 $deploymentAbstract = 'The deadline is looming: one week until we release the new version. Some features aren\'t going to make the cut, but the boss really wants to make sure these critical bugs are fixed. You can\'t wait for the release cycle to be over so you can relax. But what if I told you it didn\'t have to be that way? What if I could show you how to create a world where there is no release cycle? A world where weekend deployments are a rarity, not the norm?! In this talk we will cover the steps we took to achieve the coding utopia of releasing a feature as soon as it\'s ready - many times per day. You\'ll find out that by implementing a continuous deployment flow, you can empower your developers to take ownership and become more productive.';
 $loggingAbstract = 'Logging is an absolute must for any API or web application, but when starting out, questions such as "how can we do it without disrupting everything else" and "what is the easiest way to log" often come up. We’re going to examine a tried and tested method to carry out high-performance, low-latency logging using the power of RabbitMQ to ensure minimal impact to the performance of your runtime application. The talk will show you that a really great logging architecture is a low-cost investment in your application that will definitely pay off in the long run.';
 $astAbstract = 'The new Abstract Syntax Tree (AST) in PHP 7 means the way our PHP code is being executed has changed. Understanding this new fundamental compilation step is key to understanding how our code is being run.<br /><br />To demonstrate, James will show how a basic compiler works and how introducing an AST simplifies this process. We’ll look into how these magical time-warp techniques* can also be used in your code to introspect, analyse and modify code in a way that was never possible before.<br /><br />After seeing this talk, you’ll have a great insight as to the wonders of an AST, and how it can be applied to both compilers and userland code.<br /><br />(*actual magic or time-warp not guaranteed)';
+$expressiveAbstract = 'You\'ve heard of Zend\'s new framework, Expressive, and you\'ve heard it\'s the new hotness. In this talk, I will introduce the concepts of Expressive, how to bootstrap a simple application with the framework using best practices, and finally how to integrate a third party tool like Doctrine ORM.';
 
 return [
+    [
+        'name' => 'Dip Your Toes in the Sea of Security',
+        'type' => 'talk',
+        'date' => new DateTime('2016-10-02'),
+        'event' => 'PHPNW16 Conference',
+        'abstract' => $securityAbstract,
+        'links' => [
+            'PHPNW16' => ['url' => 'http://conference.phpnw.org.uk/phpnw16/speakers/james-titcumb/'],
+        ],
+    ],
+    [
+        'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
+        'type' => 'talk',
+        'date' => new DateTime('2016-10-01'),
+        'event' => 'PHPNW16 Conference',
+        'abstract' => $expressiveAbstract,
+        'links' => [
+            'PHPNW16' => ['url' => 'http://conference.phpnw.org.uk/phpnw16/speakers/james-titcumb/'],
+        ],
+    ],
     [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
