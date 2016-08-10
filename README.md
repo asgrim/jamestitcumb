@@ -5,7 +5,11 @@ jamestitcumb.com
 
 This is my website.
 
+Foo
+
 It's still work in progress.
+
+Bar
 
 Installation
 ------------
