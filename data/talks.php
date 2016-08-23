@@ -11,8 +11,29 @@ $deploymentAbstract = 'The deadline is looming: one week until we release the ne
 $loggingAbstract = 'Logging is an absolute must for any API or web application, but when starting out, questions such as "how can we do it without disrupting everything else" and "what is the easiest way to log" often come up. We’re going to examine a tried and tested method to carry out high-performance, low-latency logging using the power of RabbitMQ to ensure minimal impact to the performance of your runtime application. The talk will show you that a really great logging architecture is a low-cost investment in your application that will definitely pay off in the long run.';
 $astAbstract = 'The new Abstract Syntax Tree (AST) in PHP 7 means the way our PHP code is being executed has changed. Understanding this new fundamental compilation step is key to understanding how our code is being run.<br /><br />To demonstrate, James will show how a basic compiler works and how introducing an AST simplifies this process. We’ll look into how these magical time-warp techniques* can also be used in your code to introspect, analyse and modify code in a way that was never possible before.<br /><br />After seeing this talk, you’ll have a great insight as to the wonders of an AST, and how it can be applied to both compilers and userland code.<br /><br />(*actual magic or time-warp not guaranteed)';
 $expressiveAbstract = 'You\'ve heard of Zend\'s new framework, Expressive, and you\'ve heard it\'s the new hotness. In this talk, I will introduce the concepts of Expressive, how to bootstrap a simple application with the framework using best practices, and finally how to integrate a third party tool like Doctrine ORM.';
+$ibmiAbstract = 'Zend Server for IBM i has done a great job at allowing enterprise PHP applications to run smoothly on the IBM i platform. But what about developing for the platform? Having recently been hired for a PHP project on IBM i, we wanted to ensure the project was using the best practices possible. This involved embarking on a whole new collaborative journey - uniting expert platform knowledge with bleeding-edge modern PHP development practices. We\'ll show you the process our team went through on the project to revolutionize the client\'s development process by introducing database abstraction, unit tests, functional tests, continuous integration, automated deployment, and more.';
 
 return [
+    [
+        'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
+        'type' => 'talk',
+        'date' => new DateTime('2016-10-18'),
+        'event' => 'ZendCon 2016',
+        'abstract' => $expressiveAbstract,
+        'links' => [
+            'ZendCon 2016' => ['url' => 'http://www.zendcon.com/session/kicking-zend-expressive-and-doctrine-orm'],
+        ],
+    ],
+    [
+        'name' => 'Bringing Modern PHP Development to IBM i',
+        'type' => 'talk',
+        'date' => new DateTime('2016-10-18'),
+        'event' => 'ZendCon 2016',
+        'abstract' => $ibmiAbstract,
+        'links' => [
+            'ZendCon 2016' => ['url' => 'http://www.zendcon.com/session/bringing-modern-php-development-ibm-i'],
+        ],
+    ],
     [
         'name' => 'Dip Your Toes in the Sea of Security',
         'type' => 'talk',
