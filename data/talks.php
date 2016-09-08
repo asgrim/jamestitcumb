@@ -42,6 +42,7 @@ return [
         'abstract' => $securityAbstract,
         'links' => [
             'PHPNW16' => ['url' => 'http://conference.phpnw.org.uk/phpnw16/speakers/james-titcumb/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/18843', 'class' => 'joindin'],
         ],
     ],
     [
@@ -52,6 +53,7 @@ return [
         'abstract' => $expressiveAbstract,
         'links' => [
             'PHPNW16' => ['url' => 'http://conference.phpnw.org.uk/phpnw16/speakers/james-titcumb/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/18842', 'class' => 'joindin'],
         ],
     ],
     [
@@ -62,6 +64,7 @@ return [
         'abstract' => $astAbstract,
         'links' => [
             'Bulgaria PHP' => ['url' => 'http://www.bgphp.org/speakers/#post-108'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/18954', 'class' => 'joindin'],
         ],
     ],
     [
@@ -72,6 +75,7 @@ return [
         'abstract' => $rabbitTutorial,
         'links' => [
             'Bulgaria PHP' => ['url' => 'http://www.bgphp.org/speakers/#post-108'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/18945', 'class' => 'joindin'],
         ],
     ],
     [
