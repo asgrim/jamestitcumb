@@ -17,7 +17,7 @@ return [
     [
         'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
         'type' => 'talk',
-        'date' => new DateTime('2016-10-18'),
+        'date' => new DateTime('2016-10-19'),
         'event' => 'ZendCon 2016',
         'abstract' => $expressiveAbstract,
         'links' => [
@@ -27,7 +27,7 @@ return [
     [
         'name' => 'Bringing Modern PHP Development to IBM i',
         'type' => 'talk',
-        'date' => new DateTime('2016-10-18'),
+        'date' => new DateTime('2016-10-20'),
         'event' => 'ZendCon 2016',
         'abstract' => $ibmiAbstract,
         'links' => [
