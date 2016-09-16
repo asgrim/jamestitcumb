@@ -5,7 +5,7 @@ namespace AsgrimTest\Service;
 
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\PostService;
-use \OutOfBoundsException;
+use OutOfBoundsException;
 
 /**
  * @covers \Asgrim\Service\PostService

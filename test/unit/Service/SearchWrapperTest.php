@@ -39,7 +39,7 @@ final class SearchWrapperTest extends \PHPUnit_Framework_TestCase
                 [
                     'slug' => 'a-test-slug',
                     'title' => 'post-title-fibble',
-                ]
+                ],
             ]);
 
         $wrapper = new SearchWrapper(self::$esClient, $indexer);
@@ -78,7 +78,7 @@ final class SearchWrapperTest extends \PHPUnit_Framework_TestCase
             [
                 'scorePercent' => 100.0,
                 'slug' => 'a-test-slug',
-            ]
+            ],
         ], $wrapper->search('wibble'));
     }
 
@@ -93,7 +93,7 @@ final class SearchWrapperTest extends \PHPUnit_Framework_TestCase
             [
                 'scorePercent' => 100.0,
                 'slug' => 'a-test-slug',
-            ]
+            ],
         ], $wrapper->search('fibble'));
     }
 }

@@ -1,7 +1,8 @@
 <?php
+declare(strict_types=1);
 
-$finder = Symfony\CS\Finder\DefaultFinder::create();
-$config = Symfony\CS\Config\Config::create();
+$finder = Symfony\CS\Finder::create();
+$config = Symfony\CS\Config::create();
 
 $config->level(null);
 $config->fixers([
@@ -25,7 +26,6 @@ $config->fixers([
     'single_line_after_imports',
     'trailing_spaces',
     'visibility',
-    'blankline_after_open_tag',
     'extra_empty_lines',
     'join_function',
     'multiline_array_trailing_comma',
@@ -38,7 +38,6 @@ $config->fixers([
     'phpdoc_no_access',
     'phpdoc_no_package',
     'phpdoc_scalar',
-    'phpdoc_short_description',
     'phpdoc_trim',
     'phpdoc_type_to_var',
     'phpdoc_var_without_name',

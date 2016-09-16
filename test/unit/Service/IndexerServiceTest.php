@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace AsgrimTest\Service;
 
 use Asgrim\Service\IndexerService;
-use \OutOfBoundsException;
+use OutOfBoundsException;
 
 /**
  * @covers \Asgrim\Service\IndexerService

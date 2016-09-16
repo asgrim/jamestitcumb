@@ -32,7 +32,7 @@ class TalkService
             $this->talks = require $this->talkDataFile;
         }
 
-        usort($this->talks, function($a, $b) use ($inverseOrder) {
+        usort($this->talks, function ($a, $b) use ($inverseOrder) {
             if ($a['date'] > $b['date']) {
                 return $inverseOrder ? 1 : -1;
             }
