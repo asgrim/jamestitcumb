@@ -10,6 +10,7 @@ It's still work in progress.
 Installation
 ------------
 
- * Clone it.
- * Composer install it.
+ * Clone it: `git clone git@github.com:asgrim/jamestitcumb.git`
+ * Composer install: `composer install --no-dev --optimize-autoloader`
+ * Configure: `cp config/autoload/local.php.dist config/autoload/local.php` and change if necessary
  * Serve it (from `public`)

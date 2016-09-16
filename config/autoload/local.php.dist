@@ -1,7 +1,13 @@
 <?php
 
 return [
-    'debug' => true,
-
+    'debug' => false,
     'config_cache_enabled' => false,
+
+    // Enable this block to see better exception dump with stack trace etc.
+//    'templates' => [
+//        'map' => [
+//            'error/error'   => 'templates/error/debug.phtml',
+//        ],
+//    ],
 ];
