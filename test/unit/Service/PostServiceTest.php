@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AsgrimTest\Service;
 
@@ -9,7 +10,7 @@ use \OutOfBoundsException;
 /**
  * @covers \Asgrim\Service\PostService
  */
-class PostServiceTest extends \PHPUnit_Framework_TestCase
+final class PostServiceTest extends \PHPUnit_Framework_TestCase
 {
     private static $postsFolder = __DIR__ . '/../../fixture/posts/';
 
@@ -21,9 +22,9 @@ class PostServiceTest extends \PHPUnit_Framework_TestCase
         $postService = new PostService($indexer);
         $post = $postService->fetchPostBySlug('test-post');
 
-        $this->assertSame('Test post from 2014', $post['title']);
-        $this->assertSame('2014-01-01', $post['date']);
-        $this->assertSame('test-post', $post['slug']);
+        self::assertSame('Test post from 2014', $post['title']);
+        self::assertSame('2014-01-01', $post['date']);
+        self::assertSame('test-post', $post['slug']);
     }
 
     public function testExceptionThrownWhenSlugNotFound()
@@ -33,7 +34,8 @@ class PostServiceTest extends \PHPUnit_Framework_TestCase
 
         $postService = new PostService($indexer);
 
-        $this->setExpectedException(OutOfBoundsException::class, 'Post \'this-slug-should-not-exist\' not found');
+        $this->expectException(OutOfBoundsException::class);
+        $this->expectExceptionMessage('Post \'this-slug-should-not-exist\' not found');
         $postService->fetchPostBySlug('this-slug-should-not-exist');
     }
 
@@ -45,7 +47,7 @@ class PostServiceTest extends \PHPUnit_Framework_TestCase
         $postService = new PostService($indexer);
         $posts = $postService->fetchRecentPosts();
 
-        $this->assertCount(3, $posts);
+        self::assertCount(3, $posts);
     }
 
     public function testFetchRecentPostsReturnsTwoPostsWhenRequested()
@@ -56,7 +58,7 @@ class PostServiceTest extends \PHPUnit_Framework_TestCase
         $postService = new PostService($indexer);
         $posts = $postService->fetchRecentPosts(2);
 
-        $this->assertCount(2, $posts);
+        self::assertCount(2, $posts);
     }
 
     public function tearDown()

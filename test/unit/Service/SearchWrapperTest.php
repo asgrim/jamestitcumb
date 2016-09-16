@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AsgrimTest\Service;
 
@@ -9,7 +10,7 @@ use Elasticsearch\ClientBuilder;
 /**
  * @covers \Asgrim\Service\SearchWrapper
  */
-class SearchWrapperTest extends \PHPUnit_Framework_TestCase
+final class SearchWrapperTest extends \PHPUnit_Framework_TestCase
 {
     private static $esClient;
 
@@ -26,20 +27,20 @@ class SearchWrapperTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $indexer->expects($this->once())
+        $indexer->expects(self::once())
             ->method('getPostContentWithoutMetadata')
             ->with('a-test-slug')
-            ->will($this->returnValue('This is some post content with keyword wibble.'));
+            ->willReturn('This is some post content with keyword wibble.');
 
-        $indexer->expects($this->once())
+        $indexer->expects(self::once())
             ->method('getAllPostsFromCache')
             ->with()
-            ->will($this->returnValue([
+            ->willReturn([
                 [
                     'slug' => 'a-test-slug',
                     'title' => 'post-title-fibble',
                 ]
-            ]));
+            ]);
 
         $wrapper = new SearchWrapper(self::$esClient, $indexer);
         $wrapper->indexAllPosts();
@@ -63,7 +64,7 @@ class SearchWrapperTest extends \PHPUnit_Framework_TestCase
             ->getMock();
 
         $wrapper = new SearchWrapper($this->getIndexedEsClient(), $indexer);
-        $this->assertSame([], $wrapper->search('zibble'));
+        self::assertSame([], $wrapper->search('zibble'));
     }
 
     public function testSearchReturnsResultWhenSearchingContent()
@@ -73,7 +74,7 @@ class SearchWrapperTest extends \PHPUnit_Framework_TestCase
             ->getMock();
 
         $wrapper = new SearchWrapper($this->getIndexedEsClient(), $indexer);
-        $this->assertSame([
+        self::assertSame([
             [
                 'scorePercent' => 100.0,
                 'slug' => 'a-test-slug',
@@ -88,7 +89,7 @@ class SearchWrapperTest extends \PHPUnit_Framework_TestCase
             ->getMock();
 
         $wrapper = new SearchWrapper($this->getIndexedEsClient(), $indexer);
-        $this->assertSame([
+        self::assertSame([
             [
                 'scorePercent' => 100.0,
                 'slug' => 'a-test-slug',

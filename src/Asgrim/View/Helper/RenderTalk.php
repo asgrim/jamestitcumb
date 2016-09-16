@@ -1,12 +1,13 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\View\Helper;
 
-use Zend\Form\View\Helper\AbstractHelper;
+use Zend\View\Helper\AbstractHelper;
 
 class RenderTalk extends AbstractHelper
 {
-    public function __invoke(array $talk)
+    public function __invoke(array $talk) : string
     {
         $s = '<li>';
 

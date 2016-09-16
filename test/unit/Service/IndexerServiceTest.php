@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AsgrimTest\Service;
 
@@ -8,14 +9,14 @@ use \OutOfBoundsException;
 /**
  * @covers \Asgrim\Service\IndexerService
  */
-class IndexerServiceTest extends \PHPUnit_Framework_TestCase
+final class IndexerServiceTest extends \PHPUnit_Framework_TestCase
 {
     private static $postsFolder = __DIR__ . '/../../fixture/posts/';
 
     public function testIndexerCreatesUsableCache()
     {
         $indexer = new IndexerService(self::$postsFolder);
-        $this->assertSame(3, $indexer->createIndex());
+        self::assertSame(3, $indexer->createIndex());
     }
 
     public function testIndexerFetchesCache()
@@ -24,7 +25,7 @@ class IndexerServiceTest extends \PHPUnit_Framework_TestCase
         $indexer->createIndex();
         $posts = $indexer->getAllPostsFromCache();
 
-        $this->assertCount(3, $posts);
+        self::assertCount(3, $posts);
     }
 
     public function testIndexerCanFetchSpecificPost()
@@ -33,8 +34,8 @@ class IndexerServiceTest extends \PHPUnit_Framework_TestCase
         $indexer->createIndex();
 
         $post = $indexer->getPostContentBySlug('test-post');
-        $this->assertInternalType('string', $post);
-        $this->assertGreaterThan(0, strlen($post));
+        self::assertInternalType('string', $post);
+        self::assertGreaterThan(0, strlen($post));
     }
 
     public function testIndexerFailsWhenSlugDoesNotExist()
@@ -42,7 +43,8 @@ class IndexerServiceTest extends \PHPUnit_Framework_TestCase
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
 
-        $this->setExpectedException(OutOfBoundsException::class, 'No post was indexed with the slug');
+        $this->expectException(OutOfBoundsException::class);
+        $this->expectExceptionMessage('No post was indexed with the slug');
         $indexer->getPostContentBySlug('this-slug-should-not-exist');
     }
 
@@ -61,7 +63,8 @@ class IndexerServiceTest extends \PHPUnit_Framework_TestCase
             ],
         ]);
 
-        $this->setExpectedException(OutOfBoundsException::class, 'Markdown file missing for slug');
+        $this->expectException(OutOfBoundsException::class);
+        $this->expectExceptionMessage('Markdown file missing for slug');
         $indexer->getPostContentBySlug('test-post-slug');
     }
 

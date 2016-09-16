@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AsgrimTest\Service;
 
@@ -8,7 +9,7 @@ use Asgrim\View\Helper\RenderPostContent;
 /**
  * @covers \Asgrim\View\Helper\RenderPostContent
  */
-class RenderPostContentTest extends \PHPUnit_Framework_TestCase
+final class RenderPostContentTest extends \PHPUnit_Framework_TestCase
 {
     public function testBasicMarkdownConversion()
     {
@@ -18,12 +19,12 @@ class RenderPostContentTest extends \PHPUnit_Framework_TestCase
             ->setMethods(['getPostContentBySlug'])
             ->getMock();
 
-        $indexer->expects($this->once())
+        $indexer->expects(self::once())
             ->method('getPostContentBySlug')
             ->with('test-slug')
             ->willReturn("metadata: here\n---\n\n\n# Some *content*");
 
         $renderer = new RenderPostContent($indexer);
-        $this->assertSame("<h1>Some <em>content</em></h1>\n", $renderer->__invoke('test-slug'));
+        self::assertSame("<h1>Some <em>content</em></h1>\n", $renderer->__invoke('test-slug'));
     }
 }

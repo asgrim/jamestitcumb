@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AsgrimTest\Service;
 
@@ -10,15 +11,15 @@ use Zend\Feed\Writer\Feed;
 /**
  * @covers \Asgrim\Service\FeedService
  */
-class FeedServiceTest extends \PHPUnit_Framework_TestCase
+final class FeedServiceTest extends \PHPUnit_Framework_TestCase
 {
     public function testFeedServiceCreatesFeedEvenWithEmptyPostsArray()
     {
         $feedService = new FeedService(new RenderPostContent(new IndexerService('')));
         $feed = $feedService->createFeed([]);
 
-        $this->assertInstanceOf(Feed::class, $feed);
-        $this->assertSame(0, $feed->count());
+        self::assertInstanceOf(Feed::class, $feed);
+        self::assertSame(0, $feed->count());
     }
 
     public function testFeedServiceWithPosts()
@@ -29,7 +30,7 @@ class FeedServiceTest extends \PHPUnit_Framework_TestCase
             ->setMethods(['__invoke'])
             ->getMock();
 
-        $postRenderer->expects($this->exactly(2))
+        $postRenderer->expects(self::exactly(2))
             ->method('__invoke')
             ->willReturn('foo');
 
@@ -49,7 +50,7 @@ class FeedServiceTest extends \PHPUnit_Framework_TestCase
             ],
         ]);
 
-        $this->assertInstanceOf(Feed::class, $feed);
-        $this->assertSame(2, $feed->count());
+        self::assertInstanceOf(Feed::class, $feed);
+        self::assertSame(2, $feed->count());
     }
 }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\Service;
 
@@ -22,11 +23,12 @@ class TalkService
     }
 
     /**
+     * @param bool $inverseOrder
      * @return array
      */
-    private function getTalks($inverseOrder = false)
+    private function getTalks(bool $inverseOrder = false) : array
     {
-        if (!isset($this->talks)) {
+        if (null === $this->talks) {
             $this->talks = require $this->talkDataFile;
         }
 
@@ -47,7 +49,7 @@ class TalkService
      *
      * @return array
      */
-    public function getUpcomingTalks()
+    public function getUpcomingTalks() : array
     {
         $now = new DateTime('00:00:00');
         return array_filter($this->getTalks(true), function ($talk) use ($now) {
@@ -60,7 +62,7 @@ class TalkService
      *
      * @return array
      */
-    public function getPastTalks()
+    public function getPastTalks() : array
     {
         $now = new DateTime('00:00:00');
         return array_filter($this->getTalks(), function ($talk) use ($now) {

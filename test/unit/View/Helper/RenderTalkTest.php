@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AsgrimTest\Service;
 
@@ -7,7 +8,7 @@ use Asgrim\View\Helper\RenderTalk;
 /**
  * @covers \Asgrim\View\Helper\RenderTalk
  */
-class RenderTalkTest extends \PHPUnit_Framework_TestCase
+final class RenderTalkTest extends \PHPUnit_Framework_TestCase
 {
     public function testRenderRegularTalkContents()
     {
@@ -24,10 +25,10 @@ class RenderTalkTest extends \PHPUnit_Framework_TestCase
             'links' => [],
         ]);
 
-        $this->assertStringMatchesFormat('%s<h3>My Great Talk%s</h3>%s', $content);
-        $this->assertStringMatchesFormat('%s(Fantastic Conference%s)%s', $content);
-        $this->assertStringMatchesFormat('%s<p>This talk is simply fantastic.</p>%s', $content);
-        $this->assertStringMatchesFormat('%s(%s, 31st Dec \'16)%s', $content);
+        self::assertStringMatchesFormat('%s<h3>My Great Talk%s</h3>%s', $content);
+        self::assertStringMatchesFormat('%s(Fantastic Conference%s)%s', $content);
+        self::assertStringMatchesFormat('%s<p>This talk is simply fantastic.</p>%s', $content);
+        self::assertStringMatchesFormat('%s(%s, 31st Dec \'16)%s', $content);
     }
 
     public function testRenderLightningTalkContents()
@@ -45,7 +46,7 @@ class RenderTalkTest extends \PHPUnit_Framework_TestCase
             'links' => [],
         ]);
 
-        $this->assertStringMatchesFormat('%s<h3><em>Lightning: </em>My Great Lightning Talk%s</h3>%s', $content);
+        self::assertStringMatchesFormat('%s<h3><em>Lightning: </em>My Great Lightning Talk%s</h3>%s', $content);
     }
 
     public function testRenderTutorialTalkContents()
@@ -63,7 +64,7 @@ class RenderTalkTest extends \PHPUnit_Framework_TestCase
             'links' => [],
         ]);
 
-        $this->assertStringMatchesFormat('%s<h3><strong>Tutorial: </strong>My Great Tutorial%s</h3>%s', $content);
+        self::assertStringMatchesFormat('%s<h3><strong>Tutorial: </strong>My Great Tutorial%s</h3>%s', $content);
     }
 
     public function testRenderTalkWithLinksContents()
@@ -84,7 +85,7 @@ class RenderTalkTest extends \PHPUnit_Framework_TestCase
             ],
         ]);
 
-        $this->assertStringMatchesFormat('%s<a href="http://test-uri/1" class="foo">Label for link 1</a>%s', $content);
-        $this->assertStringMatchesFormat('%s<a href="http://test-uri/2">Label for link 2</a>%s', $content);
+        self::assertStringMatchesFormat('%s<a href="http://test-uri/1" class="foo">Label for link 1</a>%s', $content);
+        self::assertStringMatchesFormat('%s<a href="http://test-uri/2">Label for link 2</a>%s', $content);
     }
 }

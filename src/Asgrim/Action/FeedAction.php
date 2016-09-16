@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\Action;
 
@@ -34,14 +35,13 @@ class FeedAction
      * @param string $type
      * @return string
      */
-    private function getContentType($type)
+    private function getContentType(string $type) : string
     {
-        switch ($type) {
-            case 'atom':
-                return 'application/atom+xml';
-            default:
-                return 'application/xml';
+        if ($type === 'atom') {
+            return 'application/atom+xml';
         }
+
+        return 'application/xml';
     }
 
     /**
@@ -49,12 +49,15 @@ class FeedAction
      * @param Response $response
      * @param callable|null $next
      * @return DiactorosResponse
+     * @throws \Zend\Feed\Writer\Exception\InvalidArgumentException
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      */
-    public function __invoke(Request $request, Response $response, callable $next = null)
+    public function __invoke(Request $request, Response $response, callable $next = null) : DiactorosResponse
     {
         $outputFormat = $request->getAttribute('format', 'rss');
 
-        if (!in_array($outputFormat, ['rss'/*, 'atom'*/])) {
+        if ($outputFormat !== 'rss') {
             throw new \InvalidArgumentException('Invalid output format.');
         }
 

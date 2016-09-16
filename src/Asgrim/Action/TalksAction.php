@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\Action;
 
@@ -35,8 +36,9 @@ class TalksAction
      * @param Response $response
      * @param callable|null $next
      * @return HtmlResponse
+     * @throws \InvalidArgumentException
      */
-    public function __invoke(Request $request, Response $response, callable $next = null)
+    public function __invoke(Request $request, Response $response, callable $next = null) : HtmlResponse
     {
         return new HtmlResponse($this->template->render('app::talks', [
             'upcoming' => $this->talkService->getUpcomingTalks(),

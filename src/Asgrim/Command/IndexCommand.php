@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\Command;
 
@@ -46,7 +47,7 @@ class IndexCommand extends Command
         $output->writeln(sprintf(
             '<info>Indexed %d post%s in the cache</info>',
             $postsIndexed,
-            $postsIndexed == 1 ? '' : 's'
+            $postsIndexed === 1 ? '' : 's'
         ));
 
         try {

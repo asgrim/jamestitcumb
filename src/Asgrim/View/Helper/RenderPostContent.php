@@ -1,9 +1,10 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\View\Helper;
 
 use Asgrim\Service\IndexerService;
-use Zend\Form\View\Helper\AbstractHelper;
+use Zend\View\Helper\AbstractHelper;
 use Michelf\MarkdownExtra as Markdown;
 
 class RenderPostContent extends AbstractHelper
@@ -21,7 +22,7 @@ class RenderPostContent extends AbstractHelper
         $this->indexerService = $indexerService;
     }
 
-    public function __invoke($slug)
+    public function __invoke(string $slug) : string
     {
         $text = $this->indexerService->getPostContentBySlug($slug);
 
