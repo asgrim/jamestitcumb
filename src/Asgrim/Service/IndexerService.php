@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\Service;
 
@@ -43,7 +44,7 @@ class IndexerService
      *
      * @return int
      */
-    public function createIndex()
+    public function createIndex() : int
     {
         $files = $this->buildFileListFromDirectory($this->postFolder);
 
@@ -70,7 +71,7 @@ class IndexerService
      *
      * @return array
      */
-    public function getAllPostsFromCache()
+    public function getAllPostsFromCache() : array
     {
         if (!isset($this->posts)) {
             $this->posts = require $this->cacheFileName;
@@ -84,8 +85,9 @@ class IndexerService
      *
      * @param string $slug
      * @return string
+     * @throws \Asgrim\Service\Exception\PostNotFound
      */
-    public function getPostContentBySlug($slug)
+    public function getPostContentBySlug(string $slug) : string
     {
         $posts = $this->getAllPostsFromCache();
 
@@ -107,8 +109,9 @@ class IndexerService
      *
      * @param string $slug
      * @return string
+     * @throws \Asgrim\Service\Exception\PostNotFound
      */
-    public function getPostContentWithoutMetadata($slug)
+    public function getPostContentWithoutMetadata(string $slug) : string
     {
         $text = $this->getPostContentBySlug($slug);
 
@@ -125,7 +128,7 @@ class IndexerService
      * @param mixed[] $postIndex
      * @return mixed[]
      */
-    private function sortPostsByDate($postIndex)
+    private function sortPostsByDate(array $postIndex) : array
     {
         uasort($postIndex, function ($a, $b) {
             $aa = (int)str_replace('-', '', $a['date']);
@@ -148,7 +151,7 @@ class IndexerService
      * @param string $directory
      * @return string[]
      */
-    private function buildFileListFromDirectory($directory)
+    private function buildFileListFromDirectory(string $directory) : array
     {
         $files = [];
 
@@ -156,7 +159,7 @@ class IndexerService
 
         foreach (new \RecursiveIteratorIterator($iterator) as $file) {
             /** @var $file \SplFileInfo */
-            if (!$file->isFile() || $file->getExtension() != 'md') {
+            if (!$file->isFile() || $file->getExtension() !== 'md') {
                 continue;
             }
 
@@ -173,8 +176,9 @@ class IndexerService
      *
      * @param string $filename
      * @return mixed[]|null
+     * @throws \Symfony\Component\Yaml\Exception\ParseException
      */
-    private function getPostMetadata($filename)
+    private function getPostMetadata(string $filename)
     {
         $contents = file_get_contents($this->postFolder . '/' . $filename);
 

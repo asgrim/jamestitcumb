@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\Action;
 
@@ -45,12 +46,13 @@ class SearchAction
      * @param Response $response
      * @param callable|null $next
      * @return HtmlResponse
+     * @throws \InvalidArgumentException
      */
-    public function __invoke(Request $request, Response $response, callable $next = null)
+    public function __invoke(Request $request, Response $response, callable $next = null) : HtmlResponse
     {
         $queryParams = $request->getQueryParams();
 
-        if (!isset($queryParams['q']) || '' === trim($queryParams['q'])) {
+        if (!array_key_exists('q', $queryParams) || '' === trim($queryParams['q'])) {
             return new HtmlResponse($this->template->render('app::search/no-query'));
         }
 

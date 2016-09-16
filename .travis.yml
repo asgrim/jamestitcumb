@@ -1,11 +1,11 @@
 language: php
-sudo: false
+sudo: required
 
 services:
   - elasticsearch
 
 php:
-  - 5.6
+  - 7.0
 
 before_script:
   - sleep 10
@@ -15,8 +15,4 @@ script:
   - vendor/bin/phpunit --coverage-text --coverage-clover=clover.xml --colors
 
 after_script:
-  - if [ $TRAVIS_PHP_VERSION = '5.6' ]; then wget https://scrutinizer-ci.com/ocular.phar; php ocular.phar code-coverage:upload --format=php-clover clover.xml; fi
-
-matrix:
-  allow_failures:
-     - php: hhvm
+  - wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover clover.xml

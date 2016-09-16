@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AsgrimTest\Service;
 
@@ -7,7 +8,7 @@ use Asgrim\Service\TalkService;
 /**
  * @covers \Asgrim\Service\TalkService
  */
-class TalkServiceTest extends \PHPUnit_Framework_TestCase
+final class TalkServiceTest extends \PHPUnit_Framework_TestCase
 {
     private static $talksFixture = __DIR__ . '/../../fixture/talks.php';
 
@@ -16,7 +17,7 @@ class TalkServiceTest extends \PHPUnit_Framework_TestCase
         $talkService = new TalkService(self::$talksFixture);
         $upcoming = $talkService->getUpcomingTalks();
 
-        $this->assertCount(1, $upcoming);
+        self::assertCount(1, $upcoming);
     }
 
     public function testGetPastTalks()
@@ -24,6 +25,6 @@ class TalkServiceTest extends \PHPUnit_Framework_TestCase
         $talkService = new TalkService(self::$talksFixture);
         $past = $talkService->getPastTalks();
 
-        $this->assertCount(3, $past);
+        self::assertCount(3, $past);
     }
 }

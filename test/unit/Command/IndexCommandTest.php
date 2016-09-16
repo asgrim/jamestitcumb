@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AsgrimTest\Command;
 
@@ -9,9 +10,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * @covers Asgrim\Command\IndexCommand
+ * @covers \Asgrim\Command\IndexCommand
  */
-class IndexCommandTest extends \PHPUnit_Framework_TestCase
+final class IndexCommandTest extends \PHPUnit_Framework_TestCase
 {
     public function testConfiguration()
     {
@@ -27,8 +28,8 @@ class IndexCommandTest extends \PHPUnit_Framework_TestCase
 
         $command = new IndexCommand($mockIndexer, $mockSearch);
 
-        $this->assertSame('index-posts', $command->getName());
-        $this->assertSame('Indexes the blog posts to create a cached list of them', $command->getDescription());
+        self::assertSame('index-posts', $command->getName());
+        self::assertSame('Indexes the blog posts to create a cached list of them', $command->getDescription());
     }
 
     public function testExecuteCausesIndexerToCreateIndexAndOutputResultAndIndexSearch()
@@ -39,17 +40,17 @@ class IndexCommandTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $mockIndexer->expects($this->once())
+        $mockIndexer->expects(self::once())
             ->method('createIndex')
             ->with()
-            ->will($this->returnValue(3));
+            ->will(self::returnValue(3));
 
         /** @var SearchWrapper|\PHPUnit_Framework_MockObject_MockObject $mockSearch */
         $mockSearch = $this->getMockBuilder(SearchWrapper::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $mockSearch->expects($this->once())
+        $mockSearch->expects(self::once())
             ->method('indexAllPosts');
 
         /** @var InputInterface|\PHPUnit_Framework_MockObject_MockObject $mockInput */
@@ -61,11 +62,11 @@ class IndexCommandTest extends \PHPUnit_Framework_TestCase
             ->setMethods(['writeln'])
             ->getMockForAbstractClass();
 
-        $mockOutput->expects($this->at(0))
+        $mockOutput->expects(self::at(0))
             ->method('writeln')
             ->with('<info>Indexed 3 posts in the cache</info>');
 
-        $mockOutput->expects($this->at(1))
+        $mockOutput->expects(self::at(1))
             ->method('writeln')
             ->with('<info>Updated search index.</info>');
 
@@ -82,10 +83,10 @@ class IndexCommandTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $mockIndexer->expects($this->once())
+        $mockIndexer->expects(self::once())
             ->method('createIndex')
             ->with()
-            ->will($this->returnValue(0));
+            ->will(self::returnValue(0));
 
         /** @var SearchWrapper|\PHPUnit_Framework_MockObject_MockObject $mockSearch */
         $mockSearch = $this->getMockBuilder(SearchWrapper::class)
@@ -101,7 +102,7 @@ class IndexCommandTest extends \PHPUnit_Framework_TestCase
             ->setMethods(['writeln'])
             ->getMockForAbstractClass();
 
-        $mockOutput->expects($this->once())
+        $mockOutput->expects(self::once())
             ->method('writeln')
             ->with('<error>No posts indexed. Possible cache failure.</error>');
 

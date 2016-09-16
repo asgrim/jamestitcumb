@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\Service;
 
@@ -51,8 +52,9 @@ class FeedService
      *
      * @param array $posts
      * @return Feed
+     * @throws \Zend\Feed\Writer\Exception\InvalidArgumentException
      */
-    public function createFeed(array $posts)
+    public function createFeed(array $posts) : Feed
     {
         $feed = new Feed();
         $feed->setTitle($this->title);

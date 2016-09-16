@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\Service;
 
@@ -39,7 +40,7 @@ class SearchWrapper
      * @param $text
      * @return array
      */
-    public function search($text)
+    public function search(string $text) : array
     {
         $params = [
             'index' => 'posts',
@@ -72,6 +73,7 @@ class SearchWrapper
 
     /**
      * Index all the posts
+     * @throws \Asgrim\Service\Exception\PostNotFound
      */
     public function indexAllPosts()
     {

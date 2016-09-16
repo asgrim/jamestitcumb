@@ -1,7 +1,7 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\Service;
-
 
 class PostService
 {
@@ -24,7 +24,7 @@ class PostService
      * @param int $howMany
      * @return array
      */
-    public function fetchRecentPosts($howMany = 5)
+    public function fetchRecentPosts(int $howMany = 5) : array
     {
         $posts = $this->indexerService->getAllPostsFromCache();
 
@@ -41,9 +41,10 @@ class PostService
      * Fetch a specific post by the slug (rendered).
      *
      * @param string $slug
-     * @return mixed
+     * @return mixed[]
+     * @throws \Asgrim\Service\Exception\PostNotFound
      */
-    public function fetchPostBySlug($slug)
+    public function fetchPostBySlug(string $slug) : array
     {
         $posts = $this->indexerService->getAllPostsFromCache();
 

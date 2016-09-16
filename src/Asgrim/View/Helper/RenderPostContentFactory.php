@@ -1,21 +1,19 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\View\Helper;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Interop\Container\ContainerInterface;
+use Zend\ServiceManager\Factory\FactoryInterface;
 use Asgrim\Service\IndexerService;
 
+/**
+ * @codeCoverageIgnore
+ */
 class RenderPostContentFactory implements FactoryInterface
 {
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null) : RenderPostContent
     {
-        /** @var ServiceLocatorInterface $serviceManager */
-        $serviceManager = $serviceLocator->getServiceLocator();
-
-        /** @var IndexerService $indexerService */
-        $indexerService = $serviceManager->get(IndexerService::class);
-
-        return new RenderPostContent($indexerService);
+        return new RenderPostContent($container->get(IndexerService::class));
     }
 }

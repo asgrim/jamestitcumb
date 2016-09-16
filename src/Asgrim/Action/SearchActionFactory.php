@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Asgrim\Action;
 
@@ -7,9 +8,12 @@ use Interop\Container\ContainerInterface;
 use Asgrim\Service\SearchWrapper;
 use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
 
+/**
+ * @codeCoverageIgnore
+ */
 class SearchActionFactory
 {
-    public function __invoke(ContainerInterface $container)
+    public function __invoke(ContainerInterface $container) : SearchAction
     {
         return new SearchAction(
             $container->get(SearchWrapper::class),
