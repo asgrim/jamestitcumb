@@ -15,6 +15,16 @@ $ibmiAbstract = 'Zend Server for IBM i has done a great job at allowing enterpri
 
 return [
     [
+        'name' => 'Mirror, Mirror on the Wall: Building a New PHP Reflection Library',
+        'type' => 'talk',
+        'date' => new DateTime('2016-11-17'),
+        'event' => 'Nomad PHP (Europe) November 2016',
+        'abstract' => $reflectionAbstract,
+        'links' => [
+            'Nomad PHP' => ['url' => 'https://nomadphp.com/nomadphp-2016-11-eu/'],
+        ],
+    ],
+    [
         'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
         'type' => 'talk',
         'date' => new DateTime('2016-10-19'),
