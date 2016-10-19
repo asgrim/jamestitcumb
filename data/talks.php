@@ -32,6 +32,7 @@ return [
         'abstract' => $expressiveAbstract,
         'links' => [
             'ZendCon 2016' => ['url' => 'http://www.zendcon.com/session/kicking-zend-expressive-and-doctrine-orm'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/19468', 'class' => 'joindin'],
         ],
     ],
     [
@@ -42,6 +43,7 @@ return [
         'abstract' => $ibmiAbstract,
         'links' => [
             'ZendCon 2016' => ['url' => 'http://www.zendcon.com/session/bringing-modern-php-development-ibm-i'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/19494', 'class' => 'joindin'],
         ],
     ],
     [
