@@ -87,6 +87,7 @@ return [
         'links' => [
             'Bulgaria PHP' => ['url' => 'http://www.bgphp.org/speakers/#post-108'],
             'Joind.in' => ['url' => 'https://joind.in/talk/view/18954', 'class' => 'joindin'],
+            'Vimeo' => ['url' => 'https://vimeo.com/album/4217236/video/188950463'],
         ],
     ],
     [
