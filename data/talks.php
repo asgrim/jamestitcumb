@@ -32,6 +32,7 @@ return [
         'abstract' => $reflectionAbstract,
         'links' => [
             'Nomad PHP' => ['url' => 'https://nomadphp.com/nomadphp-2016-11-eu/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/19802', 'class' => 'joindin'],
         ],
     ],
     [
