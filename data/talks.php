@@ -31,7 +31,7 @@ return [
         'event' => 'PHPem Unconference 2016',
         'abstract' => 'Second half of my two part series on interpreters. In this, I demonstrate how easy it is to write a very basic maths sum interpreter, including a live demo of adding a new language feature!',
         'links' => [
-            'Joind.in' => ['url' => 'https://joind.in/event/php-east-midlands-unconference-2016/-now-write-an-interpreter-part-2', 'class' => 'joindin'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/19833', 'class' => 'joindin'],
         ],
     ],
     [
@@ -41,7 +41,7 @@ return [
         'event' => 'PHPem Unconference 2016',
         'abstract' => 'First half of a two-part talk. I\'ll show how the Lexer, Parser and AST work in PHP, introducing a little bit of compiler theory that helps explain.',
         'links' => [
-            'Joind.in' => ['url' => 'https://joind.in/event/php-east-midlands-unconference-2016/interpret-this--part-1', 'class' => 'joindin'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/19830', 'class' => 'joindin'],
         ],
     ],
     [
