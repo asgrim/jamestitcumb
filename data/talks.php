@@ -17,11 +17,31 @@ return [
     [
         'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
         'type' => 'talk',
+        'date' => new DateTime('2017-02-17'),
+        'event' => 'PHP UK Conference 2017',
+        'abstract' => $expressiveAbstract,
+        'links' => [
+            'PHP UK 2017' => ['url' => 'http://phpconference.co.uk/schedule/#timetable-3-popup-9'],
+        ],
+    ],
+    [
+        'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
+        'type' => 'talk',
         'date' => new DateTime('2017-02-03'),
         'event' => 'Sunshine PHP Conference 2017',
         'abstract' => $expressiveAbstract,
         'links' => [
             'Sunshine PHP 2017 Talks' => ['url' => 'http://2017.sunshinephp.com/talks#kicking-off-with-zend-expressive-and-doctrine-orm'],
+        ],
+    ],
+    [
+        'name' => 'Dip Your Toes in the Sea of Security',
+        'type' => 'talk',
+        'date' => new DateTime('2017-01-27'),
+        'event' => 'PHP Benelux Conference 2017',
+        'abstract' => $securityAbstract,
+        'links' => [
+            'PHP Benelux' => ['url' => 'https://conference.phpbenelux.eu/2017/'],
         ],
     ],
     [
