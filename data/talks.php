@@ -98,6 +98,16 @@ return [
         ],
     ],
     [
+        'name' => 'Zend Expressive',
+        'type' => 'lightning',
+        'date' => new DateTime('2016-10-12'),
+        'event' => 'PHP Hampshire October 2016',
+        'abstract' => 'A lightning talk about PSR-7, middleware and Zend Expressive',
+        'links' => [
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/19279', 'class' => 'joindin'],
+        ],
+    ],
+    [
         'name' => 'Dip Your Toes in the Sea of Security',
         'type' => 'talk',
         'date' => new DateTime('2016-10-02'),
