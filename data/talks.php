@@ -32,6 +32,7 @@ return [
         'abstract' => $expressiveAbstract,
         'links' => [
             'Sunshine PHP 2017 Talks' => ['url' => 'http://2017.sunshinephp.com/talks#kicking-off-with-zend-expressive-and-doctrine-orm'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/20090', 'class' => 'joindin'],
         ],
     ],
     [
