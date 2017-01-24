@@ -15,6 +15,26 @@ $ibmiAbstract = 'Zend Server for IBM i has done a great job at allowing enterpri
 
 return [
     [
+        'name' => 'Get Started with RabbitMQ',
+        'type' => 'talk',
+        'date' => new DateTime('2017-07-18'),
+        'event' => 'CoderCruise',
+        'abstract' => $rabbitAbstract,
+        'links' => [
+            'CoderCruise' => ['url' => 'https://www.codercruise.com/?paref=jtd8d9&utm_campaign=jtd8d9'],
+        ],
+    ],
+    [
+        'name' => 'Dip Your Toes in the Sea of Security',
+        'type' => 'talk',
+        'date' => new DateTime('2017-07-17'),
+        'event' => 'CoderCruise',
+        'abstract' => $securityAbstract,
+        'links' => [
+            'CoderCruise' => ['url' => 'https://www.codercruise.com/?paref=jtd8d9&utm_campaign=jtd8d9'],
+        ],
+    ],
+    [
         'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
         'type' => 'talk',
         'date' => new DateTime('2017-02-17'),
