@@ -63,6 +63,7 @@ return [
         'abstract' => $securityAbstract,
         'links' => [
             'PHP Benelux' => ['url' => 'https://conference.phpbenelux.eu/2017/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/20175', 'class' => 'joindin'],
         ],
     ],
     [
