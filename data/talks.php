@@ -52,6 +52,7 @@ return [
         'abstract' => $expressiveAbstract,
         'links' => [
             'PHP UK 2017' => ['url' => 'http://phpconference.co.uk/schedule/#timetable-3-popup-9'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/20348', 'class' => 'joindin'],
         ],
     ],
     [
