@@ -45,6 +45,16 @@ return [
         ],
     ],
     [
+        'name' => 'Climbing the Abstract Syntax Tree',
+        'type' => 'talk',
+        'date' => new DateTime('2017-05-12'),
+        'event' => 'phpDay 2017',
+        'abstract' => $astAbstract,
+        'links' => [
+            'phpDay 2017' => ['url' => 'https://2017.phpday.it/schedule.html'],
+        ],
+    ],
+    [
         'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
         'type' => 'talk',
         'date' => new DateTime('2017-02-17'),
