@@ -1,5 +1,6 @@
 ---
 title: Local Packagist Setup
+tags: [php, composer, packagist]
 ---
 At [Protected.co.uk](http://www.protected.co.uk/) we are developing some new back end systems, which are broken down "[the right way](http://www.phptherightway.com/)" into lots of little components, all installable via [Composer](http://getcomposer.org/). Because all of our code is closed source, we couldn't use the awesome [Packagist.org](https://packagist.org/). After reading up a little on it, we found a tool called [Satis](https://github.com/composer/satis), which is a static Composer repository generator.
 

@@ -26,15 +26,7 @@ class PostService
      */
     public function fetchRecentPosts(int $howMany = 5) : array
     {
-        $posts = $this->indexerService->getAllPostsFromCache();
-
-        $recentPosts = array_slice($posts, -$howMany);
-
-        foreach ($recentPosts as &$post) {
-            $post['active'] = false;
-        }
-
-        return array_reverse($recentPosts);
+        return array_slice($this->indexerService->getAllPostsFromCache(), 0, $howMany);
     }
 
     /**
@@ -48,11 +40,26 @@ class PostService
     {
         $posts = $this->indexerService->getAllPostsFromCache();
 
-        if (isset($posts[$slug])) {
-            $posts[$slug]['active'] = false;
+        if (array_key_exists($slug, $posts)) {
             return $posts[$slug];
-        } else {
-            throw new Exception\PostNotFound("Post '{$slug}' not found.");
         }
+
+        throw new Exception\PostNotFound("Post '{$slug}' not found.");
+    }
+
+    /**
+     * Fetch all posts matching a specified tag
+     *
+     * @param string $tag
+     * @return array
+     */
+    public function fetchPostsByTag(string $tag) : array
+    {
+        return array_filter(
+            $this->indexerService->getAllPostsFromCache(),
+            function ($post) use ($tag) {
+                return in_array($tag, $post['tags'], true);
+            }
+        );
     }
 }

@@ -61,9 +61,18 @@ class FeedAction
             throw new \InvalidArgumentException('Invalid output format.');
         }
 
-        $feed = $this->feedService->createFeed(
-            $this->postService->fetchRecentPosts(10)
-        );
+        $query = $request->getQueryParams();
+        if (array_key_exists('tag', $query)) {
+            $posts = $this->postService->fetchPostsByTag($query['tag']);
+            $titleSuffix = ' [tag: ' . $query['tag'] . ']';
+            $linkSuffix = '?tag=' . $query['tag'];
+        } else {
+            $posts = $this->postService->fetchRecentPosts(10);
+            $titleSuffix = '';
+            $linkSuffix = '';
+        }
+
+        $feed = $this->feedService->createFeed($posts, $titleSuffix, $linkSuffix);
 
         $response = new DiactorosResponse('php://temp', 200, ['Content-Type' => $this->getContentType($outputFormat)]);
         $response->getBody()->write($feed->export($outputFormat));

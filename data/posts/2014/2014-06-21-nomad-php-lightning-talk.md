@@ -1,5 +1,6 @@
 ---
 title: Nomad PHP Lightning Talk - What RabbitMQ Can Do For You
+tags: [php, nomadphp, speaking]
 ---
 
 I was pretty stoked to be picked to do [Nomad PHP](http://nomadphp.com/)'s first ever lightning talk. This happened in May and Nomad PHP released the videos for free!

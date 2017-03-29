@@ -1,5 +1,6 @@
 ---
 title: PHPNE14 Review
+tags: [php, conference, phpne]
 ---
 Earlier this week was the PHPNE14 conference up in Newcastle-upon-Tyne, which is run by the [PHPNE](http://phpne.org.uk/) user group. I had an absolutely fantastic time, and I even managed to talk at the uncon. I was staying at the [Sandman Signature](http://www.sandmansignature.co.uk/find-hotels/newcastle/) which was a really good quality hotel. Some of the modernisations weren't very practical, for example my shower managed to get almost the entire bathroom floor wet.
 

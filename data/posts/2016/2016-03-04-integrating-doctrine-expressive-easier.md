@@ -1,5 +1,6 @@
 ---
 title: Zend Expressive + Doctrine integration - now even easier!
+tags: [php, zend, expressive, doctrine, zf]
 ---
 
 # Introduction

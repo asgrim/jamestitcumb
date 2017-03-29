@@ -1,5 +1,6 @@
 ---
 title: PHPUnit Coverage...
+tags: [php, phpunit]
 ---
 In our new projects at Netbasic / Ed, I am adamant that we will have 100% unit test coverage.
 

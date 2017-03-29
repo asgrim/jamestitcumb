@@ -1,5 +1,6 @@
 ---
 title: Exploring HHVM Internals
+tags: [hhvm, cpp]
 ---
 
 Starting work on an existing open source project can be pretty overwhelming, especially if you don't know where everything is kept. This blog post is basically a catalogue of my findings from exploring the HHVM internals, primarily for my personal future reference, and also just in case anyone else might find it useful. I'm not going to list every single file and folder - otherwise this post will be enormous, so I'm just going to focus on the main parts. Let's start off at the top, and visit [github.com/facebook/hhvm](https://github.com/facebook/hhvm)... at the root level, there are various build / configure / third party modules, but the folder that we'll mostly need is the hphp folder, so we'll descend straight into there.

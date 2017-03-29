@@ -1,5 +1,6 @@
 ---
 title: Better Reflection 1.0.0 released
+tags: [php, reflection]
 ---
 
 Yay! The idea was [first committed](https://github.com/Roave/BetterReflection/commit/ed0060ff) back on 3rd June 2015,

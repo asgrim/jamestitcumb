@@ -1,5 +1,6 @@
 ---
 title: Better Reflection 1.1.0 released
+tags: [php, reflection]
 ---
 
 After a bit more hacking away, tinkering and violating all good programming practices, I'm pleased to announce the
