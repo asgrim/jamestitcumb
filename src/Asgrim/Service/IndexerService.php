@@ -198,11 +198,16 @@ class IndexerService
             return null;
         }
 
+        if (!array_key_exists('tags', $parsed)) {
+            $parsed['tags'] = [];
+        }
+
         $fileparts = sscanf(basename($filename), '%d-%d-%d-%s');
 
         $parsed['date'] = sprintf('%04d-%02d-%02d', $fileparts[0], $fileparts[1], $fileparts[2]);
         $parsed['slug'] = str_replace('.md', '', $fileparts[3]);
         $parsed['file'] = $filename;
+        $parsed['active'] = false;
 
         return $parsed;
     }

@@ -51,13 +51,14 @@ class FeedService
      * that returned by the PostService.
      *
      * @param array $posts
+     * @param string $titleSuffix
      * @return Feed
      * @throws \Zend\Feed\Writer\Exception\InvalidArgumentException
      */
-    public function createFeed(array $posts) : Feed
+    public function createFeed(array $posts, string $titleSuffix = '') : Feed
     {
         $feed = new Feed();
-        $feed->setTitle($this->title);
+        $feed->setTitle($this->title . $titleSuffix);
         $feed->setLink($this->baseUrl);
         $feed->setDescription($this->description);
         $feed->setFeedLink($this->baseUrl . 'feed/atom', 'atom');

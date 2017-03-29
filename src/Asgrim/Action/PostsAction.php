@@ -48,8 +48,14 @@ class PostsAction
                 $posts[$slug]['active'] = true;
                 $title = $posts[$slug]['title'];
             } else {
-                $posts = $this->postService->fetchRecentPosts();
-                $title = 'Recent posts';
+                $query = $request->getQueryParams();
+                if (array_key_exists('tag', $query)) {
+                    $posts = $this->postService->fetchPostsByTag($query['tag']);
+                    $title = 'Post matching tag: ';
+                } else {
+                    $posts = $this->postService->fetchRecentPosts();
+                    $title = 'Recent posts';
+                }
             }
 
             return new HtmlResponse($this->template->render('app::posts', [
