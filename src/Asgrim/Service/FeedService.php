@@ -36,7 +36,7 @@ class FeedService
 
     public function __construct(RenderPostContent $renderPostContent)
     {
-        $this->baseUrl = 'http://www.jamestitcumb.com/';
+        $this->baseUrl = 'https://www.jamestitcumb.com/';
         $this->title = 'James Titcumb\'s blog';
         $this->description = 'This is James Titcumb\'s personal PHP-related blog posts.';
         $this->author = [
@@ -52,14 +52,15 @@ class FeedService
      *
      * @param array $posts
      * @param string $titleSuffix
+     * @param string $linkSuffix
      * @return Feed
      * @throws \Zend\Feed\Writer\Exception\InvalidArgumentException
      */
-    public function createFeed(array $posts, string $titleSuffix = '') : Feed
+    public function createFeed(array $posts, string $titleSuffix = '', string $linkSuffix = '') : Feed
     {
         $feed = new Feed();
         $feed->setTitle($this->title . $titleSuffix);
-        $feed->setLink($this->baseUrl);
+        $feed->setLink($this->baseUrl . 'posts' . $linkSuffix);
         $feed->setDescription($this->description);
         $feed->setFeedLink($this->baseUrl . 'feed/atom', 'atom');
         $feed->setDateModified(time());

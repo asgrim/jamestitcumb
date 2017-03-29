@@ -64,13 +64,15 @@ class FeedAction
         $query = $request->getQueryParams();
         if (array_key_exists('tag', $query)) {
             $posts = $this->postService->fetchPostsByTag($query['tag']);
-            $suffix = ' [tag: ' . $query['tag'] . ']';
+            $titleSuffix = ' [tag: ' . $query['tag'] . ']';
+            $linkSuffix = '?tag=' . $query['tag'];
         } else {
             $posts = $this->postService->fetchRecentPosts(10);
-            $suffix = '';
+            $titleSuffix = '';
+            $linkSuffix = '';
         }
 
-        $feed = $this->feedService->createFeed($posts, $suffix);
+        $feed = $this->feedService->createFeed($posts, $titleSuffix, $linkSuffix);
 
         $response = new DiactorosResponse('php://temp', 200, ['Content-Type' => $this->getContentType($outputFormat)]);
         $response->getBody()->write($feed->export($outputFormat));
