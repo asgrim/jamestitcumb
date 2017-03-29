@@ -1,5 +1,6 @@
 ---
 title: PHP Dorset talk - Dip Your Toes in the Sea of Security
+tags: [php, phpdorset, speaking]
 ---
 
 This is a video of my talk from the PHP Dorset meetup earlier this month.

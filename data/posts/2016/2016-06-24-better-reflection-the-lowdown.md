@@ -1,5 +1,6 @@
 ---
 title: Better Reflection - The Lowdown
+tags: [php, reflection]
 ---
 
 You may have heard me mention [Better Reflection](https://github.com/Roave/BetterReflection) a few times already. In fact, I've just done a talk this morning at Dutch PHP Conference 2016 (the [slides are on Joind.in](https://joind.in/event/dutch-php-conference-2016/mirror-mirror-on-the-wall-building-a-new-php-reflection-library) now!). If you missed my talk, or weren't able to make the conference... what's the big deal, you might ask. Let me summarise what this is all about, and why this library can help you.

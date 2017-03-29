@@ -1,5 +1,6 @@
 ---
 title: ZF2 + Doctrine ObjectSelect + Form binding + Custom Select Options
+tags: [php, doctrine, zf, zend-form]
 ---
 This morning me and another developer have spent 3.5 hours figuring out how on earth to solve our problem. We are writing a [Zend Framework 2](http://framework.zend.com/) application that uses Doctrine entities. The trouble was figuring out how to use the `$form->bind(..)` method with our Doctrine entities. Turns out, a combination of RTFM and sifting through the code for Doctrine, what we were trying to do _is_ possible without nasty hacks. In the examples below, the `AdVariant` entity is the entity we are creating the edit form for, and in our application's vernacular, a "module" is a semantic "grouping" of pages - it does not mean a ZF2 "Module"!
 

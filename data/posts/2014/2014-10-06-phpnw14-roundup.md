@@ -1,5 +1,6 @@
 ---
 title: PHPNW14 Conference Roundup
+tags: [php, conference, phpnw]
 ---
 
 I got back yesterday (absolutely exhausted) from [PHPNW14 conference](conference.phpnw.org.uk/phpnw14/), and I must say I had an absolutely fantastic time. Being a pretty new face in the community, I was astounded at the reception of so many people I met at the conference - some I met previously, and others I've never met before. I know it might be cheesey, but I'd like to call out some of these people and thank them, in no particular order, for various reasons...

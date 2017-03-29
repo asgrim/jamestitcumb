@@ -1,5 +1,6 @@
 ---
 title: Testing with ZF2 Controller Plugins
+tags: [php, zend, zf, testing]
 ---
 
 One of the things I've found that can make controllers difficult to test in Zend Framework 2 is the use of controller plugins. Although it makes the functionality provided by the plugin itself easier to test, I found it makes it difficult to test the controller itself. In the past I've resorted to mocking the controller and in turn mocking the controller plugin as if it was a method.

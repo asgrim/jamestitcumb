@@ -1,5 +1,6 @@
 ---
 title: GDB Debugging Basics
+tags: [gdb, debugging]
 ---
 The last time I did any C++ was back in the late 90's/early 00's, and Microsoft VisualC++ 6.0 was my tool of choice. Since then I have made the leap to Linux and I use this as my day-to-day OS. So, after a little discussion with Derick Rethans, I've found that I need to acquaint myself with the `gdb` tool.
 

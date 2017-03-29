@@ -1,5 +1,6 @@
 ---
 title: Integrating Doctrine 2 ORM and Migrations into Zend Expressive
+tags: [php, zend, expressive, doctrine, zf]
 ---
 
 I've started a new project in which we're looking at using Doctrine 2 ORM, but

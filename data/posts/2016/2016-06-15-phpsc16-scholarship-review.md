@@ -1,5 +1,6 @@
 ---
 title: PHPSC16 - Scholarship Programme Review
+tags: [php, conference, phpsc]
 ---
 
 This year at [PHP South Coast 2016](https://2016.phpsouthcoast.co.uk/), we decided to run a [ticket scholarship programme](https://2016.phpsouthcoast.co.uk/scholarship/) with fundraising. Someone asked me to blog about how it went, so this is that blog post. I'm presenting my findings here only in note form really, but should give you an idea of how it went:

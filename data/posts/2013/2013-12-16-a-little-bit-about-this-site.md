@@ -1,5 +1,6 @@
 ---
 title: A Little Bit About This Site
+tags: [php]
 ---
 If you're a regular "follower" of whatever I do, firstly, thanks. Secondly, you might've noticed that my old site at [asgrim.com](http://www.asgrim.com/) has completely vanished, and now forwards to this site. I had been wanting to do it for quite some time, but I just never got around to doing it. However, a couple of weeks ago, I finally did it, in a rather haphazard and careless way, mainly because I did it in just an evening whilst I was watching TV or something.
 

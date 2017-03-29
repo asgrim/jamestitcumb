@@ -1,5 +1,6 @@
 ---
 title: Lightning Talk on Composer @ PHP Hants Sept 13
+tags: [php, composer, speaking]
 ---
 <iframe width="420" height="315" src="//www.youtube.com/embed/nnDUSkvdvWg?rel=0" frameborder="0" allowfullscreen></iframe>
 
