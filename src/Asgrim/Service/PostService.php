@@ -26,7 +26,7 @@ class PostService
      */
     public function fetchRecentPosts(int $howMany = 5) : array
     {
-        return array_reverse(array_slice($this->indexerService->getAllPostsFromCache(), -$howMany));
+        return array_slice($this->indexerService->getAllPostsFromCache(), 0, $howMany);
     }
 
     /**

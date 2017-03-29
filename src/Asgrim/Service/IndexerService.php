@@ -134,9 +134,9 @@ class IndexerService
             $aa = (int)str_replace('-', '', $a['date']);
             $bb = (int)str_replace('-', '', $b['date']);
             if ($aa > $bb) {
-                return 1;
-            } elseif ($bb > $aa) {
                 return -1;
+            } elseif ($bb > $aa) {
+                return 1;
             } else {
                 return 0;
             }
