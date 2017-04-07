@@ -12,8 +12,19 @@ $loggingAbstract = 'Logging is an absolute must for any API or web application, 
 $astAbstract = 'The new Abstract Syntax Tree (AST) in PHP 7 means the way our PHP code is being executed has changed. Understanding this new fundamental compilation step is key to understanding how our code is being run.<br /><br />To demonstrate, James will show how a basic compiler works and how introducing an AST simplifies this process. We’ll look into how these magical time-warp techniques* can also be used in your code to introspect, analyse and modify code in a way that was never possible before.<br /><br />After seeing this talk, you’ll have a great insight as to the wonders of an AST, and how it can be applied to both compilers and userland code.<br /><br />(*actual magic or time-warp not guaranteed)';
 $expressiveAbstract = 'You\'ve heard of Zend\'s new framework, Expressive, and you\'ve heard it\'s the new hotness. In this talk, I will introduce the concepts of Expressive, how to bootstrap a simple application with the framework using best practices, and finally how to integrate a third party tool like Doctrine ORM.';
 $ibmiAbstract = 'Zend Server for IBM i has done a great job at allowing enterprise PHP applications to run smoothly on the IBM i platform. But what about developing for the platform? Having recently been hired for a PHP project on IBM i, we wanted to ensure the project was using the best practices possible. This involved embarking on a whole new collaborative journey - uniting expert platform knowledge with bleeding-edge modern PHP development practices. We\'ll show you the process our team went through on the project to revolutionize the client\'s development process by introducing database abstraction, unit tests, functional tests, continuous integration, automated deployment, and more.';
+$qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in production. That legacy application really needs some TLC. Where do we start? When creating long lived applications, it\'s imperative to focus on good practices. The solution is to improve the whole development life cycle; from planning, better coding and testing, to automation, peer review and more. In this talk, we\'ll take a quick look into each of these areas, looking at how we can make positive, actionable change in our workflow.';
 
 return [
+    [
+        'name' => 'Crafting Quality PHP Applications',
+        'type' => 'talk',
+        'date' => new DateTime('2017-05-26'),
+        'event' => 'Bucharest Tech Week',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'Bucharest Tech Week' => ['url' => 'http://techweek.ro/business-summits-speakers/'],
+        ],
+    ],
     [
         'name' => 'Get Started with RabbitMQ',
         'type' => 'talk',
