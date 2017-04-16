@@ -18,6 +18,26 @@ return [
     [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
+        'date' => new DateTime('2017-09-27'),
+        'event' => 'PHP South Africa 2017',
+        'abstract' => $astAbstract,
+        'links' => [
+            'PHP South Africa 2017' => ['url' => 'http://phpsouthafrica.com/'],
+        ],
+    ],
+    [
+        'name' => 'Dip Your Toes in the Sea of Security',
+        'type' => 'talk',
+        'date' => new DateTime('2017-09-27'),
+        'event' => 'PHP South Africa 2017',
+        'abstract' => $securityAbstract,
+        'links' => [
+            'PHP South Africa 2017' => ['url' => 'http://phpsouthafrica.com/'],
+        ],
+    ],
+    [
+        'name' => 'Climbing the Abstract Syntax Tree',
+        'type' => 'talk',
         'date' => new DateTime('2017-06-30'),
         'event' => 'Dutch PHP Conference 2017',
         'abstract' => $astAbstract,
