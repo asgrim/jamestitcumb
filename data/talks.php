@@ -18,6 +18,15 @@ return [
     [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
+        'date' => new DateTime('2017-06-24'),
+        'event' => 'Odessa PHP 2017',
+        'abstract' => $astAbstract,
+        'links' => [
+        ],
+    ],
+    [
+        'name' => 'Climbing the Abstract Syntax Tree',
+        'type' => 'talk',
         'date' => new DateTime('2017-09-27'),
         'event' => 'PHP South Africa 2017',
         'abstract' => $astAbstract,
