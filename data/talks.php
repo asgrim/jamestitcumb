@@ -102,6 +102,7 @@ return [
         'abstract' => $astAbstract,
         'links' => [
             'phpDay 2017' => ['url' => 'https://2017.phpday.it/schedule.html'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/21227', 'class' => 'joindin'],
         ],
     ],
     [
