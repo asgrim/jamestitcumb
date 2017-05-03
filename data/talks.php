@@ -87,7 +87,7 @@ return [
     [
         'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
         'type' => 'talk',
-        'date' => new DateTime('2017-05-27'),
+        'date' => new DateTime('2017-05-28'),
         'event' => 'PHP Srbija 2017',
         'abstract' => $expressiveAbstract,
         'links' => [
