@@ -52,6 +52,7 @@ return [
         'abstract' => $astAbstract,
         'links' => [
             'Dutch PHP Conference' => ['url' => 'https://www.phpconference.nl/schedule'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/21136', 'class' => 'joindin'],
         ],
     ],
     [
@@ -92,6 +93,7 @@ return [
         'abstract' => $expressiveAbstract,
         'links' => [
             'PHP Srbija 2017' => ['url' => 'http://www.conf2017.phpsrbija.rs/schedule#kicking-off-with-zend-expressive-and-doctrine-orm'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/21210', 'class' => 'joindin'],
         ],
     ],
     [
