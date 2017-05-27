@@ -18,10 +18,11 @@ return [
     [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
-        'date' => new DateTime('2017-06-24'),
-        'event' => 'Odessa PHP 2017',
+        'date' => new DateTime('2017-06-25'),
+        'event' => 'CodeiD PHP Odessa conference',
         'abstract' => $astAbstract,
         'links' => [
+            'CodeiD PHP Odessa conference' => ['url' => 'http://codeid.com.ua/'],
         ],
     ],
     [
