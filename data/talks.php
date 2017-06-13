@@ -16,6 +16,26 @@ $qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in pro
 
 return [
     [
+        'name' => 'Crafting Quality PHP Applications',
+        'type' => 'talk',
+        'date' => new DateTime('2017-12-04'),
+        'event' => 'ConFoo Vancouver 2017',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'ConFoo Vancouver 2017' => ['url' => 'https://confoo.ca/en/yvr2017/session/crafting-quality-php-applications'],
+        ],
+    ],
+    [
+        'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
+        'type' => 'talk',
+        'date' => new DateTime('2017-12-04'),
+        'event' => 'ConFoo Vancouver 2017',
+        'abstract' => $expressiveAbstract,
+        'links' => [
+            'ConFoo Vancouver 2017' => ['url' => 'https://confoo.ca/en/yvr2017/session/kicking-off-with-zend-expressive-and-doctrine-orm'],
+        ],
+    ],
+    [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
         'date' => new DateTime('2017-06-25'),
