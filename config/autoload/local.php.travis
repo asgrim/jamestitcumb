@@ -1,0 +1,16 @@
+<?php
+
+return [
+    'debug' => false,
+    'config_cache_enabled' => false,
+    'templates' => [
+        'map' => [
+            'error::error'   => 'templates/error/debug.phtml',
+        ],
+    ],
+    'elasticsearch' => [
+        'hosts' => [
+            'http://localhost:9200',
+        ],
+    ],
+];
