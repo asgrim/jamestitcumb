@@ -20,4 +20,8 @@ return [
             Zend\Expressive\Application::class => Zend\Expressive\Container\ApplicationFactory::class,
         ],
     ],
+    'elasticsearch' => [
+        'hosts' => [
+        ],
+    ],
 ];

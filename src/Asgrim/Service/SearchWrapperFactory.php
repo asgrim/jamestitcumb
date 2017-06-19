@@ -13,7 +13,9 @@ class SearchWrapperFactory
 {
     public function __invoke(ContainerInterface $container) : SearchWrapper
     {
-        $esClient = ClientBuilder::create()->build();
+        $esClient = ClientBuilder::create()
+            ->setHosts($container->get('config')['elasticsearch']['hosts'])
+            ->build();
 
         return new SearchWrapper(
             $esClient,
