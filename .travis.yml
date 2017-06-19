@@ -1,15 +1,16 @@
 language: php
-sudo: required
+sudo: false
 
 services:
   - elasticsearch
 
 php:
-  - 7.0
+  - 7.1
 
 before_script:
   - sleep 10
-  - composer install --dev
+  - cp config/autoload/local.php.travis config/autoload/local.php
+  - composer install
 
 script:
   - vendor/bin/phpunit --coverage-text --coverage-clover=clover.xml --colors

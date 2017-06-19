@@ -10,4 +10,9 @@ return [
 //            'error/error'   => 'templates/error/debug.phtml',
 //        ],
 //    ],
+//    'elasticsearch' => [
+//        'hosts' => [
+//            'http://user:pass@localhost:9200',
+//        ],
+//    ],
 ];
