@@ -10,7 +10,7 @@ php:
 before_script:
   - sleep 10
   - cp config/autoload/local.php.travis config/autoload/local.php
-  - composer install --dev
+  - composer install
 
 script:
   - vendor/bin/phpunit --coverage-text --coverage-clover=clover.xml --colors
