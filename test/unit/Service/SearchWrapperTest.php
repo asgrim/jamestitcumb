@@ -18,7 +18,11 @@ final class SearchWrapperTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUpBeforeClass();
 
-        self::$esClient = ClientBuilder::create()->build();
+        $config = require __DIR__ . '/../../../config/autoload/local.php';
+
+        self::$esClient = ClientBuilder::create()
+            ->setHosts($config['elasticsearch']['hosts'])
+            ->build();
     }
 
     private function getIndexedEsClient()
