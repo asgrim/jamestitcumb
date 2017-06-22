@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 return [
     'debug' => false,
-    'config_cache_enabled' => false,
+    \Zend\ConfigAggregator\ConfigAggregator::ENABLE_CACHE => false,
     'templates' => [
         'map' => [
             'error::error'   => 'templates/error/debug.phtml',

@@ -12,7 +12,8 @@
         "zendframework/zend-expressive": "^2.0",
         "zendframework/zend-expressive-fastroute": "^2.0",
         "zendframework/zend-expressive-zendviewrenderer": "^1.4",
-        "elasticsearch/elasticsearch": "^5.2"
+        "elasticsearch/elasticsearch": "^5.2",
+        "zendframework/zend-config-aggregator": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.2",
