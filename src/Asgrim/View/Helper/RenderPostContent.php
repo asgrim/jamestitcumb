@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace Asgrim\View\Helper;
 
 use Asgrim\Service\IndexerService;
-use Zend\View\Helper\AbstractHelper;
 use Michelf\MarkdownExtra as Markdown;
+use Zend\View\Helper\AbstractHelper;
 
 class RenderPostContent extends AbstractHelper
 {

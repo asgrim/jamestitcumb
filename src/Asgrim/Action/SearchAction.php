@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 namespace Asgrim\Action;
 
+use Asgrim\Service\PostService;
+use Asgrim\Service\SearchWrapper;
 use Elasticsearch\Common\Exceptions\TransportException;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
-use Asgrim\Service\PostService;
-use Asgrim\Service\SearchWrapper;
 use Zend\View\Model\ViewModel;
 
 class SearchAction

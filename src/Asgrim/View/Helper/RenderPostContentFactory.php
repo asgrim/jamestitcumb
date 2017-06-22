@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Asgrim\View\Helper;
 
+use Asgrim\Service\IndexerService;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
-use Asgrim\Service\IndexerService;
 
 /**
  * @codeCoverageIgnore

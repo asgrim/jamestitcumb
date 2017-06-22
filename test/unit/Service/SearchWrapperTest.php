@@ -59,9 +59,6 @@ final class SearchWrapperTest extends TestCase
         $this->getIndexedEsClient();
     }
 
-    /**
-     *
-     */
     public function testSearchReturnsEmptyArrayWithNoResults()
     {
         $indexer = $this->getMockBuilder(IndexerService::class)

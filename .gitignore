@@ -3,3 +3,4 @@
 .settings
 .project
 .idea
+.php_cs.cache
