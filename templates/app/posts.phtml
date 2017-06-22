@@ -3,10 +3,10 @@
 <?php foreach ($posts as $slug => $post): ?>
 <article style="margin-bottom: 60px;">
 	<div class="article-header">
-		<h1><a href="/posts/<?= $this->escapeHtmlAttr($slug); ?>"><?= $this->escapeHtml($post['title']); ?></a></h1>
+		<h1><a href="<?= $this->url('posts', ['slug' => $slug]); ?>"><?= $this->escapeHtml($post['title']); ?></a></h1>
 		<p style="font-weight: bold; font-style: italic;">
 			Posted on <?= date('jS F Y', strtotime($post['date'])); ?>
-			| <a href="/posts/<?= $this->escapeHtmlAttr($slug); ?>#disqus_thread" data-disqus-identifier="<?= $this->escapeHtmlAttr($slug); ?>">View comments</a>
+			| <a href="<?= $this->url('posts', ['slug' => $slug]); ?>#disqus_thread" data-disqus-identifier="<?= $this->escapeHtmlAttr($slug); ?>">View comments</a>
 		</p>
 	</div>
 	<hr />
