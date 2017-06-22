@@ -1,6 +1,10 @@
 <?php
 declare(strict_types=1);
 
+use Zend\Expressive\Application;
+use Zend\Expressive\Container\ApplicationFactory;
+use Zend\Expressive\Helper;
+
 return [
     'dependencies' => [
         'factories' => [
@@ -16,7 +20,12 @@ return [
             Asgrim\Service\FeedService::class => Asgrim\Service\FeedServiceFactory::class,
             Asgrim\Service\SearchWrapper::class => Asgrim\Service\SearchWrapperFactory::class,
 
-            Zend\Expressive\Application::class => Zend\Expressive\Container\ApplicationFactory::class,
+            Application::class => ApplicationFactory::class,
+            Zend\Expressive\Router\RouterInterface::class => \Zend\Expressive\Router\FastRouteRouterFactory::class,
+            Helper\ServerUrlHelper::class => Zend\ServiceManager\Factory\InvokableFactory::class,
+            Helper\UrlHelper::class => Helper\UrlHelperFactory::class,
+            Helper\ServerUrlMiddleware::class => Helper\ServerUrlMiddlewareFactory::class,
+            Helper\UrlHelperMiddleware::class => Helper\UrlHelperMiddlewareFactory::class,
         ],
     ],
     'elasticsearch' => [

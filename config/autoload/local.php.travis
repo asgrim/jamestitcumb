@@ -6,7 +6,7 @@ return [
     \Zend\ConfigAggregator\ConfigAggregator::ENABLE_CACHE => false,
     'templates' => [
         'map' => [
-            'error::error'   => 'templates/error/debug.phtml',
+            'error/error'   => 'templates/error/debug.phtml',
         ],
     ],
     'elasticsearch' => [

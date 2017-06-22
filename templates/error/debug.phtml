@@ -1,5 +1,9 @@
-<h2>Something went wrong...</h2>
-<p>Sorry, but something appears to have gone wrong.</p>
+<?php
+declare(strict_types=1);
+require __DIR__ . '/error.phtml';
+?>
+
+<h3>Further debug information (if available);</h3>
 
 <?php if (isset($this->error) && $this->error instanceof \Exception): ?>
     <h3><?= get_class($this->error); ?>:</h3>
