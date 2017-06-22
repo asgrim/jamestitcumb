@@ -10,13 +10,14 @@
         "zendframework/zend-feed": "^2.8",
         "zendframework/zend-servicemanager": "^3.3",
         "zendframework/zend-expressive": "^2.0",
-        "zendframework/zend-expressive-zendrouter": "^2.0",
+        "zendframework/zend-expressive-fastroute": "^2.0",
         "zendframework/zend-expressive-zendviewrenderer": "^1.4",
         "elasticsearch/elasticsearch": "^5.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.5",
-        "friendsofphp/php-cs-fixer": "^1.12"
+        "friendsofphp/php-cs-fixer": "^1.12",
+        "zendframework/zend-expressive-tooling": "^0.4.4"
     },
     "autoload": {
         "psr-0": {
