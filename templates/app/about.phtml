@@ -35,7 +35,7 @@
 <p>As a professional PHP consultant with many years of experience, I can offer many consultancy services to clients, including:</p>
 
 <ul>
-    <li>Mentoring and training</li>
+    <li><a href="<?= $this->url('training'); ?>">Mentoring and training</a></li>
     <li>Consultancy and advice</li>
     <li>Software and application development</li>
     <li>Refactoring expertise and consulting</li>
@@ -47,10 +47,4 @@
 
 <p>You can get in touch with me the following ways:</p>
 
-<ul>
-    <li>Twitter: <a href="https://twitter.com/asgrim">@asgrim</a></li>
-    <li>GitHub: <a href="https://github.com/asgrim">github.com/asgrim</a></li>
-    <li>LinkedIn: <a href="https://uk.linkedin.com/in/jamestitcumb">uk.linkedin.com/in/jamestitcumb</a></li>
-    <li>Google+: <a href="https://plus.google.com/115315299682874378471">James Titcumb</a></li>
-    <li>IRC (freenode): asgrim</li>
-</ul>
+<?= $this->partial('partial::contact'); ?>

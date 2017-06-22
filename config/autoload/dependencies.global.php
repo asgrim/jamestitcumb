@@ -13,6 +13,7 @@ return [
             Asgrim\Action\PostsAction::class => Asgrim\Action\PostsActionFactory::class,
             Asgrim\Action\TalksAction::class => Asgrim\Action\TalksActionFactory::class,
             Asgrim\Action\SearchAction::class => Asgrim\Action\SearchActionFactory::class,
+            Asgrim\Action\TrainingAction::class => Asgrim\Action\TrainingActionFactory::class,
 
             Asgrim\Service\PostService::class => Asgrim\Service\PostServiceFactory::class,
             Asgrim\Service\IndexerService::class => Asgrim\Service\IndexerServiceFactory::class,
