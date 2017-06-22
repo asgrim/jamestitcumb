@@ -6,13 +6,14 @@ namespace AsgrimTest\Command;
 use Asgrim\Command\IndexCommand;
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * @covers \Asgrim\Command\IndexCommand
  */
-final class IndexCommandTest extends \PHPUnit_Framework_TestCase
+final class IndexCommandTest extends TestCase
 {
     public function testConfiguration()
     {

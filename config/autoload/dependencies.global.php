@@ -1,9 +1,8 @@
 <?php
+declare(strict_types=1);
 
 return [
     'dependencies' => [
-        'invokables' => [
-        ],
         'factories' => [
             Asgrim\Action\AboutAction::class => Asgrim\Action\AboutActionFactory::class,
             Asgrim\Action\FeedAction::class => Asgrim\Action\FeedActionFactory::class,

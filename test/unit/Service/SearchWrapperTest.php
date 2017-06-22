@@ -6,11 +6,12 @@ namespace AsgrimTest\Service;
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
 use Elasticsearch\ClientBuilder;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Asgrim\Service\SearchWrapper
  */
-final class SearchWrapperTest extends \PHPUnit_Framework_TestCase
+final class SearchWrapperTest extends TestCase
 {
     private static $esClient;
 
@@ -18,7 +19,11 @@ final class SearchWrapperTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUpBeforeClass();
 
-        self::$esClient = ClientBuilder::create()->build();
+        $config = require __DIR__ . '/../../../config/autoload/local.php';
+
+        self::$esClient = ClientBuilder::create()
+            ->setHosts($config['elasticsearch']['hosts'])
+            ->build();
     }
 
     private function getIndexedEsClient()
@@ -54,9 +59,6 @@ final class SearchWrapperTest extends \PHPUnit_Framework_TestCase
         $this->getIndexedEsClient();
     }
 
-    /**
-     *
-     */
     public function testSearchReturnsEmptyArrayWithNoResults()
     {
         $indexer = $this->getMockBuilder(IndexerService::class)

@@ -4,11 +4,12 @@ declare(strict_types=1);
 namespace AsgrimTest\Service;
 
 use Asgrim\View\Helper\RenderTalk;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Asgrim\View\Helper\RenderTalk
  */
-final class RenderTalkTest extends \PHPUnit_Framework_TestCase
+final class RenderTalkTest extends TestCase
 {
     public function testRenderRegularTalkContents()
     {

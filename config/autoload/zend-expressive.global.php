@@ -1,10 +1,9 @@
 <?php
+declare(strict_types=1);
 
 return [
     'debug' => false,
-
-    'config_cache_enabled' => false,
-
+    \Zend\ConfigAggregator\ConfigAggregator::ENABLE_CACHE => false,
     'zend-expressive' => [
         'error_handler' => [
             'template_404'   => 'error/404',

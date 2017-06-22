@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace Asgrim;
 
-use Symfony\Component\Console\Application as BaseApplication;
-use Interop\Container\ContainerInterface;
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
+use Interop\Container\ContainerInterface;
+use Symfony\Component\Console\Application as BaseApplication;
 
 class ConsoleApplication extends BaseApplication
 {

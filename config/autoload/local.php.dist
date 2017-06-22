@@ -1,8 +1,9 @@
 <?php
+declare(strict_types=1);
 
 return [
     'debug' => false,
-    'config_cache_enabled' => false,
+    \Zend\ConfigAggregator\ConfigAggregator::ENABLE_CACHE => false,
 
     // Enable this block to see better exception dump with stack trace etc.
 //    'templates' => [

@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Asgrim\Service;
 
+use Asgrim\View\Helper\RenderPostContent;
 use DateTime;
 use Zend\Feed\Writer\Feed;
-use Asgrim\View\Helper\RenderPostContent;
 
 class FeedService
 {
