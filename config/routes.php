@@ -7,3 +7,4 @@ $app->get('/feed[/{format}]', \Asgrim\Action\FeedAction::class, 'feed');
 $app->get('/posts[/{slug}]', \Asgrim\Action\PostsAction::class, 'posts');
 $app->get('/talks', \Asgrim\Action\TalksAction::class, 'talks');
 $app->get('/search', \Asgrim\Action\SearchAction::class, 'search');
+$app->get('/training-workshops', \Asgrim\Action\TrainingAction::class, 'training');
