@@ -4,12 +4,13 @@ declare(strict_types=1);
 namespace Asgrim\Action;
 
 use Asgrim\Service\TalkService;
-use Psr\Http\Message\ResponseInterface as Response;
+use Interop\Http\ServerMiddleware\DelegateInterface;
+use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
 
-class TalksAction
+final class TalksAction implements MiddlewareInterface
 {
     /**
      * @var TalkService
@@ -31,14 +32,7 @@ class TalksAction
         $this->template = $template;
     }
 
-    /**
-     * @param Request $request
-     * @param Response $response
-     * @param callable|null $next
-     * @return HtmlResponse
-     * @throws \InvalidArgumentException
-     */
-    public function __invoke(Request $request, Response $response, callable $next = null) : HtmlResponse
+    public function process(Request $request, DelegateInterface $delegate) : HtmlResponse
     {
         return new HtmlResponse($this->template->render('app::talks', [
             'upcoming' => $this->talkService->getUpcomingTalks(),
