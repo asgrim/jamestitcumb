@@ -6,11 +6,12 @@ namespace AsgrimTest\Service;
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
 use Elasticsearch\ClientBuilder;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Asgrim\Service\SearchWrapper
  */
-final class SearchWrapperTest extends \PHPUnit_Framework_TestCase
+final class SearchWrapperTest extends TestCase
 {
     private static $esClient;
 

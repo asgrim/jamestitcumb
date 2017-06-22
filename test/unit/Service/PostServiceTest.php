@@ -6,11 +6,12 @@ namespace AsgrimTest\Service;
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\PostService;
 use OutOfBoundsException;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Asgrim\Service\PostService
  */
-final class PostServiceTest extends \PHPUnit_Framework_TestCase
+final class PostServiceTest extends TestCase
 {
     private static $postsFolder = __DIR__ . '/../../fixture/posts/';
 

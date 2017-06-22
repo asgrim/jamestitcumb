@@ -5,11 +5,12 @@ namespace AsgrimTest\Service;
 
 use Asgrim\Service\IndexerService;
 use OutOfBoundsException;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Asgrim\Service\IndexerService
  */
-final class IndexerServiceTest extends \PHPUnit_Framework_TestCase
+final class IndexerServiceTest extends TestCase
 {
     private static $postsFolder = __DIR__ . '/../../fixture/posts/';
 

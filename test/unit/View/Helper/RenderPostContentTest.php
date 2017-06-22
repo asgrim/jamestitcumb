@@ -5,11 +5,12 @@ namespace AsgrimTest\Service;
 
 use Asgrim\Service\IndexerService;
 use Asgrim\View\Helper\RenderPostContent;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Asgrim\View\Helper\RenderPostContent
  */
-final class RenderPostContentTest extends \PHPUnit_Framework_TestCase
+final class RenderPostContentTest extends TestCase
 {
     public function testBasicMarkdownConversion()
     {

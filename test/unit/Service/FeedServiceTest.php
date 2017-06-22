@@ -6,12 +6,13 @@ namespace AsgrimTest\Service;
 use Asgrim\Service\FeedService;
 use Asgrim\Service\IndexerService;
 use Asgrim\View\Helper\RenderPostContent;
+use PHPUnit\Framework\TestCase;
 use Zend\Feed\Writer\Feed;
 
 /**
  * @covers \Asgrim\Service\FeedService
  */
-final class FeedServiceTest extends \PHPUnit_Framework_TestCase
+final class FeedServiceTest extends TestCase
 {
     public function testFeedServiceCreatesFeedEvenWithEmptyPostsArray()
     {
