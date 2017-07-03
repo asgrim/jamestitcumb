@@ -38,6 +38,26 @@ return [
     [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
+        'date' => new DateTime('2017-10-26'),
+        'event' => 'AFUP Forum PHP 2017',
+        'abstract' => $astAbstract,
+        'links' => [
+            'AFUP Forum PHP 2017' => ['url' => 'https://event.afup.org/forumphp2017/programme/?lang=en'],
+        ],
+    ],
+    [
+        'name' => 'Crafting Quality PHP Applications',
+        'type' => 'talk',
+        'date' => new DateTime('2017-09-21'),
+        'event' => 'Nomad PHP EU September 2017',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'Nomad PHP EU - September 2017' => ['url' => 'https://nomadphp.com/crafting-quality-php-applications/'],
+        ],
+    ],
+    [
+        'name' => 'Climbing the Abstract Syntax Tree',
+        'type' => 'talk',
         'date' => new DateTime('2017-06-25'),
         'event' => 'CodeiD PHP Odessa conference',
         'abstract' => $astAbstract,
