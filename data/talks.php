@@ -16,6 +16,16 @@ $qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in pro
 
 return [
     [
+        'name' => 'Crafting Quality PHP Applications',
+        'type' => 'talk',
+        'date' => new DateTime('2017-09-13'),
+        'event' => 'PHP Hampshire meetup September 2017',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'PHP Hampshire meetups' => ['url' => 'https://www.phphants.co.uk/meetups'],
+        ],
+    ],
+    [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
         'date' => new DateTime('2017-10-24'),
