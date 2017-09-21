@@ -98,7 +98,7 @@ return [
     [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
-        'date' => new DateTime('2017-09-27'),
+        'date' => new DateTime('2017-09-28'),
         'event' => 'PHP South Africa 2017',
         'abstract' => $astAbstract,
         'links' => [
@@ -108,7 +108,7 @@ return [
     [
         'name' => 'Dip Your Toes in the Sea of Security',
         'type' => 'talk',
-        'date' => new DateTime('2017-09-27'),
+        'date' => new DateTime('2017-09-29'),
         'event' => 'PHP South Africa 2017',
         'abstract' => $securityAbstract,
         'links' => [
