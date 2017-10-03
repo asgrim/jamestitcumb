@@ -103,6 +103,7 @@ return [
         'abstract' => $astAbstract,
         'links' => [
             'PHP South Africa 2017' => ['url' => 'http://phpsouthafrica.com/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/21648', 'class' => 'joindin'],
         ],
     ],
     [
@@ -113,6 +114,7 @@ return [
         'abstract' => $securityAbstract,
         'links' => [
             'PHP South Africa 2017' => ['url' => 'http://phpsouthafrica.com/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/22477', 'class' => 'joindin'],
         ],
     ],
     [
