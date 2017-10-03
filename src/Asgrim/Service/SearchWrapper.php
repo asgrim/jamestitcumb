@@ -84,6 +84,8 @@ class SearchWrapper
             $this->esClient->indices()->delete(['index' => 'posts']);
         }
 
+        $this->esClient->indices()->create(['index' => 'posts']);
+
         // Repopulate the index
         foreach ($posts as $post) {
             $params = [
