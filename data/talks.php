@@ -73,6 +73,7 @@ return [
         'abstract' => $astAbstract,
         'links' => [
             'AFUP Forum PHP 2017' => ['url' => 'https://event.afup.org/forumphp2017/programme/?lang=en'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/21736', 'class' => 'joindin'],
         ],
     ],
     [
