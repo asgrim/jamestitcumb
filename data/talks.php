@@ -16,6 +16,26 @@ $qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in pro
 
 return [
     [
+        'name' => 'Best practices for crafting high quality PHP apps',
+        'type' => 'tutorial',
+        'date' => new DateTime('2018-04-13'),
+        'event' => 'PHP Yorkshire 2018',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'PHP Yorkshire 2018' => ['url' => 'https://www.phpyorkshire.co.uk/workshops'],
+        ],
+    ],
+    [
+        'name' => 'Crafting Quality PHP Applications',
+        'type' => 'talk',
+        'date' => new DateTime('2018-01-26'),
+        'event' => 'PHP Benelux Conference 2018',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'PHP Benelux Conference 2018' => ['url' => 'https://conference.phpbenelux.eu/2018/speaker/james-titcumb/'],
+        ],
+    ],
+    [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
         'date' => new DateTime('2018-02-15'),
@@ -58,11 +78,21 @@ return [
     [
         'name' => 'Crafting Quality PHP Applications',
         'type' => 'talk',
-        'date' => new DateTime('2017-12-04'),
+        'date' => new DateTime('2017-12-06'),
         'event' => 'ConFoo Vancouver 2017',
         'abstract' => $qualityTalk,
         'links' => [
             'ConFoo Vancouver 2017' => ['url' => 'https://confoo.ca/en/yvr2017/session/crafting-quality-php-applications'],
+        ],
+    ],
+    [
+        'name' => 'Dip Your Toes in the Sea of Security',
+        'type' => 'talk',
+        'date' => new DateTime('2017-12-05'),
+        'event' => 'ConFoo Vancouver 2017',
+        'abstract' => $securityAbstract,
+        'links' => [
+            'ConFoo Vancouver 2017' => ['url' => 'https://confoo.ca/en/yvr2017/session/dip-your-toes-in-the-sea-of-security'],
         ],
     ],
     [
