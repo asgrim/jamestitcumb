@@ -16,6 +16,36 @@ $qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in pro
 
 return [
     [
+        'name' => 'Crafting Quality PHP Applications',
+        'type' => 'talk',
+        'date' => new DateTime('2018-03-29'),
+        'event' => 'PHP Warwickshire user group - March 2018',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'PHP Warwickshire' => ['url' => 'https://www.meetup.com/PHP-Warwickshire'],
+        ],
+    ],
+    [
+        'name' => 'Crafting Quality PHP Applications',
+        'type' => 'talk',
+        'date' => new DateTime('2018-02-01'),
+        'event' => 'PHPem user group - February 2018',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'PHPenm' => ['url' => 'https://www.meetup.com/ugPHPem/events/'],
+        ],
+    ],
+    [
+        'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
+        'type' => 'talk',
+        'date' => new DateTime('2018-03-08'),
+        'event' => 'php[MiNDS] (Nottingham) User Group - March 2018',
+        'abstract' => $expressiveAbstract,
+        'links' => [
+            'PHPMiNDS' => ['url' => 'https://phpminds.org/'],
+        ],
+    ],
+    [
         'name' => 'Best practices for crafting high quality PHP apps',
         'type' => 'tutorial',
         'date' => new DateTime('2018-04-13'),
