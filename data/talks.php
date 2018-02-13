@@ -52,7 +52,7 @@ return [
         'event' => 'PHPem user group - February 2018',
         'abstract' => $qualityTalk,
         'links' => [
-            'PHPenm' => ['url' => 'https://www.meetup.com/ugPHPem/events/'],
+            'PHPem' => ['url' => 'https://www.meetup.com/ugPHPem/events/'],
         ],
     ],
     [
@@ -83,6 +83,7 @@ return [
         'abstract' => $qualityTalk,
         'links' => [
             'PHP Benelux Conference 2018' => ['url' => 'https://conference.phpbenelux.eu/2018/speaker/james-titcumb/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/23079', 'class' => 'joindin'],
         ],
     ],
     [
@@ -93,6 +94,7 @@ return [
         'abstract' => $astAbstract,
         'links' => [
             'PHP UK 2018' => ['url' => 'https://www.phpconference.co.uk/schedule/#timetable-2-popup-10'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/23293', 'class' => 'joindin'],
         ],
     ],
     [
