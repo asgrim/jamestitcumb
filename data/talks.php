@@ -28,6 +28,26 @@ return [
     [
         'name' => 'Crafting Quality PHP Applications',
         'type' => 'talk',
+        'date' => new DateTime('2018-03-14'),
+        'event' => 'PHPSW user group - March 2018',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'PHP South West' => ['url' => 'https://www.meetup.com/php-sw/'],
+        ],
+    ],
+    [
+        'name' => 'Crafting Quality PHP Applications',
+        'type' => 'talk',
+        'date' => new DateTime('2018-05-20'),
+        'event' => 'PHPkonf 2018 - Istanbul',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'PHPkonf' => ['url' => 'http://phpkonf.org/'],
+        ],
+    ],
+    [
+        'name' => 'Crafting Quality PHP Applications',
+        'type' => 'talk',
         'date' => new DateTime('2018-02-01'),
         'event' => 'PHPem user group - February 2018',
         'abstract' => $qualityTalk,
