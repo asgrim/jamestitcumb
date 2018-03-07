@@ -43,6 +43,7 @@ return [
         'abstract' => $qualityTalk,
         'links' => [
             'PHP South West' => ['url' => 'https://www.meetup.com/php-sw/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/23401', 'class' => 'joindin'],
         ],
     ],
     [
