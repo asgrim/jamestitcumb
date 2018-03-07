@@ -16,6 +16,16 @@ $qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in pro
 
 return [
     [
+        'name' => 'Best practices for crafting high quality PHP apps (full day)',
+        'type' => 'tutorial',
+        'date' => new DateTime('2018-06-07'),
+        'event' => 'Dutch PHP Conference 2018',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'Dutch PHP Conference 2018' => ['url' => 'https://www.phpconference.nl/schedule#tutorial'],
+        ],
+    ],
+    [
         'name' => 'Crafting Quality PHP Applications',
         'type' => 'talk',
         'date' => new DateTime('2018-03-29'),
