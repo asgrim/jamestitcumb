@@ -5,9 +5,10 @@ namespace Asgrim\Action;
 
 use Asgrim\Service\FeedService;
 use Asgrim\Service\PostService;
-use Interop\Http\ServerMiddleware\DelegateInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response as DiactorosResponse;
 
 final class FeedAction implements MiddlewareInterface
@@ -45,7 +46,12 @@ final class FeedAction implements MiddlewareInterface
         return 'application/xml';
     }
 
-    public function process(Request $request, DelegateInterface $delegate) : DiactorosResponse
+    /**
+     * {@inheritdoc}
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
+     */
+    public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
     {
         $outputFormat = $request->getAttribute('format', 'rss');
 

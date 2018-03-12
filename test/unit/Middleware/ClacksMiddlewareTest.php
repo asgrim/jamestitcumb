@@ -4,9 +4,10 @@ declare(strict_types=1);
 namespace AsgrimTest\Middleware;
 
 use Asgrim\Middleware\ClacksMiddleware;
-use Interop\Http\ServerMiddleware\DelegateInterface;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 
@@ -21,8 +22,8 @@ final class ClacksMiddlewareTest extends TestCase
 
         $response = $middleware->process(
             new ServerRequest(['']),
-            new class implements DelegateInterface {
-                public function process(ServerRequestInterface $request)
+            new class implements RequestHandlerInterface {
+                public function handle(ServerRequestInterface $request): ResponseInterface
                 {
                     return new Response();
                 }

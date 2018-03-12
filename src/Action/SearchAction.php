@@ -6,9 +6,10 @@ namespace Asgrim\Action;
 use Asgrim\Service\PostService;
 use Asgrim\Service\SearchWrapper;
 use Elasticsearch\Common\Exceptions\TransportException;
-use Interop\Http\ServerMiddleware\DelegateInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
 use Zend\View\Model\ViewModel;
@@ -41,7 +42,12 @@ final class SearchAction implements MiddlewareInterface
         $this->postService = $postService;
         $this->template = $template;
     }
-    public function process(Request $request, DelegateInterface $delegate) : HtmlResponse
+
+    /**
+     * {@inheritdoc}
+     * @throws \InvalidArgumentException
+     */
+    public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
     {
         $queryParams = $request->getQueryParams();
 

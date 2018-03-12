@@ -3,9 +3,10 @@ declare(strict_types=1);
 
 namespace Asgrim\Action;
 
-use Interop\Http\ServerMiddleware\DelegateInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
 
@@ -24,7 +25,11 @@ final class TrainingAction implements MiddlewareInterface
         $this->template = $template;
     }
 
-    public function process(Request $request, DelegateInterface $delegate) : HtmlResponse
+    /**
+     * {@inheritdoc}
+     * @throws \InvalidArgumentException
+     */
+    public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
     {
         return new HtmlResponse($this->template->render('app::training', []));
     }
