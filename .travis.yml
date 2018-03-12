@@ -5,7 +5,7 @@ services:
   - elasticsearch
 
 php:
-  - 7.1
+  - 7.2
 
 before_script:
   - sleep 10
