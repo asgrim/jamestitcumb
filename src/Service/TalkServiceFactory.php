@@ -12,6 +12,6 @@ class TalkServiceFactory
 {
     public function __invoke(ContainerInterface $container) : TalkService
     {
-        return new TalkService(__DIR__ . '/../../../data/talks.php');
+        return new TalkService(__DIR__ . '/../../data/talks.php');
     }
 }
