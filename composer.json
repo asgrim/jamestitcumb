@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Asgrim\\": "src/Asgrim"
+            "Asgrim\\": "src/"
         }
     },
     "autoload-dev": {

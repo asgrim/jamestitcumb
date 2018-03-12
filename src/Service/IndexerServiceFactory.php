@@ -12,6 +12,6 @@ class IndexerServiceFactory
 {
     public function __invoke(ContainerInterface $container) : IndexerService
     {
-        return new IndexerService(__DIR__ . '/../../../data/posts/');
+        return new IndexerService(__DIR__ . '/../../data/posts/');
     }
 }
