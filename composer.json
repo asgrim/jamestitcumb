@@ -21,8 +21,13 @@
         "zendframework/zend-expressive-tooling": "^0.4.4"
     },
     "autoload": {
-        "psr-0": {
-            "": "src/"
+        "psr-4": {
+            "Asgrim": "src/Asgrim"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AsgrimTest": "test/unit/"
         }
     },
     "license": "MIT",

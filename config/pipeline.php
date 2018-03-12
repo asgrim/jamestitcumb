@@ -7,5 +7,6 @@ $app->pipe(\Zend\Stratigility\Middleware\ErrorHandler::class);
 $app->pipe(\Zend\Expressive\Helper\ServerUrlMiddleware::class);
 $app->pipeRoutingMiddleware();
 $app->pipe(\Zend\Expressive\Helper\UrlHelperMiddleware::class);
+$app->pipe(\Asgrim\Middleware\ClacksMiddleware::class);
 $app->pipeDispatchMiddleware();
 $app->pipe(\Zend\Expressive\Middleware\NotFoundHandler::class);
