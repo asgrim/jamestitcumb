@@ -5,17 +5,20 @@ if (!getenv('HEROKU')) {
     return [];
 }
 
-return [
-    'debug' => false,
+$debug = (bool)\getenv('DEBUG');
+
+$config = [
+    'debug' => $debug,
     \Zend\ConfigAggregator\ConfigAggregator::ENABLE_CACHE => true,
-//    'templates' => [
-//        'map' => [
-//            'error/error'   => 'templates/error/debug.phtml',
-//        ],
-//    ],
     'elasticsearch' => [
         'hosts' => [
-            getenv('BONSAI_URL') . ':443',
+            \getenv('BONSAI_URL') . ':443',
         ],
     ],
 ];
+
+if ($debug) {
+    $config['templates']['map']['error/error'] = 'templates/error/debug.phtml';
+}
+
+return $config;
