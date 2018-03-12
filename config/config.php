@@ -10,8 +10,8 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
+    \Zend\HttpHandlerRunner\ConfigProvider::class,
     new ArrayProvider($cacheConfig),
-
     new PhpFileProvider('config/autoload/{{,*.}global,{,*.}local}.php'),
 ], $cacheConfig['config_cache_path']);
 
