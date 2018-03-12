@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Asgrim\Action;
+namespace Asgrim\Handler;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -10,7 +10,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
 
-final class TrainingAction implements MiddlewareInterface
+final class AboutHandler implements MiddlewareInterface
 {
     /**
      * @var TemplateRenderer
@@ -31,6 +31,6 @@ final class TrainingAction implements MiddlewareInterface
      */
     public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
     {
-        return new HtmlResponse($this->template->render('app::training', []));
+        return new HtmlResponse($this->template->render('app::about', []));
     }
 }

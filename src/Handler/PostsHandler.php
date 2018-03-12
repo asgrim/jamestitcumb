@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Asgrim\Action;
+namespace Asgrim\Handler;
 
 use Asgrim\Service\Exception\PostNotFound;
 use Asgrim\Service\PostService;
@@ -12,7 +12,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
 
-final class PostsAction implements MiddlewareInterface
+final class PostsHandler implements MiddlewareInterface
 {
     /**
      * @var PostService

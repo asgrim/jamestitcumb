@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Asgrim\Action;
+namespace Asgrim\Handler;
 
 use Asgrim\Service\PostService;
 use Asgrim\Service\SearchWrapper;
@@ -14,7 +14,7 @@ use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
 use Zend\View\Model\ViewModel;
 
-final class SearchAction implements MiddlewareInterface
+final class SearchHandler implements MiddlewareInterface
 {
     /**
      * @var SearchWrapper

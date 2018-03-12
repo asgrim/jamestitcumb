@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Asgrim\Action;
+namespace Asgrim\Handler;
 
 use Asgrim\Service\FeedService;
 use Asgrim\Service\PostService;
@@ -11,7 +11,7 @@ use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response as DiactorosResponse;
 
-final class FeedAction implements MiddlewareInterface
+final class FeedHandler implements MiddlewareInterface
 {
     /**
      * @var FeedService
