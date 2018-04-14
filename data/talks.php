@@ -33,6 +33,7 @@ return [
         'abstract' => $qualityTalk,
         'links' => [
             'PHP Warwickshire' => ['url' => 'https://www.meetup.com/PHP-Warwickshire'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/23965', 'class' => 'joindin'],
         ],
     ],
     [
