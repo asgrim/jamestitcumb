@@ -84,6 +84,7 @@ return [
         'abstract' => $qualityTalk,
         'links' => [
             'PHP Yorkshire 2018' => ['url' => 'https://www.phpyorkshire.co.uk/workshops'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/23878', 'class' => 'joindin'],
         ],
     ],
     [
