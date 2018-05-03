@@ -16,6 +16,16 @@ $qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in pro
 
 return [
     [
+        'name' => 'Climbing the Abstract Syntax Tree',
+        'type' => 'talk',
+        'date' => new DateTime('2018-08-16'),
+        'event' => 'Southeast PHP 2018',
+        'abstract' => $astAbstract,
+        'links' => [
+            'Southeast PHP 2018' => ['url' => 'https://southeastphp.com/sessions'],
+        ],
+    ],
+    [
         'name' => 'Best practices for crafting high quality PHP apps (full day)',
         'type' => 'tutorial',
         'date' => new DateTime('2018-06-07'),
