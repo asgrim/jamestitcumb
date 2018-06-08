@@ -19,6 +19,16 @@ return [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
         'date' => new DateTime('2018-08-16'),
+        'event' => 'PHP Developer Days Dresden 2018',
+        'abstract' => $astAbstract,
+        'links' => [
+            '2018.phpdd.org' => ['url' => 'https://2018.phpdd.org/talks.html#climbing-the-abstract-syntax-tree'],
+        ],
+    ],
+    [
+        'name' => 'Climbing the Abstract Syntax Tree',
+        'type' => 'talk',
+        'date' => new DateTime('2018-08-16'),
         'event' => 'Southeast PHP 2018',
         'abstract' => $astAbstract,
         'links' => [
