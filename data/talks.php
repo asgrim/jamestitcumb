@@ -38,7 +38,7 @@ return [
     [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
-        'date' => new DateTime('2018-08-16'),
+        'date' => new DateTime('2018-09-22'),
         'event' => 'PHP Developer Days Dresden 2018',
         'abstract' => $astAbstract,
         'links' => [
