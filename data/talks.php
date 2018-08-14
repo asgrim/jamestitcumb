@@ -16,6 +16,16 @@ $qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in pro
 
 return [
     [
+        'name' => 'Best practices for crafting high quality PHP apps',
+        'type' => 'tutorial',
+        'date' => new DateTime('2018-10-05'),
+        'event' => 'ScotlandPHP 2018',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'ScotlandPHP' => ['url' => 'https://conference.scotlandphp.co.uk/'],
+        ],
+    ],
+    [
         'name' => 'Kicking off with Zend Expressive and Doctrine ORM',
         'type' => 'talk',
         'date' => new DateTime('2018-09-27'),
