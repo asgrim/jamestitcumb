@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a5bf5b09ceba69a5fcf48b67f7e4097b",
+    "content-hash": "bc0afd50d33b7e30c2e6e127ec940512",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -4673,13 +4673,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "alpha",
+    "minimum-stability": "stable",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "zendframework/zend-expressive": 5,
-        "zendframework/zend-expressive-fastroute": 5,
-        "zendframework/zend-expressive-zendviewrenderer": 15,
-        "zendframework/zend-expressive-tooling": 15
+        "roave/security-advisories": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
