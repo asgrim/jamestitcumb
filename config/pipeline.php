@@ -9,7 +9,7 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     $app->pipe(\Zend\Stratigility\Middleware\ErrorHandler::class);
     $app->pipe(\Zend\Expressive\Helper\ServerUrlMiddleware::class);
 
-    $app->pipe(\Zend\Expressive\Router\Middleware\PathBasedRoutingMiddleware::class);
+    $app->pipe(\Zend\Expressive\Router\Middleware\RouteMiddleware::class);
 
     $app->pipe(\Zend\Expressive\Helper\UrlHelperMiddleware::class);
     $app->pipe(\Asgrim\Middleware\ClacksMiddleware::class);
