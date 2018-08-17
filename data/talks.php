@@ -53,6 +53,7 @@ return [
         'abstract' => $astAbstract,
         'links' => [
             '2018.phpdd.org' => ['url' => 'https://2018.phpdd.org/talks.html#climbing-the-abstract-syntax-tree'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/24636', 'class' => 'joindin'],
         ],
     ],
     [
@@ -63,6 +64,7 @@ return [
         'abstract' => $astAbstract,
         'links' => [
             'Southeast PHP 2018' => ['url' => 'https://southeastphp.com/sessions'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/24708', 'class' => 'joindin'],
         ],
     ],
     [
@@ -73,6 +75,7 @@ return [
         'abstract' => $qualityTalk,
         'links' => [
             'Dutch PHP Conference 2018' => ['url' => 'https://www.phpconference.nl/schedule#tutorial'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/24185', 'class' => 'joindin'],
         ],
     ],
     [
@@ -105,6 +108,7 @@ return [
         'abstract' => $qualityTalk,
         'links' => [
             'PHPkonf' => ['url' => 'http://phpkonf.org/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/24272', 'class' => 'joindin'],
         ],
     ],
     [
