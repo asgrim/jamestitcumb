@@ -22,7 +22,17 @@ return [
         'event' => 'ScotlandPHP 2018',
         'abstract' => $qualityTalk,
         'links' => [
-            'ScotlandPHP' => ['url' => 'https://conference.scotlandphp.co.uk/'],
+            'ScotlandPHP' => ['url' => 'https://conference.scotlandphp.co.uk/schedule'],
+        ],
+    ],
+    [
+        'name' => 'Climbing the Abstract Syntax Tree',
+        'type' => 'talk',
+        'date' => new DateTime('2018-10-06'),
+        'event' => 'ScotlandPHP 2018',
+        'abstract' => $astAbstract,
+        'links' => [
+            'ScotlandPHP' => ['url' => 'https://conference.scotlandphp.co.uk/speakers'],
         ],
     ],
     [
