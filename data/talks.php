@@ -43,6 +43,7 @@ return [
         'abstract' => $expressiveAbstract,
         'links' => [
             'PHP South Africa' => ['url' => 'https://phpsouthafrica.com/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/25094', 'class' => 'joindin'],
         ],
     ],
     [
@@ -53,6 +54,7 @@ return [
         'abstract' => $qualityTalk,
         'links' => [
             'PHP South Africa' => ['url' => 'https://phpsouthafrica.com/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/25134', 'class' => 'joindin'],
         ],
     ],
     [
