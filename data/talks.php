@@ -23,6 +23,7 @@ return [
         'abstract' => $qualityTalk,
         'links' => [
             'ScotlandPHP' => ['url' => 'https://conference.scotlandphp.co.uk/schedule'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/25205', 'class' => 'joindin'],
         ],
     ],
     [
@@ -33,6 +34,7 @@ return [
         'abstract' => $astAbstract,
         'links' => [
             'ScotlandPHP' => ['url' => 'https://conference.scotlandphp.co.uk/speakers'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/25212', 'class' => 'joindin'],
         ],
     ],
     [
