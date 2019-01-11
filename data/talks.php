@@ -18,6 +18,16 @@ return [
     [
         'name' => 'Best practices for crafting high quality PHP apps',
         'type' => 'tutorial',
+        'date' => new DateTime('2019-02-22'),
+        'event' => 'PHP UK Conference 2019',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'PHP UK' => ['url' => 'https://www.phpconference.co.uk/schedule/'],
+        ],
+    ],
+    [
+        'name' => 'Best practices for crafting high quality PHP apps',
+        'type' => 'tutorial',
         'date' => new DateTime('2018-10-05'),
         'event' => 'ScotlandPHP 2018',
         'abstract' => $qualityTalk,
