@@ -23,6 +23,7 @@ return [
         'abstract' => $qualityTalk,
         'links' => [
             'PHP UK' => ['url' => 'https://www.phpconference.co.uk/schedule/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/25905', 'class' => 'joindin'],
         ],
     ],
     [
