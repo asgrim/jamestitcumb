@@ -49,10 +49,12 @@ final class ConfigProvider
             'factories' => [
                 View\Helper\RenderPostContent::class => ReflectionBasedAbstractFactory::class,
                 View\Helper\RenderTalk::class => InvokableFactory::class,
+                View\Helper\SelfAggrandisingQuote::class => InvokableFactory::class,
             ],
             'aliases' => [
                 'renderTalk' => View\Helper\RenderTalk::class,
                 'renderPostContent' => View\Helper\RenderPostContent::class,
+                'selfAggrandisingQuote' => View\Helper\SelfAggrandisingQuote::class,
             ],
         ];
     }
