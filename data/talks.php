@@ -23,6 +23,7 @@ return [
         'abstract' => $astAbstract,
         'links' => [
             'PHP Russia' => ['url' => 'https://phprussia.ru/2019/abstracts/5007'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/26218', 'class' => 'joindin'],
         ],
     ],
     [
