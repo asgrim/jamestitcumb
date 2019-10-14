@@ -28,10 +28,7 @@ final class FeedServiceTest extends TestCase
     public function testFeedServiceWithPosts() : void
     {
         /** @var RenderPostContent|MockObject $postRenderer */
-        $postRenderer = $this->getMockBuilder(RenderPostContent::class)
-            ->disableOriginalConstructor()
-            ->setMethods(['__invoke'])
-            ->getMock();
+        $postRenderer = $this->createMock(RenderPostContent::class);
 
         $postRenderer->expects(self::exactly(2))
             ->method('__invoke')

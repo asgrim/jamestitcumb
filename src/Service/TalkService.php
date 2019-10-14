@@ -30,6 +30,7 @@ class TalkService
     private function getTalks(bool $inverseOrder = false) : array
     {
         if ($this->talks === null) {
+            /** @noinspection PhpIncludeInspection */
             /** @psalm-suppress UnresolvableInclude */
             $this->talks = array_map(
                 [Talk::class, 'fromArrayData'],

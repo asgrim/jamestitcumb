@@ -10,6 +10,7 @@ use Asgrim\Value\Post;
 use DateTimeImmutable;
 use Elasticsearch\Client as ElasticsearchClient;
 use Elasticsearch\ClientBuilder;
+use Elasticsearch\Common\Exceptions\TransportException;
 use PHPUnit\Framework\TestCase;
 use function sleep;
 
@@ -32,6 +33,7 @@ final class SearchWrapperTest extends TestCase
             ->build();
     }
 
+    /** @throws TransportException */
     private function getIndexedEsClient() : ElasticsearchClient
     {
         $indexer = $this->getMockBuilder(IndexerService::class)
@@ -64,12 +66,14 @@ final class SearchWrapperTest extends TestCase
         return self::$esClient;
     }
 
+    /** @throws TransportException */
     public function testIndexingAllPosts() : void
     {
         /** @noinspection UnusedFunctionResultInspection */
         $this->getIndexedEsClient();
     }
 
+    /** @throws TransportException */
     public function testSearchReturnsEmptyArrayWithNoResults() : void
     {
         $indexer = $this->getMockBuilder(IndexerService::class)
@@ -80,6 +84,7 @@ final class SearchWrapperTest extends TestCase
         self::assertSame([], $wrapper->search('zibble'));
     }
 
+    /** @throws TransportException */
     public function testSearchReturnsResultWhenSearchingContent() : void
     {
         $indexer = $this->getMockBuilder(IndexerService::class)
@@ -95,6 +100,7 @@ final class SearchWrapperTest extends TestCase
         ], $wrapper->search('wibble'));
     }
 
+    /** @throws TransportException */
     public function testSearchReturnsResultWhenSearchingTitle() : void
     {
         $indexer = $this->getMockBuilder(IndexerService::class)

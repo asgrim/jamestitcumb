@@ -23,6 +23,7 @@ class ConsoleApplication extends BaseApplication
         ];
 
         foreach ($commands as $command) {
+            /** @noinspection UnusedFunctionResultInspection */
             $this->add($command);
         }
     }

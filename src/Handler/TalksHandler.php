@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Asgrim\Handler;
 
 use Asgrim\Service\TalkService;
-use InvalidArgumentException;
+use Exception;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
@@ -27,11 +27,7 @@ final class TalksHandler implements MiddlewareInterface
         $this->template    = $template;
     }
 
-    /**
-     * {@inheritdoc}
-     *
-     * @throws InvalidArgumentException
-     */
+    /** @throws Exception */
     public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
     {
         return new HtmlResponse($this->template->render('app::talks', [

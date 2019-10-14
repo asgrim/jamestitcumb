@@ -1,4 +1,5 @@
 <?php
+/** @noinspection UnusedFunctionResultInspection */
 
 declare(strict_types=1);
 

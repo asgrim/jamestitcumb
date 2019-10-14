@@ -19,9 +19,7 @@ final class ClacksMiddlewareTest extends TestCase
 {
     public function testClacksHeaderAdded() : void
     {
-        $middleware = new ClacksMiddleware();
-
-        $response = $middleware->process(
+        $response = (new ClacksMiddleware())->process(
             new ServerRequest(['']),
             new class implements RequestHandlerInterface {
                 public function handle(ServerRequestInterface $request) : ResponseInterface

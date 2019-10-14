@@ -6,6 +6,7 @@ namespace Asgrim\Service;
 
 use Asgrim\Service\Exception\PostNotFound;
 use Elasticsearch\Client as EsClient;
+use Elasticsearch\Common\Exceptions\TransportException;
 use function assert;
 use function is_array;
 
@@ -23,6 +24,8 @@ class SearchWrapper
         $this->esClient       = $esClient;
     }
 
+    /** @noinspection PhpDocRedundantThrowsInspection */
+
     /**
      * Perform a post search, returning simplified results, for example:
      *
@@ -38,6 +41,8 @@ class SearchWrapper
      * ]
      *
      * @return string[][]
+     *
+     * @throws TransportException
      */
     public function search(string $text) : array
     {
@@ -71,10 +76,13 @@ class SearchWrapper
         return $simplifiedResults;
     }
 
+    /** @noinspection PhpDocRedundantThrowsInspection */
+
     /**
      * Index all the posts
      *
      * @throws PostNotFound
+     * @throws TransportException
      */
     public function indexAllPosts() : void
     {
@@ -82,9 +90,11 @@ class SearchWrapper
 
         // Clear index first, if it exists
         if ($this->esClient->indices()->exists(['index' => 'posts'])) {
+            /** @noinspection UnusedFunctionResultInspection */
             $this->esClient->indices()->delete(['index' => 'posts']);
         }
 
+        /** @noinspection UnusedFunctionResultInspection */
         $this->esClient->indices()->create(['index' => 'posts']);
 
         // Repopulate the index
@@ -99,6 +109,7 @@ class SearchWrapper
                 'id' => $post->slug(),
             ];
 
+            /** @noinspection UnusedFunctionResultInspection */
             $this->esClient->index($params);
         }
     }

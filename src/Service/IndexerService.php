@@ -88,6 +88,7 @@ class IndexerService
     public function getAllPostsFromCache() : array
     {
         if (! isset($this->posts)) {
+            /** @noinspection PhpIncludeInspection */
             /** @psalm-suppress UnresolvableInclude */
             $this->posts = require $this->cacheFileName;
         }
@@ -195,7 +196,7 @@ class IndexerService
         $parsed = $this->yamlParser->parse($metadata);
 
         // Don't index drafts
-        if (isset($parsed['draft']) && $parsed['draft']) {
+        if (! empty($parsed['draft'])) {
             return null;
         }
 

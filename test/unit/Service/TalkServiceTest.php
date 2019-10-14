@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AsgrimTest\Service;
 
 use Asgrim\Service\TalkService;
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,18 +16,18 @@ final class TalkServiceTest extends TestCase
     /** @var string */
     private static $talksFixture = __DIR__ . '/../../fixture/talks.php';
 
+    /** @throws Exception */
     public function testGetUpcomingTalks() : void
     {
-        $talkService = new TalkService(self::$talksFixture);
-        $upcoming    = $talkService->getUpcomingTalks();
+        $upcoming = (new TalkService(self::$talksFixture))->getUpcomingTalks();
 
         self::assertCount(1, $upcoming);
     }
 
+    /** @throws Exception */
     public function testGetPastTalks() : void
     {
-        $talkService = new TalkService(self::$talksFixture);
-        $past        = $talkService->getPastTalks();
+        $past = (new TalkService(self::$talksFixture))->getPastTalks();
 
         self::assertCount(3, $past);
     }

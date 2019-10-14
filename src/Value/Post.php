@@ -54,9 +54,7 @@ final class Post
         );
     }
 
-    /**
-     * @param string[] $tags
-     */
+    /** @param string[] $tags */
     public static function create(
         string $title,
         array $tags,

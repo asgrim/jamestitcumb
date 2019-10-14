@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace AsgrimTest\Service;
+namespace AsgrimTest\View\Helper;
 
 use Asgrim\Service\IndexerService;
 use Asgrim\View\Helper\RenderPostContent;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use PHPUnit_Framework_MockObject_MockObject;
 
 /**
  * @covers \Asgrim\View\Helper\RenderPostContent
@@ -16,16 +16,12 @@ final class RenderPostContentTest extends TestCase
 {
     public function testBasicMarkdownConversion() : void
     {
-        /** @var IndexerService|PHPUnit_Framework_MockObject_MockObject $indexer */
-        $indexer = $this->getMockBuilder(IndexerService::class)
-            ->disableOriginalConstructor()
-            ->setMethods(['getPostContentBySlug'])
-            ->getMock();
-
+        /** @var IndexerService|MockObject $indexer */
+        $indexer = $this->createMock(IndexerService::class);
         $indexer->expects(self::once())
-            ->method('getPostContentBySlug')
+            ->method('getPostContentWithoutMetadata')
             ->with('test-slug')
-            ->willReturn("metadata: here\n---\n\n\n# Some *content*");
+            ->willReturn('# Some *content*');
 
         $renderer = new RenderPostContent($indexer);
         self::assertSame("<h1>Some <em>content</em></h1>\n", $renderer->__invoke('test-slug'));

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AsgrimTest\Service;
+namespace AsgrimTest\View\Helper;
 
 use Asgrim\Value\Talk;
 use Asgrim\View\Helper\RenderTalk;
