@@ -1,0 +1,47 @@
+# These docker-compose definitions are suited for a development environment, not for CI or production-alike systems.
+
+version: '3.7'
+services:
+
+  nginx:
+    build: docker/nginx
+    ports:
+      - 80:80
+    restart: unless-stopped
+    networks:
+      asgrim:
+        aliases:
+          - "nginx.asgrim"
+    depends_on:
+      - php-fpm
+
+  php-fpm:
+    build:
+      context: .
+      dockerfile: docker/php-fpm/Dockerfile
+    volumes:
+      - .:/app:ro
+      - ./vendor:/app/vendor
+      - ./composer.json:/app/composer.json
+      - ./composer.lock:/app/composer.lock
+      - ./data:/app/data
+    restart: unless-stopped
+    networks:
+      asgrim:
+        aliases:
+          - "php-fpm.asgrim"
+    depends_on:
+      - elasticsearch
+
+  elasticsearch:
+    image: elasticsearch:7.4.0
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      asgrim:
+        aliases:
+          - "elastic.asgrim"
+
+networks:
+  asgrim:
