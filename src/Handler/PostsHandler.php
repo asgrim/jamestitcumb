@@ -40,9 +40,9 @@ final class PostsHandler implements MiddlewareInterface
 
         try {
             if ($slug !== null) {
-                $posts                  = [$slug => $this->postService->fetchPostBySlug($slug)];
+                $posts = [$slug => $this->postService->fetchPostBySlug($slug)];
                 $posts[$slug]->markActive();
-                $title                  = $posts[$slug]->title();
+                $title = $posts[$slug]->title();
             } else {
                 $query = $request->getQueryParams();
                 if (array_key_exists('tag', $query)) {

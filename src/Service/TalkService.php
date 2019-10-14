@@ -8,6 +8,7 @@ use Asgrim\Value\Talk;
 use DateTimeImmutable;
 use Exception;
 use function array_filter;
+use function array_map;
 use function usort;
 
 class TalkService
@@ -52,6 +53,7 @@ class TalkService
      * Get the upcoming talks.
      *
      * @return Talk[]
+     *
      * @throws Exception
      */
     public function getUpcomingTalks() : array
@@ -67,6 +69,7 @@ class TalkService
      * Get talks in the past.
      *
      * @return Talk[]
+     *
      * @throws Exception
      */
     public function getPastTalks() : array

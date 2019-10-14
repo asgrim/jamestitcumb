@@ -54,13 +54,14 @@ final class Post
     ) : self {
         Assert::allString($tags);
 
-        $instance = new self();
-        $instance->title = $title;
-        $instance->tags = $tags;
-        $instance->date = $date;
-        $instance->slug = $slug;
-        $instance->file = $file;
+        $instance         = new self();
+        $instance->title  = $title;
+        $instance->tags   = $tags;
+        $instance->date   = $date;
+        $instance->slug   = $slug;
+        $instance->file   = $file;
         $instance->active = $active;
+
         return $instance;
     }
 

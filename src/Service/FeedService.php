@@ -6,7 +6,6 @@ namespace Asgrim\Service;
 
 use Asgrim\Value\Post;
 use Asgrim\View\Helper\RenderPostContent;
-use DateTime;
 use Zend\Feed\Writer\Exception\InvalidArgumentException;
 use Zend\Feed\Writer\Feed;
 use function str_replace;

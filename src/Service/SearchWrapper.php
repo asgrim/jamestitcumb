@@ -6,6 +6,8 @@ namespace Asgrim\Service;
 
 use Asgrim\Service\Exception\PostNotFound;
 use Elasticsearch\Client as EsClient;
+use function assert;
+use function is_array;
 
 class SearchWrapper
 {

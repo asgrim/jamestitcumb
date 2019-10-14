@@ -12,6 +12,7 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Parser as YamlParser;
+use const LOCK_EX;
 use function array_key_exists;
 use function basename;
 use function count;
@@ -126,8 +127,8 @@ class IndexerService
         $text = $this->getPostContentBySlug($slug);
 
         // Get rid of the metadata
-        $text = substr($text, (int)(strpos($text, '---')) + 3);
-        $text = substr($text, (int)(strpos($text, '---')) + 3);
+        $text = substr($text, (int) (strpos($text, '---')) + 3);
+        $text = substr($text, (int) (strpos($text, '---')) + 3);
 
         return trim($text);
     }
@@ -175,8 +176,6 @@ class IndexerService
      * Read a filename, extract the header and return the metadata as array.
      *
      * Returns null if there's no metadata or is a "draft" post.
-     *
-     * @return Post|null
      *
      * @throws ParseException
      */
