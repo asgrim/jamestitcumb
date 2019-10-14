@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AsgrimTest\Service;
@@ -7,6 +8,7 @@ use Asgrim\Service\FeedService;
 use Asgrim\Service\IndexerService;
 use Asgrim\View\Helper\RenderPostContent;
 use PHPUnit\Framework\TestCase;
+use PHPUnit_Framework_MockObject_MockObject;
 use Zend\Feed\Writer\Feed;
 
 /**
@@ -14,18 +16,18 @@ use Zend\Feed\Writer\Feed;
  */
 final class FeedServiceTest extends TestCase
 {
-    public function testFeedServiceCreatesFeedEvenWithEmptyPostsArray()
+    public function testFeedServiceCreatesFeedEvenWithEmptyPostsArray() : void
     {
         $feedService = new FeedService(new RenderPostContent(new IndexerService('')));
-        $feed = $feedService->createFeed([]);
+        $feed        = $feedService->createFeed([]);
 
         self::assertInstanceOf(Feed::class, $feed);
         self::assertSame(0, $feed->count());
     }
 
-    public function testFeedServiceWithPosts()
+    public function testFeedServiceWithPosts() : void
     {
-        /** @var RenderPostContent|\PHPUnit_Framework_MockObject_MockObject $postRenderer */
+        /** @var RenderPostContent|PHPUnit_Framework_MockObject_MockObject $postRenderer */
         $postRenderer = $this->getMockBuilder(RenderPostContent::class)
             ->disableOriginalConstructor()
             ->setMethods(['__invoke'])
@@ -36,7 +38,7 @@ final class FeedServiceTest extends TestCase
             ->willReturn('foo');
 
         $feedService = new FeedService($postRenderer);
-        $feed = $feedService->createFeed([
+        $feed        = $feedService->createFeed([
             [
                 'title' => 'Post title 1',
                 'date' => '2015-01-01',

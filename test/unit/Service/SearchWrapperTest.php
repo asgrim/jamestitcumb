@@ -1,18 +1,22 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AsgrimTest\Service;
 
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
+use Elasticsearch\Client as ElasticsearchClient;
 use Elasticsearch\ClientBuilder;
 use PHPUnit\Framework\TestCase;
+use function sleep;
 
 /**
  * @covers \Asgrim\Service\SearchWrapper
  */
 final class SearchWrapperTest extends TestCase
 {
+    /** @var ElasticsearchClient */
     private static $esClient;
 
     public static function setUpBeforeClass() : void
@@ -26,7 +30,7 @@ final class SearchWrapperTest extends TestCase
             ->build();
     }
 
-    private function getIndexedEsClient()
+    private function getIndexedEsClient() : ElasticsearchClient
     {
         $indexer = $this->getMockBuilder(IndexerService::class)
             ->disableOriginalConstructor()
@@ -51,15 +55,16 @@ final class SearchWrapperTest extends TestCase
         $wrapper->indexAllPosts();
 
         sleep(1); // Could do with a better way of waiting for index to catch up
+
         return self::$esClient;
     }
 
-    public function testIndexingAllPosts()
+    public function testIndexingAllPosts() : void
     {
         $this->getIndexedEsClient();
     }
 
-    public function testSearchReturnsEmptyArrayWithNoResults()
+    public function testSearchReturnsEmptyArrayWithNoResults() : void
     {
         $indexer = $this->getMockBuilder(IndexerService::class)
             ->disableOriginalConstructor()
@@ -69,7 +74,7 @@ final class SearchWrapperTest extends TestCase
         self::assertSame([], $wrapper->search('zibble'));
     }
 
-    public function testSearchReturnsResultWhenSearchingContent()
+    public function testSearchReturnsResultWhenSearchingContent() : void
     {
         $indexer = $this->getMockBuilder(IndexerService::class)
             ->disableOriginalConstructor()
@@ -84,7 +89,7 @@ final class SearchWrapperTest extends TestCase
         ], $wrapper->search('wibble'));
     }
 
-    public function testSearchReturnsResultWhenSearchingTitle()
+    public function testSearchReturnsResultWhenSearchingTitle() : void
     {
         $indexer = $this->getMockBuilder(IndexerService::class)
             ->disableOriginalConstructor()

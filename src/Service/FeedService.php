@@ -1,45 +1,39 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\Service;
 
 use Asgrim\View\Helper\RenderPostContent;
 use DateTime;
+use Zend\Feed\Writer\Exception\InvalidArgumentException;
 use Zend\Feed\Writer\Feed;
+use function str_replace;
+use function time;
 
 class FeedService
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $baseUrl;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $title;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $description;
 
-    /**
-     * @var string[]
-     */
+    /** @var string[] */
     private $author;
 
-    /**
-     * @var RenderPostContent
-     */
+    /** @var RenderPostContent */
     private $renderPostContent;
 
     public function __construct(RenderPostContent $renderPostContent)
     {
-        $this->baseUrl = 'https://www.jamestitcumb.com/';
-        $this->title = 'James Titcumb\'s blog';
-        $this->description = 'This is James Titcumb\'s personal PHP-related blog posts.';
-        $this->author = [
+        $this->baseUrl           = 'https://www.jamestitcumb.com/';
+        $this->title             = 'James Titcumb\'s blog';
+        $this->description       = 'This is James Titcumb\'s personal PHP-related blog posts.';
+        $this->author            = [
             'name' => 'James Titcumb',
             'url' => $this->baseUrl,
         ];
@@ -50,11 +44,9 @@ class FeedService
      * Create a feed from an array of posts. The format of the posts should be
      * that returned by the PostService.
      *
-     * @param array $posts
-     * @param string $titleSuffix
-     * @param string $linkSuffix
-     * @return Feed
-     * @throws \Zend\Feed\Writer\Exception\InvalidArgumentException
+     * @param string[][]|string[][][]|bool[][] $posts
+     *
+     * @throws InvalidArgumentException
      */
     public function createFeed(array $posts, string $titleSuffix = '', string $linkSuffix = '') : Feed
     {

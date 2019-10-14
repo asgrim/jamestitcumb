@@ -1,26 +1,24 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\Service;
 
+use Asgrim\Service\Exception\PostNotFound;
 use Elasticsearch\Client as EsClient;
 
 class SearchWrapper
 {
-    /**
-     * @var IndexerService
-     */
+    /** @var IndexerService */
     private $indexerService;
 
-    /**
-     * @var EsClient
-     */
+    /** @var EsClient */
     private $esClient;
 
     public function __construct(EsClient $esClient, IndexerService $indexerService)
     {
         $this->indexerService = $indexerService;
-        $this->esClient = $esClient;
+        $this->esClient       = $esClient;
     }
 
     /**
@@ -37,8 +35,7 @@ class SearchWrapper
      *     ],
      * ]
      *
-     * @param $text
-     * @return array
+     * @return string[][]
      */
     public function search(string $text) : array
     {
@@ -47,16 +44,14 @@ class SearchWrapper
             'type' => 'post',
             'body' => [
                 'query' => [
-                    'simple_query_string' => [
-                        'query' => $text,
-                    ],
+                    'simple_query_string' => ['query' => $text],
                 ],
             ],
         ];
 
         $results = $this->esClient->search($params);
 
-        if (!$results['hits']['total']) {
+        if (! $results['hits']['total']) {
             return [];
         }
 
@@ -68,14 +63,16 @@ class SearchWrapper
                 'slug' => $hit['_id'],
             ];
         }
+
         return $simplifiedResults;
     }
 
     /**
      * Index all the posts
-     * @throws \Asgrim\Service\Exception\PostNotFound
+     *
+     * @throws PostNotFound
      */
-    public function indexAllPosts()
+    public function indexAllPosts() : void
     {
         $posts = $this->indexerService->getAllPostsFromCache();
 

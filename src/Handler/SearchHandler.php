@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\Handler;
@@ -6,6 +7,7 @@ namespace Asgrim\Handler;
 use Asgrim\Service\PostService;
 use Asgrim\Service\SearchWrapper;
 use Elasticsearch\Common\Exceptions\TransportException;
+use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
@@ -13,45 +15,37 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
 use Zend\View\Model\ViewModel;
+use function array_key_exists;
+use function trim;
 
 final class SearchHandler implements MiddlewareInterface
 {
-    /**
-     * @var SearchWrapper
-     */
+    /** @var SearchWrapper */
     private $searchWrapper;
 
-    /**
-     * @var PostService
-     */
+    /** @var PostService */
     private $postService;
 
-    /**
-     * @var TemplateRenderer
-     */
+    /** @var TemplateRenderer */
     private $template;
 
-    /**
-     * @param SearchWrapper $searchWrapper
-     * @param PostService $postService
-     * @param TemplateRenderer $template
-     */
     public function __construct(SearchWrapper $searchWrapper, PostService $postService, TemplateRenderer $template)
     {
         $this->searchWrapper = $searchWrapper;
-        $this->postService = $postService;
-        $this->template = $template;
+        $this->postService   = $postService;
+        $this->template      = $template;
     }
 
     /**
      * {@inheritdoc}
-     * @throws \InvalidArgumentException
+     *
+     * @throws InvalidArgumentException
      */
     public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
     {
         $queryParams = $request->getQueryParams();
 
-        if (!array_key_exists('q', $queryParams) || '' === trim($queryParams['q'])) {
+        if (! array_key_exists('q', $queryParams) || trim($queryParams['q']) === '') {
             return new HtmlResponse($this->template->render('app::search/no-query'));
         }
 

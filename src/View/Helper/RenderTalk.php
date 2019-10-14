@@ -1,12 +1,17 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\View\Helper;
 
+use DateTimeImmutable;
 use Zend\View\Helper\AbstractHelper;
+use function count;
+use function implode;
 
 class RenderTalk extends AbstractHelper
 {
+    /** @param string[]|DateTimeImmutable[]|string[][] $talk */
     public function __invoke(array $talk) : string
     {
         $s = '<li>';
@@ -29,12 +34,12 @@ class RenderTalk extends AbstractHelper
 
         $links = [];
         foreach ($talk['links'] as $text => $linkData) {
-            $l = '<a href="';
+            $l  = '<a href="';
             $l .= $linkData['url'] . '"';
             if (isset($linkData['class'])) {
                 $l .= ' class="' . $linkData['class'] . '"';
             }
-            $l .= '>' . $text . '</a>';
+            $l      .= '>' . $text . '</a>';
             $links[] = $l;
         }
 
@@ -45,6 +50,7 @@ class RenderTalk extends AbstractHelper
         }
 
         $s .= '</li>';
+
         return $s;
     }
 }

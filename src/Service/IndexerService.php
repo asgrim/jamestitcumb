@@ -1,48 +1,55 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\Service;
 
+use Asgrim\Service\Exception\PostNotFound;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
+use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Parser as YamlParser;
+use function array_key_exists;
+use function basename;
+use function count;
+use function explode;
+use function file_exists;
+use function file_get_contents;
+use function file_put_contents;
+use function sprintf;
+use function sscanf;
+use function str_replace;
+use function strpos;
+use function substr;
+use function trim;
+use function uasort;
+use function var_export;
 
 class IndexerService
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $postFolder;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $cacheFileName;
 
-    /**
-     * @var YamlParser
-     */
+    /** @var YamlParser */
     private $yamlParser;
 
-    /**
-     * @var array
-     */
+    /** @var string[][]|string[][][]|bool[][] */
     private $posts;
 
-    /**
-     * @param string $postFolder
-     */
-    public function __construct($postFolder)
+    public function __construct(string $postFolder)
     {
-        $this->postFolder = $postFolder;
+        $this->postFolder    = $postFolder;
         $this->cacheFileName = $postFolder . '/postsCache.php';
-        $this->yamlParser = new YamlParser();
+        $this->yamlParser    = new YamlParser();
     }
 
     /**
      * Create the posts cache index.
      *
      * Returns the number of posts created in the index.
-     *
-     * @return int
      */
     public function createIndex() : int
     {
@@ -51,9 +58,12 @@ class IndexerService
         // Build cache in array
         $postIndex = [];
         foreach ($files as $file) {
-            if ($metadata = $this->getPostMetadata($file)) {
-                $postIndex[$metadata['slug']] = $metadata;
+            $metadata = $this->getPostMetadata($file);
+            if ($metadata === null) {
+                continue;
             }
+
+            $postIndex[$metadata['slug']] = $metadata;
         }
 
         // Sort it by date
@@ -69,11 +79,11 @@ class IndexerService
     /**
      * Fetch the posts from the cache.
      *
-     * @return array
+     * @return string[][]|string[][][]|bool[][]
      */
     public function getAllPostsFromCache() : array
     {
-        if (!isset($this->posts)) {
+        if (! isset($this->posts)) {
             $this->posts = require $this->cacheFileName;
         }
 
@@ -83,22 +93,20 @@ class IndexerService
     /**
      * Get the raw content of a post (including metadata) by the slug.
      *
-     * @param string $slug
-     * @return string
-     * @throws \Asgrim\Service\Exception\PostNotFound
+     * @throws PostNotFound
      */
     public function getPostContentBySlug(string $slug) : string
     {
         $posts = $this->getAllPostsFromCache();
 
-        if (!isset($posts[$slug])) {
-            throw new Exception\PostNotFound("No post was indexed with the slug: {$slug}");
+        if (! isset($posts[$slug])) {
+            throw new Exception\PostNotFound(sprintf('No post was indexed with the slug: %s', $slug));
         }
 
         $fullPath = $this->postFolder . $posts[$slug]['file'];
 
-        if (!file_exists($fullPath)) {
-            throw new Exception\PostNotFound("Markdown file missing for slug: {$slug}");
+        if (! file_exists($fullPath)) {
+            throw new Exception\PostNotFound(sprintf('Markdown file missing for slug: %s', $slug));
         }
 
         return file_get_contents($fullPath);
@@ -107,9 +115,7 @@ class IndexerService
     /**
      * Get the post content with the metadata stripped out
      *
-     * @param string $slug
-     * @return string
-     * @throws \Asgrim\Service\Exception\PostNotFound
+     * @throws PostNotFound
      */
     public function getPostContentWithoutMetadata(string $slug) : string
     {
@@ -126,18 +132,22 @@ class IndexerService
      * Sort a list of posts by date.
      *
      * @param mixed[] $postIndex
+     *
      * @return mixed[]
      */
     private function sortPostsByDate(array $postIndex) : array
     {
-        uasort($postIndex, function ($a, $b) {
-            $aa = (int)str_replace('-', '', $a['date']);
-            $bb = (int)str_replace('-', '', $b['date']);
+        uasort($postIndex, static function ($a, $b) {
+            $aa = (int) str_replace('-', '', $a['date']);
+            $bb = (int) str_replace('-', '', $b['date']);
             if ($aa > $bb) {
                 return -1;
-            } elseif ($bb > $aa) {
+            }
+
+            if ($bb > $aa) {
                 return 1;
             }
+
             return 0;
         });
 
@@ -147,18 +157,17 @@ class IndexerService
     /**
      * Build a flat file list of .md files from a directory.
      *
-     * @param string $directory
      * @return string[]
      */
     private function buildFileListFromDirectory(string $directory) : array
     {
         $files = [];
 
-        $iterator = new \RecursiveDirectoryIterator($directory);
+        $iterator = new RecursiveDirectoryIterator($directory);
 
-        foreach (new \RecursiveIteratorIterator($iterator) as $file) {
+        foreach (new RecursiveIteratorIterator($iterator) as $file) {
             /** @var $file \SplFileInfo */
-            if (!$file->isFile() || $file->getExtension() !== 'md') {
+            if (! $file->isFile() || $file->getExtension() !== 'md') {
                 continue;
             }
 
@@ -173,11 +182,11 @@ class IndexerService
      *
      * Returns null if there's no metadata or is a "draft" post.
      *
-     * @param string $filename
      * @return mixed[]|null
-     * @throws \Symfony\Component\Yaml\Exception\ParseException
+     *
+     * @throws ParseException
      */
-    private function getPostMetadata(string $filename)
+    private function getPostMetadata(string $filename) : ?array
     {
         $contents = file_get_contents($this->postFolder . '/' . $filename);
 
@@ -197,15 +206,15 @@ class IndexerService
             return null;
         }
 
-        if (!array_key_exists('tags', $parsed)) {
+        if (! array_key_exists('tags', $parsed)) {
             $parsed['tags'] = [];
         }
 
         $fileparts = sscanf(basename($filename), '%d-%d-%d-%s');
 
-        $parsed['date'] = sprintf('%04d-%02d-%02d', $fileparts[0], $fileparts[1], $fileparts[2]);
-        $parsed['slug'] = str_replace('.md', '', $fileparts[3]);
-        $parsed['file'] = $filename;
+        $parsed['date']   = sprintf('%04d-%02d-%02d', $fileparts[0], $fileparts[1], $fileparts[2]);
+        $parsed['slug']   = str_replace('.md', '', $fileparts[3]);
+        $parsed['file']   = $filename;
         $parsed['active'] = false;
 
         return $parsed;

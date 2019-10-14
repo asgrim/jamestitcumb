@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\View\Helper;
@@ -6,17 +7,15 @@ namespace Asgrim\View\Helper;
 use Asgrim\Service\IndexerService;
 use Michelf\MarkdownExtra as Markdown;
 use Zend\View\Helper\AbstractHelper;
+use function strpos;
+use function substr;
+use function trim;
 
 class RenderPostContent extends AbstractHelper
 {
-    /**
-     * @var IndexerService
-     */
+    /** @var IndexerService */
     private $indexerService;
 
-    /**
-     * @param IndexerService $indexerService
-     */
     public function __construct(IndexerService $indexerService)
     {
         $this->indexerService = $indexerService;

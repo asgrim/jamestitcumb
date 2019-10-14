@@ -1,58 +1,59 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\Service;
 
-use DateTime;
+use DateTimeImmutable;
+use function array_filter;
+use function usort;
 
 class TalkService
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $talkDataFile;
 
-    /**
-     * @var array
-     */
+    /** @var string[][]|string[][][]|bool[][] */
     private $talks;
 
-    public function __construct($talkDataFile)
+    public function __construct(string $talkDataFile)
     {
         $this->talkDataFile = $talkDataFile;
     }
 
     /**
-     * @param bool $inverseOrder
-     * @return array
+     * @return string[][]|string[][][]|bool[][]
      */
     private function getTalks(bool $inverseOrder = false) : array
     {
-        if (null === $this->talks) {
+        if ($this->talks === null) {
             $this->talks = require $this->talkDataFile;
         }
 
-        usort($this->talks, function ($a, $b) use ($inverseOrder) {
+        usort($this->talks, static function ($a, $b) use ($inverseOrder) {
             if ($a['date'] > $b['date']) {
                 return $inverseOrder ? 1 : -1;
             }
             if ($a['date'] < $b['date']) {
                 return $inverseOrder ? -1 : 1;
             }
+
             return 0;
         });
+
         return $this->talks;
     }
 
     /**
      * Get the upcoming talks.
      *
-     * @return array
+     * @return string[][]|string[][][]|bool[][]
      */
     public function getUpcomingTalks() : array
     {
-        $now = new DateTime('00:00:00');
-        return array_filter($this->getTalks(true), function ($talk) use ($now) {
+        $now = new DateTimeImmutable('00:00:00');
+
+        return array_filter($this->getTalks(true), static function ($talk) use ($now) {
             return $talk['date'] >= $now;
         });
     }
@@ -60,12 +61,13 @@ class TalkService
     /**
      * Get talks in the past.
      *
-     * @return array
+     * @return string[][]|string[][][]|bool[][]
      */
     public function getPastTalks() : array
     {
-        $now = new DateTime('00:00:00');
-        return array_filter($this->getTalks(), function ($talk) use ($now) {
+        $now = new DateTimeImmutable('00:00:00');
+
+        return array_filter($this->getTalks(), static function ($talk) use ($now) {
             return $talk['date'] < $now;
         });
     }

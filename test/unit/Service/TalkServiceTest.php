@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AsgrimTest\Service;
@@ -11,20 +12,21 @@ use PHPUnit\Framework\TestCase;
  */
 final class TalkServiceTest extends TestCase
 {
+    /** @var string */
     private static $talksFixture = __DIR__ . '/../../fixture/talks.php';
 
-    public function testGetUpcomingTalks()
+    public function testGetUpcomingTalks() : void
     {
         $talkService = new TalkService(self::$talksFixture);
-        $upcoming = $talkService->getUpcomingTalks();
+        $upcoming    = $talkService->getUpcomingTalks();
 
         self::assertCount(1, $upcoming);
     }
 
-    public function testGetPastTalks()
+    public function testGetPastTalks() : void
     {
         $talkService = new TalkService(self::$talksFixture);
-        $past = $talkService->getPastTalks();
+        $past        = $talkService->getPastTalks();
 
         self::assertCount(3, $past);
     }

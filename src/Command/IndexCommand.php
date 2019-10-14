@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\Command;
@@ -9,38 +10,36 @@ use Elasticsearch\Common\Exceptions\TransportException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use function sprintf;
 
 final class IndexCommand extends Command
 {
-    /**
-     * @var IndexerService
-     */
+    /** @var IndexerService */
     private $indexerService;
 
-    /**
-     * @var SearchWrapper
-     */
+    /** @var SearchWrapper */
     private $searchWrapper;
 
     public function __construct(IndexerService $indexerService, SearchWrapper $searchWrapper)
     {
         parent::__construct();
         $this->indexerService = $indexerService;
-        $this->searchWrapper = $searchWrapper;
+        $this->searchWrapper  = $searchWrapper;
     }
 
-    protected function configure()
+    protected function configure() : void
     {
         $this->setName('index-posts')
             ->setDescription('Indexes the blog posts to create a cached list of them');
     }
 
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output) : void
     {
         $postsIndexed = $this->indexerService->createIndex();
 
-        if (!$postsIndexed) {
+        if (! $postsIndexed) {
             $output->writeln('<error>No posts indexed. Possible cache failure.</error>');
+
             return;
         }
 

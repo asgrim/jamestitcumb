@@ -1,9 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AsgrimTest\Service;
 
 use Asgrim\View\Helper\RenderTalk;
+use DateTime;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -11,11 +13,11 @@ use PHPUnit\Framework\TestCase;
  */
 final class RenderTalkTest extends TestCase
 {
-    public function testRenderRegularTalkContents()
+    public function testRenderRegularTalkContents() : void
     {
         $renderTalk = new RenderTalk();
 
-        $date = new \DateTime('2016-12-31 23:59:59');
+        $date = new DateTime('2016-12-31 23:59:59');
 
         $content = $renderTalk->__invoke([
             'type' => 'regular',
@@ -32,11 +34,11 @@ final class RenderTalkTest extends TestCase
         self::assertStringMatchesFormat('%s(%s, 31st Dec \'16)%s', $content);
     }
 
-    public function testRenderLightningTalkContents()
+    public function testRenderLightningTalkContents() : void
     {
         $renderTalk = new RenderTalk();
 
-        $date = new \DateTime('2016-12-31 23:59:59');
+        $date = new DateTime('2016-12-31 23:59:59');
 
         $content = $renderTalk->__invoke([
             'type' => 'lightning',
@@ -50,11 +52,11 @@ final class RenderTalkTest extends TestCase
         self::assertStringMatchesFormat('%s<h3><em>Lightning: </em>My Great Lightning Talk%s</h3>%s', $content);
     }
 
-    public function testRenderTutorialTalkContents()
+    public function testRenderTutorialTalkContents() : void
     {
         $renderTalk = new RenderTalk();
 
-        $date = new \DateTime('2016-12-31 23:59:59');
+        $date = new DateTime('2016-12-31 23:59:59');
 
         $content = $renderTalk->__invoke([
             'type' => 'tutorial',
@@ -68,11 +70,11 @@ final class RenderTalkTest extends TestCase
         self::assertStringMatchesFormat('%s<h3><strong>Tutorial: </strong>My Great Tutorial%s</h3>%s', $content);
     }
 
-    public function testRenderTalkWithLinksContents()
+    public function testRenderTalkWithLinksContents() : void
     {
         $renderTalk = new RenderTalk();
 
-        $date = new \DateTime('2016-12-31 23:59:59');
+        $date = new DateTime('2016-12-31 23:59:59');
 
         $content = $renderTalk->__invoke([
             'type' => 'lightning',

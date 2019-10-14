@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AsgrimTest\Service;
@@ -6,15 +7,16 @@ namespace AsgrimTest\Service;
 use Asgrim\Service\IndexerService;
 use Asgrim\View\Helper\RenderPostContent;
 use PHPUnit\Framework\TestCase;
+use PHPUnit_Framework_MockObject_MockObject;
 
 /**
  * @covers \Asgrim\View\Helper\RenderPostContent
  */
 final class RenderPostContentTest extends TestCase
 {
-    public function testBasicMarkdownConversion()
+    public function testBasicMarkdownConversion() : void
     {
-        /** @var IndexerService|\PHPUnit_Framework_MockObject_MockObject $indexer */
+        /** @var IndexerService|PHPUnit_Framework_MockObject_MockObject $indexer */
         $indexer = $this->getMockBuilder(IndexerService::class)
             ->disableOriginalConstructor()
             ->setMethods(['getPostContentBySlug'])

@@ -1,8 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\Handler;
 
+use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
@@ -12,14 +14,9 @@ use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
 
 final class AboutHandler implements MiddlewareInterface
 {
-    /**
-     * @var TemplateRenderer
-     */
+    /** @var TemplateRenderer */
     private $template;
 
-    /**
-     * @param TemplateRenderer $template
-     */
     public function __construct(TemplateRenderer $template)
     {
         $this->template = $template;
@@ -27,7 +24,8 @@ final class AboutHandler implements MiddlewareInterface
 
     /**
      * {@inheritdoc}
-     * @throws \InvalidArgumentException
+     *
+     * @throws InvalidArgumentException
      */
     public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
     {

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AsgrimTest\Middleware;
@@ -16,14 +17,14 @@ use Zend\Diactoros\ServerRequest;
  */
 final class ClacksMiddlewareTest extends TestCase
 {
-    public function testClacksHeaderAdded(): void
+    public function testClacksHeaderAdded() : void
     {
         $middleware = new ClacksMiddleware();
 
         $response = $middleware->process(
             new ServerRequest(['']),
             new class implements RequestHandlerInterface {
-                public function handle(ServerRequestInterface $request): ResponseInterface
+                public function handle(ServerRequestInterface $request) : ResponseInterface
                 {
                     return new Response();
                 }
