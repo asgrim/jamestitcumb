@@ -13,7 +13,7 @@ return [
 //    ],
 //    'elasticsearch' => [
 //        'hosts' => [
-//            'http://user:pass@localhost:9200',
+//            'http://elastic:changeme@elastic.asgrim:9200', // default for Docker
 //        ],
 //    ],
 ];

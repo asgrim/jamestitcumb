@@ -5,7 +5,7 @@ services:
   - elasticsearch
 
 php:
-  - 7.2
+  - 7.3
 
 before_script:
   - sleep 10
@@ -14,6 +14,8 @@ before_script:
 
 script:
   - vendor/bin/phpunit --coverage-text --coverage-clover=clover.xml --colors
+  - vendor/bin/phpcs
+  - vendor/bin/psalm
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover clover.xml
