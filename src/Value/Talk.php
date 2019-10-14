@@ -4,17 +4,19 @@ declare(strict_types=1);
 
 namespace Asgrim\Value;
 
+use DateTime;
 use DateTimeImmutable;
 use Webmozart\Assert\Assert;
 
 /**
  * @psalm-type TalkType = Talk::TYPE_TALK|Talk::TYPE_TUTORIAL|Talk::TYPE_LIGHTNING
+ * @psalm-type LinksData = array<string, array{url: string, class: string}>
  * @psalm-suppress PropertyNotSetInConstructor
  */
 final class Talk
 {
-    private const TYPE_TALK = 'talk';
-    private const TYPE_TUTORIAL = 'tutorial';
+    private const TYPE_TALK      = 'talk';
+    private const TYPE_TUTORIAL  = 'tutorial';
     private const TYPE_LIGHTNING = 'lightning';
 
     /** @var string */
@@ -22,7 +24,6 @@ final class Talk
 
     /**
      * @var string
-     *
      * @psalm-var TalkType
      */
     private $type;
@@ -36,25 +37,33 @@ final class Talk
     /** @var string */
     private $abstract;
 
-    /** @var array<string, array{url: string, class: string}> */
+    /**
+     * @var string[][]
+     * @psalm-var LinksData
+     */
     private $links;
 
     private function __construct()
     {
     }
 
+    /**
+     * @param string[]|DateTime[]|string[][][] $data
+     *
+     * @psalm-param array{name: string, type: TalkType, date: DateTime, event: string, abstract: string, links: LinksData} $data
+     */
     public static function fromArrayData(array $data) : self
     {
         Assert::oneOf($data['type'], [self::TYPE_TALK, self::TYPE_TUTORIAL, self::TYPE_LIGHTNING]);
 
         $instance = new self();
 
-        $instance->name = $data['name'];
-        $instance->type = $data['type'];
-        $instance->date = DateTimeImmutable::createFromMutable($data['date']);
-        $instance->event = $data['event'];
+        $instance->name     = $data['name'];
+        $instance->type     = $data['type'];
+        $instance->date     = DateTimeImmutable::createFromMutable($data['date']);
+        $instance->event    = $data['event'];
         $instance->abstract = $data['abstract'];
-        $instance->links = $data['links'];
+        $instance->links    = $data['links'];
 
         return $instance;
     }
@@ -90,7 +99,9 @@ final class Talk
     }
 
     /**
-     * @return array<string, array{url: string, class: string}>
+     * @return string[][]
+     *
+     * @psalm-return LinksData
      */
     public function links() : array
     {

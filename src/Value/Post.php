@@ -32,8 +32,19 @@ final class Post
     {
     }
 
+    /**
+     * @param string[]|DateTimeImmutable[]|string[][] $dataArray
+     *
+     * @return static
+     */
     public static function __set_state(array $dataArray) : self
     {
+        Assert::string($dataArray['title']);
+        Assert::isArray($dataArray['tags']);
+        Assert::isInstanceOf($dataArray['date'], DateTimeImmutable::class);
+        Assert::string($dataArray['slug']);
+        Assert::string($dataArray['file']);
+
         return self::create(
             $dataArray['title'],
             $dataArray['tags'],
@@ -43,6 +54,9 @@ final class Post
         );
     }
 
+    /**
+     * @param string[] $tags
+     */
     public static function create(
         string $title,
         array $tags,
