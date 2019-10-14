@@ -7,6 +7,8 @@ services:
     build: docker/nginx
     ports:
       - 80:80
+    volumes:
+      - .:/app:ro
     restart: unless-stopped
     networks:
       asgrim:
@@ -38,6 +40,13 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
+    environment:
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    restart: unless-stopped
     networks:
       asgrim:
         aliases:

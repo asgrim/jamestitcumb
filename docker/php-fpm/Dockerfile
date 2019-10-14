@@ -12,12 +12,14 @@ RUN mkdir -p /usr/share/php-fpm \
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+ADD ./docker/php-fpm/wait-for-it /usr/bin/wait-for-it
+ADD ./docker/php-fpm/php-xdebug /usr/bin/php-xdebug
+ADD ./docker/php-fpm/dev-entrypoint.sh /dev-entrypoint.sh
 ADD ./docker/php-fpm/php-fpm.conf /usr/local/etc/php-fpm.d/php-fpm.conf
 ADD ./docker/php-fpm/php.ini /usr/local/etc/php/php.ini
-ADD ./docker/php-fpm/php-xdebug /usr/bin/php-xdebug
 
 WORKDIR /app
 
 EXPOSE 9001
 
-CMD ["php-fpm", "--allow-to-run-as-root"]
+CMD ["/dev-entrypoint.sh"]
