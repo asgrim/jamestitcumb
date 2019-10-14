@@ -27,3 +27,9 @@ $ docker-compose run php-fpm composer install
 $ docker-compose up
 $ docker-compose exec php-fpm vendor/bin/phpunit
 ```
+
+### Index stuff again
+
+```bash
+$ docker-compose exec php-fpm /app/app.php index-posts
+```
