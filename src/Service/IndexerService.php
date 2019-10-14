@@ -214,8 +214,7 @@ class IndexerService
                 new DateTimeZone('UTC')
             ),
             str_replace('.md', '', $fileparts[3]),
-            $filename,
-            false
+            $filename
         );
     }
 }

@@ -6,10 +6,11 @@ namespace AsgrimTest\Service;
 
 use Asgrim\Service\FeedService;
 use Asgrim\Service\IndexerService;
+use Asgrim\Value\Post;
 use Asgrim\View\Helper\RenderPostContent;
+use DateTimeImmutable;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use PHPUnit_Framework_MockObject_MockObject;
-use Zend\Feed\Writer\Feed;
 
 /**
  * @covers \Asgrim\Service\FeedService
@@ -18,16 +19,15 @@ final class FeedServiceTest extends TestCase
 {
     public function testFeedServiceCreatesFeedEvenWithEmptyPostsArray() : void
     {
-        $feedService = new FeedService(new RenderPostContent(new IndexerService('')));
-        $feed        = $feedService->createFeed([]);
-
-        self::assertInstanceOf(Feed::class, $feed);
-        self::assertSame(0, $feed->count());
+        self::assertSame(
+            0,
+            (new FeedService(new RenderPostContent(new IndexerService(''))))->createFeed([])->count()
+        );
     }
 
     public function testFeedServiceWithPosts() : void
     {
-        /** @var RenderPostContent|PHPUnit_Framework_MockObject_MockObject $postRenderer */
+        /** @var RenderPostContent|MockObject $postRenderer */
         $postRenderer = $this->getMockBuilder(RenderPostContent::class)
             ->disableOriginalConstructor()
             ->setMethods(['__invoke'])
@@ -37,23 +37,23 @@ final class FeedServiceTest extends TestCase
             ->method('__invoke')
             ->willReturn('foo');
 
-        $feedService = new FeedService($postRenderer);
-        $feed        = $feedService->createFeed([
-            [
-                'title' => 'Post title 1',
-                'date' => '2015-01-01',
-                'content' => 'Some post content',
-                'slug' => 'post-slug-1',
-            ],
-            [
-                'title' => 'Post title 2',
-                'date' => '2015-01-01',
-                'content' => 'Some more post content',
-                'slug' => 'post-slug-2',
-            ],
+        $feed = (new FeedService($postRenderer))->createFeed([
+            Post::create(
+                'Post title 1',
+                [],
+                DateTimeImmutable::createFromFormat('Y-m-d', '2015-01-01'),
+                'post-slug-1',
+                'no file'
+            ),
+            Post::create(
+                'Post title 2',
+                [],
+                DateTimeImmutable::createFromFormat('Y-m-d', '2015-01-01'),
+                'post-slug-2',
+                'no file'
+            ),
         ]);
 
-        self::assertInstanceOf(Feed::class, $feed);
         self::assertSame(2, $feed->count());
     }
 }

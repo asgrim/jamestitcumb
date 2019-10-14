@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace AsgrimTest\Service;
 
+use Asgrim\Value\Talk;
 use Asgrim\View\Helper\RenderTalk;
 use DateTime;
 use PHPUnit\Framework\TestCase;
@@ -19,14 +20,14 @@ final class RenderTalkTest extends TestCase
 
         $date = new DateTime('2016-12-31 23:59:59');
 
-        $content = $renderTalk->__invoke([
-            'type' => 'regular',
+        $content = $renderTalk->__invoke(Talk::fromArrayData([
+            'type' => 'talk',
             'name' => 'My Great Talk',
             'event' => 'Fantastic Conference',
             'date' => $date,
             'abstract' => 'This talk is simply fantastic.',
             'links' => [],
-        ]);
+        ]));
 
         self::assertStringMatchesFormat('%s<h3>My Great Talk%s</h3>%s', $content);
         self::assertStringMatchesFormat('%s(Fantastic Conference%s)%s', $content);
@@ -40,14 +41,14 @@ final class RenderTalkTest extends TestCase
 
         $date = new DateTime('2016-12-31 23:59:59');
 
-        $content = $renderTalk->__invoke([
+        $content = $renderTalk->__invoke(Talk::fromArrayData([
             'type' => 'lightning',
             'name' => 'My Great Lightning Talk',
             'event' => 'Fantastic Conference',
             'date' => $date,
             'abstract' => 'This talk is simply fantastic.',
             'links' => [],
-        ]);
+        ]));
 
         self::assertStringMatchesFormat('%s<h3><em>Lightning: </em>My Great Lightning Talk%s</h3>%s', $content);
     }
@@ -58,14 +59,14 @@ final class RenderTalkTest extends TestCase
 
         $date = new DateTime('2016-12-31 23:59:59');
 
-        $content = $renderTalk->__invoke([
+        $content = $renderTalk->__invoke(Talk::fromArrayData([
             'type' => 'tutorial',
             'name' => 'My Great Tutorial',
             'event' => 'Fantastic Conference',
             'date' => $date,
             'abstract' => 'This talk is simply fantastic.',
             'links' => [],
-        ]);
+        ]));
 
         self::assertStringMatchesFormat('%s<h3><strong>Tutorial: </strong>My Great Tutorial%s</h3>%s', $content);
     }
@@ -76,7 +77,7 @@ final class RenderTalkTest extends TestCase
 
         $date = new DateTime('2016-12-31 23:59:59');
 
-        $content = $renderTalk->__invoke([
+        $content = $renderTalk->__invoke(Talk::fromArrayData([
             'type' => 'lightning',
             'name' => 'My Great Talk',
             'event' => 'Fantastic Conference',
@@ -86,7 +87,7 @@ final class RenderTalkTest extends TestCase
                 'Label for link 1' => ['url' => 'http://test-uri/1', 'class' => 'foo'],
                 'Label for link 2' => ['url' => 'http://test-uri/2'],
             ],
-        ]);
+        ]));
 
         self::assertStringMatchesFormat('%s<a href="http://test-uri/1" class="foo">Label for link 1</a>%s', $content);
         self::assertStringMatchesFormat('%s<a href="http://test-uri/2">Label for link 2</a>%s', $content);

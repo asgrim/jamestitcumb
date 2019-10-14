@@ -6,6 +6,7 @@ namespace Asgrim\Handler;
 
 use Asgrim\Service\Exception\PostNotFound;
 use Asgrim\Service\PostService;
+use Asgrim\Value\Post;
 use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -40,8 +41,9 @@ final class PostsHandler implements MiddlewareInterface
 
         try {
             if ($slug !== null) {
+                /** @var Post[] $posts */
                 $posts = [$slug => $this->postService->fetchPostBySlug($slug)];
-                $posts[$slug]->markActive();
+                $posts[$slug]->enableCommentsForPost();
                 $title = $posts[$slug]->title();
             } else {
                 $query = $request->getQueryParams();

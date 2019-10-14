@@ -6,6 +6,8 @@ namespace AsgrimTest\Service;
 
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
+use Asgrim\Value\Post;
+use DateTimeImmutable;
 use Elasticsearch\Client as ElasticsearchClient;
 use Elasticsearch\ClientBuilder;
 use PHPUnit\Framework\TestCase;
@@ -45,10 +47,13 @@ final class SearchWrapperTest extends TestCase
             ->method('getAllPostsFromCache')
             ->with()
             ->willReturn([
-                [
-                    'slug' => 'a-test-slug',
-                    'title' => 'post-title-fibble',
-                ],
+                Post::create(
+                    'Post Title Fibble',
+                    [],
+                    new DateTimeImmutable(),
+                    'a-test-slug',
+                    'a-filename'
+                ),
             ]);
 
         $wrapper = new SearchWrapper(self::$esClient, $indexer);
@@ -61,6 +66,7 @@ final class SearchWrapperTest extends TestCase
 
     public function testIndexingAllPosts() : void
     {
+        /** @noinspection UnusedFunctionResultInspection */
         $this->getIndexedEsClient();
     }
 

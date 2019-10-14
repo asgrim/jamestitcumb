@@ -24,7 +24,7 @@ $this->headTitle()->append($title);
 		<?php echo $this->renderPostContent($post->slug()); ?>
 	</div>
 
-	<?php if ($post->active()): ?>
+	<?php if ($post->shouldShowComments()): ?>
 		<hr />
 
 		<div id="disqus_thread"></div>

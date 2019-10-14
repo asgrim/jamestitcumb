@@ -24,12 +24,11 @@ final class PostServiceTest extends TestCase
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
 
-        $postService = new PostService($indexer);
-        $post        = $postService->fetchPostBySlug('test-post');
+        $post = (new PostService($indexer))->fetchPostBySlug('test-post');
 
-        self::assertSame('Test post from 2014', $post['title']);
-        self::assertSame('2014-01-01', $post['date']);
-        self::assertSame('test-post', $post['slug']);
+        self::assertSame('Test post from 2014', $post->title());
+        self::assertSame('2014-01-01', $post->date()->format('Y-m-d'));
+        self::assertSame('test-post', $post->slug());
     }
 
     public function testExceptionThrownWhenSlugNotFound() : void
@@ -41,6 +40,8 @@ final class PostServiceTest extends TestCase
 
         $this->expectException(OutOfBoundsException::class);
         $this->expectExceptionMessage('Post \'this-slug-should-not-exist\' not found');
+
+        /** @noinspection UnusedFunctionResultInspection */
         $postService->fetchPostBySlug('this-slug-should-not-exist');
     }
 
@@ -49,8 +50,7 @@ final class PostServiceTest extends TestCase
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
 
-        $postService = new PostService($indexer);
-        $posts       = $postService->fetchRecentPosts();
+        $posts = (new PostService($indexer))->fetchRecentPosts();
 
         self::assertCount(3, $posts);
     }
@@ -60,8 +60,7 @@ final class PostServiceTest extends TestCase
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
 
-        $postService = new PostService($indexer);
-        $posts       = $postService->fetchRecentPosts(2);
+        $posts = (new PostService($indexer))->fetchRecentPosts(2);
 
         self::assertCount(2, $posts);
     }

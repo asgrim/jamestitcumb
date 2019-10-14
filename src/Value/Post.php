@@ -39,8 +39,7 @@ final class Post
             $dataArray['tags'],
             $dataArray['date'],
             $dataArray['slug'],
-            $dataArray['file'],
-            $dataArray['active']
+            $dataArray['file']
         );
     }
 
@@ -49,8 +48,7 @@ final class Post
         array $tags,
         DateTimeImmutable $date,
         string $slug,
-        string $file,
-        bool $active
+        string $file
     ) : self {
         Assert::allString($tags);
 
@@ -60,7 +58,7 @@ final class Post
         $instance->date   = $date;
         $instance->slug   = $slug;
         $instance->file   = $file;
-        $instance->active = $active;
+        $instance->active = false;
 
         return $instance;
     }
@@ -91,12 +89,12 @@ final class Post
         return $this->file;
     }
 
-    public function active() : bool
+    public function shouldShowComments() : bool
     {
         return $this->active;
     }
 
-    public function markActive() : void
+    public function enableCommentsForPost() : void
     {
         $this->active = true;
     }

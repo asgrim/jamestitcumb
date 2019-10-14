@@ -5,8 +5,11 @@ declare(strict_types=1);
 namespace AsgrimTest\Service;
 
 use Asgrim\Service\IndexerService;
+use Asgrim\Value\Post;
+use DateTimeImmutable;
 use OutOfBoundsException;
 use PHPUnit\Framework\TestCase;
+use ReflectionException;
 use ReflectionProperty;
 use function file_exists;
 use function strlen;
@@ -52,9 +55,12 @@ final class IndexerServiceTest extends TestCase
 
         $this->expectException(OutOfBoundsException::class);
         $this->expectExceptionMessage('No post was indexed with the slug');
+
+        /** @noinspection UnusedFunctionResultInspection */
         $indexer->getPostContentBySlug('this-slug-should-not-exist');
     }
 
+    /** @throws ReflectionException */
     public function testIndexerFailsWhenSlugExistsButFileDoesNot() : void
     {
         $indexer = new IndexerService(self::$postsFolder);
@@ -62,16 +68,19 @@ final class IndexerServiceTest extends TestCase
         $postsProperty = new ReflectionProperty($indexer, 'posts');
         $postsProperty->setAccessible(true);
         $postsProperty->setValue($indexer, [
-            'test-post-slug' => [
-                'title' => 'Test post title',
-                'date' => '2015-01-01',
-                'slug' => 'test-post-slug',
-                'file' => 'foo/bar/baz/should/not/exist.md',
-            ],
+            'test-post-slug' => Post::create(
+                'Test post title',
+                [],
+                DateTimeImmutable::createFromFormat('Y-m-d', '2015-01-01'),
+                'test-post-slug',
+                'foo/bar/baz/should/not/exist.md'
+            ),
         ]);
 
         $this->expectException(OutOfBoundsException::class);
         $this->expectExceptionMessage('Markdown file missing for slug');
+
+        /** @noinspection UnusedFunctionResultInspection */
         $indexer->getPostContentBySlug('test-post-slug');
     }
 
