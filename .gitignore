@@ -4,3 +4,8 @@
 .project
 .idea
 .php_cs.cache
+.phpcs-cache
+.phpunit.result.cache
+phpunit.xml
+psalm.xml
+phpcs.xml
