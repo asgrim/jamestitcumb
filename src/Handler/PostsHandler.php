@@ -41,8 +41,8 @@ final class PostsHandler implements MiddlewareInterface
         try {
             if ($slug !== null) {
                 $posts                  = [$slug => $this->postService->fetchPostBySlug($slug)];
-                $posts[$slug]['active'] = true;
-                $title                  = $posts[$slug]['title'];
+                $posts[$slug]->markActive();
+                $title                  = $posts[$slug]->title();
             } else {
                 $query = $request->getQueryParams();
                 if (array_key_exists('tag', $query)) {

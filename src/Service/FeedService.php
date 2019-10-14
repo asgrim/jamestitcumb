@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Asgrim\Service;
 
+use Asgrim\Value\Post;
 use Asgrim\View\Helper\RenderPostContent;
 use DateTime;
 use Zend\Feed\Writer\Exception\InvalidArgumentException;
@@ -44,7 +45,7 @@ class FeedService
      * Create a feed from an array of posts. The format of the posts should be
      * that returned by the PostService.
      *
-     * @param string[][]|string[][][]|bool[][] $posts
+     * @param Post[]|array<string, Post> $posts
      *
      * @throws InvalidArgumentException
      */
@@ -60,17 +61,17 @@ class FeedService
 
         foreach ($posts as $slug => $post) {
             $entry = $feed->createEntry();
-            $entry->setTitle($post['title']);
+            $entry->setTitle($post->title());
             $entry->setLink($this->baseUrl . 'posts/' . $slug);
             $entry->addAuthor($this->author);
-            $entry->setDateModified(new DateTime($post['date']));
-            $entry->setDateCreated(new DateTime($post['date']));
-            $entry->setDescription($post['title']);
+            $entry->setDateModified($post->date());
+            $entry->setDateCreated($post->date());
+            $entry->setDescription($post->title());
 
             $content = str_replace(
                 ' allowfullscreen>',
                 ' allowfullscreen="allowfullscreen">',
-                $this->renderPostContent->__invoke($post['slug'])
+                $this->renderPostContent->__invoke($post->slug())
             );
 
             $entry->setContent($content);

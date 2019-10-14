@@ -51,6 +51,8 @@ class SearchWrapper
 
         $results = $this->esClient->search($params);
 
+        assert(is_array($results));
+
         if (! $results['hits']['total']) {
             return [];
         }
@@ -87,12 +89,12 @@ class SearchWrapper
         foreach ($posts as $post) {
             $params = [
                 'body' => [
-                    'title' => $post['title'],
-                    'content' => $this->indexerService->getPostContentWithoutMetadata($post['slug']),
+                    'title' => $post->title(),
+                    'content' => $this->indexerService->getPostContentWithoutMetadata($post->slug()),
                 ],
                 'index' => 'posts',
                 'type' => 'post',
-                'id' => $post['slug'],
+                'id' => $post->slug(),
             ];
 
             $this->esClient->index($params);

@@ -7,9 +7,6 @@ namespace Asgrim\View\Helper;
 use Asgrim\Service\IndexerService;
 use Michelf\MarkdownExtra as Markdown;
 use Zend\View\Helper\AbstractHelper;
-use function strpos;
-use function substr;
-use function trim;
 
 class RenderPostContent extends AbstractHelper
 {
@@ -23,12 +20,6 @@ class RenderPostContent extends AbstractHelper
 
     public function __invoke(string $slug) : string
     {
-        $text = $this->indexerService->getPostContentBySlug($slug);
-
-        // Get rid of the metadata
-        $text = substr($text, strpos($text, '---')+3);
-        $text = substr($text, strpos($text, '---')+3);
-
-        return Markdown::defaultTransform(trim($text));
+        return Markdown::defaultTransform($this->indexerService->getPostContentWithoutMetadata($slug));
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Asgrim\Service;
 
 use Asgrim\Service\Exception\PostNotFound;
+use Asgrim\Value\Post;
 use function array_filter;
 use function array_key_exists;
 use function array_slice;
@@ -24,7 +25,7 @@ class PostService
     /**
      * Fetch a number of recent posts (rendered).
      *
-     * @return string[][]|string[][][]|bool[][]
+     * @return Post[]|array<string, Post>
      */
     public function fetchRecentPosts(int $howMany = 5) : array
     {
@@ -34,11 +35,9 @@ class PostService
     /**
      * Fetch a specific post by the slug (rendered).
      *
-     * @return string[]|string[][]|bool[]
-     *
      * @throws PostNotFound
      */
-    public function fetchPostBySlug(string $slug) : array
+    public function fetchPostBySlug(string $slug) : Post
     {
         $posts = $this->indexerService->getAllPostsFromCache();
 
@@ -52,14 +51,14 @@ class PostService
     /**
      * Fetch all posts matching a specified tag
      *
-     * @return string[][]|string[][][]|bool[][]
+     * @return Post[]|array<string, Post>
      */
     public function fetchPostsByTag(string $tag) : array
     {
         return array_filter(
             $this->indexerService->getAllPostsFromCache(),
-            static function ($post) use ($tag) {
-                return in_array($tag, $post['tags'], true);
+            static function (Post $post) use ($tag) {
+                return in_array($tag, $post->tags(), true);
             }
         );
     }

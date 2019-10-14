@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Asgrim\Service;
 
 use Asgrim\Service\Exception\PostNotFound;
+use Asgrim\Value\Post;
+use DateTimeImmutable;
+use DateTimeZone;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Symfony\Component\Yaml\Exception\ParseException;
@@ -36,7 +39,7 @@ class IndexerService
     /** @var YamlParser */
     private $yamlParser;
 
-    /** @var string[][]|string[][][]|bool[][] */
+    /** @var Post[]|array<string, Post>|null */
     private $posts;
 
     public function __construct(string $postFolder)
@@ -63,7 +66,7 @@ class IndexerService
                 continue;
             }
 
-            $postIndex[$metadata['slug']] = $metadata;
+            $postIndex[$metadata->slug()] = $metadata;
         }
 
         // Sort it by date
@@ -71,7 +74,7 @@ class IndexerService
 
         // Write to disk
         $cacheContent = var_export($postIndex, true);
-        file_put_contents($this->cacheFileName, "<?php\nreturn " . $cacheContent . ";\n");
+        file_put_contents($this->cacheFileName, "<?php\nreturn " . $cacheContent . ";\n", LOCK_EX);
 
         return count($postIndex);
     }
@@ -79,11 +82,12 @@ class IndexerService
     /**
      * Fetch the posts from the cache.
      *
-     * @return string[][]|string[][][]|bool[][]
+     * @return Post[]|array<string, Post>
      */
     public function getAllPostsFromCache() : array
     {
         if (! isset($this->posts)) {
+            /** @psalm-suppress UnresolvableInclude */
             $this->posts = require $this->cacheFileName;
         }
 
@@ -103,7 +107,7 @@ class IndexerService
             throw new Exception\PostNotFound(sprintf('No post was indexed with the slug: %s', $slug));
         }
 
-        $fullPath = $this->postFolder . $posts[$slug]['file'];
+        $fullPath = $this->postFolder . $posts[$slug]->file();
 
         if (! file_exists($fullPath)) {
             throw new Exception\PostNotFound(sprintf('Markdown file missing for slug: %s', $slug));
@@ -122,8 +126,8 @@ class IndexerService
         $text = $this->getPostContentBySlug($slug);
 
         // Get rid of the metadata
-        $text = substr($text, strpos($text, '---')+3);
-        $text = substr($text, strpos($text, '---')+3);
+        $text = substr($text, (int)(strpos($text, '---')) + 3);
+        $text = substr($text, (int)(strpos($text, '---')) + 3);
 
         return trim($text);
     }
@@ -131,24 +135,14 @@ class IndexerService
     /**
      * Sort a list of posts by date.
      *
-     * @param mixed[] $postIndex
+     * @param array<Post> $postIndex
      *
-     * @return mixed[]
+     * @return array<Post>
      */
     private function sortPostsByDate(array $postIndex) : array
     {
-        uasort($postIndex, static function ($a, $b) {
-            $aa = (int) str_replace('-', '', $a['date']);
-            $bb = (int) str_replace('-', '', $b['date']);
-            if ($aa > $bb) {
-                return -1;
-            }
-
-            if ($bb > $aa) {
-                return 1;
-            }
-
-            return 0;
+        uasort($postIndex, static function (Post $a, Post $b) {
+            return $a->date() > $b->date() ? -1 : 1;
         });
 
         return $postIndex;
@@ -182,11 +176,11 @@ class IndexerService
      *
      * Returns null if there's no metadata or is a "draft" post.
      *
-     * @return mixed[]|null
+     * @return Post|null
      *
      * @throws ParseException
      */
-    private function getPostMetadata(string $filename) : ?array
+    private function getPostMetadata(string $filename) : ?Post
     {
         $contents = file_get_contents($this->postFolder . '/' . $filename);
 
@@ -212,11 +206,17 @@ class IndexerService
 
         $fileparts = sscanf(basename($filename), '%d-%d-%d-%s');
 
-        $parsed['date']   = sprintf('%04d-%02d-%02d', $fileparts[0], $fileparts[1], $fileparts[2]);
-        $parsed['slug']   = str_replace('.md', '', $fileparts[3]);
-        $parsed['file']   = $filename;
-        $parsed['active'] = false;
-
-        return $parsed;
+        return Post::create(
+            $parsed['title'],
+            $parsed['tags'],
+            DateTimeImmutable::createFromFormat(
+                'Y-m-d',
+                sprintf('%04d-%02d-%02d', $fileparts[0], $fileparts[1], $fileparts[2]),
+                new DateTimeZone('UTC')
+            ),
+            str_replace('.md', '', $fileparts[3]),
+            $filename,
+            false
+        );
     }
 }
