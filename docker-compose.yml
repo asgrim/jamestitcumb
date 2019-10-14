@@ -27,6 +27,8 @@ services:
       - ./composer.json:/app/composer.json
       - ./composer.lock:/app/composer.lock
       - ./data:/app/data
+      - ./test/fixture:/app/test/fixture
+      - .phpunit.result.cache
     restart: unless-stopped
     networks:
       asgrim:

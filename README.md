@@ -20,3 +20,10 @@ $ docker-compose build
 $ docker-compose up
 $ docker-compose run php-fpm composer install
 ```
+
+### Running tests
+
+```bash
+$ docker-compose up
+$ docker-compose exec php-fpm vendor/bin/phpunit
+```

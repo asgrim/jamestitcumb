@@ -15,7 +15,7 @@ final class SearchWrapperTest extends TestCase
 {
     private static $esClient;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass() : void
     {
         parent::setUpBeforeClass();
 

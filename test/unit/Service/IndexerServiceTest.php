@@ -35,7 +35,7 @@ final class IndexerServiceTest extends TestCase
         $indexer->createIndex();
 
         $post = $indexer->getPostContentBySlug('test-post');
-        self::assertInternalType('string', $post);
+        self::assertIsString($post);
         self::assertGreaterThan(0, strlen($post));
     }
 
@@ -69,7 +69,7 @@ final class IndexerServiceTest extends TestCase
         $indexer->getPostContentBySlug('test-post-slug');
     }
 
-    public function tearDown()
+    public function tearDown() : void
     {
         $cache = self::$postsFolder . '/postsCache.php';
         if (file_exists($cache)) {

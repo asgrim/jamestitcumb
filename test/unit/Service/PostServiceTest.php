@@ -62,7 +62,7 @@ final class PostServiceTest extends TestCase
         self::assertCount(2, $posts);
     }
 
-    public function tearDown()
+    public function tearDown() : void
     {
         $cache = self::$postsFolder . '/postsCache.php';
         if (file_exists($cache)) {
