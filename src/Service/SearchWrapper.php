@@ -1,27 +1,30 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\Service;
 
+use Asgrim\Service\Exception\PostNotFound;
 use Elasticsearch\Client as EsClient;
+use Elasticsearch\Common\Exceptions\TransportException;
+use function assert;
+use function is_array;
 
 class SearchWrapper
 {
-    /**
-     * @var IndexerService
-     */
+    /** @var IndexerService */
     private $indexerService;
 
-    /**
-     * @var EsClient
-     */
+    /** @var EsClient */
     private $esClient;
 
     public function __construct(EsClient $esClient, IndexerService $indexerService)
     {
         $this->indexerService = $indexerService;
-        $this->esClient = $esClient;
+        $this->esClient       = $esClient;
     }
+
+    /** @noinspection PhpDocRedundantThrowsInspection */
 
     /**
      * Perform a post search, returning simplified results, for example:
@@ -37,8 +40,9 @@ class SearchWrapper
      *     ],
      * ]
      *
-     * @param $text
-     * @return array
+     * @return string[][]
+     *
+     * @throws TransportException
      */
     public function search(string $text) : array
     {
@@ -47,16 +51,16 @@ class SearchWrapper
             'type' => 'post',
             'body' => [
                 'query' => [
-                    'simple_query_string' => [
-                        'query' => $text,
-                    ],
+                    'simple_query_string' => ['query' => $text],
                 ],
             ],
         ];
 
         $results = $this->esClient->search($params);
 
-        if (!$results['hits']['total']) {
+        assert(is_array($results));
+
+        if (! $results['hits']['total']) {
             return [];
         }
 
@@ -68,36 +72,44 @@ class SearchWrapper
                 'slug' => $hit['_id'],
             ];
         }
+
         return $simplifiedResults;
     }
 
+    /** @noinspection PhpDocRedundantThrowsInspection */
+
     /**
      * Index all the posts
-     * @throws \Asgrim\Service\Exception\PostNotFound
+     *
+     * @throws PostNotFound
+     * @throws TransportException
      */
-    public function indexAllPosts()
+    public function indexAllPosts() : void
     {
         $posts = $this->indexerService->getAllPostsFromCache();
 
         // Clear index first, if it exists
         if ($this->esClient->indices()->exists(['index' => 'posts'])) {
+            /** @noinspection UnusedFunctionResultInspection */
             $this->esClient->indices()->delete(['index' => 'posts']);
         }
 
+        /** @noinspection UnusedFunctionResultInspection */
         $this->esClient->indices()->create(['index' => 'posts']);
 
         // Repopulate the index
         foreach ($posts as $post) {
             $params = [
                 'body' => [
-                    'title' => $post['title'],
-                    'content' => $this->indexerService->getPostContentWithoutMetadata($post['slug']),
+                    'title' => $post->title(),
+                    'content' => $this->indexerService->getPostContentWithoutMetadata($post->slug()),
                 ],
                 'index' => 'posts',
                 'type' => 'post',
-                'id' => $post['slug'],
+                'id' => $post->slug(),
             ];
 
+            /** @noinspection UnusedFunctionResultInspection */
             $this->esClient->index($params);
         }
     }

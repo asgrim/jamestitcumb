@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim;
@@ -8,20 +9,23 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 
 final class ConfigProvider
 {
-    public function __invoke(): array
+    /**
+     * @return array<string, array<string, string|array<string>|array<string,string>|array<string,array<string>>>>
+     */
+    public function __invoke() : array
     {
         return [
             'dependencies' => $this->getDependencies(),
             'view_helpers' => $this->getViewHelpers(),
             'templates' => $this->getTemplates(),
             'elasticsearch' => [
-                'hosts' => [
-                ],
+                'hosts' => [],
             ],
         ];
     }
 
-    private function getDependencies(): array
+    /** @return array<string, array<string>|array<string, string>> */
+    private function getDependencies() : array
     {
         return [
             'abstract_factories' => [
@@ -43,7 +47,8 @@ final class ConfigProvider
         ];
     }
 
-    private function getViewHelpers(): array
+    /** @return array<string, array<string, string>> */
+    private function getViewHelpers() : array
     {
         return [
             'factories' => [
@@ -59,7 +64,10 @@ final class ConfigProvider
         ];
     }
 
-    private function getTemplates(): array
+    /**
+     * @return array<string, string|array<string, string|array<string>>>
+     */
+    private function getTemplates() : array
     {
         return [
             'layout' => 'layout/default',

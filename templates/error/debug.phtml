@@ -1,11 +1,13 @@
 <?php
+
 declare(strict_types=1);
+
 require __DIR__ . '/error.phtml';
 ?>
 
 <h3>Further debug information (if available);</h3>
 
-<?php if (isset($this->error) && $this->error instanceof \Exception): ?>
+<?php if (isset($this->error) && $this->error instanceof Exception): ?>
     <h3><?= get_class($this->error); ?>:</h3>
     <h4><?= $this->escapeHtml($this->error->getMessage()); ?></h4>
     <pre style="overflow-x: scroll; word-wrap: initial; white-space: pre"><?= $this->escapeHtml($this->error); ?></pre>

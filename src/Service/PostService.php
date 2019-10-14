@@ -1,18 +1,22 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\Service;
 
+use Asgrim\Service\Exception\PostNotFound;
+use Asgrim\Value\Post;
+use function array_filter;
+use function array_key_exists;
+use function array_slice;
+use function in_array;
+use function sprintf;
+
 class PostService
 {
-    /**
-     * @var IndexerService
-     */
+    /** @var IndexerService */
     private $indexerService;
 
-    /**
-     * @param IndexerService $indexerService
-     */
     public function __construct(IndexerService $indexerService)
     {
         $this->indexerService = $indexerService;
@@ -21,8 +25,7 @@ class PostService
     /**
      * Fetch a number of recent posts (rendered).
      *
-     * @param int $howMany
-     * @return array
+     * @return Post[]|array<string, Post>
      */
     public function fetchRecentPosts(int $howMany = 5) : array
     {
@@ -32,11 +35,9 @@ class PostService
     /**
      * Fetch a specific post by the slug (rendered).
      *
-     * @param string $slug
-     * @return mixed[]
-     * @throws \Asgrim\Service\Exception\PostNotFound
+     * @throws PostNotFound
      */
-    public function fetchPostBySlug(string $slug) : array
+    public function fetchPostBySlug(string $slug) : Post
     {
         $posts = $this->indexerService->getAllPostsFromCache();
 
@@ -44,21 +45,20 @@ class PostService
             return $posts[$slug];
         }
 
-        throw new Exception\PostNotFound("Post '{$slug}' not found.");
+        throw new Exception\PostNotFound(sprintf("Post '%s' not found.", $slug));
     }
 
     /**
      * Fetch all posts matching a specified tag
      *
-     * @param string $tag
-     * @return array
+     * @return Post[]|array<string, Post>
      */
     public function fetchPostsByTag(string $tag) : array
     {
         return array_filter(
             $this->indexerService->getAllPostsFromCache(),
-            function ($post) use ($tag) {
-                return in_array($tag, $post['tags'], true);
+            static function (Post $post) use ($tag) {
+                return in_array($tag, $post->tags(), true);
             }
         );
     }

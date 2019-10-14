@@ -1,51 +1,50 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\Handler;
 
 use Asgrim\Service\Exception\PostNotFound;
 use Asgrim\Service\PostService;
+use Asgrim\Value\Post;
+use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
+use function array_key_exists;
 
 final class PostsHandler implements MiddlewareInterface
 {
-    /**
-     * @var PostService
-     */
+    /** @var PostService */
     private $postService;
 
-    /**
-     * @var TemplateRenderer
-     */
+    /** @var TemplateRenderer */
     private $template;
 
-    /**
-     * @param PostService $postService
-     */
     public function __construct(PostService $postService, TemplateRenderer $template)
     {
         $this->postService = $postService;
-        $this->template = $template;
+        $this->template    = $template;
     }
 
     /**
      * {@inheritdoc}
-     * @throws \InvalidArgumentException
+     *
+     * @throws InvalidArgumentException
      */
     public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
     {
         $slug = $request->getAttribute('slug', null);
 
         try {
-            if (null !== $slug) {
+            if ($slug !== null) {
+                /** @var Post[] $posts */
                 $posts = [$slug => $this->postService->fetchPostBySlug($slug)];
-                $posts[$slug]['active'] = true;
-                $title = $posts[$slug]['title'];
+                $posts[$slug]->enableCommentsForPost();
+                $title = $posts[$slug]->title();
             } else {
                 $query = $request->getQueryParams();
                 if (array_key_exists('tag', $query)) {

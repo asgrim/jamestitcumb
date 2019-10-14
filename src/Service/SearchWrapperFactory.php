@@ -1,10 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim\Service;
 
 use Elasticsearch\ClientBuilder;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * @codeCoverageIgnore

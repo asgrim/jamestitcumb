@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Asgrim;
 
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Application as BaseApplication;
 
 class ConsoleApplication extends BaseApplication
@@ -22,6 +23,7 @@ class ConsoleApplication extends BaseApplication
         ];
 
         foreach ($commands as $command) {
+            /** @noinspection UnusedFunctionResultInspection */
             $this->add($command);
         }
     }

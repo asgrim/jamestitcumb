@@ -1,12 +1,11 @@
 <?php
+/** @noinspection UnusedFunctionResultInspection */
 declare(strict_types=1);
 
 use Asgrim\Handler;
-use Psr\Container\ContainerInterface;
 use Zend\Expressive\Application;
-use Zend\Expressive\MiddlewareFactory;
 
-return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
+return static function (Application $app): void {
     $app->get('/', Handler\AboutHandler::class, 'home');
     $app->get('/feed[/{format}]', Handler\FeedHandler::class, 'feed');
     $app->get('/posts[/{slug}]', Handler\PostsHandler::class, 'posts');
