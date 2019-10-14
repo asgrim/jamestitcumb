@@ -9,7 +9,6 @@
         beStrictAboutChangesToGlobalState="true"
         beStrictAboutTodoAnnotatedTests="true"
         forceCoversAnnotation="true"
-        cacheResult="false"
 >
     <testsuites>
         <testsuite name="unit">
