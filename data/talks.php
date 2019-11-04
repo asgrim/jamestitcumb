@@ -45,6 +45,7 @@ return [
         'abstract' => $qualityTalk,
         'links' => [
             'php[world]' => ['url' => 'https://world.phparch.com/schedule/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/26825', 'class' => 'joindin'],
         ],
     ],
     [
@@ -55,6 +56,7 @@ return [
         'abstract' => $astAbstract,
         'links' => [
             'php[world]' => ['url' => 'https://world.phparch.com/schedule/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/26826', 'class' => 'joindin'],
         ],
     ],
     [
