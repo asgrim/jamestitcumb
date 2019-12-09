@@ -14,7 +14,7 @@ use Throwable;
 final class MonologMiddleware implements MiddlewareInterface
 {
     /** @var LoggerInterface */
-    private LoggerInterface $logger;
+    private $logger;
 
     public function __construct(LoggerInterface $logger)
     {
