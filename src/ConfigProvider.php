@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Asgrim;
 
+use Asgrim\Service\LoggerFactory;
+use Psr\Log\LoggerInterface;
 use Zend\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
@@ -43,6 +45,7 @@ final class ConfigProvider
                 Service\TalkService::class => Service\TalkServiceFactory::class,
                 Service\FeedService::class => ReflectionBasedAbstractFactory::class,
                 Service\SearchWrapper::class => Service\SearchWrapperFactory::class,
+                LoggerInterface::class => LoggerFactory::class,
             ],
         ];
     }

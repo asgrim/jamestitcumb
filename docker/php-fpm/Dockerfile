@@ -7,8 +7,9 @@ RUN mkdir -p /usr/share/php-fpm \
     && yes | pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_connect_back=off" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_addr_header=REMOTE_ADDR" >> /usr/local/etc/php/conf.d/xdebug.ini
+    && echo "xdebug.remote_connect_back=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.remote_addr_header=REMOTE_ADDR" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.remote_log=/tmp/xdebug.log" >> /usr/local/etc/php/conf.d/xdebug.ini
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 

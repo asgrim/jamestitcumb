@@ -58,6 +58,7 @@ class SearchWrapper
 
         $results = $this->esClient->search($params);
 
+        /** @psalm-suppress RedundantConditionGivenDocblockType */
         assert(is_array($results));
 
         if (! $results['hits']['total']) {
