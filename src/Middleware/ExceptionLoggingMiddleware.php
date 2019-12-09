@@ -11,7 +11,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
 use Throwable;
 
-final class MonologMiddleware implements MiddlewareInterface
+final class ExceptionLoggingMiddleware implements MiddlewareInterface
 {
     /** @var LoggerInterface */
     private $logger;
