@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 use Asgrim\Middleware\ClacksMiddleware;
+use Asgrim\Middleware\MonologMiddleware;
 use Zend\Expressive\Application;
 use Zend\Expressive\Handler\NotFoundHandler;
 use Zend\Expressive\Helper\ServerUrlMiddleware;
@@ -12,6 +13,7 @@ use Zend\Stratigility\Middleware\ErrorHandler;
 
 return static function (Application $app): void {
     $app->pipe(ErrorHandler::class);
+    $app->pipe(MonologMiddleware::class);
     $app->pipe(ServerUrlMiddleware::class);
     $app->pipe(RouteMiddleware::class);
     $app->pipe(UrlHelperMiddleware::class);
