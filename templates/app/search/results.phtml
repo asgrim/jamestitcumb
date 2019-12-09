@@ -18,9 +18,9 @@ use Asgrim\Value\Post;
         <?php foreach ($results as $post): ?>
             <li>
                 <div class="article-header">
-                    <h3><a href="<?= $this->url('posts', ['slug' => $post['slug']]); ?>"><?= $this->escapeHtml($post['title']); ?></a></h3>
+                    <h3><a href="<?= $this->url('posts', ['slug' => $post->slug()]); ?>"><?= $this->escapeHtml($post->title()); ?></a></h3>
                     <p style="font-weight: bold; font-style: italic;">
-                        Posted on <?php echo date('jS F Y', strtotime($post['date'])); ?>
+                        Posted on <?= $post->date()->format('jS F Y'); ?>
                     </p>
                 </div>
             </li>
