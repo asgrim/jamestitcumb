@@ -33,14 +33,14 @@ final class IndexCommand extends Command
             ->setDescription('Indexes the blog posts to create a cached list of them');
     }
 
-    public function execute(InputInterface $input, OutputInterface $output) : void
+    public function execute(InputInterface $input, OutputInterface $output) : int
     {
         $postsIndexed = $this->indexerService->createIndex();
 
         if (! $postsIndexed) {
             $output->writeln('<error>No posts indexed. Possible cache failure.</error>');
 
-            return;
+            return 1;
         }
 
         $output->writeln(sprintf(
@@ -52,8 +52,12 @@ final class IndexCommand extends Command
         try {
             $this->searchWrapper->indexAllPosts();
             $output->writeln('<info>Updated search index.</info>');
+
+            return 0;
         } catch (TransportException $transportException) {
             $output->writeln('<error>Failed to connect to transport: ' . $transportException->getMessage() . '</error>');
+
+            return 1;
         }
     }
 }

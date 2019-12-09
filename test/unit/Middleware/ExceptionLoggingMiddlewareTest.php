@@ -10,6 +10,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\Test\TestLogger;
+use RuntimeException;
 use Zend\Diactoros\ServerRequest;
 
 /** @covers \Asgrim\Middleware\ExceptionLoggingMiddleware */
@@ -26,13 +27,13 @@ final class ExceptionLoggingMiddlewareTest extends TestCase
                     /** @inheritDoc */
                     public function handle(ServerRequestInterface $request) : ResponseInterface
                     {
-                        throw new \RuntimeException('oh no');
+                        throw new RuntimeException('oh no');
                     }
                 }
             );
 
             self::fail('Should not have reached here, exception was thrown!');
-        } catch (\RuntimeException $exception) {
+        } catch (RuntimeException $exception) {
             self::assertTrue($logger->hasErrorThatContains('oh no'));
         }
     }
