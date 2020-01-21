@@ -18,6 +18,26 @@ $qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in pro
 
 return [
     [
+        'name' => 'Climbing the Abstract Syntax Tree',
+        'type' => 'talk',
+        'date' => new DateTime('2020-04-04'),
+        'event' => 'Midwest PHP 2020',
+        'abstract' => $astAbstract,
+        'links' => [
+            'Midwest PHP' => ['url' => 'https://midwestphp.org/schedule'],
+        ],
+    ],
+    [
+        'name' => 'Best practices for crafting high quality PHP apps',
+        'type' => 'tutorial',
+        'date' => new DateTime('2020-04-02'),
+        'event' => 'Midwest PHP 2020',
+        'abstract' => $qualityTalk,
+        'links' => [
+            'Midwest PHP' => ['url' => 'https://midwestphp.org/schedule'],
+        ],
+    ],
+    [
         'name' => 'Crafting Quality PHP Applications: An Overview (remote talk)',
         'type' => 'talk',
         'date' => new DateTime('2019-10-17'),
