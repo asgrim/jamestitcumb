@@ -17,7 +17,7 @@ $ibmiAbstract = 'Zend Server for IBM i has done a great job at allowing enterpri
 $qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in production. That legacy application really needs some TLC. Where do we start? When creating long lived applications, it\'s imperative to focus on good practices. The solution is to improve the whole development life cycle; from planning, better coding and testing, to automation, peer review and more. In this talk, we\'ll take a quick look into each of these areas, looking at how we can make positive, actionable change in our workflow.';
 
 return [
-    [
+/*    [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
         'date' => new DateTime('2020-05-21'),
@@ -66,7 +66,7 @@ return [
         'links' => [
             'Midwest PHP' => ['url' => 'https://midwestphp.org/schedule'],
         ],
-    ],
+    ],*/
     [
         'name' => 'Crafting Quality PHP Applications: An Overview (remote talk)',
         'type' => 'talk',
