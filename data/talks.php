@@ -46,27 +46,17 @@ return [
         'links' => [
             'phpDay 2020' => ['url' => 'https://2020.phpday.it/'],
         ],
-    ],
+    ],*/
     [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
         'date' => new DateTime('2020-04-04'),
-        'event' => 'Midwest PHP 2020',
+        'event' => 'Midwest PHP 2020 (online)',
         'abstract' => $astAbstract,
         'links' => [
             'Midwest PHP' => ['url' => 'https://midwestphp.org/schedule'],
         ],
     ],
-    [
-        'name' => 'Best practices for crafting high quality PHP apps',
-        'type' => 'tutorial',
-        'date' => new DateTime('2020-04-02'),
-        'event' => 'Midwest PHP 2020',
-        'abstract' => $qualityTalk,
-        'links' => [
-            'Midwest PHP' => ['url' => 'https://midwestphp.org/schedule'],
-        ],
-    ],*/
     [
         'name' => 'Crafting Quality PHP Applications: An Overview (remote talk)',
         'type' => 'talk',
