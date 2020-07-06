@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Asgrim\View\Helper;
 
 use Exception;
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
 use function count;
 use function random_int;
 

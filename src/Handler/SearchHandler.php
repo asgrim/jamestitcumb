@@ -12,9 +12,9 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
-use Zend\View\Model\ViewModel;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Mezzio\Template\TemplateRendererInterface as TemplateRenderer;
+use Laminas\View\Model\ViewModel;
 use function array_key_exists;
 use function trim;
 

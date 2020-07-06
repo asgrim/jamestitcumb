@@ -12,7 +12,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use RuntimeException;
-use Zend\Diactoros\Response as DiactorosResponse;
+use Laminas\Diactoros\Response as DiactorosResponse;
 use function array_key_exists;
 
 final class FeedHandler implements MiddlewareInterface

@@ -6,7 +6,7 @@ namespace Asgrim\View\Helper;
 
 use Asgrim\Service\IndexerService;
 use Michelf\MarkdownExtra as Markdown;
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
 
 class RenderPostContent extends AbstractHelper
 {

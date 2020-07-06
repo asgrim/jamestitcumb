@@ -6,8 +6,8 @@ namespace Asgrim;
 
 use Asgrim\Service\LoggerFactory;
 use Psr\Log\LoggerInterface;
-use Zend\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 
 final class ConfigProvider
 {

@@ -3,15 +3,16 @@
 declare(strict_types=1);
 
 use Asgrim\ConfigProvider as AsgrimConfig;
-use Zend\ConfigAggregator\ArrayProvider;
-use Zend\ConfigAggregator\ConfigAggregator;
-use Zend\ConfigAggregator\PhpFileProvider;
-use Zend\Expressive\ConfigProvider as ExpressiveConfig;
-use Zend\Expressive\Helper\ConfigProvider as ExpressiveHelperConfig;
-use Zend\Expressive\Router\ConfigProvider as RouterConfig;
-use Zend\Expressive\Router\FastRouteRouter\ConfigProvider as FastRouteRouterConfig;
-use Zend\Expressive\ZendView\ConfigProvider as ZendViewConfig;
-use Zend\HttpHandlerRunner\ConfigProvider as HttpHandlerRunnerConfig;
+use Laminas\ConfigAggregator\ArrayProvider;
+use Laminas\ConfigAggregator\ConfigAggregator;
+use Laminas\ConfigAggregator\PhpFileProvider;
+use Laminas\Diactoros\ConfigProvider as DiactorosConfig;
+use Mezzio\ConfigProvider as ExpressiveConfig;
+use Mezzio\Helper\ConfigProvider as ExpressiveHelperConfig;
+use Mezzio\Router\ConfigProvider as RouterConfig;
+use Mezzio\Router\FastRouteRouter\ConfigProvider as FastRouteRouterConfig;
+use Mezzio\LaminasView\ConfigProvider as LaminasViewConfig;
+use Laminas\HttpHandlerRunner\ConfigProvider as HttpHandlerRunnerConfig;
 
 // To enable or disable caching, set the `ConfigAggregator::ENABLE_CACHE` boolean in
 // `config/autoload/local.php`.
@@ -20,13 +21,14 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
+    DiactorosConfig::class,
     FastRouteRouterConfig::class,
     HttpHandlerRunnerConfig::class,
     new ArrayProvider($cacheConfig),
     ExpressiveHelperConfig::class,
     ExpressiveConfig::class,
     RouterConfig::class,
-    ZendViewConfig::class,
+    LaminasViewConfig::class,
     AsgrimConfig::class,
     new PhpFileProvider(realpath(__DIR__) . '/autoload/{{,*.}global,{,*.}local}.php'),
     new PhpFileProvider(realpath(__DIR__) . '/development.config.php'),

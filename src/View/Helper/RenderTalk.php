@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Asgrim\View\Helper;
 
 use Asgrim\Value\Talk;
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
 use function count;
 use function implode;
 

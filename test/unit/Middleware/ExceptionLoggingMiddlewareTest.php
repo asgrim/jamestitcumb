@@ -11,7 +11,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\Test\TestLogger;
 use RuntimeException;
-use Zend\Diactoros\ServerRequest;
+use Laminas\Diactoros\ServerRequest;
 
 /** @covers \Asgrim\Middleware\ExceptionLoggingMiddleware */
 final class ExceptionLoggingMiddlewareTest extends TestCase

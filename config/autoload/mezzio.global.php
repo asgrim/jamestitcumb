@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-use Zend\ConfigAggregator\ConfigAggregator;
+use Laminas\ConfigAggregator\ConfigAggregator;
 
 return [
     'debug' => false,
     ConfigAggregator::ENABLE_CACHE => true,
-    'zend-expressive' => [
+    'mezzio' => [
         'programmatic_pipeline' => true,
         'error_handler' => [
             'template_404'   => 'error::404',

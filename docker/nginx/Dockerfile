@@ -1,11 +1,3 @@
-FROM alpine:3.9
-
-RUN apk add --update nginx \
-    && rm -rf /var/cache/apk/* \
-    && mkdir -p /run/nginx
+FROM nginx:1.19-alpine
 
 ADD ./nginx.conf /etc/nginx/nginx.conf
-
-EXPOSE 80
-
-CMD ["nginx"]

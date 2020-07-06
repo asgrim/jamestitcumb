@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Asgrim\Handler;
-use Zend\Expressive\Application;
+use Mezzio\Application;
 
 return static function (Application $app): void {
     $app->get('/', Handler\AboutHandler::class, 'home');
