@@ -10,15 +10,14 @@ use Elasticsearch\Common\Exceptions\TransportException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+
 use function sprintf;
 
 final class IndexCommand extends Command
 {
-    /** @var IndexerService */
-    private $indexerService;
+    private IndexerService $indexerService;
 
-    /** @var SearchWrapper */
-    private $searchWrapper;
+    private SearchWrapper $searchWrapper;
 
     public function __construct(IndexerService $indexerService, SearchWrapper $searchWrapper)
     {
@@ -27,13 +26,13 @@ final class IndexCommand extends Command
         $this->searchWrapper  = $searchWrapper;
     }
 
-    protected function configure() : void
+    protected function configure(): void
     {
         $this->setName('index-posts')
             ->setDescription('Indexes the blog posts to create a cached list of them');
     }
 
-    public function execute(InputInterface $input, OutputInterface $output) : int
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $postsIndexed = $this->indexerService->createIndex();
 

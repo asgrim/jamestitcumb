@@ -11,6 +11,7 @@ use OutOfBoundsException;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
 use ReflectionProperty;
+
 use function file_exists;
 use function strlen;
 use function unlink;
@@ -20,16 +21,15 @@ use function unlink;
  */
 final class IndexerServiceTest extends TestCase
 {
-    /** @var string */
-    private static $postsFolder = __DIR__ . '/../../fixture/posts/';
+    private static string $postsFolder = __DIR__ . '/../../fixture/posts/';
 
-    public function testIndexerCreatesUsableCache() : void
+    public function testIndexerCreatesUsableCache(): void
     {
         $indexer = new IndexerService(self::$postsFolder);
         self::assertSame(3, $indexer->createIndex());
     }
 
-    public function testIndexerFetchesCache() : void
+    public function testIndexerFetchesCache(): void
     {
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
@@ -38,7 +38,7 @@ final class IndexerServiceTest extends TestCase
         self::assertCount(3, $posts);
     }
 
-    public function testIndexerCanFetchSpecificPost() : void
+    public function testIndexerCanFetchSpecificPost(): void
     {
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
@@ -48,7 +48,7 @@ final class IndexerServiceTest extends TestCase
         self::assertGreaterThan(0, strlen($post));
     }
 
-    public function testIndexerFailsWhenSlugDoesNotExist() : void
+    public function testIndexerFailsWhenSlugDoesNotExist(): void
     {
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
@@ -61,7 +61,7 @@ final class IndexerServiceTest extends TestCase
     }
 
     /** @throws ReflectionException */
-    public function testIndexerFailsWhenSlugExistsButFileDoesNot() : void
+    public function testIndexerFailsWhenSlugExistsButFileDoesNot(): void
     {
         $indexer = new IndexerService(self::$postsFolder);
 
@@ -84,7 +84,7 @@ final class IndexerServiceTest extends TestCase
         $indexer->getPostContentBySlug('test-post-slug');
     }
 
-    public function tearDown() : void
+    public function tearDown(): void
     {
         $cache = self::$postsFolder . '/postsCache.php';
         if (! file_exists($cache)) {

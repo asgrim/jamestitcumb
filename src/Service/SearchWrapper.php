@@ -7,16 +7,15 @@ namespace Asgrim\Service;
 use Asgrim\Service\Exception\PostNotFound;
 use Elasticsearch\Client as EsClient;
 use Elasticsearch\Common\Exceptions\TransportException;
+
 use function assert;
 use function is_array;
 
 class SearchWrapper
 {
-    /** @var IndexerService */
-    private $indexerService;
+    private IndexerService $indexerService;
 
-    /** @var EsClient */
-    private $esClient;
+    private EsClient $esClient;
 
     public function __construct(EsClient $esClient, IndexerService $indexerService)
     {
@@ -44,7 +43,7 @@ class SearchWrapper
      *
      * @throws TransportException
      */
-    public function search(string $text) : array
+    public function search(string $text): array
     {
         $params = [
             'index' => 'posts',
@@ -69,7 +68,7 @@ class SearchWrapper
 
         foreach ($results['hits']['hits'] as $hit) {
             $simplifiedResults[] = [
-                'scorePercent' => (($hit['_score'] / $results['hits']['max_score']) * 100),
+                'scorePercent' => $hit['_score'] / $results['hits']['max_score'] * 100,
                 'slug' => $hit['_id'],
             ];
         }
@@ -85,7 +84,7 @@ class SearchWrapper
      * @throws PostNotFound
      * @throws TransportException
      */
-    public function indexAllPosts() : void
+    public function indexAllPosts(): void
     {
         $posts = $this->indexerService->getAllPostsFromCache();
 

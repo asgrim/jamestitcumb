@@ -10,23 +10,18 @@ use Webmozart\Assert\Assert;
 /** @psalm-suppress PropertyNotSetInConstructor */
 final class Post
 {
-    /** @var string */
-    private $title;
+    private string $title;
 
     /** @var array<string> */
-    private $tags;
+    private array $tags;
 
-    /** @var DateTimeImmutable */
-    private $date;
+    private DateTimeImmutable $date;
 
-    /** @var string */
-    private $slug;
+    private string $slug;
 
-    /** @var string */
-    private $file;
+    private string $file;
 
-    /** @var bool */
-    private $active;
+    private bool $active;
 
     private function __construct()
     {
@@ -37,7 +32,7 @@ final class Post
      *
      * @return static
      */
-    public static function __set_state(array $dataArray) : self
+    public static function __set_state(array $dataArray): self
     {
         Assert::string($dataArray['title']);
         Assert::isArray($dataArray['tags']);
@@ -61,7 +56,7 @@ final class Post
         DateTimeImmutable $date,
         string $slug,
         string $file
-    ) : self {
+    ): self {
         Assert::allString($tags);
 
         $instance         = new self();
@@ -75,38 +70,38 @@ final class Post
         return $instance;
     }
 
-    public function title() : string
+    public function title(): string
     {
         return $this->title;
     }
 
     /** @return array<string> */
-    public function tags() : array
+    public function tags(): array
     {
         return $this->tags;
     }
 
-    public function date() : DateTimeImmutable
+    public function date(): DateTimeImmutable
     {
         return $this->date;
     }
 
-    public function slug() : string
+    public function slug(): string
     {
         return $this->slug;
     }
 
-    public function file() : string
+    public function file(): string
     {
         return $this->file;
     }
 
-    public function shouldShowComments() : bool
+    public function shouldShowComments(): bool
     {
         return $this->active;
     }
 
-    public function enableCommentsForPost() : void
+    public function enableCommentsForPost(): void
     {
         $this->active = true;
     }

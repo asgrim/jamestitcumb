@@ -6,12 +6,13 @@ namespace Asgrim\View\Helper;
 
 use Asgrim\Value\Talk;
 use Laminas\View\Helper\AbstractHelper;
+
 use function count;
 use function implode;
 
 class RenderTalk extends AbstractHelper
 {
-    public function __invoke(Talk $talk) : string
+    public function __invoke(Talk $talk): string
     {
         $s = '<li>';
 
@@ -38,6 +39,7 @@ class RenderTalk extends AbstractHelper
             if (isset($linkData['class'])) {
                 $l .= ' class="' . $linkData['class'] . '"';
             }
+
             $l      .= '>' . $text . '</a>';
             $links[] = $l;
         }

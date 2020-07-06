@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
  */
 final class RenderTalkTest extends TestCase
 {
-    public function testRenderRegularTalkContents() : void
+    public function testRenderRegularTalkContents(): void
     {
         $renderTalk = new RenderTalk();
 
@@ -35,7 +35,7 @@ final class RenderTalkTest extends TestCase
         self::assertStringMatchesFormat('%s(%s, 31st Dec \'16)%s', $content);
     }
 
-    public function testRenderLightningTalkContents() : void
+    public function testRenderLightningTalkContents(): void
     {
         $renderTalk = new RenderTalk();
 
@@ -53,7 +53,7 @@ final class RenderTalkTest extends TestCase
         self::assertStringMatchesFormat('%s<h3><em>Lightning: </em>My Great Lightning Talk%s</h3>%s', $content);
     }
 
-    public function testRenderTutorialTalkContents() : void
+    public function testRenderTutorialTalkContents(): void
     {
         $renderTalk = new RenderTalk();
 
@@ -71,7 +71,7 @@ final class RenderTalkTest extends TestCase
         self::assertStringMatchesFormat('%s<h3><strong>Tutorial: </strong>My Great Tutorial%s</h3>%s', $content);
     }
 
-    public function testRenderTalkWithLinksContents() : void
+    public function testRenderTalkWithLinksContents(): void
     {
         $renderTalk = new RenderTalk();
 

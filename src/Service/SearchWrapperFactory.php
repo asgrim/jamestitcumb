@@ -12,7 +12,7 @@ use Psr\Container\ContainerInterface;
  */
 class SearchWrapperFactory
 {
-    public function __invoke(ContainerInterface $container) : SearchWrapper
+    public function __invoke(ContainerInterface $container): SearchWrapper
     {
         $esClient = ClientBuilder::create()
             ->setHosts($container->get('config')['elasticsearch']['hosts'])

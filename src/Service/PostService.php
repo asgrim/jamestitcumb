@@ -6,6 +6,7 @@ namespace Asgrim\Service;
 
 use Asgrim\Service\Exception\PostNotFound;
 use Asgrim\Value\Post;
+
 use function array_filter;
 use function array_key_exists;
 use function array_slice;
@@ -14,8 +15,7 @@ use function sprintf;
 
 class PostService
 {
-    /** @var IndexerService */
-    private $indexerService;
+    private IndexerService $indexerService;
 
     public function __construct(IndexerService $indexerService)
     {
@@ -27,7 +27,7 @@ class PostService
      *
      * @return Post[]|array<string, Post>
      */
-    public function fetchRecentPosts(int $howMany = 5) : array
+    public function fetchRecentPosts(int $howMany = 5): array
     {
         return array_slice($this->indexerService->getAllPostsFromCache(), 0, $howMany);
     }
@@ -37,7 +37,7 @@ class PostService
      *
      * @throws PostNotFound
      */
-    public function fetchPostBySlug(string $slug) : Post
+    public function fetchPostBySlug(string $slug): Post
     {
         $posts = $this->indexerService->getAllPostsFromCache();
 
@@ -53,7 +53,7 @@ class PostService
      *
      * @return Post[]|array<string, Post>
      */
-    public function fetchPostsByTag(string $tag) : array
+    public function fetchPostsByTag(string $tag): array
     {
         return array_filter(
             $this->indexerService->getAllPostsFromCache(),

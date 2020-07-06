@@ -10,10 +10,13 @@ use DateTimeImmutable;
 use DateTimeZone;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
+use SplFileInfo;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Parser as YamlParser;
-use const LOCK_EX;
+use Webmozart\Assert\Assert;
+
 use function array_key_exists;
+use function assert;
 use function basename;
 use function count;
 use function explode;
@@ -29,19 +32,18 @@ use function trim;
 use function uasort;
 use function var_export;
 
+use const LOCK_EX;
+
 class IndexerService
 {
-    /** @var string */
-    private $postFolder;
+    private string $postFolder;
 
-    /** @var string */
-    private $cacheFileName;
+    private string $cacheFileName;
 
-    /** @var YamlParser */
-    private $yamlParser;
+    private YamlParser $yamlParser;
 
     /** @var Post[]|array<string, Post>|null */
-    private $posts;
+    private ?array $posts = null;
 
     public function __construct(string $postFolder)
     {
@@ -55,7 +57,7 @@ class IndexerService
      *
      * Returns the number of posts created in the index.
      */
-    public function createIndex() : int
+    public function createIndex(): int
     {
         $files = $this->buildFileListFromDirectory($this->postFolder);
 
@@ -85,7 +87,7 @@ class IndexerService
      *
      * @return Post[]|array<string, Post>
      */
-    public function getAllPostsFromCache() : array
+    public function getAllPostsFromCache(): array
     {
         if (! isset($this->posts)) {
             /** @noinspection PhpIncludeInspection */
@@ -101,7 +103,7 @@ class IndexerService
      *
      * @throws PostNotFound
      */
-    public function getPostContentBySlug(string $slug) : string
+    public function getPostContentBySlug(string $slug): string
     {
         $posts = $this->getAllPostsFromCache();
 
@@ -123,7 +125,7 @@ class IndexerService
      *
      * @throws PostNotFound
      */
-    public function getPostContentWithoutMetadata(string $slug) : string
+    public function getPostContentWithoutMetadata(string $slug): string
     {
         $text = $this->getPostContentBySlug($slug);
 
@@ -141,7 +143,7 @@ class IndexerService
      *
      * @return array<Post>
      */
-    private function sortPostsByDate(array $postIndex) : array
+    private function sortPostsByDate(array $postIndex): array
     {
         uasort($postIndex, static function (Post $a, Post $b) {
             return $a->date() > $b->date() ? -1 : 1;
@@ -155,14 +157,14 @@ class IndexerService
      *
      * @return string[]
      */
-    private function buildFileListFromDirectory(string $directory) : array
+    private function buildFileListFromDirectory(string $directory): array
     {
         $files = [];
 
         $iterator = new RecursiveDirectoryIterator($directory);
 
         foreach (new RecursiveIteratorIterator($iterator) as $file) {
-            /** @var $file \SplFileInfo */
+            assert($file instanceof SplFileInfo);
             if (! $file->isFile() || $file->getExtension() !== 'md') {
                 continue;
             }
@@ -180,7 +182,7 @@ class IndexerService
      *
      * @throws ParseException
      */
-    private function getPostMetadata(string $filename) : ?Post
+    private function getPostMetadata(string $filename): ?Post
     {
         $contents = file_get_contents($this->postFolder . '/' . $filename);
 
@@ -206,14 +208,19 @@ class IndexerService
 
         $fileparts = sscanf(basename($filename), '%d-%d-%d-%s');
 
+        $date = DateTimeImmutable::createFromFormat(
+            'Y-m-d',
+            sprintf('%04d-%02d-%02d', $fileparts[0], $fileparts[1], $fileparts[2]),
+            new DateTimeZone('UTC')
+        );
+
+        Assert::notFalse($date);
+        Assert::string($fileparts[3]);
+
         return Post::create(
             $parsed['title'],
             $parsed['tags'],
-            DateTimeImmutable::createFromFormat(
-                'Y-m-d',
-                sprintf('%04d-%02d-%02d', $fileparts[0], $fileparts[1], $fileparts[2]),
-                new DateTimeZone('UTC')
-            ),
+            $date,
             str_replace('.md', '', $fileparts[3]),
             $filename
         );

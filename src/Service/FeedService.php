@@ -9,25 +9,22 @@ use Asgrim\Value\Post;
 use Asgrim\View\Helper\RenderPostContent;
 use Laminas\Feed\Writer\Exception\InvalidArgumentException;
 use Laminas\Feed\Writer\Feed;
+
 use function str_replace;
 use function time;
 
 class FeedService
 {
-    /** @var string */
-    private $baseUrl;
+    private string $baseUrl;
 
-    /** @var string */
-    private $title;
+    private string $title;
 
-    /** @var string */
-    private $description;
+    private string $description;
 
     /** @var string[] */
-    private $author;
+    private array $author;
 
-    /** @var RenderPostContent */
-    private $renderPostContent;
+    private RenderPostContent $renderPostContent;
 
     public function __construct(RenderPostContent $renderPostContent)
     {
@@ -49,7 +46,7 @@ class FeedService
      *
      * @throws InvalidArgumentException
      */
-    public function createFeed(array $posts, string $titleSuffix = '', string $linkSuffix = '') : Feed
+    public function createFeed(array $posts, string $titleSuffix = '', string $linkSuffix = ''): Feed
     {
         $feed = new Feed();
         $feed->setTitle($this->title . $titleSuffix);

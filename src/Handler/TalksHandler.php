@@ -6,20 +6,18 @@ namespace Asgrim\Handler;
 
 use Asgrim\Service\TalkService;
 use Exception;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Mezzio\Template\TemplateRendererInterface as TemplateRenderer;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Laminas\Diactoros\Response\HtmlResponse;
-use Mezzio\Template\TemplateRendererInterface as TemplateRenderer;
 
 final class TalksHandler implements MiddlewareInterface
 {
-    /** @var TalkService */
-    private $talkService;
+    private TalkService $talkService;
 
-    /** @var TemplateRenderer */
-    private $template;
+    private TemplateRenderer $template;
 
     public function __construct(TalkService $talkService, TemplateRenderer $template)
     {
@@ -28,7 +26,7 @@ final class TalksHandler implements MiddlewareInterface
     }
 
     /** @throws Exception */
-    public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
+    public function process(Request $request, RequestHandlerInterface $handler): ResponseInterface
     {
         return new HtmlResponse($this->template->render('app::talks', [
             'upcoming' => $this->talkService->getUpcomingTalks(),

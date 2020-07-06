@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace Asgrim;
 
 use Asgrim\Service\LoggerFactory;
-use Psr\Log\LoggerInterface;
 use Laminas\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
 use Laminas\ServiceManager\Factory\InvokableFactory;
+use Psr\Log\LoggerInterface;
 
 final class ConfigProvider
 {
     /**
      * @return array<string, array<string, string|array<string>|array<string,string>|array<string,array<string>>>>
      */
-    public function __invoke() : array
+    public function __invoke(): array
     {
         return [
             'dependencies' => $this->getDependencies(),
@@ -27,7 +27,7 @@ final class ConfigProvider
     }
 
     /** @return array<string, array<string>|array<string, string>> */
-    private function getDependencies() : array
+    private function getDependencies(): array
     {
         return [
             'abstract_factories' => [
@@ -51,7 +51,7 @@ final class ConfigProvider
     }
 
     /** @return array<string, array<string, string>> */
-    private function getViewHelpers() : array
+    private function getViewHelpers(): array
     {
         return [
             'factories' => [
@@ -70,7 +70,7 @@ final class ConfigProvider
     /**
      * @return array<string, string|array<string, string|array<string>>>
      */
-    private function getTemplates() : array
+    private function getTemplates(): array
     {
         return [
             'layout' => 'layout/default',

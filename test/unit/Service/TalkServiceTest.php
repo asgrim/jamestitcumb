@@ -13,11 +13,10 @@ use PHPUnit\Framework\TestCase;
  */
 final class TalkServiceTest extends TestCase
 {
-    /** @var string */
-    private static $talksFixture = __DIR__ . '/../../fixture/talks.php';
+    private static string $talksFixture = __DIR__ . '/../../fixture/talks.php';
 
     /** @throws Exception */
-    public function testGetUpcomingTalks() : void
+    public function testGetUpcomingTalks(): void
     {
         $upcoming = (new TalkService(self::$talksFixture))->getUpcomingTalks();
 
@@ -25,7 +24,7 @@ final class TalkServiceTest extends TestCase
     }
 
     /** @throws Exception */
-    public function testGetPastTalks() : void
+    public function testGetPastTalks(): void
     {
         $past = (new TalkService(self::$talksFixture))->getPastTalks();
 

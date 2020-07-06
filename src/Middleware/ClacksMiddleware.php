@@ -17,7 +17,7 @@ final class ClacksMiddleware implements MiddlewareInterface
      *
      * @throws InvalidArgumentException
      */
-    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler) : ResponseInterface
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         return $handler->handle($request)->withHeader('X-Clacks-Overhead', 'GNU Terry Pratchett');
     }

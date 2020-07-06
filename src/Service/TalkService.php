@@ -7,17 +7,17 @@ namespace Asgrim\Service;
 use Asgrim\Value\Talk;
 use DateTimeImmutable;
 use Exception;
+
 use function array_filter;
 use function array_map;
 use function usort;
 
 class TalkService
 {
-    /** @var string */
-    private $talkDataFile;
+    private string $talkDataFile;
 
     /** @var Talk[]|null */
-    private $talks;
+    private ?array $talks = null;
 
     public function __construct(string $talkDataFile)
     {
@@ -27,7 +27,7 @@ class TalkService
     /**
      * @return Talk[]
      */
-    private function getTalks(bool $inverseOrder = false) : array
+    private function getTalks(bool $inverseOrder = false): array
     {
         if ($this->talks === null) {
             /** @noinspection PhpIncludeInspection */
@@ -57,7 +57,7 @@ class TalkService
      *
      * @throws Exception
      */
-    public function getUpcomingTalks() : array
+    public function getUpcomingTalks(): array
     {
         $now = new DateTimeImmutable('00:00:00');
 
@@ -73,7 +73,7 @@ class TalkService
      *
      * @throws Exception
      */
-    public function getPastTalks() : array
+    public function getPastTalks(): array
     {
         $now = new DateTimeImmutable('00:00:00');
 
