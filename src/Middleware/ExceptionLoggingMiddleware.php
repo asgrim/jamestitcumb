@@ -13,8 +13,7 @@ use Throwable;
 
 final class ExceptionLoggingMiddleware implements MiddlewareInterface
 {
-    /** @var LoggerInterface */
-    private $logger;
+    private LoggerInterface $logger;
 
     public function __construct(LoggerInterface $logger)
     {
@@ -26,7 +25,7 @@ final class ExceptionLoggingMiddleware implements MiddlewareInterface
      *
      * @throws Throwable
      */
-    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler) : ResponseInterface
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         try {
             return $handler->handle($request);

@@ -7,21 +7,20 @@ namespace Asgrim\Handler;
 use Asgrim\Service\FeedService;
 use Asgrim\Service\PostService;
 use InvalidArgumentException;
+use Laminas\Diactoros\Response as DiactorosResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use RuntimeException;
-use Zend\Diactoros\Response as DiactorosResponse;
+
 use function array_key_exists;
 
 final class FeedHandler implements MiddlewareInterface
 {
-    /** @var FeedService */
-    private $feedService;
+    private FeedService $feedService;
 
-    /** @var PostService */
-    private $postService;
+    private PostService $postService;
 
     public function __construct(FeedService $feedService, PostService $postService)
     {
@@ -29,7 +28,7 @@ final class FeedHandler implements MiddlewareInterface
         $this->postService = $postService;
     }
 
-    private function getContentType(string $type) : string
+    private function getContentType(string $type): string
     {
         if ($type === 'atom') {
             return 'application/atom+xml';
@@ -44,7 +43,7 @@ final class FeedHandler implements MiddlewareInterface
      * @throws RuntimeException
      * @throws InvalidArgumentException
      */
-    public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
+    public function process(Request $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $outputFormat = $request->getAttribute('format', 'rss');
 

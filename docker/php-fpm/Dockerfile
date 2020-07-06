@@ -1,4 +1,4 @@
-FROM php:7.3-fpm-alpine
+FROM php:7.4-fpm-alpine
 
 RUN mkdir -p /usr/share/php-fpm \
     && apk add --update iproute2 wget gnupg netcat-openbsd git bash unzip autoconf build-base \

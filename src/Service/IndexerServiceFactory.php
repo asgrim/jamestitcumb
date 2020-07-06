@@ -11,7 +11,7 @@ use Psr\Container\ContainerInterface;
  */
 class IndexerServiceFactory
 {
-    public function __invoke(ContainerInterface $container) : IndexerService
+    public function __invoke(ContainerInterface $container): IndexerService
     {
         return new IndexerService(__DIR__ . '/../../data/posts/');
     }

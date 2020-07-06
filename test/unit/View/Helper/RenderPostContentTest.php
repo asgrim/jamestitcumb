@@ -9,15 +9,17 @@ use Asgrim\View\Helper\RenderPostContent;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
+use function assert;
+
 /**
  * @covers \Asgrim\View\Helper\RenderPostContent
  */
 final class RenderPostContentTest extends TestCase
 {
-    public function testBasicMarkdownConversion() : void
+    public function testBasicMarkdownConversion(): void
     {
-        /** @var IndexerService|MockObject $indexer */
         $indexer = $this->createMock(IndexerService::class);
+        assert($indexer instanceof IndexerService || $indexer instanceof MockObject);
         $indexer->expects(self::once())
             ->method('getPostContentWithoutMetadata')
             ->with('test-slug')

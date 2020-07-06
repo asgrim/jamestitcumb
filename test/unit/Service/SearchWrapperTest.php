@@ -12,6 +12,7 @@ use Elasticsearch\Client as ElasticsearchClient;
 use Elasticsearch\ClientBuilder;
 use Elasticsearch\Common\Exceptions\TransportException;
 use PHPUnit\Framework\TestCase;
+
 use function sleep;
 
 /**
@@ -19,10 +20,9 @@ use function sleep;
  */
 final class SearchWrapperTest extends TestCase
 {
-    /** @var ElasticsearchClient */
-    private static $esClient;
+    private static ElasticsearchClient $esClient;
 
-    public static function setUpBeforeClass() : void
+    public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
 
@@ -34,7 +34,7 @@ final class SearchWrapperTest extends TestCase
     }
 
     /** @throws TransportException */
-    private function getIndexedEsClient() : ElasticsearchClient
+    private function getIndexedEsClient(): ElasticsearchClient
     {
         $indexer = $this->getMockBuilder(IndexerService::class)
             ->disableOriginalConstructor()
@@ -67,14 +67,14 @@ final class SearchWrapperTest extends TestCase
     }
 
     /** @throws TransportException */
-    public function testIndexingAllPosts() : void
+    public function testIndexingAllPosts(): void
     {
         /** @noinspection UnusedFunctionResultInspection */
         $this->getIndexedEsClient();
     }
 
     /** @throws TransportException */
-    public function testSearchReturnsEmptyArrayWithNoResults() : void
+    public function testSearchReturnsEmptyArrayWithNoResults(): void
     {
         $indexer = $this->getMockBuilder(IndexerService::class)
             ->disableOriginalConstructor()
@@ -85,7 +85,7 @@ final class SearchWrapperTest extends TestCase
     }
 
     /** @throws TransportException */
-    public function testSearchReturnsResultWhenSearchingContent() : void
+    public function testSearchReturnsResultWhenSearchingContent(): void
     {
         $indexer = $this->getMockBuilder(IndexerService::class)
             ->disableOriginalConstructor()
@@ -101,7 +101,7 @@ final class SearchWrapperTest extends TestCase
     }
 
     /** @throws TransportException */
-    public function testSearchReturnsResultWhenSearchingTitle() : void
+    public function testSearchReturnsResultWhenSearchingTitle(): void
     {
         $indexer = $this->getMockBuilder(IndexerService::class)
             ->disableOriginalConstructor()

@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 use Asgrim\Middleware\ClacksMiddleware;
 use Asgrim\Middleware\ExceptionLoggingMiddleware;
-use Zend\Expressive\Application;
-use Zend\Expressive\Handler\NotFoundHandler;
-use Zend\Expressive\Helper\ServerUrlMiddleware;
-use Zend\Expressive\Helper\UrlHelperMiddleware;
-use Zend\Expressive\Router\Middleware\DispatchMiddleware;
-use Zend\Expressive\Router\Middleware\RouteMiddleware;
-use Zend\Stratigility\Middleware\ErrorHandler;
+use Mezzio\Application;
+use Mezzio\Handler\NotFoundHandler;
+use Mezzio\Helper\ServerUrlMiddleware;
+use Mezzio\Helper\UrlHelperMiddleware;
+use Mezzio\Router\Middleware\DispatchMiddleware;
+use Mezzio\Router\Middleware\RouteMiddleware;
+use Laminas\Stratigility\Middleware\ErrorHandler;
 
 return static function (Application $app): void {
     $app->pipe(ErrorHandler::class);

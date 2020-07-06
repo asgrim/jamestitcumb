@@ -11,7 +11,7 @@ use Psr\Container\ContainerInterface;
  */
 class TalkServiceFactory
 {
-    public function __invoke(ContainerInterface $container) : TalkService
+    public function __invoke(ContainerInterface $container): TalkService
     {
         return new TalkService(__DIR__ . '/../../data/talks.php');
     }

@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace Asgrim\View\Helper;
 
 use Exception;
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
+
 use function count;
 use function random_int;
 
@@ -20,7 +21,7 @@ final class SelfAggrandisingQuote extends AbstractHelper
     /**
      * @throws Exception
      */
-    public function __invoke() : string
+    public function __invoke(): string
     {
         return self::QUOTES[random_int(0, count(self::QUOTES) - 1)];
     }

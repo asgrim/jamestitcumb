@@ -12,22 +12,24 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+use function assert;
+
 /**
  * @covers \Asgrim\Command\IndexCommand
  */
 final class IndexCommandTest extends TestCase
 {
-    public function testConfiguration() : void
+    public function testConfiguration(): void
     {
-        /** @var IndexerService|MockObject $mockIndexer */
         $mockIndexer = $this->getMockBuilder(IndexerService::class)
             ->disableOriginalConstructor()
             ->getMock();
+        assert($mockIndexer instanceof IndexerService || $mockIndexer instanceof MockObject);
 
-        /** @var SearchWrapper|MockObject $mockSearch */
         $mockSearch = $this->getMockBuilder(SearchWrapper::class)
             ->disableOriginalConstructor()
             ->getMock();
+        assert($mockSearch instanceof SearchWrapper || $mockSearch instanceof MockObject);
 
         $command = new IndexCommand($mockIndexer, $mockSearch);
 
@@ -35,25 +37,25 @@ final class IndexCommandTest extends TestCase
         self::assertSame('Indexes the blog posts to create a cached list of them', $command->getDescription());
     }
 
-    public function testExecuteCausesIndexerToCreateIndexAndOutputResultAndIndexSearch() : void
+    public function testExecuteCausesIndexerToCreateIndexAndOutputResultAndIndexSearch(): void
     {
-        /** @var IndexerService|MockObject $mockIndexer */
         $mockIndexer = $this->createMock(IndexerService::class);
+        assert($mockIndexer instanceof IndexerService || $mockIndexer instanceof MockObject);
         $mockIndexer->expects(self::once())
             ->method('createIndex')
             ->with()
             ->willReturn(3);
 
-        /** @var SearchWrapper|MockObject $mockSearch */
         $mockSearch = $this->createMock(SearchWrapper::class);
+        assert($mockSearch instanceof SearchWrapper || $mockSearch instanceof MockObject);
         $mockSearch->expects(self::once())
             ->method('indexAllPosts');
 
-        /** @var InputInterface|MockObject $mockInput */
         $mockInput = $this->createMock(InputInterface::class);
+        assert($mockInput instanceof InputInterface || $mockInput instanceof MockObject);
 
-        /** @var OutputInterface|MockObject $mockOutput */
         $mockOutput = $this->createMock(OutputInterface::class);
+        assert($mockOutput instanceof OutputInterface || $mockOutput instanceof MockObject);
         $mockOutput->expects(self::at(0))
             ->method('writeln')
             ->with('<info>Indexed 3 posts in the cache</info>');
@@ -66,23 +68,23 @@ final class IndexCommandTest extends TestCase
         $command->execute($mockInput, $mockOutput);
     }
 
-    public function testExecuteFailureToOutputMessage() : void
+    public function testExecuteFailureToOutputMessage(): void
     {
-        /** @var IndexerService|MockObject $mockIndexer */
         $mockIndexer = $this->createMock(IndexerService::class);
+        assert($mockIndexer instanceof IndexerService || $mockIndexer instanceof MockObject);
         $mockIndexer->expects(self::once())
             ->method('createIndex')
             ->with()
             ->willReturn(0);
 
-        /** @var SearchWrapper|MockObject $mockSearch */
         $mockSearch = $this->createMock(SearchWrapper::class);
+        assert($mockSearch instanceof SearchWrapper || $mockSearch instanceof MockObject);
 
-        /** @var InputInterface|MockObject $mockInput */
         $mockInput = $this->createMock(InputInterface::class);
+        assert($mockInput instanceof InputInterface || $mockInput instanceof MockObject);
 
-        /** @var OutputInterface|MockObject $mockOutput */
         $mockOutput = $this->createMock(OutputInterface::class);
+        assert($mockOutput instanceof OutputInterface || $mockOutput instanceof MockObject);
 
         $mockOutput->expects(self::once())
             ->method('writeln')

@@ -19,29 +19,22 @@ final class Talk
     private const TYPE_TUTORIAL  = 'tutorial';
     private const TYPE_LIGHTNING = 'lightning';
 
-    /** @var string */
-    private $name;
+    private string $name;
 
-    /**
-     * @var string
-     * @psalm-var TalkType
-     */
-    private $type;
+    /** @psalm-var TalkType */
+    private string $type;
 
-    /** @var DateTimeImmutable */
-    private $date;
+    private DateTimeImmutable $date;
 
-    /** @var string */
-    private $event;
+    private string $event;
 
-    /** @var string */
-    private $abstract;
+    private string $abstract;
 
     /**
      * @var string[][]
      * @psalm-var LinksData
      */
-    private $links;
+    private array $links;
 
     private function __construct()
     {
@@ -52,7 +45,7 @@ final class Talk
      *
      * @psalm-param array{name: string, type: TalkType, date: DateTime, event: string, abstract: string, links: LinksData} $data
      */
-    public static function fromArrayData(array $data) : self
+    public static function fromArrayData(array $data): self
     {
         Assert::oneOf($data['type'], [self::TYPE_TALK, self::TYPE_TUTORIAL, self::TYPE_LIGHTNING]);
 
@@ -68,32 +61,32 @@ final class Talk
         return $instance;
     }
 
-    public function date() : DateTimeImmutable
+    public function date(): DateTimeImmutable
     {
         return $this->date;
     }
 
-    public function isTutorial() : bool
+    public function isTutorial(): bool
     {
         return $this->type === self::TYPE_TUTORIAL;
     }
 
-    public function isLightning() : bool
+    public function isLightning(): bool
     {
         return $this->type === self::TYPE_LIGHTNING;
     }
 
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function abstract() : string
+    public function abstract(): string
     {
         return $this->abstract;
     }
 
-    public function event() : string
+    public function event(): string
     {
         return $this->event;
     }
@@ -103,7 +96,7 @@ final class Talk
      *
      * @psalm-return LinksData
      */
-    public function links() : array
+    public function links(): array
     {
         return $this->links;
     }

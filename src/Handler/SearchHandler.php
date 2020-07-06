@@ -8,26 +8,24 @@ use Asgrim\Service\PostService;
 use Asgrim\Service\SearchWrapper;
 use Elasticsearch\Common\Exceptions\TransportException;
 use InvalidArgumentException;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Laminas\View\Model\ViewModel;
+use Mezzio\Template\TemplateRendererInterface as TemplateRenderer;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
-use Zend\View\Model\ViewModel;
+
 use function array_key_exists;
 use function trim;
 
 final class SearchHandler implements MiddlewareInterface
 {
-    /** @var SearchWrapper */
-    private $searchWrapper;
+    private SearchWrapper $searchWrapper;
 
-    /** @var PostService */
-    private $postService;
+    private PostService $postService;
 
-    /** @var TemplateRenderer */
-    private $template;
+    private TemplateRenderer $template;
 
     public function __construct(SearchWrapper $searchWrapper, PostService $postService, TemplateRenderer $template)
     {
@@ -41,7 +39,7 @@ final class SearchHandler implements MiddlewareInterface
      *
      * @throws InvalidArgumentException
      */
-    public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
+    public function process(Request $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $queryParams = $request->getQueryParams();
 

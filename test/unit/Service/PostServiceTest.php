@@ -8,6 +8,7 @@ use Asgrim\Service\IndexerService;
 use Asgrim\Service\PostService;
 use OutOfBoundsException;
 use PHPUnit\Framework\TestCase;
+
 use function file_exists;
 use function unlink;
 
@@ -16,10 +17,9 @@ use function unlink;
  */
 final class PostServiceTest extends TestCase
 {
-    /** @var string */
-    private static $postsFolder = __DIR__ . '/../../fixture/posts/';
+    private static string $postsFolder = __DIR__ . '/../../fixture/posts/';
 
-    public function testFetchPostBySlug() : void
+    public function testFetchPostBySlug(): void
     {
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
@@ -31,7 +31,7 @@ final class PostServiceTest extends TestCase
         self::assertSame('test-post', $post->slug());
     }
 
-    public function testExceptionThrownWhenSlugNotFound() : void
+    public function testExceptionThrownWhenSlugNotFound(): void
     {
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
@@ -45,7 +45,7 @@ final class PostServiceTest extends TestCase
         $postService->fetchPostBySlug('this-slug-should-not-exist');
     }
 
-    public function testFetchRecentPostsReturnsPosts() : void
+    public function testFetchRecentPostsReturnsPosts(): void
     {
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
@@ -55,7 +55,7 @@ final class PostServiceTest extends TestCase
         self::assertCount(3, $posts);
     }
 
-    public function testFetchRecentPostsReturnsTwoPostsWhenRequested() : void
+    public function testFetchRecentPostsReturnsTwoPostsWhenRequested(): void
     {
         $indexer = new IndexerService(self::$postsFolder);
         $indexer->createIndex();
@@ -65,7 +65,7 @@ final class PostServiceTest extends TestCase
         self::assertCount(2, $posts);
     }
 
-    public function tearDown() : void
+    public function tearDown(): void
     {
         $cache = self::$postsFolder . '/postsCache.php';
         if (! file_exists($cache)) {

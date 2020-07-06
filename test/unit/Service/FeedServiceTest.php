@@ -12,12 +12,14 @@ use DateTimeImmutable;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
+use function assert;
+
 /**
  * @covers \Asgrim\Service\FeedService
  */
 final class FeedServiceTest extends TestCase
 {
-    public function testFeedServiceCreatesFeedEvenWithEmptyPostsArray() : void
+    public function testFeedServiceCreatesFeedEvenWithEmptyPostsArray(): void
     {
         self::assertSame(
             0,
@@ -25,10 +27,10 @@ final class FeedServiceTest extends TestCase
         );
     }
 
-    public function testFeedServiceWithPosts() : void
+    public function testFeedServiceWithPosts(): void
     {
-        /** @var RenderPostContent|MockObject $postRenderer */
         $postRenderer = $this->createMock(RenderPostContent::class);
+        assert($postRenderer instanceof RenderPostContent || $postRenderer instanceof MockObject);
 
         $postRenderer->expects(self::exactly(2))
             ->method('__invoke')

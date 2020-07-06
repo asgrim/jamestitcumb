@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 
 final class LoggerFactory
 {
-    public function __invoke() : LoggerInterface
+    public function __invoke(): LoggerInterface
     {
         $logger = new Logger('log');
 

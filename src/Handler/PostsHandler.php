@@ -8,21 +8,20 @@ use Asgrim\Service\Exception\PostNotFound;
 use Asgrim\Service\PostService;
 use Asgrim\Value\Post;
 use InvalidArgumentException;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Mezzio\Template\TemplateRendererInterface as TemplateRenderer;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Expressive\Template\TemplateRendererInterface as TemplateRenderer;
+
 use function array_key_exists;
 
 final class PostsHandler implements MiddlewareInterface
 {
-    /** @var PostService */
-    private $postService;
+    private PostService $postService;
 
-    /** @var TemplateRenderer */
-    private $template;
+    private TemplateRenderer $template;
 
     public function __construct(PostService $postService, TemplateRenderer $template)
     {
@@ -35,7 +34,7 @@ final class PostsHandler implements MiddlewareInterface
      *
      * @throws InvalidArgumentException
      */
-    public function process(Request $request, RequestHandlerInterface $handler) : ResponseInterface
+    public function process(Request $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $slug = $request->getAttribute('slug', null);
 
