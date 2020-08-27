@@ -10,6 +10,7 @@ use Asgrim\Value\Post;
  */
 
 $this->headTitle()->append($title);
+$blogPostMarketing = $this->partial('partial::blog-post-marketing');
 ?>
 
 <?php foreach ($posts as $post): ?>
@@ -23,7 +24,7 @@ $this->headTitle()->append($title);
 	</div>
 	<hr />
 	<div class="article-body">
-		<?php echo $this->renderPostContent($post->slug()); ?>
+		<?= str_replace('<!-- MARKETING -->', $blogPostMarketing, $this->renderPostContent($post->slug())) ?>
 	</div>
 
 	<?php if ($post->shouldShowComments()): ?>
