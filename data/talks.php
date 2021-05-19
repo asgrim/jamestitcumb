@@ -998,7 +998,7 @@ return [
         'name' => 'Low Latency Logging',
         'type' => 'talk',
         'date' => new DateTime('2013-11-18'),
-        'event' => 'BrigntonPHP',
+        'event' => 'BrightonPHP',
         'abstract' => $loggingAbstract,
         'links' => [
             'Joind.in' => ['url' => 'https://joind.in/talk/view/9928', 'class' => 'joindin'],
