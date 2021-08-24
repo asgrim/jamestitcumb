@@ -7,46 +7,27 @@ $hhvmAbstract = 'HHVM is currently gaining popularity at quite a pace, and it\'s
 $reflectionLightningAbstract = 'Better Reflection is an awesome new library that uses magical time-warp techniques* to improve on PHP\'s built-in reflection, in this talk we\'ll briefly explore how you can use it to maximise your reflection-fu.<br /><br />* actual magic or time-warp not guaranteed';
 $rabbitTutorial = 'As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this tutorial, I will introduce RabbitMQ as a solution to scalable, interoperable and flexible applications.<br /><br />We will first set up a hypothetical domain, around which we will structure practical coding exercises to learn the features of RabbitMQ from the ground up. This tutorial is perfect for those who would like a deep dive into RabbitMQ with little or no pre-existing knowledge about message queuing systems. Once you\'ve finished the tutorial, you will have learnt how to set up basic publish/subscribe message queues, control the flow of messages using various exchanges, and understand various features of RabbitMQ such as RPC, TTL, and DLX.';
 $rabbitAbstract = 'As your application grows, you soon realise you need to break up your application into smaller chunks that talk to each other. You could just use web services to interact, or you could take a more robust approach and use the message broker RabbitMQ. In this talk, we will take a look at the techniques you can use to vastly enhance inter-application communication, learn about the core concepts of RabbitMQ, cover how you can scale different parts of your application separately, and modernise your development using a message-oriented architecture.';
-$securityAbstract = 'Security is an enormous topic, and it’s really, really complicated. If you’re not careful, you’ll find yourself vulnerable to any number of attacks which you definitely don’t want to be on the receiving end of. This talk will give you just a taster of the vast array of things there is to know about security in modern web applications, such as writing secure PHP web applications and securing a Linux server. Whether you are writing anything beyond a basic brochure website, or even developing a complicated business web application, this talk will give you insights to some of the things you need to be aware of.';
-$practicalAbstract = 'RabbitMQ is a message broker – an application that allows communication between applications by way of a message queuing system. In this talk, we’ll set up a RabbitMQ instance, take an intermediate-level look into the technical features it provides and also how you can apply RabbitMQ in your applications to scale them efficiently.';
+$securityAbstract = 'Security is an enormous topic, and it\'s really, really complicated. If you\'re not careful, you\'ll find yourself vulnerable to any number of attacks which you definitely don\'t want to be on the receiving end of. This talk will give you just a taster of the vast array of things there is to know about security in modern web applications, such as writing secure PHP web applications and securing a Linux server. Whether you are writing anything beyond a basic brochure website, or even developing a complicated business web application, this talk will give you insights to some of the things you need to be aware of.';
+$practicalAbstract = 'RabbitMQ is a message broker – an application that allows communication between applications by way of a message queuing system. In this talk, we\'ll set up a RabbitMQ instance, take an intermediate-level look into the technical features it provides and also how you can apply RabbitMQ in your applications to scale them efficiently.';
 $deploymentAbstract = 'The deadline is looming: one week until we release the new version. Some features aren\'t going to make the cut, but the boss really wants to make sure these critical bugs are fixed. You can\'t wait for the release cycle to be over so you can relax. But what if I told you it didn\'t have to be that way? What if I could show you how to create a world where there is no release cycle? A world where weekend deployments are a rarity, not the norm?! In this talk we will cover the steps we took to achieve the coding utopia of releasing a feature as soon as it\'s ready - many times per day. You\'ll find out that by implementing a continuous deployment flow, you can empower your developers to take ownership and become more productive.';
-$loggingAbstract = 'Logging is an absolute must for any API or web application, but when starting out, questions such as "how can we do it without disrupting everything else" and "what is the easiest way to log" often come up. We’re going to examine a tried and tested method to carry out high-performance, low-latency logging using the power of RabbitMQ to ensure minimal impact to the performance of your runtime application. The talk will show you that a really great logging architecture is a low-cost investment in your application that will definitely pay off in the long run.';
-$astAbstract = 'The new Abstract Syntax Tree (AST) in PHP 7 means the way our PHP code is being executed has changed. Understanding this new fundamental compilation step is key to understanding how our code is being run.<br /><br />To demonstrate, James will show how a basic compiler works and how introducing an AST simplifies this process. We’ll look into how these magical time-warp techniques* can also be used in your code to introspect, analyse and modify code in a way that was never possible before.<br /><br />After seeing this talk, you’ll have a great insight as to the wonders of an AST, and how it can be applied to both compilers and userland code.<br /><br />(*actual magic or time-warp not guaranteed)';
+$loggingAbstract = 'Logging is an absolute must for any API or web application, but when starting out, questions such as "how can we do it without disrupting everything else" and "what is the easiest way to log" often come up. We\'re going to examine a tried and tested method to carry out high-performance, low-latency logging using the power of RabbitMQ to ensure minimal impact to the performance of your runtime application. The talk will show you that a really great logging architecture is a low-cost investment in your application that will definitely pay off in the long run.';
+$astAbstract = 'The new Abstract Syntax Tree (AST) in PHP 7 means the way our PHP code is being executed has changed. Understanding this new fundamental compilation step is key to understanding how our code is being run.<br /><br />To demonstrate, James will show how a basic compiler works and how introducing an AST simplifies this process. We\'ll look into how these magical time-warp techniques* can also be used in your code to introspect, analyse and modify code in a way that was never possible before.<br /><br />After seeing this talk, you\'ll have a great insight as to the wonders of an AST, and how it can be applied to both compilers and userland code.<br /><br />(*actual magic or time-warp not guaranteed)';
 $expressiveAbstract = 'You\'ve heard of Zend\'s new framework, Expressive, and you\'ve heard it\'s the new hotness. In this talk, I will introduce the concepts of Expressive, how to bootstrap a simple application with the framework using best practices, and finally how to integrate a third party tool like Doctrine ORM.';
 $ibmiAbstract = 'Zend Server for IBM i has done a great job at allowing enterprise PHP applications to run smoothly on the IBM i platform. But what about developing for the platform? Having recently been hired for a PHP project on IBM i, we wanted to ensure the project was using the best practices possible. This involved embarking on a whole new collaborative journey - uniting expert platform knowledge with bleeding-edge modern PHP development practices. We\'ll show you the process our team went through on the project to revolutionize the client\'s development process by introducing database abstraction, unit tests, functional tests, continuous integration, automated deployment, and more.';
 $qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in production. That legacy application really needs some TLC. Where do we start? When creating long lived applications, it\'s imperative to focus on good practices. The solution is to improve the whole development life cycle; from planning, better coding and testing, to automation, peer review and more. In this talk, we\'ll take a quick look into each of these areas, looking at how we can make positive, actionable change in our workflow.';
+$legacyAbstract = 'You\'ve started a new job. As you dig deeper into the codebase, the WTFs per minute rate rapidly increases, and you\'re left wondering... "Where do I start?!".<br /><br />In this talk, I\'ll draw on my own experiences of joining several different teams to help upgrade their legacy codebase.<br /><br />I\'ll show you what approaches were tried, what worked, what didn\'t work, and how things could\'ve been done differently.<br /><br />You\'ll come out of this talk with some ideas of how to tackle your own codebase and make it easier to refactor.';
 
 return [
-/*    [
-        'name' => 'Climbing the Abstract Syntax Tree',
+    [
+        'name' => 'Tips for Tackling a Legacy Codebase',
         'type' => 'talk',
-        'date' => new DateTime('2020-05-21'),
-        'event' => 'PHP Srbija 2020',
-        'abstract' => $astAbstract,
+        'date' => new DateTime('2021-10-23'),
+        'event' => 'Scotland PHP 2021',
+        'abstract' => $legacyAbstract,
         'links' => [
-            'PHP Srbija 2020' => ['url' => 'https://2020.phpsrbija.rs/'],
+            'Scotland PHP' => ['url' => 'https://conference.scotlandphp.co.uk/2021/conference/schedule'],
         ],
     ],
-    [
-        'name' => 'Best practices for crafting high quality PHP apps',
-        'type' => 'tutorial',
-        'date' => new DateTime('2020-05-21'),
-        'event' => 'PHP Srbija 2020',
-        'abstract' => $qualityTalk,
-        'links' => [
-            'PHP Srbija 2020' => ['url' => 'https://2020.phpsrbija.rs/'],
-        ],
-    ],
-    [
-        'name' => 'Best practices for crafting high quality PHP apps',
-        'type' => 'tutorial',
-        'date' => new DateTime('2020-05-14'),
-        'event' => 'phpDay 2020',
-        'abstract' => $qualityTalk,
-        'links' => [
-            'phpDay 2020' => ['url' => 'https://2020.phpday.it/'],
-        ],
-    ],*/
     [
         'name' => 'Climbing the Abstract Syntax Tree',
         'type' => 'talk',
@@ -75,6 +56,7 @@ return [
         'abstract' => $qualityTalk,
         'links' => [
             'Bulgaria PHP' => ['url' => 'https://www.bgphp.org/schedule/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/27735', 'class' => 'joindin'],
         ],
     ],
     [
@@ -879,7 +861,7 @@ return [
         ],
     ],
     [
-        'name' => 'You’ll Never Believe How Easy Deployments Can Really Be...',
+        'name' => 'You\'ll Never Believe How Easy Deployments Can Really Be...',
         'type' => 'talk',
         'date' => new DateTime('2014-11-12'),
         'event' => 'PHPSW November 2014',
@@ -941,7 +923,7 @@ return [
         'type' => 'talk',
         'date' => new DateTime('2014-06-21'),
         'event' => 'Portsmouth Linux User Group',
-        'abstract' => 'PHP has been around since 1995, which means it has been powering the web for nearly two decades. It is one of the top web scripting languages, and is used on countless websites. What is new in the world of PHP and why is this language, that many seem quick to dismiss, so popular? In this talk, we’ll look at some of the landmark achievements of PHP, why it’s still gaining popularity, and also a glimpse into what the future might hold for the world of PHP.',
+        'abstract' => 'PHP has been around since 1995, which means it has been powering the web for nearly two decades. It is one of the top web scripting languages, and is used on countless websites. What is new in the world of PHP and why is this language, that many seem quick to dismiss, so popular? In this talk, we\'ll look at some of the landmark achievements of PHP, why it\'s still gaining popularity, and also a glimpse into what the future might hold for the world of PHP.',
         'links' => [
             'Portsmouth LUG' => ['url' => 'http://www.portsmouth.lug.org.uk/'],
             'Slides' => ['url' => 'http://www.slideshare.net/asgrim1/the-state-of-php-2014-portsmouth-linux-user-group-6th-june-2014'],
