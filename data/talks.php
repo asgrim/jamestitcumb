@@ -26,6 +26,7 @@ return [
         'abstract' => $legacyAbstract,
         'links' => [
             'Scotland PHP' => ['url' => 'https://conference.scotlandphp.co.uk/2021/conference/schedule'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/28573', 'class' => 'joindin'],
         ],
     ],
     [
