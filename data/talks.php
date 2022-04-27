@@ -19,6 +19,16 @@ $legacyAbstract = 'You\'ve started a new job. As you dig deeper into the codebas
 
 return [
     [
+        'name' => 'Living the Best Life on a Legacy Project',
+        'type' => 'talk',
+        'date' => new DateTime('2022-05-19'),
+        'event' => 'phpday 2022',
+        'abstract' => $legacyAbstract,
+        'links' => [
+            'phpday' => ['url' => 'https://2022.phpday.it/schedule'],
+        ],
+    ],
+    [
         'name' => 'Tips for Tackling a Legacy Codebase',
         'type' => 'talk',
         'date' => new DateTime('2021-10-23'),
