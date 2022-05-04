@@ -26,6 +26,7 @@ return [
         'abstract' => $legacyAbstract,
         'links' => [
             'phpday' => ['url' => 'https://2022.phpday.it/schedule'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/28770', 'class' => 'joindin'],
         ],
     ],
     [
