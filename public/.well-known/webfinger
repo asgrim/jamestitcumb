@@ -1,0 +1,23 @@
+{
+  "subject": "acct:asgrim@phpc.social",
+  "aliases": [
+    "https://phpc.social/@asgrim",
+    "https://phpc.social/users/asgrim"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://phpc.social/@asgrim"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://phpc.social/users/asgrim"
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://phpc.social/authorize_interaction?uri={uri}"
+    }
+  ]
+}
