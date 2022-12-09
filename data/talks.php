@@ -21,6 +21,16 @@ return [
     [
         'name' => 'Living the Best Life on a Legacy Project',
         'type' => 'talk',
+        'date' => new DateTime('2023-02-15'),
+        'event' => 'PHP UK Conference 2023',
+        'abstract' => $legacyAbstract,
+        'links' => [
+            'PHP UK' => ['url' => 'https://www.phpconference.co.uk/schedule/'],
+        ],
+    ],
+    [
+        'name' => 'Living the Best Life on a Legacy Project',
+        'type' => 'talk',
         'date' => new DateTime('2022-05-19'),
         'event' => 'phpday 2022',
         'abstract' => $legacyAbstract,
