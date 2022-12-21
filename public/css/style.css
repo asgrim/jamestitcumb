@@ -9,3 +9,6 @@
     font-size: 22px;
     display: block;
 }
+.article-body img {
+    max-width: 100%;
+}
