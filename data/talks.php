@@ -16,8 +16,19 @@ $expressiveAbstract = 'You\'ve heard of Zend\'s new framework, Expressive, and y
 $ibmiAbstract = 'Zend Server for IBM i has done a great job at allowing enterprise PHP applications to run smoothly on the IBM i platform. But what about developing for the platform? Having recently been hired for a PHP project on IBM i, we wanted to ensure the project was using the best practices possible. This involved embarking on a whole new collaborative journey - uniting expert platform knowledge with bleeding-edge modern PHP development practices. We\'ll show you the process our team went through on the project to revolutionize the client\'s development process by introducing database abstraction, unit tests, functional tests, continuous integration, automated deployment, and more.';
 $qualityTalk = 'This prototype works, but it\'s not pretty, and now it\'s in production. That legacy application really needs some TLC. Where do we start? When creating long lived applications, it\'s imperative to focus on good practices. The solution is to improve the whole development life cycle; from planning, better coding and testing, to automation, peer review and more. In this talk, we\'ll take a quick look into each of these areas, looking at how we can make positive, actionable change in our workflow.';
 $legacyAbstract = 'You\'ve started a new job. As you dig deeper into the codebase, the WTFs per minute rate rapidly increases, and you\'re left wondering... "Where do I start?!".<br /><br />In this talk, I\'ll draw on my own experiences of joining several different teams to help upgrade their legacy codebase.<br /><br />I\'ll show you what approaches were tried, what worked, what didn\'t work, and how things could\'ve been done differently.<br /><br />You\'ll come out of this talk with some ideas of how to tackle your own codebase and make it easier to refactor.';
+$mvpAbstract = 'The honeymoon period is over, and your company or customer is demanding stability in your PHP applications.<br /><br />I\'m going to talk about some essential strategies to set up Continuous Integration and Delivery pipelines to help maintain, and - over time - improve the quality of the software your team delivers.<br /><br />You\'ll learn about some of the tools necessary to set these pipelines up, basic design of CI pipelines, and some key strategies for automating deployments. I\'ll show you how having a solid CI/CD pipeline means that you can still deliver software fast, but with confidence that your deliverables are steadily getting better.';
 
 return [
+    [
+        'name' => 'Minimum Viable PHPipeline',
+        'type' => 'talk',
+        'date' => new DateTime('2023-05-18'),
+        'event' => 'phpday 2023',
+        'abstract' => $mvpAbstract,
+        'links' => [
+            'phpday 2023' => ['url' => 'https://2023.phpday.it/'],
+        ],
+    ],
     [
         'name' => 'Living the Best Life on a Legacy Project',
         'type' => 'talk',
