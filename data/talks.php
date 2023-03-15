@@ -30,6 +30,16 @@ return [
         ],
     ],
     [
+        'name' => 'Minimum Viable PHPipeline',
+        'type' => 'talk',
+        'date' => new DateTime('2023-04-12'),
+        'event' => 'PHPSW User Group - April 2023',
+        'abstract' => $mvpAbstract,
+        'links' => [
+            'PHP South West' => ['url' => 'https://www.meetup.com/php-sw/'],
+        ],
+    ],
+    [
         'name' => 'Living the Best Life on a Legacy Project',
         'type' => 'talk',
         'date' => new DateTime('2023-02-15'),
