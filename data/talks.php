@@ -36,7 +36,7 @@ return [
         'event' => 'PHPSW User Group - April 2023',
         'abstract' => $mvpAbstract,
         'links' => [
-            'PHP South West' => ['url' => 'https://www.meetup.com/php-sw/'],
+            'PHP South West' => ['url' => 'https://www.meetup.com/php-sw/events/292229506/'],
         ],
     ],
     [
