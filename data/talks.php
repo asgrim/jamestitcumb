@@ -37,6 +37,7 @@ return [
         'abstract' => $mvpAbstract,
         'links' => [
             'PHP South West' => ['url' => 'https://www.meetup.com/php-sw/events/292229506/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/29085', 'class' => 'joindin'],
         ],
     ],
     [
