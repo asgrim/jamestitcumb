@@ -20,6 +20,16 @@ $mvpAbstract = 'The honeymoon period is over, and your company or customer is de
 
 return [
     [
+        'name' => 'Living the Best Life on a Legacy Project',
+        'type' => 'talk',
+        'date' => new DateTime('2023-05-27'),
+        'event' => 'PHPers Summit 2023',
+        'abstract' => $legacyAbstract,
+        'links' => [
+            'PHPers Summit 2023' => ['url' => 'https://summit.phpers.pl/en/'],
+        ],
+    ],
+    [
         'name' => 'Minimum Viable PHPipeline',
         'type' => 'talk',
         'date' => new DateTime('2023-05-18'),
