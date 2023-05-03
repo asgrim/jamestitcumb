@@ -18,14 +18,8 @@ use function array_key_exists;
 
 final class FeedHandler implements MiddlewareInterface
 {
-    private FeedService $feedService;
-
-    private PostService $postService;
-
-    public function __construct(FeedService $feedService, PostService $postService)
+    public function __construct(private FeedService $feedService, private PostService $postService)
     {
-        $this->feedService = $feedService;
-        $this->postService = $postService;
     }
 
     private function getContentType(string $type): string
@@ -38,7 +32,7 @@ final class FeedHandler implements MiddlewareInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @throws RuntimeException
      * @throws InvalidArgumentException

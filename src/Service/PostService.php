@@ -15,11 +15,8 @@ use function sprintf;
 
 class PostService
 {
-    private IndexerService $indexerService;
-
-    public function __construct(IndexerService $indexerService)
+    public function __construct(private IndexerService $indexerService)
     {
-        $this->indexerService = $indexerService;
     }
 
     /**
@@ -59,7 +56,7 @@ class PostService
             $this->indexerService->getAllPostsFromCache(),
             static function (Post $post) use ($tag) {
                 return in_array($tag, $post->tags(), true);
-            }
+            },
         );
     }
 }

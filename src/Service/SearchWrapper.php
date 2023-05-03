@@ -5,25 +5,18 @@ declare(strict_types=1);
 namespace Asgrim\Service;
 
 use Asgrim\Service\Exception\PostNotFound;
-use Elasticsearch\Client as EsClient;
-use Elasticsearch\Common\Exceptions\TransportException;
+use Elastic\Elasticsearch\Client as EsClient;
+use Elastic\Elasticsearch\Exception\ClientResponseException;
+use Elastic\Transport\Exception\TransportException;
 
 use function assert;
 use function is_array;
 
 class SearchWrapper
 {
-    private IndexerService $indexerService;
-
-    private EsClient $esClient;
-
-    public function __construct(EsClient $esClient, IndexerService $indexerService)
+    public function __construct(private EsClient $esClient, private IndexerService $indexerService)
     {
-        $this->indexerService = $indexerService;
-        $this->esClient       = $esClient;
     }
-
-    /** @noinspection PhpDocRedundantThrowsInspection */
 
     /**
      * Perform a post search, returning simplified results, for example:
@@ -41,7 +34,7 @@ class SearchWrapper
      *
      * @return string[][]
      *
-     * @throws TransportException
+     * @throws TransportException|ClientResponseException
      */
     public function search(string $text): array
     {
@@ -55,9 +48,8 @@ class SearchWrapper
             ],
         ];
 
-        $results = $this->esClient->search($params);
+        $results = $this->esClient->search($params)->asArray();
 
-        /** @psalm-suppress RedundantConditionGivenDocblockType */
         assert(is_array($results));
 
         if (! $results['hits']['total']) {
@@ -76,8 +68,6 @@ class SearchWrapper
         return $simplifiedResults;
     }
 
-    /** @noinspection PhpDocRedundantThrowsInspection */
-
     /**
      * Index all the posts
      *
@@ -89,7 +79,7 @@ class SearchWrapper
         $posts = $this->indexerService->getAllPostsFromCache();
 
         // Clear index first, if it exists
-        if ($this->esClient->indices()->exists(['index' => 'posts'])) {
+        if ($this->esClient->indices()->exists(['index' => 'posts'])->asBool()) {
             /** @noinspection UnusedFunctionResultInspection */
             $this->esClient->indices()->delete(['index' => 'posts']);
         }
@@ -109,7 +99,6 @@ class SearchWrapper
                 'id' => $post->slug(),
             ];
 
-            /** @noinspection UnusedFunctionResultInspection */
             $this->esClient->index($params);
         }
     }

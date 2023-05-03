@@ -10,6 +10,11 @@
         beStrictAboutTodoAnnotatedTests="true"
         forceCoversAnnotation="true"
 >
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+    </coverage>
     <testsuites>
         <testsuite name="unit">
             <directory>./test/unit</directory>
@@ -18,9 +23,4 @@
     <php>
         <ini name="error_reporting" value="E_ALL"/>
     </php>
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./src</directory>
-        </whitelist>
-    </filter>
 </phpunit>

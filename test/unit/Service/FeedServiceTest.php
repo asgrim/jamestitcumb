@@ -14,16 +14,14 @@ use PHPUnit\Framework\TestCase;
 
 use function assert;
 
-/**
- * @covers \Asgrim\Service\FeedService
- */
+/** @covers \Asgrim\Service\FeedService */
 final class FeedServiceTest extends TestCase
 {
     public function testFeedServiceCreatesFeedEvenWithEmptyPostsArray(): void
     {
         self::assertSame(
             0,
-            (new FeedService(new RenderPostContent(new IndexerService(''))))->createFeed([])->count()
+            (new FeedService(new RenderPostContent(new IndexerService(''))))->createFeed([])->count(),
         );
     }
 
@@ -42,14 +40,14 @@ final class FeedServiceTest extends TestCase
                 [],
                 DateTimeImmutable::createFromFormat('Y-m-d', '2015-01-01'),
                 'post-slug-1',
-                'no file'
+                'no file',
             ),
             Post::create(
                 'Post title 2',
                 [],
                 DateTimeImmutable::createFromFormat('Y-m-d', '2015-01-01'),
                 'post-slug-2',
-                'no file'
+                'no file',
             ),
         ]);
 

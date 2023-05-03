@@ -11,9 +11,7 @@ use Psr\Log\LoggerInterface;
 
 final class ConfigProvider
 {
-    /**
-     * @return array<string, array<string, string|array<string>|array<string,string>|array<string,array<string>>>>
-     */
+    /** @return array<string, array<string, string|array<string>|array<string,string>|array<string,array<string>>>> */
     public function __invoke(): array
     {
         return [
@@ -67,9 +65,7 @@ final class ConfigProvider
         ];
     }
 
-    /**
-     * @return array<string, string|array<string, string|array<string>>>
-     */
+    /** @return array<string, string|array<string, string|array<string>>> */
     private function getTemplates(): array
     {
         return [

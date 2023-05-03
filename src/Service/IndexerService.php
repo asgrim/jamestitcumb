@@ -36,18 +36,15 @@ use const LOCK_EX;
 
 class IndexerService
 {
-    private string $postFolder;
-
     private string $cacheFileName;
 
     private YamlParser $yamlParser;
 
     /** @var Post[]|array<string, Post>|null */
-    private ?array $posts = null;
+    private array|null $posts = null;
 
-    public function __construct(string $postFolder)
+    public function __construct(private string $postFolder)
     {
-        $this->postFolder    = $postFolder;
         $this->cacheFileName = $postFolder . '/postsCache.php';
         $this->yamlParser    = new YamlParser();
     }
@@ -90,7 +87,6 @@ class IndexerService
     public function getAllPostsFromCache(): array
     {
         if (! isset($this->posts)) {
-            /** @noinspection PhpIncludeInspection */
             /** @psalm-suppress UnresolvableInclude */
             $this->posts = require $this->cacheFileName;
         }
@@ -182,7 +178,7 @@ class IndexerService
      *
      * @throws ParseException
      */
-    private function getPostMetadata(string $filename): ?Post
+    private function getPostMetadata(string $filename): Post|null
     {
         $contents = file_get_contents($this->postFolder . '/' . $filename);
 
@@ -211,7 +207,7 @@ class IndexerService
         $date = DateTimeImmutable::createFromFormat(
             'Y-m-d',
             sprintf('%04d-%02d-%02d', $fileparts[0], $fileparts[1], $fileparts[2]),
-            new DateTimeZone('UTC')
+            new DateTimeZone('UTC'),
         );
 
         Assert::notFalse($date);
@@ -222,7 +218,7 @@ class IndexerService
             $parsed['tags'],
             $date,
             str_replace('.md', '', $fileparts[3]),
-            $filename
+            $filename,
         );
     }
 }

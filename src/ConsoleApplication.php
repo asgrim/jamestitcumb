@@ -18,7 +18,7 @@ class ConsoleApplication extends BaseApplication
         $commands = [
             new Command\IndexCommand(
                 $container->get(IndexerService::class),
-                $container->get(SearchWrapper::class)
+                $container->get(SearchWrapper::class),
             ),
         ];
 

@@ -9,3 +9,4 @@
 phpunit.xml
 psalm.xml
 phpcs.xml
+docker-compose.override.yml

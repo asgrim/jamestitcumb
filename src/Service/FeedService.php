@@ -24,18 +24,15 @@ class FeedService
     /** @var string[] */
     private array $author;
 
-    private RenderPostContent $renderPostContent;
-
-    public function __construct(RenderPostContent $renderPostContent)
+    public function __construct(private RenderPostContent $renderPostContent)
     {
-        $this->baseUrl           = 'https://www.jamestitcumb.com/';
-        $this->title             = 'James Titcumb\'s blog';
-        $this->description       = 'This is James Titcumb\'s personal PHP-related blog posts.';
-        $this->author            = [
+        $this->baseUrl     = 'https://www.jamestitcumb.com/';
+        $this->title       = 'James Titcumb\'s blog';
+        $this->description = 'This is James Titcumb\'s personal PHP-related blog posts.';
+        $this->author      = [
             'name' => 'James Titcumb',
             'url' => $this->baseUrl,
         ];
-        $this->renderPostContent = $renderPostContent;
     }
 
     /**
@@ -68,7 +65,7 @@ class FeedService
             $content = str_replace(
                 ' allowfullscreen>',
                 ' allowfullscreen="allowfullscreen">',
-                $this->renderPostContent->__invoke($post->slug())
+                $this->renderPostContent->__invoke($post->slug()),
             );
 
             $entry->setContent($content);

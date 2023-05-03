@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Asgrim\Service;
 
-use Elasticsearch\ClientBuilder;
+use Elastic\Elasticsearch\ClientBuilder;
 use Psr\Container\ContainerInterface;
 
-/**
- * @codeCoverageIgnore
- */
+/** @codeCoverageIgnore */
 class SearchWrapperFactory
 {
     public function __invoke(ContainerInterface $container): SearchWrapper
@@ -20,7 +18,7 @@ class SearchWrapperFactory
 
         return new SearchWrapper(
             $esClient,
-            $container->get(IndexerService::class)
+            $container->get(IndexerService::class),
         );
     }
 }

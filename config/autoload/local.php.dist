@@ -4,18 +4,18 @@ declare(strict_types=1);
 use Laminas\ConfigAggregator\ConfigAggregator;
 
 return [
-    'debug' => false,
-    ConfigAggregator::ENABLE_CACHE => true,
+    'debug' => true,
+    ConfigAggregator::ENABLE_CACHE => false,
 
-    // Enable this block to see better exception dump with stack trace etc.
+    // Enable this block to see better exception dump with stack trace etc. - not for prod!
 //    'templates' => [
 //        'map' => [
 //            'error/error'   => 'templates/error/debug.phtml',
 //        ],
 //    ],
-//    'elasticsearch' => [
-//        'hosts' => [
-//            'http://elastic:changeme@elastic.asgrim:9200', // default for Docker
-//        ],
-//    ],
+    'elasticsearch' => [
+        'hosts' => [
+            'http://elastic:changeme@elasticsearch:9200', // default for Docker
+        ],
+    ],
 ];

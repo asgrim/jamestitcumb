@@ -14,15 +14,12 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class AboutHandler implements MiddlewareInterface
 {
-    private TemplateRenderer $template;
-
-    public function __construct(TemplateRenderer $template)
+    public function __construct(private TemplateRenderer $template)
     {
-        $this->template = $template;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @throws InvalidArgumentException
      */

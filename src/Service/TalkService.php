@@ -7,6 +7,7 @@ namespace Asgrim\Service;
 use Asgrim\Value\Talk;
 use DateTimeImmutable;
 use Exception;
+use Webmozart\Assert\Assert;
 
 use function array_filter;
 use function array_map;
@@ -14,27 +15,22 @@ use function usort;
 
 class TalkService
 {
-    private string $talkDataFile;
-
     /** @var Talk[]|null */
-    private ?array $talks = null;
+    private array|null $talks = null;
 
-    public function __construct(string $talkDataFile)
+    public function __construct(private string $talkDataFile)
     {
-        $this->talkDataFile = $talkDataFile;
     }
 
-    /**
-     * @return Talk[]
-     */
+    /** @return Talk[] */
     private function getTalks(bool $inverseOrder = false): array
     {
         if ($this->talks === null) {
-            /** @noinspection PhpIncludeInspection */
-            /** @psalm-suppress UnresolvableInclude */
+            $talkArrayData = require $this->talkDataFile;
+            Assert::isArray($talkArrayData);
             $this->talks = array_map(
                 [Talk::class, 'fromArrayData'],
-                require $this->talkDataFile
+                $talkArrayData,
             );
         }
 

@@ -16,9 +16,7 @@ use function file_exists;
 use function strlen;
 use function unlink;
 
-/**
- * @covers \Asgrim\Service\IndexerService
- */
+/** @covers \Asgrim\Service\IndexerService */
 final class IndexerServiceTest extends TestCase
 {
     private static string $postsFolder = __DIR__ . '/../../fixture/posts/';
@@ -73,7 +71,7 @@ final class IndexerServiceTest extends TestCase
                 [],
                 DateTimeImmutable::createFromFormat('Y-m-d', '2015-01-01'),
                 'test-post-slug',
-                'foo/bar/baz/should/not/exist.md'
+                'foo/bar/baz/should/not/exist.md',
             ),
         ]);
 

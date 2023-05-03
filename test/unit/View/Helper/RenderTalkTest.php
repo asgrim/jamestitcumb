@@ -9,9 +9,7 @@ use Asgrim\View\Helper\RenderTalk;
 use DateTime;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @covers \Asgrim\View\Helper\RenderTalk
- */
+/** @covers \Asgrim\View\Helper\RenderTalk */
 final class RenderTalkTest extends TestCase
 {
     public function testRenderRegularTalkContents(): void
