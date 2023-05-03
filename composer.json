@@ -1,15 +1,16 @@
 {
     "name": "asgrim/jamestitcumb",
     "description": "My personal website at www.jamestitcumb.com",
+    "type": "project",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": "^8.2",
+        "php": "8.2.*",
         "ext-curl": "*",
         "ext-intl": "*",
         "ext-json": "*",
         "ext-pcre": "*",
-        "ext-zend-opcache": "*",
+        "ext-bcmath": "*",
         "azjezz/psl": "^2.5",
         "elasticsearch/elasticsearch": "^8.7.1",
         "laminas/laminas-config-aggregator": "^1.13",
