@@ -65,10 +65,12 @@
     ],
     "scripts": {
         "post-update-cmd": [
-            "./app.php index-posts"
+            "./app.php index-posts",
+            "./app.php cache-ratings"
         ],
         "post-install-cmd": [
-            "./app.php index-posts"
+            "./app.php index-posts",
+            "./app.php cache-ratings"
         ]
     },
     "config": {

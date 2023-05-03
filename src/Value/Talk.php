@@ -8,6 +8,8 @@ use DateTime;
 use DateTimeImmutable;
 use Webmozart\Assert\Assert;
 
+use function trim;
+
 /**
  * @psalm-type TalkType = Talk::TYPE_TALK|Talk::TYPE_TUTORIAL|Talk::TYPE_LIGHTNING
  * @psalm-type LinksData = array<string, array{url: string, class: string}>
@@ -97,5 +99,16 @@ final class Talk
     public function links(): array
     {
         return $this->links;
+    }
+
+    public function joindInLink(): string|null
+    {
+        foreach ($this->links() as $link) {
+            if (isset($link['class']) && trim($link['class']) === 'joindin') {
+                return $link['url'];
+            }
+        }
+
+        return null;
     }
 }

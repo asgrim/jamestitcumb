@@ -115,6 +115,11 @@
       <code>__construct</code>
     </PossiblyUnusedMethod>
   </file>
+  <file src="src/Service/Ratings.php">
+    <PossiblyFalseOperand>
+      <code><![CDATA[strrpos($joindinLink, '/')]]></code>
+    </PossiblyFalseOperand>
+  </file>
   <file src="src/Service/SearchWrapper.php">
     <MixedArrayAccess>
       <code><![CDATA[$hit['_id']]]></code>

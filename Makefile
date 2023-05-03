@@ -21,6 +21,7 @@ build: clean
 run: build ## Run the docker environment enabling you to browse the site locally (note: need ports in docker-compose.override.yml)
 	docker compose up -d
 	docker compose exec web php app.php index-posts
+	docker compose exec web php app.php cache-ratings
 
 clean: ## clean the stuff
 	docker compose down --remove-orphans
@@ -29,6 +30,9 @@ ci: cs-check static-analysis test ## Run all the tests
 
 index-posts: ## index the posts (note: need to run make run first)
 	docker compose exec web php app.php index-posts
+
+cache-ratings: ## index the posts (note: need to run make run first)
+	docker compose exec web php app.php cache-ratings
 
 update-static-analysis-baseline: ## bump static analysis baseline issues, reducing set of allowed failures
 	docker compose run --rm --no-deps web vendor/bin/psalm --update-baseline

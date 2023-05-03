@@ -39,3 +39,9 @@ $ make update-static-analysis-baseline
 ```bash
 $ make index-posts
 ```
+
+### Re-cache ratings
+
+```bash
+$ make cache-ratings
+```
