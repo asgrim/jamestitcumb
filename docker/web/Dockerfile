@@ -3,7 +3,7 @@ FROM php:8.2-apache
 
 RUN apt-get update \
     && apt-get install -y iproute2 wget gnupg git bash unzip autoconf build-essential libicu-dev \
-    && docker-php-ext-install opcache intl \
+    && docker-php-ext-install opcache intl bcmath \
     && yes | pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/xdebug.ini \

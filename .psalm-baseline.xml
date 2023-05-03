@@ -6,10 +6,6 @@
     </UnusedClass>
   </file>
   <file src="src/ConsoleApplication.php">
-    <MixedArgument>
-      <code><![CDATA[$container->get(IndexerService::class)]]></code>
-      <code><![CDATA[$container->get(SearchWrapper::class)]]></code>
-    </MixedArgument>
     <UnusedClass>
       <code>ConsoleApplication</code>
     </UnusedClass>
@@ -145,7 +141,6 @@
   <file src="src/Service/SearchWrapperFactory.php">
     <MixedArgument>
       <code><![CDATA[$container->get('config')['elasticsearch']['hosts']]]></code>
-      <code><![CDATA[$container->get(IndexerService::class)]]></code>
     </MixedArgument>
     <MixedArrayAccess>
       <code><![CDATA[$container->get('config')['elasticsearch']]]></code>
@@ -160,6 +155,11 @@
     </UnresolvableInclude>
   </file>
   <file src="src/View/Helper/RenderPostContent.php">
+    <PossiblyUnusedMethod>
+      <code>__construct</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/View/Helper/RenderTalk.php">
     <PossiblyUnusedMethod>
       <code>__construct</code>
     </PossiblyUnusedMethod>

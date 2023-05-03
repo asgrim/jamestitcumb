@@ -10,6 +10,7 @@
         "ext-json": "*",
         "ext-pcre": "*",
         "ext-zend-opcache": "*",
+        "azjezz/psl": "^2.5",
         "elasticsearch/elasticsearch": "^8.7.1",
         "laminas/laminas-config-aggregator": "^1.13",
         "laminas/laminas-diactoros": "^2.25",
@@ -38,7 +39,9 @@
     "require-dev": {
         "colinodell/psr-testlogger": "^1.2",
         "doctrine/coding-standard": "^12.0",
+        "lctrs/psalm-psr-container-plugin": "^1.9",
         "mezzio/mezzio-tooling": "^2.8",
+        "php-standard-library/psalm-plugin": "^2.2",
         "phpunit/phpunit": "^9.6",
         "roave/security-advisories": "dev-master",
         "vimeo/psalm": "^5.10"
