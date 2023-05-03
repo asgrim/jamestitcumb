@@ -5,12 +5,8 @@ declare(strict_types=1);
 namespace Asgrim\Service;
 
 use Asgrim\Service\Exception\PostNotFound;
-use Elastic\Elasticsearch\Client as EsClient;
-use Elastic\Elasticsearch\Exception\ClientResponseException;
-use Elastic\Transport\Exception\TransportException;
-
-use function assert;
-use function is_array;
+use Elasticsearch\Client as EsClient;
+use Elasticsearch\Common\Exceptions\TransportException;
 
 class SearchWrapper
 {
@@ -34,7 +30,7 @@ class SearchWrapper
      *
      * @return string[][]
      *
-     * @throws TransportException|ClientResponseException
+     * @throws TransportException
      */
     public function search(string $text): array
     {
@@ -48,9 +44,7 @@ class SearchWrapper
             ],
         ];
 
-        $results = $this->esClient->search($params)->asArray();
-
-        assert(is_array($results));
+        $results = $this->esClient->search($params);
 
         if (! $results['hits']['total']) {
             return [];
@@ -79,7 +73,7 @@ class SearchWrapper
         $posts = $this->indexerService->getAllPostsFromCache();
 
         // Clear index first, if it exists
-        if ($this->esClient->indices()->exists(['index' => 'posts'])->asBool()) {
+        if ($this->esClient->indices()->exists(['index' => 'posts'])) {
             /** @noinspection UnusedFunctionResultInspection */
             $this->esClient->indices()->delete(['index' => 'posts']);
         }

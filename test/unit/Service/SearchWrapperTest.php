@@ -8,9 +8,9 @@ use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
 use Asgrim\Value\Post;
 use DateTimeImmutable;
-use Elastic\Elasticsearch\Client as ElasticsearchClient;
-use Elastic\Elasticsearch\ClientBuilder;
-use Elastic\Transport\Exception\TransportException;
+use Elasticsearch\Client as ElasticsearchClient;
+use Elasticsearch\ClientBuilder;
+use Elasticsearch\Common\Exceptions\TransportException;
 use PHPUnit\Framework\TestCase;
 
 use function sleep;

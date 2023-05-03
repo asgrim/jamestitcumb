@@ -6,7 +6,7 @@ namespace Asgrim\Command;
 
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
-use Elastic\Transport\Exception\TransportException;
+use Elasticsearch\Common\Exceptions\TransportException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

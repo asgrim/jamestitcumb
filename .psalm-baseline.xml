@@ -138,10 +138,6 @@
       <code>$simplifiedResults</code>
       <code>string[][]</code>
     </MixedReturnTypeCoercion>
-    <PossiblyUndefinedMethod>
-      <code>asArray</code>
-      <code>asBool</code>
-    </PossiblyUndefinedMethod>
   </file>
   <file src="src/Service/SearchWrapperFactory.php">
     <MixedArgument>

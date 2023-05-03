@@ -12,7 +12,7 @@ services:
       - "host.docker.internal:host-gateway"
 
   elasticsearch:
-    image: elasticsearch:8.7.1
+    image: elasticsearch:7.10.1
     healthcheck:
       test: curl -s http://localhost:9200 >/dev/null || exit 1
       interval: 10s
