@@ -10,11 +10,8 @@ use Michelf\MarkdownExtra as Markdown;
 
 class RenderPostContent extends AbstractHelper
 {
-    private IndexerService $indexerService;
-
-    public function __construct(IndexerService $indexerService)
+    public function __construct(private IndexerService $indexerService)
     {
-        $this->indexerService = $indexerService;
     }
 
     public function __invoke(string $slug): string

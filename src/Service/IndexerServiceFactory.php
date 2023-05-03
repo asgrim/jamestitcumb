@@ -6,9 +6,7 @@ namespace Asgrim\Service;
 
 use Psr\Container\ContainerInterface;
 
-/**
- * @codeCoverageIgnore
- */
+/** @codeCoverageIgnore */
 class IndexerServiceFactory
 {
     public function __invoke(ContainerInterface $container): IndexerService

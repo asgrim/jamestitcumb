@@ -1,0 +1,9 @@
+# Uncomment as required...
+#services:
+#  web:
+#    ports:
+#      - 8180:80
+#    volumes:
+#      - .:/app
+#    environment:
+#      - PHP_IDE_CONFIG=serverName=local-dev.jamestitcumb.com

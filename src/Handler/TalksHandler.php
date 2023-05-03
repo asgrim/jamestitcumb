@@ -15,14 +15,8 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class TalksHandler implements MiddlewareInterface
 {
-    private TalkService $talkService;
-
-    private TemplateRenderer $template;
-
-    public function __construct(TalkService $talkService, TemplateRenderer $template)
+    public function __construct(private TalkService $talkService, private TemplateRenderer $template)
     {
-        $this->talkService = $talkService;
-        $this->template    = $template;
     }
 
     /** @throws Exception */

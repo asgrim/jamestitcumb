@@ -6,7 +6,8 @@ namespace Asgrim\Handler;
 
 use Asgrim\Service\PostService;
 use Asgrim\Service\SearchWrapper;
-use Elasticsearch\Common\Exceptions\TransportException;
+use Elastic\Elasticsearch\Exception\ClientResponseException;
+use Elastic\Transport\Exception\TransportException;
 use InvalidArgumentException;
 use Laminas\Diactoros\Response\HtmlResponse;
 use Laminas\View\Model\ViewModel;
@@ -21,21 +22,12 @@ use function trim;
 
 final class SearchHandler implements MiddlewareInterface
 {
-    private SearchWrapper $searchWrapper;
-
-    private PostService $postService;
-
-    private TemplateRenderer $template;
-
-    public function __construct(SearchWrapper $searchWrapper, PostService $postService, TemplateRenderer $template)
+    public function __construct(private SearchWrapper $searchWrapper, private PostService $postService, private TemplateRenderer $template)
     {
-        $this->searchWrapper = $searchWrapper;
-        $this->postService   = $postService;
-        $this->template      = $template;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @throws InvalidArgumentException
      */
@@ -49,7 +41,7 @@ final class SearchHandler implements MiddlewareInterface
 
         try {
             $rawResults = $this->searchWrapper->search($queryParams['q']);
-        } catch (TransportException $transportException) {
+        } catch (TransportException | ClientResponseException) {
             return new HtmlResponse($this->template->render('app::search/unavailable'));
         }
 

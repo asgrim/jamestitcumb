@@ -8,16 +8,14 @@ use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
 use Asgrim\Value\Post;
 use DateTimeImmutable;
-use Elasticsearch\Client as ElasticsearchClient;
-use Elasticsearch\ClientBuilder;
-use Elasticsearch\Common\Exceptions\TransportException;
+use Elastic\Elasticsearch\Client as ElasticsearchClient;
+use Elastic\Elasticsearch\ClientBuilder;
+use Elastic\Transport\Exception\TransportException;
 use PHPUnit\Framework\TestCase;
 
 use function sleep;
 
-/**
- * @covers \Asgrim\Service\SearchWrapper
- */
+/** @covers \Asgrim\Service\SearchWrapper */
 final class SearchWrapperTest extends TestCase
 {
     private static ElasticsearchClient $esClient;
@@ -54,7 +52,7 @@ final class SearchWrapperTest extends TestCase
                     [],
                     new DateTimeImmutable(),
                     'a-test-slug',
-                    'a-filename'
+                    'a-filename',
                 ),
             ]);
 

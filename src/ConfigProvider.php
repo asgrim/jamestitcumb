@@ -11,9 +11,7 @@ use Psr\Log\LoggerInterface;
 
 final class ConfigProvider
 {
-    /**
-     * @return array<string, array<string, string|array<string>|array<string,string>|array<string,array<string>>>>
-     */
+    /** @return array<string, array<string, string|array<string>|array<string,string>|array<string,array<string>>>> */
     public function __invoke(): array
     {
         return [
@@ -45,6 +43,7 @@ final class ConfigProvider
                 Service\TalkService::class => Service\TalkServiceFactory::class,
                 Service\FeedService::class => ReflectionBasedAbstractFactory::class,
                 Service\SearchWrapper::class => Service\SearchWrapperFactory::class,
+                Service\Ratings::class => Service\RatingsFactory::class,
                 LoggerInterface::class => LoggerFactory::class,
             ],
         ];
@@ -56,7 +55,7 @@ final class ConfigProvider
         return [
             'factories' => [
                 View\Helper\RenderPostContent::class => ReflectionBasedAbstractFactory::class,
-                View\Helper\RenderTalk::class => InvokableFactory::class,
+                View\Helper\RenderTalk::class => ReflectionBasedAbstractFactory::class,
                 View\Helper\SelfAggrandisingQuote::class => InvokableFactory::class,
             ],
             'aliases' => [
@@ -67,9 +66,7 @@ final class ConfigProvider
         ];
     }
 
-    /**
-     * @return array<string, string|array<string, string|array<string>>>
-     */
+    /** @return array<string, string|array<string, string|array<string>>> */
     private function getTemplates(): array
     {
         return [

@@ -19,18 +19,12 @@ use function array_key_exists;
 
 final class PostsHandler implements MiddlewareInterface
 {
-    private PostService $postService;
-
-    private TemplateRenderer $template;
-
-    public function __construct(PostService $postService, TemplateRenderer $template)
+    public function __construct(private PostService $postService, private TemplateRenderer $template)
     {
-        $this->postService = $postService;
-        $this->template    = $template;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @throws InvalidArgumentException
      */

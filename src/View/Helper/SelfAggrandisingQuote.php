@@ -18,9 +18,7 @@ final class SelfAggrandisingQuote extends AbstractHelper
         'James is by far and away the most talented developer I have ever met.',
     ];
 
-    /**
-     * @throws Exception
-     */
+    /** @throws Exception */
     public function __invoke(): string
     {
         return self::QUOTES[random_int(0, count(self::QUOTES) - 1)];

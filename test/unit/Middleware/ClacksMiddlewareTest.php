@@ -12,9 +12,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
-/**
- * @covers \Asgrim\Middleware\ClacksMiddleware
- */
+/** @covers \Asgrim\Middleware\ClacksMiddleware */
 final class ClacksMiddlewareTest extends TestCase
 {
     public function testClacksHeaderAdded(): void
@@ -26,7 +24,7 @@ final class ClacksMiddlewareTest extends TestCase
                 {
                     return new Response();
                 }
-            }
+            },
         );
 
         self::assertTrue($response->hasHeader('X-Clacks-Overhead'));

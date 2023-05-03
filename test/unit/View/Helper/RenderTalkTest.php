@@ -4,23 +4,32 @@ declare(strict_types=1);
 
 namespace AsgrimTest\View\Helper;
 
+use Asgrim\Service\Ratings;
 use Asgrim\Value\Talk;
 use Asgrim\View\Helper\RenderTalk;
 use DateTime;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @covers \Asgrim\View\Helper\RenderTalk
- */
+/** @covers \Asgrim\View\Helper\RenderTalk */
 final class RenderTalkTest extends TestCase
 {
+    private Ratings&MockObject $ratings;
+    private RenderTalk $renderTalk;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->ratings    = $this->createMock(Ratings::class);
+        $this->renderTalk = new RenderTalk($this->ratings);
+    }
+
     public function testRenderRegularTalkContents(): void
     {
-        $renderTalk = new RenderTalk();
-
         $date = new DateTime('2016-12-31 23:59:59');
 
-        $content = $renderTalk->__invoke(Talk::fromArrayData([
+        $content = $this->renderTalk->__invoke(Talk::fromArrayData([
             'type' => 'talk',
             'name' => 'My Great Talk',
             'event' => 'Fantastic Conference',
@@ -37,11 +46,9 @@ final class RenderTalkTest extends TestCase
 
     public function testRenderLightningTalkContents(): void
     {
-        $renderTalk = new RenderTalk();
-
         $date = new DateTime('2016-12-31 23:59:59');
 
-        $content = $renderTalk->__invoke(Talk::fromArrayData([
+        $content = $this->renderTalk->__invoke(Talk::fromArrayData([
             'type' => 'lightning',
             'name' => 'My Great Lightning Talk',
             'event' => 'Fantastic Conference',
@@ -55,11 +62,9 @@ final class RenderTalkTest extends TestCase
 
     public function testRenderTutorialTalkContents(): void
     {
-        $renderTalk = new RenderTalk();
-
         $date = new DateTime('2016-12-31 23:59:59');
 
-        $content = $renderTalk->__invoke(Talk::fromArrayData([
+        $content = $this->renderTalk->__invoke(Talk::fromArrayData([
             'type' => 'tutorial',
             'name' => 'My Great Tutorial',
             'event' => 'Fantastic Conference',
@@ -73,11 +78,9 @@ final class RenderTalkTest extends TestCase
 
     public function testRenderTalkWithLinksContents(): void
     {
-        $renderTalk = new RenderTalk();
-
         $date = new DateTime('2016-12-31 23:59:59');
 
-        $content = $renderTalk->__invoke(Talk::fromArrayData([
+        $content = $this->renderTalk->__invoke(Talk::fromArrayData([
             'type' => 'lightning',
             'name' => 'My Great Talk',
             'event' => 'Fantastic Conference',

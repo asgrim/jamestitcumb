@@ -12,9 +12,7 @@ use PHPUnit\Framework\TestCase;
 use function file_exists;
 use function unlink;
 
-/**
- * @covers \Asgrim\Service\PostService
- */
+/** @covers \Asgrim\Service\PostService */
 final class PostServiceTest extends TestCase
 {
     private static string $postsFolder = __DIR__ . '/../../fixture/posts/';

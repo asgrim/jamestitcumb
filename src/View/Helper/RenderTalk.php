@@ -4,14 +4,20 @@ declare(strict_types=1);
 
 namespace Asgrim\View\Helper;
 
+use Asgrim\Service\Ratings;
 use Asgrim\Value\Talk;
 use Laminas\View\Helper\AbstractHelper;
 
 use function count;
 use function implode;
+use function trim;
 
 class RenderTalk extends AbstractHelper
 {
+    public function __construct(private Ratings $ratings)
+    {
+    }
+
     public function __invoke(Talk $talk): string
     {
         $s = '<li>';
@@ -40,7 +46,12 @@ class RenderTalk extends AbstractHelper
                 $l .= ' class="' . $linkData['class'] . '"';
             }
 
-            $l      .= '>' . $text . '</a>';
+            $l .= '>' . $text . '</a>';
+
+            if (isset($linkData['class']) && trim($linkData['class']) === 'joindin') {
+                $l .= $this->ratings->ratingForTalk($linkData['url']);
+            }
+
             $links[] = $l;
         }
 

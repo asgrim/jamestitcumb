@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace AsgrimTest\Middleware;
 
 use Asgrim\Middleware\ExceptionLoggingMiddleware;
+use ColinODell\PsrTestLogger\TestLogger;
 use Laminas\Diactoros\ServerRequest;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Psr\Log\Test\TestLogger;
 use RuntimeException;
 
 /** @covers \Asgrim\Middleware\ExceptionLoggingMiddleware */
@@ -28,11 +28,11 @@ final class ExceptionLoggingMiddlewareTest extends TestCase
                     {
                         throw new RuntimeException('oh no');
                     }
-                }
+                },
             );
 
             self::fail('Should not have reached here, exception was thrown!');
-        } catch (RuntimeException $exception) {
+        } catch (RuntimeException) {
             self::assertTrue($logger->hasErrorThatContains('oh no'));
         }
     }

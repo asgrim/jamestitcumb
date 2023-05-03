@@ -45,7 +45,7 @@ final class Post
             $dataArray['tags'],
             $dataArray['date'],
             $dataArray['slug'],
-            $dataArray['file']
+            $dataArray['file'],
         );
     }
 
@@ -55,7 +55,7 @@ final class Post
         array $tags,
         DateTimeImmutable $date,
         string $slug,
-        string $file
+        string $file,
     ): self {
         Assert::allString($tags);
 
@@ -96,6 +96,7 @@ final class Post
         return $this->file;
     }
 
+    /** @psalm-api */
     public function shouldShowComments(): bool
     {
         return $this->active;

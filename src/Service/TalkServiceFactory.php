@@ -4,14 +4,10 @@ declare(strict_types=1);
 
 namespace Asgrim\Service;
 
-use Psr\Container\ContainerInterface;
-
-/**
- * @codeCoverageIgnore
- */
+/** @codeCoverageIgnore */
 class TalkServiceFactory
 {
-    public function __invoke(ContainerInterface $container): TalkService
+    public function __invoke(): TalkService
     {
         return new TalkService(__DIR__ . '/../../data/talks.php');
     }

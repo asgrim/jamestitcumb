@@ -13,11 +13,8 @@ use Throwable;
 
 final class ExceptionLoggingMiddleware implements MiddlewareInterface
 {
-    private LoggerInterface $logger;
-
-    public function __construct(LoggerInterface $logger)
+    public function __construct(private LoggerInterface $logger)
     {
-        $this->logger = $logger;
     }
 
     /**

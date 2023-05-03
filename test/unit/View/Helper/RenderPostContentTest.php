@@ -11,9 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 use function assert;
 
-/**
- * @covers \Asgrim\View\Helper\RenderPostContent
- */
+/** @covers \Asgrim\View\Helper\RenderPostContent */
 final class RenderPostContentTest extends TestCase
 {
     public function testBasicMarkdownConversion(): void

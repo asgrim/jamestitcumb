@@ -1,58 +1,28 @@
 # These docker-compose definitions are suited for a development environment, not for CI or production-alike systems.
-
-version: '3.7'
 services:
-
-  nginx:
-    build: docker/nginx
-    ports:
-      - 80:80
-    volumes:
-      - .:/app:ro
-    restart: unless-stopped
-    networks:
-      asgrim:
-        aliases:
-          - "nginx.asgrim"
-    depends_on:
-      - php-fpm
-
-  php-fpm:
+  web:
     build:
       context: .
-      dockerfile: docker/php-fpm/Dockerfile
-    volumes:
-      - .:/app:ro
-      - ./vendor:/app/vendor
-      - ./composer.json:/app/composer.json
-      - ./composer.lock:/app/composer.lock
-      - ./data:/app/data
-      - ./test/fixture:/app/test/fixture
-      - .phpunit.result.cache
+      dockerfile: docker/web/Dockerfile
     restart: unless-stopped
-    networks:
-      asgrim:
-        aliases:
-          - "php-fpm.asgrim"
     depends_on:
-      - elasticsearch
+      elasticsearch:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   elasticsearch:
-    image: elasticsearch:7.4.0
-    ports:
-      - 9200:9200
-      - 9300:9300
+    image: elasticsearch:8.7.1
+    healthcheck:
+      test: curl -s http://localhost:9200 >/dev/null || exit 1
+      interval: 10s
+      timeout: 3s
+      retries: 6
     environment:
+      - xpack.security.enabled=false
       - discovery.type=single-node
     ulimits:
       memlock:
         soft: -1
         hard: -1
     restart: unless-stopped
-    networks:
-      asgrim:
-        aliases:
-          - "elastic.asgrim"
-
-networks:
-  asgrim:

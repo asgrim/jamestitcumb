@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Asgrim;
 
 use Asgrim\Service\IndexerService;
+use Asgrim\Service\Ratings;
 use Asgrim\Service\SearchWrapper;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Application as BaseApplication;
@@ -18,7 +19,10 @@ class ConsoleApplication extends BaseApplication
         $commands = [
             new Command\IndexCommand(
                 $container->get(IndexerService::class),
-                $container->get(SearchWrapper::class)
+                $container->get(SearchWrapper::class),
+            ),
+            new Command\CacheRatingsCommand(
+                $container->get(Ratings::class),
             ),
         ];
 

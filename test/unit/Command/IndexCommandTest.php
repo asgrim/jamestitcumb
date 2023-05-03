@@ -14,9 +14,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 use function assert;
 
-/**
- * @covers \Asgrim\Command\IndexCommand
- */
+/** @covers \Asgrim\Command\IndexCommand */
 final class IndexCommandTest extends TestCase
 {
     public function testConfiguration(): void
@@ -52,16 +50,15 @@ final class IndexCommandTest extends TestCase
             ->method('indexAllPosts');
 
         $mockInput = $this->createMock(InputInterface::class);
-        assert($mockInput instanceof InputInterface || $mockInput instanceof MockObject);
 
         $mockOutput = $this->createMock(OutputInterface::class);
         assert($mockOutput instanceof OutputInterface || $mockOutput instanceof MockObject);
-        $mockOutput->expects(self::at(0))
+        $mockOutput->expects(self::exactly(2))
             ->method('writeln')
-            ->with('<info>Indexed 3 posts in the cache</info>');
-        $mockOutput->expects(self::at(1))
-            ->method('writeln')
-            ->with('<info>Updated search index.</info>');
+            ->withConsecutive(
+                ['<info>Indexed 3 posts in the cache</info>'],
+                ['<info>Updated search index.</info>'],
+            );
 
         $command = new IndexCommand($mockIndexer, $mockSearch);
 

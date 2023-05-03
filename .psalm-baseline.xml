@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="5.10.0@a5effd2d2dddd1a7ea7a0f6a051ce63ff979e356">
+  <file src="src/ConfigProvider.php">
+    <UnusedClass>
+      <code>ConfigProvider</code>
+    </UnusedClass>
+  </file>
+  <file src="src/ConsoleApplication.php">
+    <UnusedClass>
+      <code>ConsoleApplication</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Handler/AboutHandler.php">
+    <PossiblyUnusedMethod>
+      <code>__construct</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Handler/FeedHandler.php">
+    <MixedArgument>
+      <code><![CDATA[$query['tag']]]></code>
+    </MixedArgument>
+    <MixedOperand>
+      <code><![CDATA[$query['tag']]]></code>
+      <code><![CDATA[$query['tag']]]></code>
+    </MixedOperand>
+    <PossiblyUnusedMethod>
+      <code>__construct</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Handler/PostsHandler.php">
+    <MixedArgument>
+      <code><![CDATA[$query['tag']]]></code>
+      <code>$slug</code>
+    </MixedArgument>
+    <MixedArrayOffset>
+      <code><![CDATA[[$slug => $this->postService->fetchPostBySlug($slug)]]]></code>
+    </MixedArrayOffset>
+    <MixedAssignment>
+      <code>$slug</code>
+    </MixedAssignment>
+    <PossiblyUnusedMethod>
+      <code>__construct</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Handler/SearchHandler.php">
+    <MixedArgument>
+      <code><![CDATA[$queryParams['q']]]></code>
+      <code><![CDATA[$queryParams['q']]]></code>
+    </MixedArgument>
+    <PossiblyUnusedMethod>
+      <code>__construct</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Handler/TalksHandler.php">
+    <PossiblyUnusedMethod>
+      <code>__construct</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Handler/TrainingHandler.php">
+    <PossiblyUnusedMethod>
+      <code>__construct</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Middleware/ClacksMiddleware.php">
+    <UnusedClass>
+      <code>ClacksMiddleware</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Middleware/ExceptionLoggingMiddleware.php">
+    <UnusedClass>
+      <code>ExceptionLoggingMiddleware</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Service/FeedService.php">
+    <PossiblyUnusedMethod>
+      <code>__construct</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Service/IndexerService.php">
+    <MixedArgument>
+      <code>$parsed</code>
+      <code><![CDATA[$parsed['tags']]]></code>
+      <code><![CDATA[$parsed['title']]]></code>
+    </MixedArgument>
+    <MixedAssignment>
+      <code>$parsed</code>
+      <code><![CDATA[$this->posts]]></code>
+    </MixedAssignment>
+    <MixedInferredReturnType>
+      <code><![CDATA[Post[]|array<string, Post>]]></code>
+    </MixedInferredReturnType>
+    <MixedReturnStatement>
+      <code><![CDATA[$this->posts]]></code>
+      <code><![CDATA[$this->posts]]></code>
+    </MixedReturnStatement>
+    <PossiblyNullArgument>
+      <code>$fileparts[0]</code>
+      <code>$fileparts[1]</code>
+      <code>$fileparts[2]</code>
+    </PossiblyNullArgument>
+    <PossiblyNullArrayAccess>
+      <code>$fileparts[0]</code>
+      <code>$fileparts[1]</code>
+      <code>$fileparts[2]</code>
+      <code>$fileparts[3]</code>
+    </PossiblyNullArrayAccess>
+  </file>
+  <file src="src/Service/IndexerServiceFactory.php">
+    <PossiblyUnusedParam>
+      <code>$container</code>
+    </PossiblyUnusedParam>
+  </file>
+  <file src="src/Service/PostService.php">
+    <PossiblyUnusedMethod>
+      <code>__construct</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Service/Ratings.php">
+    <PossiblyFalseOperand>
+      <code><![CDATA[strrpos($joindinLink, '/')]]></code>
+    </PossiblyFalseOperand>
+  </file>
+  <file src="src/Service/SearchWrapper.php">
+    <MixedArrayAccess>
+      <code><![CDATA[$hit['_id']]]></code>
+      <code><![CDATA[$hit['_score']]]></code>
+      <code><![CDATA[$results['hits']['hits']]]></code>
+      <code><![CDATA[$results['hits']['max_score']]]></code>
+      <code><![CDATA[$results['hits']['total']]]></code>
+    </MixedArrayAccess>
+    <MixedAssignment>
+      <code>$hit</code>
+    </MixedAssignment>
+    <MixedOperand>
+      <code><![CDATA[$hit['_score']]]></code>
+    </MixedOperand>
+    <MixedReturnTypeCoercion>
+      <code>$simplifiedResults</code>
+      <code>string[][]</code>
+    </MixedReturnTypeCoercion>
+    <PossiblyUndefinedMethod>
+      <code>asArray</code>
+      <code>asBool</code>
+    </PossiblyUndefinedMethod>
+  </file>
+  <file src="src/Service/SearchWrapperFactory.php">
+    <MixedArgument>
+      <code><![CDATA[$container->get('config')['elasticsearch']['hosts']]]></code>
+    </MixedArgument>
+    <MixedArrayAccess>
+      <code><![CDATA[$container->get('config')['elasticsearch']]]></code>
+    </MixedArrayAccess>
+  </file>
+  <file src="src/Service/TalkService.php">
+    <MixedArgument>
+      <code>$talkArrayData</code>
+    </MixedArgument>
+    <UnresolvableInclude>
+      <code><![CDATA[require $this->talkDataFile]]></code>
+    </UnresolvableInclude>
+  </file>
+  <file src="src/View/Helper/RenderPostContent.php">
+    <PossiblyUnusedMethod>
+      <code>__construct</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/View/Helper/RenderTalk.php">
+    <PossiblyUnusedMethod>
+      <code>__construct</code>
+    </PossiblyUnusedMethod>
+  </file>
+</files>

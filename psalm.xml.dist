@@ -1,14 +1,22 @@
 <?xml version="1.0"?>
 <psalm
-    totallyTyped="false"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    errorLevel="1"
+    findUnusedPsalmSuppress="true"
+    findUnusedBaselineEntry="true"
+    findUnusedCode="true"
+    errorBaseline=".psalm-baseline.xml"
 >
     <projectFiles>
-        <directory name="src" />
+        <directory name="src"/>
         <ignoreFiles>
-            <directory name="vendor" />
+            <directory name="vendor"/>
         </ignoreFiles>
     </projectFiles>
+    <plugins>
+        <pluginClass class="Psl\Psalm\Plugin"/>
+        <pluginClass class="Lctrs\PsalmPsrContainerPlugin\Plugin"/>
+    </plugins>
 </psalm>
