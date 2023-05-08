@@ -1074,7 +1074,7 @@ return [
         'event' => 'PHP Hampshire',
         'abstract' => 'A very quick introduction to the basics of Composer, what problems it solves, what it does, including a live demo.',
         'links' => [
-            'Joind.in' => ['url' => 'https://joind.in/9341', 'class' => 'joindin'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/9341', 'class' => 'joindin'],
             'YouTube' => ['url' => 'http://www.youtube.com/watch?v=nnDUSkvdvWg'],
             'Slideshare' => ['url' => 'http://www.slideshare.net/asgrim1/composer-tutorial-php-hants-sept-13-26138484'],
         ],

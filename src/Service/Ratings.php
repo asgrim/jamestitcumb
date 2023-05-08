@@ -21,6 +21,8 @@ use function sprintf;
 use function strrpos;
 use function substr;
 
+use const ARRAY_FILTER_USE_BOTH;
+
 class Ratings
 {
     /** @param non-empty-string $ratingsCacheFile */
@@ -80,6 +82,12 @@ class Ratings
                                         ]),
                                     );
 
+                                    $this->logger->debug(sprintf(
+                                        'Talk rating %s found for %s',
+                                        $response['talks'][0]['average_rating'],
+                                        $joindinLink,
+                                    ));
+
                                     return [
                                         'rating' => $response['talks'][0]['average_rating'],
                                     ];
@@ -88,9 +96,20 @@ class Ratings
                             ),
                         ),
                     ),
-                    static function (array $item): bool {
-                        return $item['rating'] > 0;
+                    function (array $item, string $url): bool {
+                        if ($item['rating'] > 0) {
+                            return true;
+                        }
+
+                        $this->logger->debug(sprintf(
+                            'Filtering out rating %s for talk %s',
+                            (string) $item['rating'],
+                            $url,
+                        ));
+
+                        return false;
                     },
+                    ARRAY_FILTER_USE_BOTH,
                 ),
                 true,
             ),
