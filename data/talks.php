@@ -37,6 +37,7 @@ return [
         'abstract' => $mvpAbstract,
         'links' => [
             'phpday 2023' => ['url' => 'https://2023.phpday.it/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/29141', 'class' => 'joindin'],
         ],
     ],
     [
