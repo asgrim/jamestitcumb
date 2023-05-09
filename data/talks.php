@@ -22,6 +22,16 @@ return [
     [
         'name' => 'Living the Best Life on a Legacy Project',
         'type' => 'talk',
+        'date' => new DateTime('2023-06-22'),
+        'event' => 'Laravel Live UK 2023',
+        'abstract' => $legacyAbstract,
+        'links' => [
+            'Laravel Live UK' => ['url' => 'https://laravellive.uk/'],
+        ],
+    ],
+    [
+        'name' => 'Living the Best Life on a Legacy Project',
+        'type' => 'talk',
         'date' => new DateTime('2023-05-27'),
         'event' => 'PHPers Summit 2023',
         'abstract' => $legacyAbstract,
