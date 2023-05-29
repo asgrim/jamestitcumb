@@ -37,6 +37,7 @@ return [
         'abstract' => $legacyAbstract,
         'links' => [
             'PHPers Summit 2023' => ['url' => 'https://summit.phpers.pl/en/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/29176', 'class' => 'joindin'],
         ],
     ],
     [
