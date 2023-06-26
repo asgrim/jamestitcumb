@@ -27,6 +27,7 @@ return [
         'abstract' => $legacyAbstract,
         'links' => [
             'Laravel Live UK' => ['url' => 'https://laravellive.uk/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/29221', 'class' => 'joindin'],
         ],
     ],
     [
