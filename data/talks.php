@@ -22,6 +22,17 @@ return [
     [
         'name' => 'Living the Best Life on a Legacy Project',
         'type' => 'talk',
+        'date' => new DateTime('2023-11-03'),
+        'event' => 'Longhorn PHP 2023',
+        'abstract' => $legacyAbstract,
+        'links' => [
+            'Longhorn PHP' => ['url' => 'https://www.longhornphp.com/schedule'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/29375', 'class' => 'joindin'],
+        ],
+    ],
+    [
+        'name' => 'Living the Best Life on a Legacy Project',
+        'type' => 'talk',
         'date' => new DateTime('2023-06-22'),
         'event' => 'Laravel Live UK 2023',
         'abstract' => $legacyAbstract,
