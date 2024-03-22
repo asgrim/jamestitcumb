@@ -27,6 +27,7 @@ return [
         'abstract' => $legacyAbstract,
         'links' => [
             'DPC 2024' => ['url' => 'https://phpconference.nl/schedule-2024/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/29612', 'class' => 'joindin'],
         ],
     ],
     [
