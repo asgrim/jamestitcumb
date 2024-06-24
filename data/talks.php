@@ -22,6 +22,16 @@ return [
     [
         'name' => 'Living the Best Life on a Legacy Project',
         'type' => 'talk',
+        'date' => new DateTime('2024-09-06'),
+        'event' => 'PHP Serbia 2024',
+        'abstract' => $legacyAbstract,
+        'links' => [
+            'PHP Serbia 2024' => ['url' => 'https://2024.phpsrbija.rs/'],
+        ],
+    ],
+    [
+        'name' => 'Living the Best Life on a Legacy Project',
+        'type' => 'talk',
         'date' => new DateTime('2024-03-15'),
         'event' => 'Dutch PHP Conference 2024',
         'abstract' => $legacyAbstract,
