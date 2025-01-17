@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.10.0@a5effd2d2dddd1a7ea7a0f6a051ce63ff979e356">
+<files psalm-version="dev-master@765dcbfe43002e52e4808b65561842784fe7bcc7">
   <file src="src/ConfigProvider.php">
     <UnusedClass>
-      <code>ConfigProvider</code>
+      <code><![CDATA[ConfigProvider]]></code>
     </UnusedClass>
   </file>
   <file src="src/ConsoleApplication.php">
     <UnusedClass>
-      <code>ConsoleApplication</code>
+      <code><![CDATA[ConsoleApplication]]></code>
     </UnusedClass>
   </file>
   <file src="src/Handler/AboutHandler.php">
     <PossiblyUnusedMethod>
-      <code>__construct</code>
+      <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Handler/FeedHandler.php">
@@ -24,22 +24,22 @@
       <code><![CDATA[$query['tag']]]></code>
     </MixedOperand>
     <PossiblyUnusedMethod>
-      <code>__construct</code>
+      <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Handler/PostsHandler.php">
     <MixedArgument>
       <code><![CDATA[$query['tag']]]></code>
-      <code>$slug</code>
+      <code><![CDATA[$slug]]></code>
     </MixedArgument>
     <MixedArrayOffset>
       <code><![CDATA[[$slug => $this->postService->fetchPostBySlug($slug)]]]></code>
     </MixedArrayOffset>
     <MixedAssignment>
-      <code>$slug</code>
+      <code><![CDATA[$slug]]></code>
     </MixedAssignment>
     <PossiblyUnusedMethod>
-      <code>__construct</code>
+      <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Handler/SearchHandler.php">
@@ -48,71 +48,68 @@
       <code><![CDATA[$queryParams['q']]]></code>
     </MixedArgument>
     <PossiblyUnusedMethod>
-      <code>__construct</code>
+      <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Handler/TalksHandler.php">
     <PossiblyUnusedMethod>
-      <code>__construct</code>
+      <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Handler/TrainingHandler.php">
     <PossiblyUnusedMethod>
-      <code>__construct</code>
+      <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Middleware/ClacksMiddleware.php">
     <UnusedClass>
-      <code>ClacksMiddleware</code>
+      <code><![CDATA[ClacksMiddleware]]></code>
     </UnusedClass>
   </file>
   <file src="src/Middleware/ExceptionLoggingMiddleware.php">
     <UnusedClass>
-      <code>ExceptionLoggingMiddleware</code>
+      <code><![CDATA[ExceptionLoggingMiddleware]]></code>
     </UnusedClass>
   </file>
   <file src="src/Service/FeedService.php">
     <PossiblyUnusedMethod>
-      <code>__construct</code>
+      <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Service/IndexerService.php">
     <MixedArgument>
-      <code>$parsed</code>
+      <code><![CDATA[$parsed]]></code>
       <code><![CDATA[$parsed['tags']]]></code>
       <code><![CDATA[$parsed['title']]]></code>
     </MixedArgument>
     <MixedAssignment>
-      <code>$parsed</code>
+      <code><![CDATA[$parsed]]></code>
       <code><![CDATA[$this->posts]]></code>
     </MixedAssignment>
-    <MixedInferredReturnType>
-      <code><![CDATA[Post[]|array<string, Post>]]></code>
-    </MixedInferredReturnType>
     <MixedReturnStatement>
       <code><![CDATA[$this->posts]]></code>
       <code><![CDATA[$this->posts]]></code>
     </MixedReturnStatement>
     <PossiblyNullArgument>
-      <code>$fileparts[0]</code>
-      <code>$fileparts[1]</code>
-      <code>$fileparts[2]</code>
+      <code><![CDATA[$fileparts[0]]]></code>
+      <code><![CDATA[$fileparts[1]]]></code>
+      <code><![CDATA[$fileparts[2]]]></code>
     </PossiblyNullArgument>
     <PossiblyNullArrayAccess>
-      <code>$fileparts[0]</code>
-      <code>$fileparts[1]</code>
-      <code>$fileparts[2]</code>
-      <code>$fileparts[3]</code>
+      <code><![CDATA[$fileparts[0]]]></code>
+      <code><![CDATA[$fileparts[1]]]></code>
+      <code><![CDATA[$fileparts[2]]]></code>
+      <code><![CDATA[$fileparts[3]]]></code>
     </PossiblyNullArrayAccess>
   </file>
   <file src="src/Service/IndexerServiceFactory.php">
     <PossiblyUnusedParam>
-      <code>$container</code>
+      <code><![CDATA[$container]]></code>
     </PossiblyUnusedParam>
   </file>
   <file src="src/Service/PostService.php">
     <PossiblyUnusedMethod>
-      <code>__construct</code>
+      <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Service/Ratings.php">
@@ -129,14 +126,14 @@
       <code><![CDATA[$results['hits']['total']]]></code>
     </MixedArrayAccess>
     <MixedAssignment>
-      <code>$hit</code>
+      <code><![CDATA[$hit]]></code>
     </MixedAssignment>
     <MixedOperand>
       <code><![CDATA[$hit['_score']]]></code>
     </MixedOperand>
     <MixedReturnTypeCoercion>
-      <code>$simplifiedResults</code>
-      <code>string[][]</code>
+      <code><![CDATA[$simplifiedResults]]></code>
+      <code><![CDATA[string[][]]]></code>
     </MixedReturnTypeCoercion>
   </file>
   <file src="src/Service/SearchWrapperFactory.php">
@@ -149,7 +146,7 @@
   </file>
   <file src="src/Service/TalkService.php">
     <MixedArgument>
-      <code>$talkArrayData</code>
+      <code><![CDATA[$talkArrayData]]></code>
     </MixedArgument>
     <UnresolvableInclude>
       <code><![CDATA[require $this->talkDataFile]]></code>
@@ -157,12 +154,12 @@
   </file>
   <file src="src/View/Helper/RenderPostContent.php">
     <PossiblyUnusedMethod>
-      <code>__construct</code>
+      <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/View/Helper/RenderTalk.php">
     <PossiblyUnusedMethod>
-      <code>__construct</code>
+      <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
 </files>

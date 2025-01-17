@@ -1,5 +1,5 @@
 # ONLY FOR DEVELOPMENT PURPOSES - Heroku is used in prod
-FROM php:8.2-apache
+FROM php:8.4-apache
 
 RUN apt-get update \
     && apt-get install -y iproute2 wget gnupg git bash unzip autoconf build-essential libicu-dev \
@@ -10,7 +10,7 @@ RUN apt-get update \
     && echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.log=/tmp/xdebug.log" >> /usr/local/etc/php/conf.d/xdebug.ini
 
-COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 ADD ./docker/web/dev-entrypoint.sh /dev-entrypoint.sh
 ADD ./docker/web/php.ini /usr/local/etc/php/php.ini

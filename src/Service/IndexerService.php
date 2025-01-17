@@ -113,7 +113,11 @@ class IndexerService
             throw new Exception\PostNotFound(sprintf('Markdown file missing for slug: %s', $slug));
         }
 
-        return file_get_contents($fullPath);
+        $postContent = file_get_contents($fullPath);
+
+        Assert::string($postContent);
+
+        return $postContent;
     }
 
     /**
@@ -181,6 +185,8 @@ class IndexerService
     private function getPostMetadata(string $filename): Post|null
     {
         $contents = file_get_contents($this->postFolder . '/' . $filename);
+
+        Assert::string($contents);
 
         $parts = explode('---', $contents);
 
