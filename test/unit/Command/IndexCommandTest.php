@@ -56,10 +56,10 @@ final class IndexCommandTest extends TestCase
         $matcher = self::exactly(2);
         $mockOutput->expects($matcher)
             ->method('writeln')
-            ->willReturnCallback(function (string $line) use ($matcher) {
+            ->willReturnCallback(static function (string $line) use ($matcher): void {
                 match ($matcher->numberOfInvocations()) {
-                    1 =>  self::assertEquals('<info>Indexed 3 posts in the cache</info>', $line),
-                    2 =>  self::assertEquals('<info>Updated search index.</info>', $line),
+                    1 =>  self::assertSame('<info>Indexed 3 posts in the cache</info>', $line),
+                    2 =>  self::assertSame('<info>Updated search index.</info>', $line),
                 };
             });
 
