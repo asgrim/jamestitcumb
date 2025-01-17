@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+$pieAbstract = 'PHP Installer for Extensions (PIE) is an innovative tool under development by the PHP Foundation to modernise how PHP extensions are installed and managed. For decades, PECL has been the go-to mechanism, but it\'s time for a change. In this talk, we’ll explore why PIE is poised to replace PECL, its goals, and what makes it a game-changer for PHP developers. We\'ll dive into PIE\'s features, demo its usage, and provide a glimpse of its roadmap, including exciting enhancements already in the works. Whether you\'re a seasoned developer or new to PHP extensions, discover how PIE is shaping the future of PHP extension installation.';
 $reflectionAbstract = 'Have you ever used PHP\'s built in reflection, only to find you can\'t do quite what you wanted? What about finding types for parameters or properties? What about reflecting on classes that aren\'t loaded, so that you can modify them directly?<br /><br />Better Reflection is an awesome new library that uses magical time-warp techniques* (*actual magic or time-warp not guaranteed) to improve on PHP\'s built-in reflection by providing additional functionality. In this talk we\'ll cover what reflection is all about, explore the cool features of Better Reflection already implemented, the difficulties we faced actually writing the thing, and how you can use Better Reflection in your projects to maximise your reflection-fu.';
 $hhvmAbstract = 'HHVM is currently gaining popularity at quite a pace, and it\'s a pretty exciting time for PHP runtimes. Have you ever wondered what is going on beneath this slick and super-speedy engine? I wondered that myself, so I dived into the internals of HHVM, discovering a treasure trove of awesome stuff. In this talk, I\'ll show you how HHVM itself works with a guided tour of the codebase, demonstrating how it all pieces together. I\'ll also show you a couple of ways to write your own incredible HHVM extension. You don\'t need to know C++ to understand this talk - just PHP language knowledge is enough.';
 $reflectionLightningAbstract = 'Better Reflection is an awesome new library that uses magical time-warp techniques* to improve on PHP\'s built-in reflection, in this talk we\'ll briefly explore how you can use it to maximise your reflection-fu.<br /><br />* actual magic or time-warp not guaranteed';
@@ -19,6 +20,16 @@ $legacyAbstract = 'You\'ve started a new job. As you dig deeper into the codebas
 $mvpAbstract = 'The honeymoon period is over, and your company or customer is demanding stability in your PHP applications.<br /><br />I\'m going to talk about some essential strategies to set up Continuous Integration and Delivery pipelines to help maintain, and - over time - improve the quality of the software your team delivers.<br /><br />You\'ll learn about some of the tools necessary to set these pipelines up, basic design of CI pipelines, and some key strategies for automating deployments. I\'ll show you how having a solid CI/CD pipeline means that you can still deliver software fast, but with confidence that your deliverables are steadily getting better.';
 
 return [
+    [
+        'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
+        'type' => 'talk',
+        'date' => new DateTime('2025-06-04'),
+        'event' => 'IPC Berlin 2025',
+        'abstract' => $pieAbstract,
+        'links' => [
+            'IPC Berlin 2025' => ['url' => 'https://phpconference.com/berlin-en/program-berlin-en/'],
+        ],
+    ],
     [
         'name' => 'Living the Best Life on a Legacy Project',
         'type' => 'talk',
