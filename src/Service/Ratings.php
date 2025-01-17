@@ -96,7 +96,7 @@ class Ratings
                             ),
                         ),
                     ),
-                    function (array $item, string $url): bool {
+                    function (array $item, string|int $url): bool {
                         if ($item['rating'] > 0) {
                             return true;
                         }

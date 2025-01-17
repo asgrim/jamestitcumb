@@ -53,12 +53,15 @@ final class IndexCommandTest extends TestCase
 
         $mockOutput = $this->createMock(OutputInterface::class);
         assert($mockOutput instanceof OutputInterface || $mockOutput instanceof MockObject);
-        $mockOutput->expects(self::exactly(2))
+        $matcher = self::exactly(2);
+        $mockOutput->expects($matcher)
             ->method('writeln')
-            ->withConsecutive(
-                ['<info>Indexed 3 posts in the cache</info>'],
-                ['<info>Updated search index.</info>'],
-            );
+            ->willReturnCallback(function (string $line) use ($matcher) {
+                match ($matcher->numberOfInvocations()) {
+                    1 =>  self::assertEquals('<info>Indexed 3 posts in the cache</info>', $line),
+                    2 =>  self::assertEquals('<info>Updated search index.</info>', $line),
+                };
+            });
 
         $command = new IndexCommand($mockIndexer, $mockSearch);
 
