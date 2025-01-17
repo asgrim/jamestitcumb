@@ -113,7 +113,7 @@ class Ratings
                 ),
                 true,
             ),
-            File\WriteMode::TRUNCATE,
+            File\WriteMode::Truncate,
         );
     }
 
