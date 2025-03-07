@@ -23,6 +23,26 @@ return [
     [
         'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
         'type' => 'talk',
+        'date' => new DateTime('2025-05-15'),
+        'event' => 'phpday 2025',
+        'abstract' => $pieAbstract,
+        'links' => [
+            'phpday 2025' => ['url' => 'https://www.phpday.it/'],
+        ],
+    ],
+    [
+        'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
+        'type' => 'talk',
+        'date' => new DateTime('2025-06-03'),
+        'event' => 'PHP Frankfurt am Main',
+        'abstract' => $pieAbstract,
+        'links' => [
+            'PHPUGFFM' => ['url' => 'https://www.phpugffm.de/'],
+        ],
+    ],
+    [
+        'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
+        'type' => 'talk',
         'date' => new DateTime('2025-06-04'),
         'event' => 'IPC Berlin 2025',
         'abstract' => $pieAbstract,
