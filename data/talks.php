@@ -23,6 +23,16 @@ return [
     [
         'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
         'type' => 'talk',
+        'date' => new DateTime('2025-06-10'),
+        'event' => 'Laravel Live UK 2025',
+        'abstract' => $pieAbstract,
+        'links' => [
+            'Laravel Live UK 2025' => ['url' => 'https://laravellive.uk/'],
+        ],
+    ],
+    [
+        'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
+        'type' => 'talk',
         'date' => new DateTime('2025-05-15'),
         'event' => 'phpday 2025',
         'abstract' => $pieAbstract,
