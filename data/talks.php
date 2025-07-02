@@ -23,6 +23,16 @@ return [
     [
         'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
         'type' => 'talk',
+        'date' => new DateTime('2025-10-09'),
+        'event' => 'AFUP Forum PHP 2025',
+        'abstract' => $pieAbstract,
+        'links' => [
+            'AFUP Forum PHP 2025' => ['url' => 'https://event.afup.org/forum-php-2025/programme/'],
+        ],
+    ],
+    [
+        'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
+        'type' => 'talk',
         'date' => new DateTime('2025-06-10'),
         'event' => 'Laravel Live UK 2025',
         'abstract' => $pieAbstract,
