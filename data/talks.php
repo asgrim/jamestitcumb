@@ -28,6 +28,7 @@ return [
         'abstract' => $pieAbstract,
         'links' => [
             'Longhorn PHP 2025' => ['url' => 'https://longhornphp.com/schedule'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/30271', 'class' => 'joindin'],
         ],
     ],
     [
