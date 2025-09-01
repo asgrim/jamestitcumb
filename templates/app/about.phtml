@@ -1,7 +1,5 @@
 <?php $this->headTitle()->append('@asgrim'); ?>
 
-<q class="self-aggrandising-quote">&ldquo;<?= $this->selfAggrandisingQuote(); ?>&rdquo;</q>
-
 <div class="pull-right">
     <p>
         <img src="/images/James2025-400x400.jpg" width="200" height="200" alt="Photo of James Titcumb" class="pull-right" style="margin-bottom: 5px;" />
@@ -45,16 +43,59 @@
 <p>As a professional software consultant with many years of experience, I can offer many consultancy services to clients, including:</p>
 
 <ul>
-    <li><a href="<?= $this->url('training'); ?>">Mentoring and training</a></li>
-    <li>Consultancy and advice</li>
     <li>Software and application development</li>
+    <li>Code reviews and quality audits</li>
+    <li>Consultancy and advice</li>
     <li>Refactoring expertise and consulting</li>
     <li>Project planning and scoping</li>
-    <li>Code reviews and quality</li>
+    <li>Mentoring and training</li>
 </ul>
 
-<h2>Get in touch...</h2>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">I can help you improve your PHP team.</h3>
+    </div>
+    <div class="panel-body">
+        <p>If you'd like me to help your PHP software developers improve, get in touch today:</p>
+        <?= $this->partial('partial::contact'); ?>
+    </div>
+</div>
 
-<p>You can get in touch with me the following ways:</p>
+<h2>What do people say about me?</h2>
 
-<?= $this->partial('partial::contact'); ?>
+<section class="testimonial">
+    <blockquote>
+        <p>In the time I've worked with James, he has shown his ability to spearhead projects as the project tech lead, drive collaborative technical discussions between multiple engineering teams to progress the direction of integration efforts, and maintain hands on involvement building the solution while juggling all the responsibilities needed of a lead.</p>
+
+        <p>James has a strong sense of responsibility for any tasks asked of him, passion for the mastery of his craft, and the grit and determination to overcome any problem encountered during the course of developing solutions.</p>
+    </blockquote>
+    <footer>Joseph Wang, Panasonic Avionics Corporation</footer>
+</section>
+
+<section class="testimonial">
+    <blockquote>
+        <p>As founder of a consulting group trusted to provide expert PHP and IBM i solutions and guidance, I gladly turn to James whenever we need additional PHP and Zend Framework expertise. His years of experience, positive attitude, and proficiency with technical structure and back-end development make him a pleasure to work with. What's more, he's a really nice guy. Every project goes better with James.</p>
+    </blockquote>
+    <footer>Alan Seiden, Seiden Group</footer>
+</section>
+
+<section class="testimonial">
+    <blockquote>
+        <p>James is by far and away the most talented developer I have ever met. He can not only code but understands why he is coding - his understanding of the business requirement is amazing.</p>
+    </blockquote>
+    <footer>Simon Moore, Live Life Protected</footer>
+</section>
+
+<section class="testimonial">
+    <blockquote>
+        <p>James is a developer with great experience that will find a simple and elegant solution of any problem. He is resourceful and he would be of great help to any business in finding what works best for them. A development team will benefit from his expertise for high standards of software development and architecture. Working with him was a pleasure and I would be happy to be in his team again.</p>
+    </blockquote>
+    <footer>Stanislav Petrov, DVSA</footer>
+</section>
+
+<section class="testimonial">
+    <blockquote>
+        <p>James is a very technical developer with good problem solving abilities, able to think outside the box to design and find solutions. James used his knowledge to provide additional support and contributions to other areas of the company.</p>
+    </blockquote>
+    <footer>Mark Glover, Airborne Interactive</footer>
+</section>

@@ -12,3 +12,41 @@
 .article-body img {
     max-width: 100%;
 }
+.testimonial blockquote {
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+    border: none;
+}
+.testimonial blockquote p {
+    font-size: 15px;
+}
+.testimonial blockquote::after, .testimonial blockquote::before {
+    color: rgba(42, 100, 150, 0.3);
+    font-size: 80px;
+}
+.testimonial blockquote::after {
+    content: close-quote;
+    vertical-align: bottom;
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+}
+.testimonial blockquote::before {
+    content: open-quote;
+    vertical-align: top;
+    /* Added */
+    position: absolute;
+    top: -20px;
+    left: -10px;
+}
+
+.testimonial footer {
+    text-align: right;
+    font-weight: bold;
+    color: #888888;
+}
+.testimonial footer::before {
+    content: "\2014";
+    margin-right: 5px;
+}

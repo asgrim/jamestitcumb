@@ -6,7 +6,6 @@ namespace Asgrim;
 
 use Asgrim\Service\LoggerFactory;
 use Laminas\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
-use Laminas\ServiceManager\Factory\InvokableFactory;
 use Psr\Log\LoggerInterface;
 
 final class ConfigProvider
@@ -56,12 +55,10 @@ final class ConfigProvider
             'factories' => [
                 View\Helper\RenderPostContent::class => ReflectionBasedAbstractFactory::class,
                 View\Helper\RenderTalk::class => ReflectionBasedAbstractFactory::class,
-                View\Helper\SelfAggrandisingQuote::class => InvokableFactory::class,
             ],
             'aliases' => [
                 'renderTalk' => View\Helper\RenderTalk::class,
                 'renderPostContent' => View\Helper\RenderPostContent::class,
-                'selfAggrandisingQuote' => View\Helper\SelfAggrandisingQuote::class,
             ],
         ];
     }

@@ -6,6 +6,8 @@ namespace Asgrim\Handler;
 
 use InvalidArgumentException;
 use Laminas\Diactoros\Response\HtmlResponse;
+use Laminas\Diactoros\Response\RedirectResponse;
+use Mezzio\Helper\UrlHelper;
 use Mezzio\Template\TemplateRendererInterface as TemplateRenderer;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -14,7 +16,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class TrainingHandler implements MiddlewareInterface
 {
-    public function __construct(private TemplateRenderer $template)
+    public function __construct(private UrlHelper $url)
     {
     }
 
@@ -25,6 +27,6 @@ final class TrainingHandler implements MiddlewareInterface
      */
     public function process(Request $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        return new HtmlResponse($this->template->render('app::training', []));
+        return new RedirectResponse($this->url->generate('home'));
     }
 }

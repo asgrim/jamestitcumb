@@ -18,11 +18,11 @@ class RenderTalk extends AbstractHelper
     {
     }
 
-    public function __invoke(Talk $talk): string
+    public function __invoke(Talk $talk, bool $skipAbstract = false): string
     {
         $s = '<li>';
 
-        $s .= '<h3>';
+        $s .= $skipAbstract ? '<h4>' : '<h3>';
 
         if ($talk->isTutorial()) {
             $s .= '<strong>Tutorial: </strong>';
@@ -34,9 +34,11 @@ class RenderTalk extends AbstractHelper
 
         $s .= $talk->name();
         $s .= ' (' . $talk->event() . ', ' . $talk->date()->format('jS M \'y') . ')';
-        $s .= '</h3>';
+        $s .= $skipAbstract ? '</h4>' : '</h3>';
 
-        $s .= '<p>' . $talk->abstract() . '</p>';
+        if (!$skipAbstract) {
+            $s .= '<p>' . $talk->abstract() . '</p>';
+        }
 
         $links = [];
         foreach ($talk->links() as $text => $linkData) {

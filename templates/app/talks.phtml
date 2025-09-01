@@ -24,13 +24,13 @@ if (count($upcoming)) {
     echo '<p>No upcoming talks...</p>';
 }
 ?>
-
-<p>This is a list of talks I've given:</p>
+<hr />
+<p>I have given <?= count($past); ?> in the past:</p>
 
 <?php
 echo '<ul>';
 foreach ($past as $t) {
-    echo $this->renderTalk($t);
+    echo $this->renderTalk($t, skipAbstract: true);
 }
 echo '</ul>';
 ?>
