@@ -36,7 +36,7 @@ class RenderTalk extends AbstractHelper
         $s .= ' (' . $talk->event() . ', ' . $talk->date()->format('jS M \'y') . ')';
         $s .= $skipAbstract ? '</h4>' : '</h3>';
 
-        if (!$skipAbstract) {
+        if (! $skipAbstract) {
             $s .= '<p>' . $talk->abstract() . '</p>';
         }
 

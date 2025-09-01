@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace Asgrim\Handler;
 
 use InvalidArgumentException;
-use Laminas\Diactoros\Response\HtmlResponse;
 use Laminas\Diactoros\Response\RedirectResponse;
 use Mezzio\Helper\UrlHelper;
-use Mezzio\Template\TemplateRendererInterface as TemplateRenderer;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
