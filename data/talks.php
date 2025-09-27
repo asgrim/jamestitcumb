@@ -23,6 +23,16 @@ return [
     [
         'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
         'type' => 'talk',
+        'date' => new DateTime('2025-12-06'),
+        'event' => 'PHP Conference Brasil 2025',
+        'abstract' => $pieAbstract,
+        'links' => [
+            'PHP Conference Brasil 2025' => ['url' => 'https://phpconference.com.br/'],
+        ],
+    ],
+    [
+        'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
+        'type' => 'talk',
         'date' => new DateTime('2025-10-25'),
         'event' => 'Longhorn PHP 2025',
         'abstract' => $pieAbstract,
