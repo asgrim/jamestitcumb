@@ -44,7 +44,7 @@ return [
     [
         'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
         'type' => 'talk',
-        'date' => new DateTime('2025-10-09'),
+        'date' => new DateTime('2025-10-10'),
         'event' => 'AFUP Forum PHP 2025',
         'abstract' => $pieAbstract,
         'links' => [
