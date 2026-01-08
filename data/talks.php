@@ -23,6 +23,16 @@ return [
     [
         'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
         'type' => 'talk',
+        'date' => new DateTime('2026-05-20'),
+        'event' => 'PHP Tek 2026',
+        'abstract' => $pieAbstract,
+        'links' => [
+            'PHP Tek 2026' => ['url' => 'https://phptek.io/'],
+        ],
+    ],
+    [
+        'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
+        'type' => 'talk',
         'date' => new DateTime('2025-12-06'),
         'event' => 'PHP Conference Brasil 2025',
         'abstract' => $pieAbstract,
