@@ -17,7 +17,7 @@ $blogPostMarketing = $this->partial('partial::blog-post-marketing');
 <article style="margin-bottom: 60px;">
 	<div class="article-header">
 		<h1><a href="<?= $this->url('posts', ['slug' => $post->slug()]); ?>"><?= $this->escapeHtml($post->title()); ?></a></h1>
-		<p style="font-weight: bold; font-style: italic;">
+		<p class="article-meta">
 			Posted on <?= $post->date()->format('jS F Y'); ?>
 			| <a href="<?= $this->url('posts', ['slug' => $post->slug()]); ?>#disqus_thread" data-disqus-identifier="<?= $this->escapeHtmlAttr($post->slug()); ?>">View comments</a>
 		</p>

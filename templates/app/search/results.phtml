@@ -19,7 +19,7 @@ use Asgrim\Value\Post;
             <li>
                 <div class="article-header">
                     <h3><a href="<?= $this->url('posts', ['slug' => $post->slug()]); ?>"><?= $this->escapeHtml($post->title()); ?></a></h3>
-                    <p style="font-weight: bold; font-style: italic;">
+                    <p class="article-meta">
                         Posted on <?= $post->date()->format('jS F Y'); ?>
                     </p>
                 </div>
