@@ -23,6 +23,15 @@ return [
     [
         'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
         'type' => 'talk',
+        'date' => new DateTime('2026-06-30'),
+        'event' => 'team.blue meet',
+        'abstract' => $pieAbstract,
+        'links' => [
+        ],
+    ],
+    [
+        'name' => '🥧 A slice of PIE: revolutionising PHP extension installation',
+        'type' => 'talk',
         'date' => new DateTime('2026-05-20'),
         'event' => 'PHP Tek 2026',
         'abstract' => $pieAbstract,
