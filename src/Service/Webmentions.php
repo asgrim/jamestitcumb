@@ -28,10 +28,10 @@ use const LOCK_EX;
  * @psalm-type Mention = array{
  *     'wm-property': string,
  *     'wm-target': string,
- *     url?: string,
- *     published?: string,
- *     author?: array{name?: string, url?: string, photo?: string},
- *     content?: array{text?: string},
+ *     url?: string|null,
+ *     published?: string|null,
+ *     author?: array{name?: string|null, url?: string|null, photo?: string|null}|null,
+ *     content?: array{text?: string|null}|null,
  * }
  */
 final class Webmentions
@@ -181,16 +181,16 @@ final class Webmentions
         return Type\shape([
             'wm-property' => Type\string(),
             'wm-target' => Type\string(),
-            'url' => Type\optional(Type\string()),
-            'published' => Type\optional(Type\string()),
-            'author' => Type\optional(Type\shape([
-                'name' => Type\optional(Type\string()),
-                'url' => Type\optional(Type\string()),
-                'photo' => Type\optional(Type\string()),
-            ], true)),
-            'content' => Type\optional(Type\shape([
-                'text' => Type\optional(Type\string()),
-            ], true)),
+            'url' => Type\optional(Type\nullable(Type\string())),
+            'published' => Type\optional(Type\nullable(Type\string())),
+            'author' => Type\optional(Type\nullable(Type\shape([
+                'name' => Type\optional(Type\nullable(Type\string())),
+                'url' => Type\optional(Type\nullable(Type\string())),
+                'photo' => Type\optional(Type\nullable(Type\string())),
+            ], true))),
+            'content' => Type\optional(Type\nullable(Type\shape([
+                'text' => Type\optional(Type\nullable(Type\string())),
+            ], true))),
         ], true);
     }
 }

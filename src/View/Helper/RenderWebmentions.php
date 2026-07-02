@@ -10,9 +10,12 @@ use Laminas\View\Helper\AbstractHelper;
 use function count;
 use function htmlspecialchars;
 use function in_array;
+use function is_string;
+use function parse_url;
 use function sprintf;
 
 use const ENT_QUOTES;
+use const PHP_URL_HOST;
 
 /** @psalm-import-type Mention from Webmentions */
 final class RenderWebmentions extends AbstractHelper
@@ -66,7 +69,7 @@ final class RenderWebmentions extends AbstractHelper
     {
         $avatars = '';
         foreach ($facepile as $mention) {
-            $name  = $this->escape($mention['author']['name'] ?? 'Someone');
+            $name  = $this->escape($this->displayName($mention));
             $photo = $mention['author']['photo'] ?? '';
 
             if ($photo === '') {
@@ -94,8 +97,8 @@ final class RenderWebmentions extends AbstractHelper
     /** @param Mention $mention */
     private function renderReply(array $mention): string
     {
-        $name    = $this->escape($mention['author']['name'] ?? 'Someone');
-        $url     = $this->escape($mention['url'] ?? '#');
+        $name    = $this->escape($this->displayName($mention));
+        $url     = $this->escape($this->stringOrDefault($mention['url'] ?? null, '#'));
         $photo   = $mention['author']['photo'] ?? '';
         $content = $this->escape($mention['content']['text'] ?? '');
 
@@ -117,5 +120,35 @@ final class RenderWebmentions extends AbstractHelper
     private function escape(string $value): string
     {
         return htmlspecialchars($value, ENT_QUOTES);
+    }
+
+    /**
+     * webmention.io sometimes sends an empty string rather than omitting a field
+     * entirely (seen live: `"author": {"name": "", "photo": "", "url": ""}` for a
+     * source page with no h-card), so a plain `??` fallback isn't enough here.
+     */
+    private function stringOrDefault(string|null $value, string $default): string
+    {
+        return $value !== null && $value !== '' ? $value : $default;
+    }
+
+    /**
+     * Falls back to "{host} mentioned this post" using the mention's source URL
+     * when there's no h-card author name (common for sources without proper
+     * microformats), rather than an anonymous "Someone".
+     *
+     * @param Mention $mention
+     */
+    private function displayName(array $mention): string
+    {
+        $name = $mention['author']['name'] ?? null;
+        if ($name !== null && $name !== '') {
+            return $name;
+        }
+
+        $url  = $mention['url'] ?? null;
+        $host = $url !== null && $url !== '' ? parse_url($url, PHP_URL_HOST) : null;
+
+        return is_string($host) && $host !== '' ? $host . ' mentioned this post' : 'Someone mentioned this post';
     }
 }
