@@ -34,9 +34,6 @@ JS);
 		<h1><a class="u-url p-name" href="<?= $this->url('posts', ['slug' => $post->slug()]); ?>"><?= $this->escapeHtml($post->title()); ?></a></h1>
 		<p class="article-meta">
 			Posted on <?= $post->date()->format('jS F Y'); ?>
-			<?php if ($post->syndicationUrl() !== null): ?>
-				| mentioned on: <a class="u-syndication" href="<?= $this->escapeHtmlAttr($post->syndicationUrl()); ?>">Mastodon</a>
-			<?php endif; ?>
 		</p>
 	</div>
 	<hr />
@@ -51,6 +48,12 @@ JS);
 
 	<?php if ($post->shouldShowComments()): ?>
 		<hr />
+		<?php if ($post->syndicationUrl() !== null): ?>
+			<p class="webmention-invite">
+				Like, share, or comment on this post via
+				<a class="u-syndication" href="<?= $this->escapeHtmlAttr($post->syndicationUrl()); ?>">Mastodon</a>.
+			</p>
+		<?php endif; ?>
 		<?= $this->renderWebmentions($post->slug()) ?>
 	<?php endif; ?>
 

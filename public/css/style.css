@@ -548,6 +548,12 @@ img {
     margin: 1.4em 0;
 }
 
+.webmention-invite {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0 0 1.4em;
+}
+
 .webmention-facepile {
     display: flex;
     align-items: center;

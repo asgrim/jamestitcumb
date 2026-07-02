@@ -1,6 +1,7 @@
 ---
 title: "Git rebase pro-tip"
 tags: [git, rebase]
+mastodon: https://phpc.social/@asgrim/116850032272840062
 ---
 
 I have lost count of the number of times I have referred myself to
