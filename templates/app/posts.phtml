@@ -29,11 +29,14 @@ JS);
 ?>
 
 <?php foreach ($posts as $post): ?>
-<article style="margin-bottom: 60px;">
+<article class="h-entry" style="margin-bottom: 60px;">
 	<div class="article-header">
-		<h1><a href="<?= $this->url('posts', ['slug' => $post->slug()]); ?>"><?= $this->escapeHtml($post->title()); ?></a></h1>
+		<h1><a class="u-url p-name" href="<?= $this->url('posts', ['slug' => $post->slug()]); ?>"><?= $this->escapeHtml($post->title()); ?></a></h1>
 		<p class="article-meta">
 			Posted on <?= $post->date()->format('jS F Y'); ?>
+			<?php if ($post->syndicationUrl() !== null): ?>
+				| mentioned on: <a class="u-syndication" href="<?= $this->escapeHtmlAttr($post->syndicationUrl()); ?>">Mastodon</a>
+			<?php endif; ?>
 		</p>
 	</div>
 	<hr />

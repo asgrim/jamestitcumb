@@ -46,6 +46,24 @@ final class IndexerServiceTest extends TestCase
         self::assertGreaterThan(0, strlen($post));
     }
 
+    public function testIndexerParsesSyndicationUrlWhenPresent(): void
+    {
+        $indexer = new IndexerService(self::$postsFolder);
+        $indexer->createIndex();
+        $posts = $indexer->getAllPostsFromCache();
+
+        self::assertSame('https://phpc.social/@asgrim/12345', $posts['test-post']->syndicationUrl());
+    }
+
+    public function testIndexerLeavesSyndicationUrlNullWhenAbsent(): void
+    {
+        $indexer = new IndexerService(self::$postsFolder);
+        $indexer->createIndex();
+        $posts = $indexer->getAllPostsFromCache();
+
+        self::assertNull($posts['another-test-post']->syndicationUrl());
+    }
+
     public function testIndexerFailsWhenSlugDoesNotExist(): void
     {
         $indexer = new IndexerService(self::$postsFolder);

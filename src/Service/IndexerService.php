@@ -219,12 +219,16 @@ class IndexerService
         Assert::notFalse($date);
         Assert::string($fileparts[3]);
 
+        $syndicationUrl = $parsed['mastodon'] ?? null;
+        Assert::nullOrString($syndicationUrl);
+
         return Post::create(
             $parsed['title'],
             $parsed['tags'],
             $date,
             str_replace('.md', '', $fileparts[3]),
             $filename,
+            $syndicationUrl,
         );
     }
 }

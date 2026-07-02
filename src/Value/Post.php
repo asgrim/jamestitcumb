@@ -23,14 +23,25 @@ final class Post
 
     private bool $active;
 
+    private string|null $syndicationUrl;
+
     private function __construct()
     {
     }
 
     /**
-     * @param string[]|DateTimeImmutable[]|string[][] $dataArray
+     * @param array{
+     *     title: string,
+     *     tags: string[],
+     *     date: DateTimeImmutable,
+     *     slug: string,
+     *     file: string,
+     *     syndicationUrl?: string|null
+     * } $dataArray
      *
      * @return static
+     *
+     * @psalm-suppress RedundantConditionGivenDocblockType
      */
     public static function __set_state(array $dataArray): self
     {
@@ -39,6 +50,7 @@ final class Post
         Assert::isInstanceOf($dataArray['date'], DateTimeImmutable::class);
         Assert::string($dataArray['slug']);
         Assert::string($dataArray['file']);
+        Assert::nullOrString($dataArray['syndicationUrl'] ?? null);
 
         return self::create(
             $dataArray['title'],
@@ -46,6 +58,7 @@ final class Post
             $dataArray['date'],
             $dataArray['slug'],
             $dataArray['file'],
+            $dataArray['syndicationUrl'] ?? null,
         );
     }
 
@@ -56,16 +69,18 @@ final class Post
         DateTimeImmutable $date,
         string $slug,
         string $file,
+        string|null $syndicationUrl = null,
     ): self {
         Assert::allString($tags);
 
-        $instance         = new self();
-        $instance->title  = $title;
-        $instance->tags   = $tags;
-        $instance->date   = $date;
-        $instance->slug   = $slug;
-        $instance->file   = $file;
-        $instance->active = false;
+        $instance                 = new self();
+        $instance->title          = $title;
+        $instance->tags           = $tags;
+        $instance->date           = $date;
+        $instance->slug           = $slug;
+        $instance->file           = $file;
+        $instance->active         = false;
+        $instance->syndicationUrl = $syndicationUrl;
 
         return $instance;
     }
@@ -94,6 +109,11 @@ final class Post
     public function file(): string
     {
         return $this->file;
+    }
+
+    public function syndicationUrl(): string|null
+    {
+        return $this->syndicationUrl;
     }
 
     /** @psalm-api */

@@ -1,6 +1,7 @@
 ---
 title: "Labels for STDOUT and STDERR when developing Bash scripts"
 tags: [bash, stdout, stderr, label, scripting, sed]
+mastodon: https://phpc.social/@asgrim/116849787641057613
 ---
 
 Time for my once-yearly blog post! This time, I'd like to post a tip when working on Bash scripts, and when you do,
