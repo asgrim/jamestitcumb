@@ -539,8 +539,8 @@ img {
 }
 
 .article-body pre {
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
+    background: var(--navy);
+    border: 1px solid var(--navy);
     border-radius: 6px;
     padding: 14px 16px;
     overflow-x: auto;
@@ -557,6 +557,63 @@ img {
 .article-body pre code {
     background: none;
     padding: 0;
+    color: #e4e8f4;
+    text-shadow: none;
+}
+
+/* Prism.js token colours, tinted to the site palette */
+.article-body .token.comment,
+.article-body .token.prolog,
+.article-body .token.doctype,
+.article-body .token.cdata {
+    color: #8b93b3;
+    font-style: italic;
+}
+
+.article-body .token.punctuation {
+    color: #c3c9dc;
+}
+
+.article-body .token.property,
+.article-body .token.tag,
+.article-body .token.boolean,
+.article-body .token.number,
+.article-body .token.constant,
+.article-body .token.symbol,
+.article-body .token.deleted {
+    color: #f78c6c;
+}
+
+.article-body .token.selector,
+.article-body .token.attr-name,
+.article-body .token.string,
+.article-body .token.char,
+.article-body .token.builtin,
+.article-body .token.inserted {
+    color: #ffcb6b;
+}
+
+.article-body .token.operator,
+.article-body .token.entity,
+.article-body .token.url {
+    color: #89ddff;
+}
+
+.article-body .token.atrule,
+.article-body .token.attr-value,
+.article-body .token.keyword {
+    color: #5bb8ff;
+}
+
+.article-body .token.function,
+.article-body .token.class-name {
+    color: #82aaff;
+}
+
+.article-body .token.regex,
+.article-body .token.important,
+.article-body .token.variable {
+    color: #f07178;
 }
 
 /* ==========================================================================

@@ -11,6 +11,20 @@ use Asgrim\Value\Post;
 
 $this->headTitle()->append($title);
 $blogPostMarketing = $this->partial('partial::blog-post-marketing');
+
+$this->headScript()->appendScript('window.Prism = window.Prism || {}; Prism.manual = true;');
+$this->headScript()->appendFile('https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js');
+$this->headScript()->appendFile('https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js');
+$this->headScript()->appendScript(<<<'JS'
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('pre > code[class]').forEach(function (el) {
+        if (!/\blanguage-/.test(el.className)) {
+            el.classList.add('language-' + el.className.trim());
+        }
+    });
+    Prism.highlightAll();
+});
+JS);
 ?>
 
 <?php foreach ($posts as $post): ?>
