@@ -42,7 +42,7 @@
     },
     "require-dev": {
         "colinodell/psr-testlogger": "^1.3",
-        "doctrine/coding-standard": "^12.0",
+        "doctrine/coding-standard": "^14",
         "mezzio/mezzio-tooling": "^2.10.x-dev",
         "php-standard-library/psalm-plugin": "^2.3",
         "phpunit/phpunit": "^11.5",

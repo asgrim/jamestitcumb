@@ -30,13 +30,13 @@ final class Post
     }
 
     /**
-     * @param array{
+     * @psalm-param array{
      *     title: string,
      *     tags: string[],
      *     date: DateTimeImmutable,
      *     slug: string,
      *     file: string,
-     *     syndicationUrl?: string|null
+     *     syndicationUrl?: string|null,
      * } $dataArray
      *
      * @return static

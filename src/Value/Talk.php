@@ -17,9 +17,9 @@ use function trim;
  */
 final class Talk
 {
-    private const TYPE_TALK      = 'talk';
-    private const TYPE_TUTORIAL  = 'tutorial';
-    private const TYPE_LIGHTNING = 'lightning';
+    private const string TYPE_TALK      = 'talk';
+    private const string TYPE_TUTORIAL  = 'tutorial';
+    private const string TYPE_LIGHTNING = 'lightning';
 
     private string $name;
 
