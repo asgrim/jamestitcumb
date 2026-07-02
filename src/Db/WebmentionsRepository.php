@@ -10,6 +10,8 @@ use PDO;
 use Psl\Json;
 
 use function array_map;
+use function assert;
+use function is_string;
 
 /** @psalm-import-type Mention from Webmentions */
 class WebmentionsRepository
@@ -59,5 +61,25 @@ class WebmentionsRepository
             static fn (string $payload): array => Json\typed($payload, Webmentions::mentionType()),
             $payloads,
         );
+    }
+
+    public function getLastSyncedAt(): DateTimeImmutable|null
+    {
+        $statement = $this->pdo->prepare('SELECT last_synced_at FROM webmention_sync_state WHERE id');
+        $statement->execute();
+
+        $lastSyncedAt = $statement->fetchColumn();
+        assert(is_string($lastSyncedAt) || $lastSyncedAt === false);
+
+        return $lastSyncedAt === false ? null : new DateTimeImmutable($lastSyncedAt);
+    }
+
+    public function markSynced(DateTimeImmutable $when): void
+    {
+        $statement = $this->pdo->prepare(
+            'INSERT INTO webmention_sync_state (id, last_synced_at) VALUES (true, :last_synced_at)
+             ON CONFLICT (id) DO UPDATE SET last_synced_at = EXCLUDED.last_synced_at',
+        );
+        $statement->execute(['last_synced_at' => $when->format(DateTimeImmutable::ATOM)]);
     }
 }

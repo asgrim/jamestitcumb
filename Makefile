@@ -38,8 +38,11 @@ cache-ratings: ## refresh Joind.in ratings for talks in the last 3 months (note:
 cache-ratings-all: ## rebuild Joind.in ratings for every past talk, not just the last 3 months
 	docker compose exec web php app.php cache-ratings --all
 
-cache-webmentions: ## refresh webmentions from webmention.io into Postgres
+cache-webmentions: ## refresh webmentions from webmention.io into Postgres (since last sync)
 	docker compose exec web php app.php cache-webmentions
+
+cache-webmentions-all: ## rebuild webmentions from webmention.io for all time, ignoring the last sync cursor
+	docker compose exec web php app.php cache-webmentions --all
 
 migrate: build ## run database migrations against the local Postgres instance
 	docker compose run --rm web vendor/bin/phinx migrate

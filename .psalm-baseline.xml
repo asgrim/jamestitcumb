@@ -171,6 +171,11 @@
       <code><![CDATA[require $this->talkDataFile]]></code>
     </UnresolvableInclude>
   </file>
+  <file src="src/Service/Webmentions.php">
+    <ClassMustBeFinal>
+      <code><![CDATA[Webmentions]]></code>
+    </ClassMustBeFinal>
+  </file>
   <file src="src/Value/Post.php">
     <PossiblyUnusedMethod>
       <code><![CDATA[syndicationUrl]]></code>

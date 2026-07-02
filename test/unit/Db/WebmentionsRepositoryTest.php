@@ -33,6 +33,7 @@ final class WebmentionsRepositoryTest extends TestCase
         parent::setUp();
 
         self::$pdo->exec('TRUNCATE TABLE webmentions RESTART IDENTITY');
+        self::$pdo->exec('TRUNCATE TABLE webmention_sync_state');
 
         $this->repository = new WebmentionsRepository(self::$pdo);
     }
@@ -111,5 +112,31 @@ final class WebmentionsRepositoryTest extends TestCase
             1,
             $this->repository->findMentionsForUrl('https://www.jamestitcumb.com/posts/another-post'),
         );
+    }
+
+    public function testGetLastSyncedAtReturnsNullWhenNeverSynced(): void
+    {
+        self::assertNull($this->repository->getLastSyncedAt());
+    }
+
+    public function testMarkSyncedThenGetLastSyncedAtReturnsThatTime(): void
+    {
+        $when = new DateTimeImmutable('2026-06-01T10:30:00+00:00');
+
+        $this->repository->markSynced($when);
+
+        self::assertEquals($when, $this->repository->getLastSyncedAt());
+    }
+
+    public function testMarkSyncedTwiceUpdatesRatherThanDuplicates(): void
+    {
+        $this->repository->markSynced(new DateTimeImmutable('2026-06-01T10:30:00+00:00'));
+        $secondSync = new DateTimeImmutable('2026-06-02T11:00:00+00:00');
+        $this->repository->markSynced($secondSync);
+
+        self::assertEquals($secondSync, $this->repository->getLastSyncedAt());
+
+        $count = self::$pdo->query('SELECT COUNT(*) FROM webmention_sync_state')->fetchColumn();
+        self::assertSame(1, (int) $count);
     }
 }
