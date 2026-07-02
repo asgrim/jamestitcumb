@@ -20,24 +20,27 @@ final class RenderTalk extends AbstractHelper
 
     public function __invoke(Talk $talk, bool $skipAbstract = false): string
     {
-        $s = '<li>';
+        $titleTag = $skipAbstract ? 'h4' : 'h3';
 
-        $s .= $skipAbstract ? '<h4>' : '<h3>';
-
+        $badgeModifier = 'talk';
+        $badgeLabel    = 'Talk';
         if ($talk->isTutorial()) {
-            $s .= '<strong>Tutorial: </strong>';
+            $badgeModifier = 'tutorial';
+            $badgeLabel    = 'Tutorial';
+        } elseif ($talk->isLightning()) {
+            $badgeModifier = 'lightning';
+            $badgeLabel    = 'Lightning';
         }
 
-        if ($talk->isLightning()) {
-            $s .= '<em>Lightning: </em>';
-        }
-
-        $s .= $talk->name();
-        $s .= ' (' . $talk->event() . ', ' . $talk->date()->format('jS M \'y') . ')';
-        $s .= $skipAbstract ? '</h4>' : '</h3>';
+        $s  = '<li class="talk-card' . ($skipAbstract ? ' talk-card--compact' : '') . '">';
+        $s .= '<div class="talk-card__header">';
+        $s .= '<span class="talk-card__badge talk-card__badge--' . $badgeModifier . '">' . $badgeLabel . '</span>';
+        $s .= '<' . $titleTag . ' class="talk-card__title">' . $talk->name() . '</' . $titleTag . '>';
+        $s .= '</div>';
+        $s .= '<p class="talk-card__meta">' . $talk->event() . ' <span class="talk-card__meta-sep">&middot;</span> ' . $talk->date()->format('jS M \'y') . '</p>';
 
         if (! $skipAbstract) {
-            $s .= '<p>' . $talk->abstract() . '</p>';
+            $s .= '<p class="talk-card__abstract">' . $talk->abstract() . '</p>';
         }
 
         $links = [];
@@ -58,8 +61,8 @@ final class RenderTalk extends AbstractHelper
         }
 
         if (count($links)) {
-            $s .= '<p><strong>Links: </strong> ';
-            $s .= implode(' | ', $links);
+            $s .= '<p class="talk-card__links"><strong>Links: </strong> ';
+            $s .= implode(' <span class="talk-card__link-sep">|</span> ', $links);
             $s .= '</p>';
         }
 

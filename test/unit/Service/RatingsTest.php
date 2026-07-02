@@ -46,7 +46,7 @@ final class RatingsTest extends TestCase
         $this->repository->method('findRatingForTalk')->willReturn(4);
 
         self::assertSame(
-            ' <img src="/images/ji-ratings/rating-4.gif" alt="Joind.in rating 4" />',
+            ' <img class="talk-card__rating" src="/images/ji-ratings/rating-4.gif" alt="Joind.in rating 4" />',
             $this->ratings->ratingForTalk('https://joind.in/talk/view/1'),
         );
     }

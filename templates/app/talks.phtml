@@ -10,24 +10,29 @@ use Asgrim\Value\Talk;
 $this->headTitle()->append('Upcoming talks');
 ?>
 
-<p>Upcoming talks:</p>
+<h1>Talks</h1>
+
+<h2>Upcoming talks</h2>
 
 <?php
 if (count($upcoming)) {
-    echo '<ul>';
+    echo '<ul class="talk-list">';
     foreach ($upcoming as $t) {
         echo $this->renderTalk($t);
     }
     echo '</ul>';
 } else {
-    echo '<p>No upcoming talks...</p>';
+    echo '<p>No upcoming talks&hellip; check back soon!</p>';
 }
 ?>
+
 <hr />
-<p>I have given <?= count($past); ?> in the past:</p>
+
+<h2>Past talks</h2>
+<p class="talk-list__count">I have given <?= count($past); ?> talks in the past:</p>
 
 <?php
-echo '<ul>';
+echo '<ul class="talk-list talk-list--past">';
 foreach ($past as $t) {
     echo $this->renderTalk($t, skipAbstract: true);
 }

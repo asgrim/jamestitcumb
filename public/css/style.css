@@ -413,6 +413,121 @@ img {
 }
 
 /* ==========================================================================
+   Talks
+   ========================================================================== */
+
+.talk-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.6em;
+}
+
+.talk-list--past {
+    gap: 10px;
+}
+
+.talk-list__count {
+    color: var(--text-muted);
+}
+
+.talk-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--blue);
+    border-radius: 8px;
+    padding: 18px 20px;
+}
+
+.talk-card--compact {
+    border-left-width: 3px;
+    padding: 12px 16px;
+}
+
+.talk-card__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.talk-card__badge {
+    display: inline-block;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #fff;
+    padding: 2px 9px;
+    border-radius: 999px;
+}
+
+.talk-card__badge--talk {
+    background: var(--blue);
+}
+
+.talk-card__badge--tutorial {
+    background: var(--navy-soft);
+}
+
+.talk-card__badge--lightning {
+    background: #6d6ba8;
+}
+
+.talk-card__title {
+    margin: 0;
+}
+
+.talk-card--compact .talk-card__title {
+    font-size: 1rem;
+}
+
+.talk-card__meta {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 4px 0 10px;
+}
+
+.talk-card--compact .talk-card__meta {
+    margin: 2px 0 0;
+}
+
+.talk-card__meta-sep {
+    opacity: 0.5;
+}
+
+.talk-card__abstract {
+    margin: 0 0 12px;
+}
+
+.talk-card__links {
+    margin: 0;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+}
+
+.talk-card--compact .talk-card__links {
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+.talk-card__link-sep {
+    color: var(--border);
+    margin: 0 2px;
+}
+
+.talk-card__rating {
+    vertical-align: middle;
+    height: 14px;
+    margin-left: 2px;
+}
+
+/* ==========================================================================
    Notices
    ========================================================================== */
 

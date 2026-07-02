@@ -88,7 +88,7 @@ class Ratings
 
         /** @noinspection HtmlUnknownTarget */
         return sprintf(
-            ' <img src="/images/ji-ratings/rating-%d.gif" alt="Joind.in rating %d" />',
+            ' <img class="talk-card__rating" src="/images/ji-ratings/rating-%d.gif" alt="Joind.in rating %d" />',
             $rating,
             $rating,
         );

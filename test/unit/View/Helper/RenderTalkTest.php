@@ -38,10 +38,10 @@ final class RenderTalkTest extends TestCase
             'links' => [],
         ]));
 
-        self::assertStringMatchesFormat('%s<h3>My Great Talk%s</h3>%s', $content);
-        self::assertStringMatchesFormat('%s(Fantastic Conference%s)%s', $content);
-        self::assertStringMatchesFormat('%s<p>This talk is simply fantastic.</p>%s', $content);
-        self::assertStringMatchesFormat('%s(%s, 31st Dec \'16)%s', $content);
+        self::assertStringMatchesFormat('%s<span class="talk-card__badge talk-card__badge--talk">Talk</span><h3 class="talk-card__title">My Great Talk</h3>%s', $content);
+        self::assertStringMatchesFormat('%s<p class="talk-card__meta">Fantastic Conference%s</p>%s', $content);
+        self::assertStringMatchesFormat('%s<p class="talk-card__abstract">This talk is simply fantastic.</p>%s', $content);
+        self::assertStringMatchesFormat('%s31st Dec \'16%s', $content);
     }
 
     public function testRenderLightningTalkContents(): void
@@ -57,7 +57,8 @@ final class RenderTalkTest extends TestCase
             'links' => [],
         ]));
 
-        self::assertStringMatchesFormat('%s<h3><em>Lightning: </em>My Great Lightning Talk%s</h3>%s', $content);
+        self::assertStringMatchesFormat('%s<span class="talk-card__badge talk-card__badge--lightning">Lightning</span>%s', $content);
+        self::assertStringMatchesFormat('%s<h3 class="talk-card__title">My Great Lightning Talk</h3>%s', $content);
     }
 
     public function testRenderTutorialTalkContents(): void
@@ -73,7 +74,8 @@ final class RenderTalkTest extends TestCase
             'links' => [],
         ]));
 
-        self::assertStringMatchesFormat('%s<h3><strong>Tutorial: </strong>My Great Tutorial%s</h3>%s', $content);
+        self::assertStringMatchesFormat('%s<span class="talk-card__badge talk-card__badge--tutorial">Tutorial</span>%s', $content);
+        self::assertStringMatchesFormat('%s<h3 class="talk-card__title">My Great Tutorial</h3>%s', $content);
     }
 
     public function testRenderTalkWithLinksContents(): void
@@ -94,5 +96,23 @@ final class RenderTalkTest extends TestCase
 
         self::assertStringMatchesFormat('%s<a href="http://test-uri/1" class="foo">Label for link 1</a>%s', $content);
         self::assertStringMatchesFormat('%s<a href="http://test-uri/2">Label for link 2</a>%s', $content);
+    }
+
+    public function testRenderPastTalkUsesCompactHeadingAndSkipsAbstract(): void
+    {
+        $date = new DateTime('2016-12-31 23:59:59');
+
+        $content = $this->renderTalk->__invoke(Talk::fromArrayData([
+            'type' => 'talk',
+            'name' => 'My Great Talk',
+            'event' => 'Fantastic Conference',
+            'date' => $date,
+            'abstract' => 'This talk is simply fantastic.',
+            'links' => [],
+        ]), skipAbstract: true);
+
+        self::assertStringMatchesFormat('<li class="talk-card talk-card--compact">%a', $content);
+        self::assertStringMatchesFormat('%s<h4 class="talk-card__title">My Great Talk</h4>%s', $content);
+        self::assertStringNotContainsString('talk-card__abstract', $content);
     }
 }
