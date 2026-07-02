@@ -11,6 +11,7 @@ use InvalidArgumentException;
 use Laminas\Diactoros\Response\HtmlResponse;
 use Laminas\View\Model\ViewModel;
 use Mezzio\Template\TemplateRendererInterface as TemplateRenderer;
+use Override;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
@@ -30,6 +31,7 @@ final class SearchHandler implements MiddlewareInterface
      *
      * @throws InvalidArgumentException
      */
+    #[Override]
     public function process(Request $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $queryParams = $request->getQueryParams();

@@ -7,6 +7,7 @@ namespace Asgrim\Handler;
 use InvalidArgumentException;
 use Laminas\Diactoros\Response\RedirectResponse;
 use Mezzio\Helper\UrlHelper;
+use Override;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
@@ -23,6 +24,7 @@ final class TrainingHandler implements MiddlewareInterface
      *
      * @throws InvalidArgumentException
      */
+    #[Override]
     public function process(Request $request, RequestHandlerInterface $handler): ResponseInterface
     {
         return new RedirectResponse($this->url->generate('home'));

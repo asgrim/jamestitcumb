@@ -7,6 +7,7 @@ namespace Asgrim\Command;
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\SearchWrapper;
 use Elasticsearch\Common\Exceptions\TransportException;
+use Override;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -20,12 +21,14 @@ final class IndexCommand extends Command
         parent::__construct();
     }
 
+    #[Override]
     protected function configure(): void
     {
         $this->setName('index-posts')
             ->setDescription('Indexes the blog posts to create a cached list of them');
     }
 
+    #[Override]
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $postsIndexed = $this->indexerService->createIndex();

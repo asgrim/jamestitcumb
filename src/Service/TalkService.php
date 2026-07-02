@@ -13,7 +13,7 @@ use function array_filter;
 use function array_map;
 use function usort;
 
-class TalkService
+final class TalkService
 {
     /** @var Talk[]|null */
     private array|null $talks = null;

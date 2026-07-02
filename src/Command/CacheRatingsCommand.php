@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Asgrim\Command;
 
 use Asgrim\Service\Ratings;
+use Override;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -16,12 +17,14 @@ final class CacheRatingsCommand extends Command
         parent::__construct();
     }
 
+    #[Override]
     protected function configure(): void
     {
         $this->setName('cache-ratings')
             ->setDescription('Caches Joind.in ratings');
     }
 
+    #[Override]
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->ratings->updateCachedRatings();

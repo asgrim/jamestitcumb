@@ -13,7 +13,7 @@ use function array_slice;
 use function in_array;
 use function sprintf;
 
-class PostService
+final class PostService
 {
     public function __construct(private IndexerService $indexerService)
     {

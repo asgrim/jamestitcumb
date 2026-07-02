@@ -9,7 +9,7 @@ use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 
 /** @codeCoverageIgnore */
-class RatingsFactory
+final class RatingsFactory
 {
     public function __invoke(ContainerInterface $container): Ratings
     {

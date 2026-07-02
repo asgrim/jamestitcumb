@@ -10,13 +10,13 @@ use Asgrim\Service\SearchWrapper;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Application as BaseApplication;
 
-class ConsoleApplication extends BaseApplication
+final class ConsoleApplication extends BaseApplication
 {
     public function __construct(ContainerInterface $container)
     {
         parent::__construct('James Titcumb', 'dev-master');
 
-        $commands = [
+        $this->addCommands([
             new Command\IndexCommand(
                 $container->get(IndexerService::class),
                 $container->get(SearchWrapper::class),
@@ -24,11 +24,6 @@ class ConsoleApplication extends BaseApplication
             new Command\CacheRatingsCommand(
                 $container->get(Ratings::class),
             ),
-        ];
-
-        foreach ($commands as $command) {
-            /** @noinspection UnusedFunctionResultInspection */
-            $this->add($command);
-        }
+        ]);
     }
 }

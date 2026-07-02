@@ -13,7 +13,7 @@ use Laminas\Feed\Writer\Feed;
 use function str_replace;
 use function time;
 
-class FeedService
+final class FeedService
 {
     private string $baseUrl;
 

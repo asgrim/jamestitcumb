@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="dev-master@765dcbfe43002e52e4808b65561842784fe7bcc7">
+<files psalm-version="6.x-dev@7385c402699026d000ccce5f96415257c0ccc0d0">
   <file src="src/ConfigProvider.php">
     <UnusedClass>
       <code><![CDATA[ConfigProvider]]></code>
@@ -77,6 +77,9 @@
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Service/IndexerService.php">
+    <ClassMustBeFinal>
+      <code><![CDATA[IndexerService]]></code>
+    </ClassMustBeFinal>
     <MixedArgument>
       <code><![CDATA[$parsed]]></code>
       <code><![CDATA[$parsed['tags']]]></code>
@@ -103,9 +106,9 @@
     </PossiblyNullArrayAccess>
   </file>
   <file src="src/Service/IndexerServiceFactory.php">
-    <PossiblyUnusedParam>
+    <UnusedParam>
       <code><![CDATA[$container]]></code>
-    </PossiblyUnusedParam>
+    </UnusedParam>
   </file>
   <file src="src/Service/PostService.php">
     <PossiblyUnusedMethod>
@@ -113,11 +116,17 @@
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Service/Ratings.php">
+    <ClassMustBeFinal>
+      <code><![CDATA[Ratings]]></code>
+    </ClassMustBeFinal>
     <PossiblyFalseOperand>
       <code><![CDATA[strrpos($joindinLink, '/')]]></code>
     </PossiblyFalseOperand>
   </file>
   <file src="src/Service/SearchWrapper.php">
+    <ClassMustBeFinal>
+      <code><![CDATA[SearchWrapper]]></code>
+    </ClassMustBeFinal>
     <MixedArrayAccess>
       <code><![CDATA[$hit['_id']]]></code>
       <code><![CDATA[$hit['_score']]]></code>
@@ -153,11 +162,20 @@
     </UnresolvableInclude>
   </file>
   <file src="src/View/Helper/RenderPostContent.php">
+    <ClassMustBeFinal>
+      <code><![CDATA[RenderPostContent]]></code>
+    </ClassMustBeFinal>
+    <DeprecatedClass>
+      <code><![CDATA[AbstractHelper]]></code>
+    </DeprecatedClass>
     <PossiblyUnusedMethod>
       <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/View/Helper/RenderTalk.php">
+    <DeprecatedClass>
+      <code><![CDATA[AbstractHelper]]></code>
+    </DeprecatedClass>
     <PossiblyUnusedMethod>
       <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>

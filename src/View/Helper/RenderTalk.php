@@ -12,7 +12,7 @@ use function count;
 use function implode;
 use function trim;
 
-class RenderTalk extends AbstractHelper
+final class RenderTalk extends AbstractHelper
 {
     public function __construct(private Ratings $ratings)
     {

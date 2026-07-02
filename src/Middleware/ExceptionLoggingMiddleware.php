@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Asgrim\Middleware;
 
+use Override;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -22,6 +23,7 @@ final class ExceptionLoggingMiddleware implements MiddlewareInterface
      *
      * @throws Throwable
      */
+    #[Override]
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         try {

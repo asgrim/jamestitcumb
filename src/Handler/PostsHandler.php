@@ -10,6 +10,7 @@ use Asgrim\Value\Post;
 use InvalidArgumentException;
 use Laminas\Diactoros\Response\HtmlResponse;
 use Mezzio\Template\TemplateRendererInterface as TemplateRenderer;
+use Override;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface;
@@ -28,6 +29,7 @@ final class PostsHandler implements MiddlewareInterface
      *
      * @throws InvalidArgumentException
      */
+    #[Override]
     public function process(Request $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $slug = $request->getAttribute('slug', null);

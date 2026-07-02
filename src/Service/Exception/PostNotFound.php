@@ -6,6 +6,6 @@ namespace Asgrim\Service\Exception;
 
 use OutOfBoundsException;
 
-class PostNotFound extends OutOfBoundsException
+final class PostNotFound extends OutOfBoundsException
 {
 }

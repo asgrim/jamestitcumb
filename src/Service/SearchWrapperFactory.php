@@ -8,7 +8,7 @@ use Elasticsearch\ClientBuilder;
 use Psr\Container\ContainerInterface;
 
 /** @codeCoverageIgnore */
-class SearchWrapperFactory
+final class SearchWrapperFactory
 {
     public function __invoke(ContainerInterface $container): SearchWrapper
     {
