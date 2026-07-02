@@ -39,3 +39,5 @@ e: this shoudl be stderr
 
 Notice how also, because I had `set -x`, the trace lines are also shown in the stderr stream. Naturally, this technique
 will need `sed` installed. Enjoy!
+
+<!-- MARKETING -->

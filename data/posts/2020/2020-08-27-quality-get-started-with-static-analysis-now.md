@@ -1,5 +1,5 @@
 ---
-title: "Code Quality Series: Get Started with Static Analysis - NOW!"
+title: "Get Started with Static Analysis - NOW!"
 tags: [php, quality, static analysis, psalm]
 ---
 
