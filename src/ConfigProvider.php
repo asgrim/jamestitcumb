@@ -6,6 +6,7 @@ namespace Asgrim;
 
 use Asgrim\Service\LoggerFactory;
 use Laminas\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
+use PDO;
 use Psr\Log\LoggerInterface;
 
 final class ConfigProvider
@@ -24,6 +25,7 @@ final class ConfigProvider
                 'token' => '',
                 'domain' => 'www.jamestitcumb.com',
             ],
+            'database' => ['url' => ''],
         ];
     }
 
@@ -48,7 +50,10 @@ final class ConfigProvider
                 Service\SearchWrapper::class => Service\SearchWrapperFactory::class,
                 Service\Ratings::class => Service\RatingsFactory::class,
                 Service\Webmentions::class => Service\WebmentionsFactory::class,
+                Db\RatingsRepository::class => Db\RatingsRepositoryFactory::class,
+                Db\WebmentionsRepository::class => Db\WebmentionsRepositoryFactory::class,
                 LoggerInterface::class => LoggerFactory::class,
+                PDO::class => Db\PdoConnectionFactory::class,
             ],
         ];
     }

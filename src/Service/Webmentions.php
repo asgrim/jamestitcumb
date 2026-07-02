@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Asgrim\Service;
 
+use Asgrim\Db\WebmentionsRepository;
+use DateTimeImmutable;
 use Laminas\Diactoros\Request;
 use Psl\Json;
 use Psl\Type;
@@ -12,17 +14,9 @@ use Psr\Log\LoggerInterface;
 use Throwable;
 
 use function count;
-use function file_exists;
-use function file_get_contents;
-use function file_put_contents;
-use function filemtime;
-use function json_encode;
+use function md5;
 use function sprintf;
-use function time;
 use function urlencode;
-
-use const JSON_THROW_ON_ERROR;
-use const LOCK_EX;
 
 /**
  * @psalm-type Mention = array{
@@ -37,96 +31,61 @@ use const LOCK_EX;
 final class Webmentions
 {
     public function __construct(
-        private string $cacheFile,
+        private WebmentionsRepository $repository,
         private string $token,
         private string $domain,
         private ClientInterface $httpClient,
         private LoggerInterface $logger,
-        private int $ttlSeconds = 1800,
     ) {
     }
 
     /** @return list<Mention> */
     public function mentionsForUrl(string $postUrl): array
     {
-        $mentions = $this->getFreshOrCachedMentions();
-
-        return $mentions[$postUrl] ?? [];
+        return $this->repository->findMentionsForUrl($postUrl);
     }
 
     /**
-     * Force a live fetch and cache rewrite, bypassing the TTL check. Not required
-     * for correctness (mentionsForUrl() self-refreshes lazily) - this exists purely
-     * as a local dev convenience for warming the cache ahead of time.
+     * Fetches every mention for the whole domain from webmention.io and upserts
+     * each into Postgres. This is the only refresh mechanism now that reads no
+     * longer trigger a live fetch - it must be run periodically (e.g. via Heroku
+     * Scheduler) to keep webmentions up to date.
      */
-    public function forceRefresh(): void
+    public function refreshFromWebmentionIo(): void
     {
-        $this->writeCache($this->fetchAllMentions());
-    }
+        foreach ($this->fetchAllMentions() as $targetUrl => $mentions) {
+            foreach ($mentions as $mention) {
+                $published = $mention['published'] ?? null;
+                // webmention.io mentions are almost always self-identifying by `url`,
+                // but that field is technically optional - fall back to a hash of the
+                // mention itself so two url-less mentions on the same post don't
+                // collide on the (target_url, source_url) uniqueness constraint.
+                $sourceUrl = $mention['url'] ?? sprintf('urn:mention-hash:%s', md5(Json\encode($mention)));
 
-    /**
-     * Returns mentions grouped by target URL, refreshing from webmention.io if the
-     * local cache is stale or missing. Falls back to a stale cache (or an empty
-     * result) if the live fetch fails, so a slow/down webmention.io never breaks a
-     * page load.
-     *
-     * @return array<string, list<Mention>>
-     */
-    private function getFreshOrCachedMentions(): array
-    {
-        if ($this->isCacheFresh()) {
-            $cached = $this->readCache();
-            if ($cached !== null) {
-                return $cached;
+                $this->repository->upsert(
+                    $targetUrl,
+                    $sourceUrl,
+                    $mention['wm-property'],
+                    $this->parsePublishedAt($published),
+                    $mention,
+                );
             }
         }
-
-        try {
-            $mentions = $this->fetchAllMentions();
-            $this->writeCache($mentions);
-
-            return $mentions;
-        } catch (Throwable $throwable) {
-            $this->logger->warning(sprintf('Failed to refresh webmentions cache: %s', $throwable->getMessage()));
-
-            return $this->readCache() ?? [];
-        }
     }
 
-    private function isCacheFresh(): bool
+    private function parsePublishedAt(string|null $published): DateTimeImmutable|null
     {
-        if (! file_exists($this->cacheFile)) {
-            return false;
-        }
-
-        $mtime = filemtime($this->cacheFile);
-
-        return $mtime !== false && (time() - $mtime) < $this->ttlSeconds;
-    }
-
-    /** @return array<string, list<Mention>>|null */
-    private function readCache(): array|null
-    {
-        if (! file_exists($this->cacheFile)) {
-            return null;
-        }
-
-        $contents = file_get_contents($this->cacheFile);
-        if ($contents === false || $contents === '') {
+        if ($published === null) {
             return null;
         }
 
         try {
-            return Json\typed($contents, Type\dict(Type\string(), Type\vec($this->mentionType())));
+            return new DateTimeImmutable($published);
         } catch (Throwable) {
+            $this->logger->warning(sprintf('Could not parse webmention published date: %s', $published));
+
             return null;
         }
-    }
-
-    /** @param array<string, list<Mention>> $mentions */
-    private function writeCache(array $mentions): void
-    {
-        file_put_contents($this->cacheFile, json_encode($mentions, JSON_THROW_ON_ERROR), LOCK_EX);
     }
 
     /**
@@ -161,7 +120,7 @@ final class Webmentions
             $body = Json\typed(
                 (string) $response->getBody(),
                 Type\shape([
-                    'children' => Type\vec($this->mentionType()),
+                    'children' => Type\vec(self::mentionType()),
                 ], true),
             );
 
@@ -176,7 +135,7 @@ final class Webmentions
     }
 
     /** @return Type\TypeInterface<Mention> */
-    private function mentionType(): Type\TypeInterface
+    public static function mentionType(): Type\TypeInterface
     {
         return Type\shape([
             'wm-property' => Type\string(),

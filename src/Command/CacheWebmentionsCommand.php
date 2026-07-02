@@ -22,17 +22,18 @@ final class CacheWebmentionsCommand extends Command
     {
         $this->setName('cache-webmentions')
             ->setDescription(
-                'Warms the local webmentions cache (optional dev convenience - ' .
-                'mentionsForUrl() self-refreshes lazily at request time, so this is not required in production).',
+                'Fetches webmentions from webmention.io and stores them in Postgres. This is the ' .
+                'only refresh mechanism - reads never fetch live, so this must be run periodically ' .
+                '(e.g. via Heroku Scheduler) to keep webmentions up to date.',
             );
     }
 
     #[Override]
     public function execute(InputInterface $input, OutputInterface $output): int
     {
-        $this->webmentions->forceRefresh();
+        $this->webmentions->refreshFromWebmentionIo();
 
-        $output->writeln('<info>Webmentions cache refreshed.</info>');
+        $output->writeln('<info>Webmentions refreshed.</info>');
 
         return 0;
     }

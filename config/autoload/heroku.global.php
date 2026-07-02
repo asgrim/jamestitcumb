@@ -9,6 +9,11 @@ if (!getenv('HEROKU')) {
 
 $debug = (bool) getenv('DEBUG');
 
+$databaseUrl = (string) getenv('DATABASE_URL');
+if ($databaseUrl !== '') {
+    $databaseUrl .= (str_contains($databaseUrl, '?') ? '&' : '?') . 'sslmode=require';
+}
+
 $config = [
     'debug' => $debug,
     ConfigAggregator::ENABLE_CACHE => true,
@@ -19,6 +24,9 @@ $config = [
     ],
     'webmention' => [
         'token' => (string) getenv('WEBMENTION_IO_TOKEN'),
+    ],
+    'database' => [
+        'url' => $databaseUrl,
     ],
 ];
 

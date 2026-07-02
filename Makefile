@@ -20,6 +20,7 @@ build: clean
 
 run: build ## Run the docker environment enabling you to browse the site locally (note: need ports in docker-compose.override.yml)
 	docker compose up -d
+	docker compose exec web vendor/bin/phinx migrate
 	docker compose exec web php app.php index-posts
 	docker compose exec web php app.php cache-ratings
 
@@ -34,8 +35,14 @@ index-posts: ## index the posts (note: need to run make run first)
 cache-ratings: ## index the posts (note: need to run make run first)
 	docker compose exec web php app.php cache-ratings
 
-cache-webmentions: ## warm the webmentions cache locally (optional - it self-refreshes lazily at request time)
+cache-webmentions: ## refresh webmentions from webmention.io into Postgres
 	docker compose exec web php app.php cache-webmentions
+
+migrate: build ## run database migrations against the local Postgres instance
+	docker compose run --rm web vendor/bin/phinx migrate
+
+migrate-status: build ## show pending/applied migration status
+	docker compose run --rm web vendor/bin/phinx status
 
 update-static-analysis-baseline: ## bump static analysis baseline issues, reducing set of allowed failures
 	docker compose run --rm --no-deps web vendor/bin/psalm --update-baseline

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Asgrim\Service;
 
+use Asgrim\Db\WebmentionsRepository;
 use GuzzleHttp\Client;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
@@ -17,7 +18,7 @@ final class WebmentionsFactory
         $config = $container->get('config');
 
         return new Webmentions(
-            __DIR__ . '/../../data/cache/webmentions.json',
+            $container->get(WebmentionsRepository::class),
             $config['webmention']['token'],
             $config['webmention']['domain'],
             new Client(['timeout' => 5, 'connect_timeout' => 5]),

@@ -45,3 +45,9 @@ $ make index-posts
 ```bash
 $ make cache-ratings
 ```
+
+### Re-cache webmentions
+
+```bash
+$ make cache-webmentions
+```

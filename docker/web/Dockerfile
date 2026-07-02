@@ -2,8 +2,8 @@
 FROM php:8.4-apache
 
 RUN apt-get update \
-    && apt-get install -y iproute2 wget gnupg git bash unzip autoconf build-essential libicu-dev \
-    && docker-php-ext-install opcache intl bcmath \
+    && apt-get install -y iproute2 wget gnupg git bash unzip autoconf build-essential libicu-dev libpq-dev \
+    && docker-php-ext-install opcache intl bcmath pdo_pgsql \
     && yes | pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/xdebug.ini \
@@ -28,11 +28,12 @@ RUN composer install --prefer-dist --no-scripts
 
 ADD /config /app/config
 ADD /data /app/data
+ADD /db /app/db
 ADD /public /app/public
 ADD /src /app/src
 ADD /templates /app/templates
 ADD /test /app/test
-ADD app.php phpcs.xml.dist phpunit.xml.dist psalm.xml.dist .psalm-baseline.xml /app/
+ADD app.php phinx.php phpcs.xml.dist phpunit.xml.dist psalm.xml.dist .psalm-baseline.xml /app/
 
 ENTRYPOINT ["/dev-entrypoint.sh"]
 CMD ["apache2-foreground"]

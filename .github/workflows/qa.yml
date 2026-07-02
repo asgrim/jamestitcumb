@@ -25,6 +25,10 @@ jobs:
           docker compose build
           docker compose pull
 
+      - name: Run database migrations
+        run: |
+          docker compose run --rm web vendor/bin/phinx migrate
+
       - name: Run tests
         run: |
           docker compose run --rm web vendor/bin/phpunit --do-not-cache-result

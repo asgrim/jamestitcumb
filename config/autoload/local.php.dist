@@ -21,4 +21,7 @@ return [
     'webmention' => [
         'token' => 'YOUR-TOKEN-HERE',
     ],
+    'database' => [
+        'url' => 'postgres://app:app@postgres:5432/app', // default for Docker
+    ],
 ];

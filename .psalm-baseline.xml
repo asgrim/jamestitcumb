@@ -10,6 +10,16 @@
       <code><![CDATA[ConsoleApplication]]></code>
     </UnusedClass>
   </file>
+  <file src="src/Db/RatingsRepository.php">
+    <ClassMustBeFinal>
+      <code><![CDATA[RatingsRepository]]></code>
+    </ClassMustBeFinal>
+  </file>
+  <file src="src/Db/WebmentionsRepository.php">
+    <ClassMustBeFinal>
+      <code><![CDATA[WebmentionsRepository]]></code>
+    </ClassMustBeFinal>
+  </file>
   <file src="src/Handler/AboutHandler.php">
     <PossiblyUnusedMethod>
       <code><![CDATA[__construct]]></code>
