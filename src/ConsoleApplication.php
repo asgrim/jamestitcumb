@@ -7,6 +7,7 @@ namespace Asgrim;
 use Asgrim\Service\IndexerService;
 use Asgrim\Service\Ratings;
 use Asgrim\Service\SearchWrapper;
+use Asgrim\Service\Webmentions;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Application as BaseApplication;
 
@@ -23,6 +24,9 @@ final class ConsoleApplication extends BaseApplication
             ),
             new Command\CacheRatingsCommand(
                 $container->get(Ratings::class),
+            ),
+            new Command\CacheWebmentionsCommand(
+                $container->get(Webmentions::class),
             ),
         ]);
     }

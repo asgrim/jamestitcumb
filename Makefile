@@ -34,6 +34,9 @@ index-posts: ## index the posts (note: need to run make run first)
 cache-ratings: ## index the posts (note: need to run make run first)
 	docker compose exec web php app.php cache-ratings
 
+cache-webmentions: ## warm the webmentions cache locally (optional - it self-refreshes lazily at request time)
+	docker compose exec web php app.php cache-webmentions
+
 update-static-analysis-baseline: ## bump static analysis baseline issues, reducing set of allowed failures
 	docker compose run --rm --no-deps web vendor/bin/psalm --update-baseline
 

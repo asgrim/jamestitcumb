@@ -17,6 +17,9 @@ $config = [
             getenv('BONSAI_URL') . ':443',
         ],
     ],
+    'webmention' => [
+        'token' => (string) getenv('WEBMENTION_IO_TOKEN'),
+    ],
 ];
 
 if ($debug) {

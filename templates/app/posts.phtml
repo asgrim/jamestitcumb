@@ -48,6 +48,7 @@ JS);
 
 	<?php if ($post->shouldShowComments()): ?>
 		<hr />
+		<?= $this->renderWebmentions($post->slug()) ?>
 	<?php endif; ?>
 
 </article>

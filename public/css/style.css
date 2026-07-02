@@ -541,6 +541,71 @@ img {
 }
 
 /* ==========================================================================
+   Webmentions
+   ========================================================================== */
+
+.webmentions {
+    margin: 1.4em 0;
+}
+
+.webmention-facepile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1em;
+}
+
+.webmention-facepile__avatars {
+    display: flex;
+}
+
+.webmention-facepile__avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--bg);
+    margin-left: -10px;
+}
+
+.webmention-facepile__avatar:first-child {
+    margin-left: 0;
+}
+
+.webmention-facepile__count {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.webmention-reply {
+    display: flex;
+    gap: 12px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+}
+
+.webmention-reply__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.webmention-reply__meta {
+    margin: 0 0 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.webmention-reply__content {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
    Articles / blog posts
    ========================================================================== */
 

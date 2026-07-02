@@ -20,6 +20,10 @@ final class ConfigProvider
             'elasticsearch' => [
                 'hosts' => [],
             ],
+            'webmention' => [
+                'token' => '',
+                'domain' => 'www.jamestitcumb.com',
+            ],
         ];
     }
 
@@ -43,6 +47,7 @@ final class ConfigProvider
                 Service\FeedService::class => ReflectionBasedAbstractFactory::class,
                 Service\SearchWrapper::class => Service\SearchWrapperFactory::class,
                 Service\Ratings::class => Service\RatingsFactory::class,
+                Service\Webmentions::class => Service\WebmentionsFactory::class,
                 LoggerInterface::class => LoggerFactory::class,
             ],
         ];
@@ -55,10 +60,12 @@ final class ConfigProvider
             'factories' => [
                 View\Helper\RenderPostContent::class => ReflectionBasedAbstractFactory::class,
                 View\Helper\RenderTalk::class => ReflectionBasedAbstractFactory::class,
+                View\Helper\RenderWebmentions::class => ReflectionBasedAbstractFactory::class,
             ],
             'aliases' => [
                 'renderTalk' => View\Helper\RenderTalk::class,
                 'renderPostContent' => View\Helper\RenderPostContent::class,
+                'renderWebmentions' => View\Helper\RenderWebmentions::class,
             ],
         ];
     }
