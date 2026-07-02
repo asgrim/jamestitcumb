@@ -32,8 +32,11 @@ ci: cs-check static-analysis test ## Run all the tests
 index-posts: ## index the posts (note: need to run make run first)
 	docker compose exec web php app.php index-posts
 
-cache-ratings: ## index the posts (note: need to run make run first)
+cache-ratings: ## refresh Joind.in ratings for talks in the last 3 months (note: need to run make run first)
 	docker compose exec web php app.php cache-ratings
+
+cache-ratings-all: ## rebuild Joind.in ratings for every past talk, not just the last 3 months
+	docker compose exec web php app.php cache-ratings --all
 
 cache-webmentions: ## refresh webmentions from webmention.io into Postgres
 	docker compose exec web php app.php cache-webmentions

@@ -37,6 +37,7 @@ return [
         'abstract' => $pieAbstract,
         'links' => [
             'PHP Tek 2026' => ['url' => 'https://phptek.io/'],
+            'Joind.in' => ['url' => 'https://joind.in/talk/view/30392', 'class' => 'joindin'],
         ],
     ],
     [

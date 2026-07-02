@@ -6,6 +6,7 @@ namespace Asgrim\Service;
 
 use Asgrim\Db\RatingsRepository;
 use Asgrim\Value\Talk;
+use DateTimeImmutable;
 use Laminas\Diactoros\Request;
 use Psl\Json;
 use Psl\Type;
@@ -28,12 +29,14 @@ class Ratings
     ) {
     }
 
-    public function updateCachedRatings(): void
+    public function updateCachedRatings(bool $rebuildAll = false): void
     {
+        $cutoff = $rebuildAll ? null : new DateTimeImmutable('-3 months');
+
         $joindinEnabledTalks = array_filter(
             $this->talks->getPastTalks(),
-            static function (Talk $talk): bool {
-                return $talk->joindInLink() !== null;
+            static function (Talk $talk) use ($cutoff): bool {
+                return $talk->joindInLink() !== null && ($cutoff === null || $talk->date() >= $cutoff);
             },
         );
 
