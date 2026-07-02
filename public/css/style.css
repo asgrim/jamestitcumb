@@ -741,6 +741,30 @@ img {
     margin-top: -0.6em;
 }
 
+.tag-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.tag-pill {
+    display: inline-block;
+    background: var(--bg-tint);
+    color: var(--blue-dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 999px;
+}
+
+.tag-pill:hover, .tag-pill:focus {
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+}
+
 .article-body img {
     max-width: 100%;
     border-radius: 6px;

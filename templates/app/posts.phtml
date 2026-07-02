@@ -34,6 +34,13 @@ JS);
 		<h1><a class="u-url p-name" href="<?= $this->url('posts', ['slug' => $post->slug()]); ?>"><?= $this->escapeHtml($post->title()); ?></a></h1>
 		<p class="article-meta">
 			Posted on <?= $post->date()->format('jS F Y'); ?>
+			<?php if (count($post->tags())): ?>
+				<span class="tag-list">
+					<?php foreach ($post->tags() as $tag): ?>
+						<a class="tag-pill" href="<?= $this->url('posts', queryParams: ['tag' => $tag], options: ['reuse_result_params' => false]); ?>"><?= $this->escapeHtml($tag); ?></a>
+					<?php endforeach; ?>
+				</span>
+			<?php endif; ?>
 		</p>
 	</div>
 	<hr />
