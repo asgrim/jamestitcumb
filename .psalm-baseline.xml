@@ -25,6 +25,11 @@
       <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
   </file>
+  <file src="src/Handler/ExperienceHandler.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+    </PossiblyUnusedMethod>
+  </file>
   <file src="src/Handler/FeedHandler.php">
     <MixedArgument>
       <code><![CDATA[$query['tag']]]></code>
@@ -120,6 +125,11 @@
       <code><![CDATA[$container]]></code>
     </UnusedParam>
   </file>
+  <file src="src/Service/JobService.php">
+    <MixedArgumentTypeCoercion>
+      <code><![CDATA[$jobData]]></code>
+    </MixedArgumentTypeCoercion>
+  </file>
   <file src="src/Service/PostService.php">
     <PossiblyUnusedMethod>
       <code><![CDATA[__construct]]></code>
@@ -181,6 +191,11 @@
       <code><![CDATA[syndicationUrl]]></code>
     </PossiblyUnusedMethod>
   </file>
+  <file src="src/View/Helper/RenderJob.php">
+    <DeprecatedClass>
+      <code><![CDATA[AbstractHelper]]></code>
+    </DeprecatedClass>
+  </file>
   <file src="src/View/Helper/RenderPostContent.php">
     <ClassMustBeFinal>
       <code><![CDATA[RenderPostContent]]></code>
@@ -191,6 +206,11 @@
     <PossiblyUnusedMethod>
       <code><![CDATA[__construct]]></code>
     </PossiblyUnusedMethod>
+  </file>
+  <file src="src/View/Helper/RenderTagCloud.php">
+    <DeprecatedClass>
+      <code><![CDATA[AbstractHelper]]></code>
+    </DeprecatedClass>
   </file>
   <file src="src/View/Helper/RenderTalk.php">
     <DeprecatedClass>

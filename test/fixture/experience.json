@@ -1,0 +1,37 @@
+[
+    {
+        "company": "Current Co A",
+        "logo": "current.png",
+        "title": "Senior Developer",
+        "start": "2015-01",
+        "end": null,
+        "description": "Current job description",
+        "url": "https://example.com"
+    },
+    {
+        "company": "Current Co B",
+        "logo": "missing.png",
+        "title": "Developer",
+        "start": "2018-01",
+        "end": null,
+        "description": "Another current job description"
+    },
+    {
+        "company": "Recent Past Co",
+        "logo": "missing.png",
+        "title": "Developer",
+        "start": "2013-01",
+        "end": "2014-01",
+        "description": "Recent past job description",
+        "tags": ["PHP", "Java"]
+    },
+    {
+        "company": "Older Past Co",
+        "logo": "missing.png",
+        "title": "Developer",
+        "start": "2010-01",
+        "end": "2012-01",
+        "description": "Older past job description",
+        "tags": ["PHP"]
+    }
+]

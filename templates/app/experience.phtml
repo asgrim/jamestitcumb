@@ -1,0 +1,25 @@
+<?php
+
+declare(strict_types=1);
+
+use Asgrim\Value\Job;
+
+/**
+ * @var Job[] $jobs
+ * @var array<string, int> $tagCounts
+ */
+
+$this->headTitle()->append('Experience');
+?>
+
+<h1>Experience</h1>
+
+<?= $this->renderTagCloud($tagCounts); ?>
+
+<ol class="timeline">
+    <?php
+    foreach ($jobs as $i => $job) {
+        echo $this->renderJob($job, $i);
+    }
+    ?>
+</ol>

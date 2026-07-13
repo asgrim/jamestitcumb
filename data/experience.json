@@ -1,0 +1,199 @@
+[
+    {
+        "company": "Roave",
+        "logo": "roave.png",
+        "title": "Principal Software Consultant",
+        "start": "2015-05",
+        "end": null,
+        "description": "Consultant for Roave, specialising in enterprise level business and back end software architecture, development and continuous integration.",
+        "url": "https://www.roave.com/",
+        "tags": ["AI", "Java", "PHP", "Rust", "Leadership", "API", "Javascript", "DevOps", "AWS", "Laravel"]
+    },
+    {
+        "company": "PHP Foundation",
+        "logo": "php-foundation.jpeg",
+        "title": "Software Engineer",
+        "start": "2024-01",
+        "end": null,
+        "description": "The developer of PIE (PHP Installer for Extensions), a project from the PHP Foundation to replace the ageing infrastructure of PECL.",
+        "url": "https://thephp.foundation/",
+        "tags": ["PHP", "C"]
+    },
+    {
+        "company": "School Software Company",
+        "logo": "sleuth.jpeg",
+        "title": "Software Engineer",
+        "start": "2023-11",
+        "end": null,
+        "description": "Software consulting for School Software Company.",
+        "url": "https://schoolsoftwarecompany.com/",
+        "tags": ["PHP", "API", "AI", "MySQL", "Javascript", "AWS", "DevOps", "Laravel"]
+    },
+    {
+        "company": "Laminas Project",
+        "logo": "laminas.jpeg",
+        "title": "Technical Steering Committee",
+        "start": "2017-03",
+        "end": null,
+        "description": "Part of the Laminas TSC team, with involvement in discussing the direction of Laminas and Mezzio, issue triage, code reviews, merging and release management.",
+        "url": "https://getlaminas.org/",
+        "tags": ["PHP", "Leadership", "Laminas"]
+    },
+    {
+        "company": "Panasonic Avionics Corporation",
+        "logo": "panasonic.jpeg",
+        "title": "Tech Lead (Java)",
+        "start": "2023-01",
+        "end": "2025-10",
+        "description": "Spearheading a Java project team in a unification initiative aiming to overhaul back end processes.",
+        "url": "https://www.panasonic.aero/",
+        "tags": ["Java", "API", "MySQL", "Kafka", "Spring Boot", "Javascript", "DevOps", "Leadership", "AWS"]
+    },
+    {
+        "company": "Panasonic Avionics Corporation",
+        "logo": "panasonic.jpeg",
+        "title": "Tech Lead (PHP)",
+        "start": "2018-11",
+        "end": "2024-08",
+        "description": "Tech lead for PHP-based back end systems at Panasonic Avionics Corporation.",
+        "url": "https://www.panasonic.aero/",
+        "tags": ["PHP", "MySQL", "Leadership", "API", "DevOps", "AWS", "Laravel", "Laminas"]
+    },
+    {
+        "company": "Scout APM",
+        "logo": "scoutapm.jpeg",
+        "title": "Software Engineer",
+        "start": "2019-08",
+        "end": "2025-10",
+        "description": "Leading maintenance of Scout APM's PHP libraries and integrations in PHP, C and Rust.",
+        "url": "https://scoutapm.com/",
+        "tags": ["PHP", "C", "Rust", "Laravel", "Symfony"]
+    },
+    {
+        "company": "Tagether",
+        "logo": "tagether.jpeg",
+        "title": "Software Consultant",
+        "start": "2020-11",
+        "end": "2021-11",
+        "description": "Software consultant for Tagether.",
+        "url": "https://tagether.fr/",
+        "tags": ["PHP", "API", "Symfony"]
+    },
+    {
+        "company": "Unlocking Potential",
+        "logo": "up.jpeg",
+        "title": "Mentor for developers",
+        "start": "2018-06",
+        "end": "2021-02",
+        "description": "Mentoring organisations in Cornwall on software development.",
+        "url": "https://www.unlocking-potential.co.uk/",
+        "tags": ["Mentoring"]
+    },
+    {
+        "company": "Castor EDC",
+        "logo": "castor.jpeg",
+        "title": "Senior Backend Engineer",
+        "start": "2018-06",
+        "end": "2018-12",
+        "description": "Senior back-end engineer for a growing data platform for medical research and studies.",
+        "url": "https://www.castoredc.com/",
+        "tags": ["PHP", "API", "Laminas", "MySQL", "Doctrine"]
+    },
+    {
+        "company": "php[architect]",
+        "logo": "php-arch.jpeg",
+        "title": "Community Corner Columnist",
+        "start": "2017-07",
+        "end": "2018-12",
+        "description": "Wrote the monthly column in the php[architect] magazine to keep readers up to date with goings on in the PHP community.",
+        "url": "https://www.phparch.com/",
+        "tags": ["PHP"]
+    },
+    {
+        "company": "Saskatchewan Blue Cross",
+        "logo": "sbc.jpeg",
+        "title": "Lead developer",
+        "start": "2017-10",
+        "end": "2018-02",
+        "description": "Modernisation of SBC's travel insurance portal following the successful transformation of the health insurance site.",
+        "url": "https://www.sk.bluecross.ca/",
+        "tags": ["PHP", "Doctrine", "IBM i", "Javascript", "Leadership", "Laminas"]
+    },
+    {
+        "company": "123Stores Inc.",
+        "logo": "123-stores.jpeg",
+        "title": "Tech lead",
+        "start": "2017-03",
+        "end": "2017-09",
+        "description": "Consulting and development work to help build a new Java-based communications platform to manage email flow.",
+        "tags": ["Java", "Spring Boot", "AWS"]
+    },
+    {
+        "company": "PHP Hampshire CIC",
+        "logo": "php-hants.jpeg",
+        "title": "Founder",
+        "start": "2011-03",
+        "end": "2017-09",
+        "description": "PHP Hampshire is a PHP User Group whose aim is to share knowledge, learn new things and support the PHP community in Hampshire, UK.",
+        "url": "https://phphants.co.uk/",
+        "tags": ["PHP", "Leadership"]
+    },
+    {
+        "company": "Seiberlich Trane Energy Services",
+        "logo": "seiberlich.jpeg",
+        "title": "Software Engineer",
+        "start": "2016-10",
+        "end": "2017-03",
+        "description": "Software engineer role at Seiberlich Trane Energy Services.",
+        "url": "http://www.seiberlich.com/",
+        "tags": ["PHP", "Doctrine", "Laminas"]
+    },
+    {
+        "company": "Saskatchewan Blue Cross",
+        "logo": "sbc.jpeg",
+        "title": "Lead software developer",
+        "start": "2015-12",
+        "end": "2017-03",
+        "description": "Creation of a Zend Expressive-based application on the IBM i platform working with the Seiden Group consultants for a health insurance portal for customers.",
+        "url": "https://www.sk.bluecross.ca/",
+        "tags": ["PHP", "Doctrine", "IBM i", "Javascript", "Leadership", "Laminas"]
+    },
+    {
+        "company": "Driver and Vehicle Standards Agency (DVSA)",
+        "logo": "dvsa.jpeg",
+        "title": "Technical Lead",
+        "start": "2015-05",
+        "end": "2015-12",
+        "description": "Worked on the Mobile Compliance project for the DVSA IT regeneration project as Tech Lead, ensuring quality control, good architectural design, clean code and strict good practices in PHP software development.",
+        "url": "https://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency",
+        "tags": ["PHP", "MySQL", "Doctrine", "Javascript", "Leadership", "Laminas"]
+    },
+    {
+        "company": "Netbasic / Live Life Protected",
+        "logo": "protected.jpeg",
+        "title": "Development Manager",
+        "start": "2008-04",
+        "end": "2015-05",
+        "description": "Managing the development and design team, making sure they can do their job without any hassle. Also doing development on internal web apps using Zend Framework 2, Doctrine 2, RabbitMQ, etc.",
+        "tags": ["PHP", "MySQL", "RabbitMQ", "Doctrine", "Javascript", "Laminas", "Leadership"]
+    },
+    {
+        "company": "Email Reaction",
+        "logo": "smartfocus.png",
+        "title": "Software Developer",
+        "start": "2007-11",
+        "end": "2008-03",
+        "description": "Assisted development of a .NET-based email marketing software in a test driven development environment.",
+        "tags": [".NET"]
+    },
+    {
+        "company": "Airborne Interactive",
+        "logo": "airborne-interactive.jpeg",
+        "title": "Software Developer",
+        "start": "2003-01",
+        "end": "2007-12",
+        "description": "Led development on in-flight entertainment for a major airline. Gave technical assistance to other developers and integrated with new technologies being introduced by Panasonic Avionics Corporation.",
+        "url": "https://www.airborne.aero/",
+        "tags": ["PHP", "MySQL", "Javascript"]
+    }
+]

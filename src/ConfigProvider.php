@@ -43,9 +43,11 @@ final class ConfigProvider
                 Handler\TalksHandler::class => ReflectionBasedAbstractFactory::class,
                 Handler\SearchHandler::class => ReflectionBasedAbstractFactory::class,
                 Handler\TrainingHandler::class => ReflectionBasedAbstractFactory::class,
+                Handler\ExperienceHandler::class => ReflectionBasedAbstractFactory::class,
                 Service\PostService::class => ReflectionBasedAbstractFactory::class,
                 Service\IndexerService::class => Service\IndexerServiceFactory::class,
                 Service\TalkService::class => Service\TalkServiceFactory::class,
+                Service\JobService::class => Service\JobServiceFactory::class,
                 Service\FeedService::class => ReflectionBasedAbstractFactory::class,
                 Service\SearchWrapper::class => Service\SearchWrapperFactory::class,
                 Service\Ratings::class => Service\RatingsFactory::class,
@@ -66,11 +68,15 @@ final class ConfigProvider
                 View\Helper\RenderPostContent::class => ReflectionBasedAbstractFactory::class,
                 View\Helper\RenderTalk::class => ReflectionBasedAbstractFactory::class,
                 View\Helper\RenderWebmentions::class => ReflectionBasedAbstractFactory::class,
+                View\Helper\RenderJob::class => ReflectionBasedAbstractFactory::class,
+                View\Helper\RenderTagCloud::class => ReflectionBasedAbstractFactory::class,
             ],
             'aliases' => [
                 'renderTalk' => View\Helper\RenderTalk::class,
                 'renderPostContent' => View\Helper\RenderPostContent::class,
                 'renderWebmentions' => View\Helper\RenderWebmentions::class,
+                'renderJob' => View\Helper\RenderJob::class,
+                'renderTagCloud' => View\Helper\RenderTagCloud::class,
             ],
         ];
     }

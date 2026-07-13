@@ -10,6 +10,7 @@ return static function (Application $app): void {
     $app->get('/feed[/{format}]', Handler\FeedHandler::class, 'feed');
     $app->get('/posts[/{slug}]', Handler\PostsHandler::class, 'posts');
     $app->get('/talks', Handler\TalksHandler::class, 'talks');
+    $app->get('/experience', Handler\ExperienceHandler::class, 'experience');
     $app->get('/search', Handler\SearchHandler::class, 'search');
     $app->get('/training-workshops', Handler\TrainingHandler::class, 'training');
 };
