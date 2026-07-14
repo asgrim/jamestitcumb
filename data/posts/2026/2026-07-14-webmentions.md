@@ -1,6 +1,7 @@
 ---
 title: "Replacing My Comments section with Webmentions"
 tags: [blog, comments, webmention, mastodon, bridgy]
+mastodon: https://phpc.social/@asgrim/116920134063499708
 ---
 
 I went down a bit of a rabbit recently. I've been slowly gaining control of my
