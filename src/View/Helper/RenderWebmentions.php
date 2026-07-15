@@ -24,6 +24,9 @@ final class RenderWebmentions extends AbstractHelper
 
     private const string BASE_URL = 'https://www.jamestitcumb.com/posts/';
 
+    /** Cap avatars actually rendered so the row stays bounded on narrow screens no matter how popular a post gets. */
+    private const int FACEPILE_AVATAR_LIMIT = 7;
+
     public function __construct(private Webmentions $webmentions)
     {
     }
@@ -67,8 +70,15 @@ final class RenderWebmentions extends AbstractHelper
     /** @param list<Mention> $facepile */
     private function renderFacepile(array $facepile): string
     {
+        $count = count($facepile);
+
         $avatars = '';
+        $shown   = 0;
         foreach ($facepile as $mention) {
+            if ($shown >= self::FACEPILE_AVATAR_LIMIT) {
+                break;
+            }
+
             $name  = $this->escape($this->displayName($mention));
             $photo = $mention['author']['photo'] ?? '';
 
@@ -81,9 +91,15 @@ final class RenderWebmentions extends AbstractHelper
                 $this->escape($photo),
                 $name,
             );
+            $shown++;
         }
 
-        $count = count($facepile);
+        if ($count > $shown) {
+            $avatars .= sprintf(
+                '<span class="webmention-facepile__more" aria-hidden="true">+%d</span>',
+                $count - $shown,
+            );
+        }
 
         return sprintf(
             '<div class="webmention-facepile"><span class="webmention-facepile__avatars">%s</span>' .
