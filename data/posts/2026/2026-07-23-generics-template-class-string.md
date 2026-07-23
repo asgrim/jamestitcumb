@@ -1,6 +1,7 @@
 ---
 title: "Generics tip for class-string"
 tags: [php, static-analysis, phpstan, psalm, generics]
+mastodon: https://phpc.social/@asgrim/116920134063499708
 ---
 
 Just a quick tip this one. When writing a method that returns an instance of
