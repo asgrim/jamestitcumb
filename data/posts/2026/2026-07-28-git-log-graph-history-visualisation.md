@@ -1,7 +1,7 @@
 ---
 title: Visualise your Git tree on the CLI
 tags: [git, git-log, tree, graph]
-#mastodon: ...
+mastodon: https://phpc.social/@asgrim/116999688995320344
 ---
 
 I cut my teeth on source control with CVS, then Sourceforge, then Subversion,
