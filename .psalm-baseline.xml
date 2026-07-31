@@ -86,6 +86,11 @@
       <code><![CDATA[ExceptionLoggingMiddleware]]></code>
     </UnusedClass>
   </file>
+  <file src="src/Middleware/SecurityHeadersMiddleware.php">
+    <UnusedClass>
+      <code><![CDATA[SecurityHeadersMiddleware]]></code>
+    </UnusedClass>
+  </file>
   <file src="src/Service/FeedService.php">
     <PossiblyUnusedMethod>
       <code><![CDATA[__construct]]></code>

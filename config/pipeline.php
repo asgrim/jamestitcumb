@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 use Asgrim\Middleware\ClacksMiddleware;
 use Asgrim\Middleware\ExceptionLoggingMiddleware;
+use Asgrim\Middleware\SecurityHeadersMiddleware;
 use Mezzio\Application;
 use Mezzio\Handler\NotFoundHandler;
 use Mezzio\Helper\ServerUrlMiddleware;
@@ -18,6 +19,7 @@ return static function (Application $app): void {
     $app->pipe(RouteMiddleware::class);
     $app->pipe(UrlHelperMiddleware::class);
     $app->pipe(ClacksMiddleware::class);
+    $app->pipe(SecurityHeadersMiddleware::class);
     $app->pipe(DispatchMiddleware::class);
     $app->pipe(NotFoundHandler::class);
 };
