@@ -29,7 +29,7 @@ final class SecurityHeadersMiddleware implements MiddlewareInterface
             'ssl.google-analytics.com',
         ],
         'style-src' => [self::CSP_SELF, self::CSP_UNSAFE_INLINE, 'cdnjs.cloudflare.com'],
-        'img-src' => [self::CSP_SELF, 'data:'],
+        'img-src' => [self::CSP_SELF, 'data:', 'avatars.webmention.io'],
         'font-src' => [self::CSP_SELF, 'cdnjs.cloudflare.com'],
         'connect-src' => [self::CSP_SELF, 'www.google-analytics.com', 'ssl.google-analytics.com'],
     ];
