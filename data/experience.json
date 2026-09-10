@@ -139,6 +139,16 @@
         "tags": ["PHP", "Leadership"]
     },
     {
+        "company": "PHP South Coast",
+        "logo": "php-south-coast.png",
+        "title": "Founder",
+        "start": "2014-10",
+        "end": "2017-06",
+        "description": "PHP South Coast was a PHP conference held on the south coast of the UK, founded to share knowledge and support the local PHP community.",
+        "url": "https://2017.phpsouthcoast.co.uk/",
+        "tags": ["PHP", "Leadership", "Conference"]
+    },
+    {
         "company": "Seiberlich Trane Energy Services",
         "logo": "seiberlich.jpeg",
         "title": "Software Engineer",
