@@ -30,6 +30,16 @@
         "tags": ["PHP", "API", "AI", "MySQL", "Javascript", "AWS", "DevOps", "Laravel"]
     },
     {
+        "company": "Tebex by Overwolf",
+        "logo": "tebex.jpeg",
+        "title": "Software Engineer, Payments",
+        "start": "2026-07",
+        "end": null,
+        "description": "Software engineer for the Payments team at Tebex by Overwolf.",
+        "url": "https://www.tebex.io/",
+        "tags": ["AI", "PHP", "API", "Laravel"]
+    },
+    {
         "company": "Laminas Project",
         "logo": "laminas.jpeg",
         "title": "Technical Steering Committee",
