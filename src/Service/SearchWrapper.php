@@ -36,7 +36,6 @@ class SearchWrapper
     {
         $params = [
             'index' => 'posts',
-            'type' => 'post',
             'body' => [
                 'query' => [
                     'simple_query_string' => ['query' => $text],
@@ -89,7 +88,6 @@ class SearchWrapper
                     'content' => $this->indexerService->getPostContentWithoutMetadata($post->slug()),
                 ],
                 'index' => 'posts',
-                'type' => 'post',
                 'id' => $post->slug(),
             ];
 
